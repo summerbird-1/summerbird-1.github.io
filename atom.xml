@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-10-31T02:17:16.887Z</updated>
+  <updated>2023-10-31T05:02:28.363Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>自然辩证法笔记</title>
+    <link href="http://example.com/2023/10/31/%E8%87%AA%E7%84%B6%E8%BE%A9%E8%AF%81%E6%B3%95%E7%AC%94%E8%AE%B0/"/>
+    <id>http://example.com/2023/10/31/%E8%87%AA%E7%84%B6%E8%BE%A9%E8%AF%81%E6%B3%95%E7%AC%94%E8%AE%B0/</id>
+    <published>2023-10-31T04:58:03.000Z</published>
+    <updated>2023-10-31T05:02:28.363Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;转载自 &lt;a href=&quot;https://blog.creativecc.cn/go.html?u=aHR0cHM6Ly9qYWNraGNjLmdpdGh1Yi5pbw==&quot;&gt;杰克成&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;smile-自然辩证法笔记&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="note" scheme="http://example.com/categories/note/"/>
+    
+    
+    <category term="自然辩证法" scheme="http://example.com/tags/%E8%87%AA%E7%84%B6%E8%BE%A9%E8%AF%81%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode42</title>
