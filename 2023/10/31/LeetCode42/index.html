@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, SummerBird博客">
+    <meta name="keywords" content="LeetCode42, SummerBird博客">
     <meta name="description" content="向往热烈而自由">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | SummerBird博客</title>
+    <title>LeetCode42 | SummerBird博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -260,12 +260,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">LeetCode42</h1>
                 </div>
             </div>
         </div>
@@ -382,12 +382,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/LeetCode/">
+                                <span class="chip bg-color">LeetCode</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Basic/" class="post-category">
+                                Basic
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -396,28 +409,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2023-10-30
+                    2023-10-31
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2023-10-30
+                    2023-10-31
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    73
+                    474
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    1 Min
+                    2 Min
                 </div>
                 
 
@@ -440,19 +453,85 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new "My New Post"<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <h3 id="42-接雨水"><a href="#42-接雨水" class="headerlink" title="42. 接雨水"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/trapping-rain-water/">42. 接雨水</a></h3><p>题目描述略</p>
+<h4 id="1、按行求"><a href="#1、按行求" class="headerlink" title="1、按行求"></a>1、按行求</h4><p>这个方法会超时，不过思路很好</p>
+<p>求第i层的水，遍历每个位置，如果当前高度小于i，而且两边都有高度大于等于i的，说明这个地方有水</p>
+<p><span class="github-emoji"><span>💧</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a7.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
+<p>但注意，第一次要先找到大于等于i的之后再开始计数</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">class Solution {
+public:
+    int trap(vector&lt;int&gt;&amp; height) {
+     int res = 0;
+     int maxheight = *max_element(height.begin(),height.end());
+     for(int i = 1;i &lt;= maxheight;i++){
+        bool isStart = false;             //标记是否开始更新temp
+        int temp = 0;
+        for(int j = 0;j &lt; height.size();j++){
+            if(isStart&amp;&amp;height[j] &lt; i){
+                temp++;
+            }
+            if(height[j] &gt;= i){          //当首次遇到大于等于该层高度的墙，开始更新temp
+                res+=temp;
+                temp = 0;
+                isStart = true;
+            }
+        }
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+     }
+     return res;
+    }
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="2、按列求"><a href="#2、按列求" class="headerlink" title="2、按列求"></a>2、按列求</h4><p>同超时</p>
+<p>对于当前正在求的列的高度i，查找当前列两端最高的列的高度，取其中较小的min，比较i与其大小，如果i &gt;= min,那么该列必定存不了水，如果i &lt; min,该列存水量为min-i</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">class Solution {
+public:
+    int trap(vector&lt;int&gt;&amp; height) {
+     int res = 0;
+     for(int i = 1;i &lt; height.size()-1;i++){
+         int leftMaxheight = 0;
+         for(int j = i-1;j &gt;= 0;j--){
+             if(height[j] &gt; leftMaxheight)
+             leftMaxheight = height[j];
+         }
+         int rightMaxheight = 0;
+         for(int j = i+1;j &lt; height.size();j++){
+             if(rightMaxheight &lt; height[j])
+             rightMaxheight = height[j];
+         }
+         int k = min(leftMaxheight,rightMaxheight);
+         if(k &gt; height[i])
+         res += k-height[i];
+     }
+     
+     return res;
+    }
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="3、动态规划"><a href="#3、动态规划" class="headerlink" title="3、动态规划"></a>3、动态规划</h4><p>改进一下方法二，把当前列左边和右边最高列存起来，不用每次都遍历</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">class Solution {
+public:
+    int trap(vector&lt;int&gt;&amp; height) {
+     int res = 0;
+     int *max_left = new int[height.size()];
+     int * max_right = new int[height.size()];
+     for(int i = 1;i &lt; height.size()-1;i++){
+         max_left[i] = max(max_left[i-1],height[i-1]);
+     }
+      for(int i = height.size()-2;i &gt;=0;i--){
+         max_right[i] = max(max_right[i+1],height[i+1]);
+     }
+        for(int i = 1;i &lt; height.size()-1;i++){
+         int k = min(max_left[i],max_right[i]);
+         if(k &gt; height[i])
+         res += k-height[i];
+     }
+     
+     return res;
+    }
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>不超时了<span class="github-emoji"><span>😀</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f600.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
 
                 
             </div>
@@ -479,7 +558,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2023/10/30/hello-world/">http://example.com/2023/10/30/hello-world/</a>
+                    <a href="http://example.com/2023/10/31/LeetCode42/">http://example.com/2023/10/31/LeetCode42/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -516,7 +595,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            
+                                <a href="/tags/LeetCode/">
+                                    <span class="chip bg-color">LeetCode</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -684,17 +767,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2023/10/30/test/">
+                <a href="/2023/10/31/LeetCode42/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="test">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="LeetCode42">
                         
-                        <span class="card-title">test</span>
+                        <span class="card-title">LeetCode42</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -704,22 +788,27 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-10-30
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-31
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            zjz
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Basic/" class="post-category">
+                                    Basic
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%B5%8B%E8%AF%95/">
-                        <span class="chip bg-color">测试</span>
+                    <a href="/tags/LeetCode/">
+                        <span class="chip bg-color">LeetCode</span>
                     </a>
                     
                 </div>
@@ -730,16 +819,16 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                Current&nbsp;<i class="far fa-dot-circle"></i>
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/10/30/hello-world/">
+                <a href="/2023/10/30/%E7%94%A8bat%E6%89%B9%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6%E4%BE%BF%E6%8D%B7%E5%88%9B%E5%BB%BA%E7%AC%94%E8%AE%B0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="用bat批处理文件便捷创建笔记">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">用bat批处理文件便捷创建笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -754,13 +843,24 @@
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            zjz
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/CStechnology/" class="post-category">
+                                    CStechnology
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/bat/">
+                        <span class="chip bg-color">bat</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>

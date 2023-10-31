@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-10-30T15:32:32.732Z</updated>
+  <updated>2023-10-31T02:17:16.887Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode42</title>
+    <link href="http://example.com/2023/10/31/LeetCode42/"/>
+    <id>http://example.com/2023/10/31/LeetCode42/</id>
+    <published>2023-10-31T01:44:15.000Z</published>
+    <updated>2023-10-31T02:17:16.887Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;42-接雨水&quot;&gt;&lt;a href=&quot;#42-接雨水&quot; class=&quot;headerlink&quot; title=&quot;42. 接雨水&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode.cn/problems/trapping-rain-water/&quot;&gt;42.</summary>
+        
+      
+    
+    
+    
+    <category term="Basic" scheme="http://example.com/categories/Basic/"/>
+    
+    
+    <category term="LeetCode" scheme="http://example.com/tags/LeetCode/"/>
+    
+  </entry>
   
   <entry>
     <title>用bat批处理文件便捷创建笔记</title>
