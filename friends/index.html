@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="SummerBird" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 6.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="SummerBird" type="application/atom+xml">
 </head>
 
 
@@ -290,7 +290,7 @@
 
 
 <script>
-    $('.bg-cover').css('background-image', 'url(/medias/banner/3.jpg)');
+    $('.bg-cover').css('background-image', 'url(/medias/banner/0.jpg)');
 </script>
 
 
@@ -825,19 +825,30 @@
 </div>
 
 <script src="/libs/valine/av-min.js"></script>
-<script src="/libs/valine/Valine.min.js"></script>
+<script src="https://unpkg.com/valine/dist/Valine.min.js"></script>
 <script>
-    new Valine({
+   let metaPlaceholder = {"nick":"昵称/QQ号(必填)","mail":"邮箱(必填)","link":"网址(https://)"} ;
+    //这里要换行
+   new Valine({
         el: '#vcomments',
-        appId: '7SleEisMQBYOpr4mIE4w82Qz-MdYXbMMI',
-        appKey: 'KC6dVZ2LeuE7LlpnbdwYvTYe',
-        notify: 'false' === 'true',
+        appId: '7EHST00G5gNv6lx7sqNSaJQV-MdYXbMMI',
+        appKey: '2149uBizy7VKnQkyJEvODWXf',
+        notify: 'true' === 'true',
         verify: 'true' === 'true',
         visitor: 'true' === 'true',
         avatar: 'monsterid',
         pageSize: '10',
-        lang: 'en',
-        placeholder: 'just go go',
+        lang: 'zh-CN',
+        placeholder: 'ヾﾉ≧∀≦)o来啊,快活啊!',
+        meta: ["nick", "mail", "link"],
+        recordIP: 'true' === 'true',
+        enableQQ: 'monsterid',
+        requiredFields: ["123abc508165c8eba9a77f872xxxx046"],
+        master: ["123abc508165c8eba9a77f872xxxx046"],
+        friends: ["c08508165c8eba9a77f8c2853xxxx09e", "901345d4c91ddfd8db0f175bbcfff0c8", "1512958e18378c98b498d5effe3e76ff"],
+        tagMeta: ["博主", "小伙伴", "访客"],
+        metaPlaceholder: metaPlaceholder,
+
     });
     document.body.addEventListener('click', function (e) {
         if (e.target.classList.contains('vsubmit')) {
