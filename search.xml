@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>心动!搭建无限量免费图床</title>
+      <link href="/2023/11/01/%E5%BF%83%E5%8A%A8-%E6%90%AD%E5%BB%BA%E6%97%A0%E9%99%90%E9%87%8F%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/"/>
+      <url>/2023/11/01/%E5%BF%83%E5%8A%A8-%E6%90%AD%E5%BB%BA%E6%97%A0%E9%99%90%E9%87%8F%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/</url>
+      
+        <content type="html"><![CDATA[<p><strong>拥有图床多是一件美式</strong> 免费不限量<span class="github-emoji"><span>🙀</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f640.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>！</p><h3 id="1、拥有GitHub账号，fork项目Telegraph-Image"><a href="#1、拥有GitHub账号，fork项目Telegraph-Image" class="headerlink" title="1、拥有GitHub账号，fork项目Telegraph-Image"></a>1、拥有GitHub账号，fork项目<a href="https://github.com/summerbird-1/Telegraph-Image">Telegraph-Image</a></h3><h3 id="2、打开cloudflare官网-注册账号"><a href="#2、打开cloudflare官网-注册账号" class="headerlink" title="2、打开cloudflare官网,注册账号"></a>2、打开<a href="https://dash.cloudflare.com/">cloudflare</a>官网,注册账号</h3><img src="/2023/11/01/%E5%BF%83%E5%8A%A8-%E6%90%AD%E5%BB%BA%E6%97%A0%E9%99%90%E9%87%8F%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/image-20231101170127709.png" class="" title="image-20231101170127709"><p>由于我做过了，下面步骤显示不了，反正都默认选项，最后保存部署，部署完成后会提供一个域名，打开会显示这个</p><img src="/2023/11/01/%E5%BF%83%E5%8A%A8-%E6%90%AD%E5%BB%BA%E6%97%A0%E9%99%90%E9%87%8F%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/image-20231101170501868.png" class="" title="image-20231101170501868"><p>上传图片就会有返回图片链接，把链接输入浏览器搜索栏就可以打开图片了。</p><h3 id="3、管理图片"><a href="#3、管理图片" class="headerlink" title="3、管理图片"></a>3、管理图片</h3><h5 id="1、创建命名空间"><a href="#1、创建命名空间" class="headerlink" title="1、创建命名空间"></a>1、创建命名空间</h5><img src="/2023/11/01/%E5%BF%83%E5%8A%A8-%E6%90%AD%E5%BB%BA%E6%97%A0%E9%99%90%E9%87%8F%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/image-20231101170827207.png" class="" title="image-20231101170827207"><h5 id="2-绑定命名空间"><a href="#2-绑定命名空间" class="headerlink" title="2.绑定命名空间"></a>2.绑定命名空间</h5><img src="/2023/11/01/%E5%BF%83%E5%8A%A8-%E6%90%AD%E5%BB%BA%E6%97%A0%E9%99%90%E9%87%8F%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/image-20231101171230255.png" class="" title="image-20231101171230255"><p>添加绑定</p><img src="/2023/11/01/%E5%BF%83%E5%8A%A8-%E6%90%AD%E5%BB%BA%E6%97%A0%E9%99%90%E9%87%8F%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/image-20231101171325433.png" class="" title="image-20231101171325433"><img src="/2023/11/01/%E5%BF%83%E5%8A%A8-%E6%90%AD%E5%BB%BA%E6%97%A0%E9%99%90%E9%87%8F%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/image-20231101171417946.png" class="" title="image-20231101171417946"><p>==更正:==这里变量名称应为==img_url==！！</p><h5 id="3、设置环境变量（用户名密码）"><a href="#3、设置环境变量（用户名密码）" class="headerlink" title="3、设置环境变量（用户名密码）"></a>3、设置环境变量（用户名密码）</h5><img src="/2023/11/01/%E5%BF%83%E5%8A%A8-%E6%90%AD%E5%BB%BA%E6%97%A0%E9%99%90%E9%87%8F%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/image-20231101171623990.png" class="" title="image-20231101171623990"><h5 id="4、重新部署"><a href="#4、重新部署" class="headerlink" title="4、重新部署"></a>4、重新部署</h5><img src="/2023/11/01/%E5%BF%83%E5%8A%A8-%E6%90%AD%E5%BB%BA%E6%97%A0%E9%99%90%E9%87%8F%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/image-20231101171733712.png" class="" title="image-20231101171733712"><img src="/2023/11/01/%E5%BF%83%E5%8A%A8-%E6%90%AD%E5%BB%BA%E6%97%A0%E9%99%90%E9%87%8F%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/image-20231101171758480.png" class="" title="image-20231101171758480"><p>5、进入图片管理界面</p><h1 id="等补充"><a href="#等补充" class="headerlink" title="等补充~"></a>等补充~</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> Basic </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 图床 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>自然辩证法笔记</title>
       <link href="/2023/10/31/%E8%87%AA%E7%84%B6%E8%BE%A9%E8%AF%81%E6%B3%95%E7%AC%94%E8%AE%B0/"/>
       <url>/2023/10/31/%E8%87%AA%E7%84%B6%E8%BE%A9%E8%AF%81%E6%B3%95%E7%AC%94%E8%AE%B0/</url>

@@ -2253,6 +2253,6 @@ body.dark img, body.dark strong {
 }
 /******夜间模式切换样式 end*******/
 /* 隐藏 valine 的 powered by*/
-.power.txt-right {
+.vpower.txt-right {
   display: none;
 }
