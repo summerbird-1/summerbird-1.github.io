@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>LeetCode3</title>
+      <link href="/2023/11/02/LeetCode3/"/>
+      <url>/2023/11/02/LeetCode3/</url>
+      
+        <content type="html"><![CDATA[<h3 id="LeetCode3-无重复字符的最长子串"><a href="#LeetCode3-无重复字符的最长子串" class="headerlink" title="LeetCode3. 无重复字符的最长子串"></a><a href="https://leetcode.cn/problems/longest-substring-without-repeating-characters/">LeetCode3. 无重复字符的最长子串</a></h3><p>给定一个字符串 <code>s</code> ，请你找出其中不含有重复字符的 <strong>最长子串</strong> 的长度。</p><p><strong>滑动窗口</strong>解这道题很丝滑</p><h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a><strong>思路</strong></h4><p>限定窗口，当前窗口内没有重复的字符<span class="github-emoji"><span>💹</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4b9.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 用哈希表<span class="github-emoji"><span>#⃣</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/0023-20e3.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 记录当前窗口内的字符,遍历字符串时，查找该字符是否在当前窗口中存在，存在则将该字符踢出哈希表，并将窗口左端右移，用maxlen记录窗口的最大值</p><h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">class Solution {public:    int lengthOfLongestSubstring(string s) {        if(s.size() == 0) return 0;         int left = 0;         int maxlen = 0;         unordered_set&lt;char&gt; index;         for(int i = 0;i &lt; s.size();i++){             while(index.find(s[i]) != index.end()){                 index.erase(s[left]);                 left++;             }            index.insert(s[i]);            maxlen = max(maxlen,i-left+1);         }          return maxlen;    }};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><span class="github-emoji"><span>👿</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f47f.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Basic </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>心动!搭建无限量免费图床</title>
       <link href="/2023/11/01/%E5%BF%83%E5%8A%A8-%E6%90%AD%E5%BB%BA%E6%97%A0%E9%99%90%E9%87%8F%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/"/>
       <url>/2023/11/01/%E5%BF%83%E5%8A%A8-%E6%90%AD%E5%BB%BA%E6%97%A0%E9%99%90%E9%87%8F%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/</url>
