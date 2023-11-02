@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Hexo博客加速</title>
+      <link href="/2023/11/02/Hexo%E5%8D%9A%E5%AE%A2%E5%8A%A0%E9%80%9F/"/>
+      <url>/2023/11/02/Hexo%E5%8D%9A%E5%AE%A2%E5%8A%A0%E9%80%9F/</url>
+      
+        <content type="html"><![CDATA[<p>博客存的资源多了，打开太慢，得加速</p><p>转载自:<a href="https://github.com/Colsrch/hexo-offline-popup">Colsrch/hexo-offline-popup: 一个增强Hexo站点的插件 (github.com)</a></p><h1 id="hexo-offline-popup"><a href="#hexo-offline-popup" class="headerlink" title="hexo-offline-popup"></a><a href="https://github.com/Colsrch/hexo-offline-popup#hexo-offline-popup">hexo-offline-popup</a></h1><p>hexo-offline-popup 是一个 <a href="https://hexo.io/">hexo</a> 插件， 它可加速您的Hexo网站的加载速度，以及网站内容更新弹窗提示。</p><p>该插件基于停止维护已久的hexo-service-worker插件，并在它的基础上加以改进。</p><h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a><a href="https://github.com/Colsrch/hexo-offline-popup#install">Install</a></h2><pre class="line-numbers language-none"><code class="language-none">npm i hexo-offline-popup --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>安装后, 运行 <code>hexo clean &amp;&amp; hexo generate</code> 激活插件.</p><h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a><a href="https://github.com/Colsrch/hexo-offline-popup#usage">Usage</a></h2><p>如果网站提供的所有内容来自原始服务器，你不需要添加任何配置。只需安装和运行 <code>hexo clean &amp;&amp; hexo generate</code>。</p><p>在博客根目录的 <code>_config.yml</code> 中添加以下配置.</p><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"># offline config passed to sw-precache.service_worker:  maximumFileSizeToCacheInBytes: 5242880  staticFileGlobs:  - public/**/*.{js,html,css,png,jpg,gif,svg,eot,ttf,woff,woff2}  stripPrefix: public  verbose: true<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>如果你有CDN资源，例：</p><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">- https://cdn.some.com/some/path/some-script.js- http://cdn.some-else.org/some/path/deeply/some-style.css<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>将此配置添加到根目录的 <code>_config.yml</code></p><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">service_worker:  runtimeCaching:    - urlPattern: /*      handler: cacheFirst      options:        origin: cdn.some.com    - urlPattern: /*      handler: cacheFirst      options:        origin: cdn.some-else.org<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 博客 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hexo博客添加评论模块</title>
       <link href="/2023/11/02/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E6%A8%A1%E5%9D%97/"/>
       <url>/2023/11/02/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E6%A8%A1%E5%9D%97/</url>

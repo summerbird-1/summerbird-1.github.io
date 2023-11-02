@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-11-02T06:16:03.441Z</updated>
+  <updated>2023-11-02T08:43:06.076Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo博客加速</title>
+    <link href="http://example.com/2023/11/02/Hexo%E5%8D%9A%E5%AE%A2%E5%8A%A0%E9%80%9F/"/>
+    <id>http://example.com/2023/11/02/Hexo%E5%8D%9A%E5%AE%A2%E5%8A%A0%E9%80%9F/</id>
+    <published>2023-11-02T08:40:54.000Z</published>
+    <updated>2023-11-02T08:43:06.076Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;博客存的资源多了，打开太慢，得加速&lt;/p&gt;
+&lt;p&gt;转载自:&lt;a href=&quot;https://github.com/Colsrch/hexo-offline-popup&quot;&gt;Colsrch/hexo-offline-popup: 一个增强Hexo站点的插件</summary>
+        
+      
+    
+    
+    
+    <category term="Hexo" scheme="http://example.com/categories/Hexo/"/>
+    
+    
+    <category term="博客" scheme="http://example.com/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo博客添加评论模块</title>
