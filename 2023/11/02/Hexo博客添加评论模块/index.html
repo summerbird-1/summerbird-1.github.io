@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="用bat批处理文件便捷创建笔记, SummerBird">
+    <meta name="keywords" content="Hexo博客添加评论模块, SummerBird">
     <meta name="description" content="向往热烈而自由">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>用bat批处理文件便捷创建笔记 | SummerBird</title>
+    <title>Hexo博客添加评论模块 | SummerBird</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -261,12 +261,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">用bat批处理文件便捷创建笔记</h1>
+                    <h1 class="description center-align post-title">Hexo博客添加评论模块</h1>
                 </div>
             </div>
         </div>
@@ -385,8 +385,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/bat/">
-                                <span class="chip bg-color">bat</span>
+                            <a href="/tags/utterances/">
+                                <span class="chip bg-color">utterances</span>
                             </a>
                         
                     </div>
@@ -397,8 +397,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/CStechnology/" class="post-category">
-                                CStechnology
+                            <a href="/categories/hexo/" class="post-category">
+                                hexo
                             </a>
                         
                     </div>
@@ -410,28 +410,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2023-10-30
+                    2023-11-02
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2023-10-31
+                    2023-11-02
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    361
+                    481
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    1 Min
+                    2 Min
                 </div>
                 
 
@@ -454,57 +454,70 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>使用Hexo+GitHub+Typora搭建博客后，感觉创建笔记好麻烦，计划用bat批处理程序帮忙解决，奈何是在不熟悉，就用python写了，然后再用bat执行python文件</p>
-<blockquote>
-<p>需求：</p>
-</blockquote>
-<p>1.打开cmd，进入指定文件夹</p>
-<p>2.输入文件名</p>
-<p>3.向cmd中自动输入 hexo new “文件名”，然后执行</p>
-<p>4.打开创建好的md文件</p>
-<p>5.上传写好的笔记</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">import subprocess
+                <p>转载自:<a target="_blank" rel="noopener" href="https://www.cnblogs.com/jijunhao/p/17235903.html">Hexo-Matery主题评论插件 - 季俊豪 - 博客园 (cnblogs.com)</a></p>
+<p><code>matery</code>主题集成了各种评论模块，例如 <strong>gitalk</strong>、<strong>gitment</strong>、<strong>disqus</strong>、<strong>livere</strong>、<strong>valine</strong>、<strong>waline</strong>、<strong>Twikoo</strong>、<strong>utteranc</strong> 等，我尝试了 <code>utteranc</code> 这种集成在github种的评论插件，并且能够做到github邮箱通知。</p>
+<h3 id="1-新建一个评论仓库"><a href="#1-新建一个评论仓库" class="headerlink" title="1. 新建一个评论仓库#"></a>1. 新建一个评论仓库<a target="_blank" rel="noopener" href="https://www.cnblogs.com/jijunhao/p/17235903.html#1-%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E8%AF%84%E8%AE%BA%E4%BB%93%E5%BA%93">#</a></h3><p>首先创建一个公开的评论仓库&lt;自定义名称&gt;<strong>！注意一定要公开，否则别人无法评论</strong></p>
+<h3 id="2-安装utterances"><a href="#2-安装utterances" class="headerlink" title="2. 安装utterances"></a>2. 安装utterances</h3><ul>
+<li>进入<a target="_blank" rel="noopener" href="https://github.com/apps/utterances">utterances</a>，点击 <code>install</code></li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://blog-1314109265.cos.ap-nanjing.myqcloud.com/202303111940868.png"><img src="/2023/11/02/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E6%A8%A1%E5%9D%97/202303111940868.png" class="" title="img"></a></p>
+<ul>
+<li>选择刚刚创建的自定义评论仓库，点击<code>install</code></li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://blog-1314109265.cos.ap-nanjing.myqcloud.com/202303111940318.png"><img src="/2023/11/02/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E6%A8%A1%E5%9D%97/202303111940318.png" class="" title="img"></a></p>
+<h3 id="3-配置评论风格configuration"><a href="#3-配置评论风格configuration" class="headerlink" title="3. 配置评论风格configuration"></a>3. 配置评论风格configuration</h3><ul>
+<li><p>首先输入自己的刚刚新建的评论仓库</p>
+</li>
+<li><img src="/2023/11/02/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E6%A8%A1%E5%9D%97/image-20231102141200666.png" class="" title="image-20231102141200666">
+</li>
+<li><p>其他按照自己的需要挑战，把最后生成的配置，<code>copy</code> 下来</p>
+</li>
+</ul>
+<img src="/2023/11/02/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E6%A8%A1%E5%9D%97/image-20231102141231593.png" class="" title="image-20231102141231593">
 
-# 指定目录路径
-directory_path = r"D:\\personalFile\Blog\source\\_posts"  # 将其替换为你希望进入的目录路径
+<h3 id="4-添加配置到matery主题"><a href="#4-添加配置到matery主题" class="headerlink" title="4. 添加配置到matery主题"></a>4. 添加配置到matery主题</h3><ul>
+<li>修改matery主题的配置文件 <code>themes/hexo-theme-matery/_config.yml</code> ，开启utteranc功能</li>
+</ul>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"># utteranc config, default disabled
+# utteranc 评论模块的配置，默认为不激活
+utteranc:
+  enable: true<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-# 构建打开 cmd 并进入目录的命令
-cmd_command = f"cmd /K cd /d {directory_path}"
+<ul>
+<li>修改博客文章 <code>themes/hexo-theme-matery/layout/_partial/post-detail.ejs</code></li>
+</ul>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span><span class="token operator">%</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>theme<span class="token punctuation">.</span>utteranc <span class="token operator">&amp;&amp;</span> theme<span class="token punctuation">.</span>utteranc<span class="token punctuation">.</span>enable<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">%</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">%</span><span class="token operator">-</span> <span class="token function">partial</span><span class="token punctuation">(</span><span class="token string">'_partial/utteranc'</span><span class="token punctuation">)</span> <span class="token operator">%</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">%</span> <span class="token punctuation">}</span> <span class="token operator">%</span><span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-# 提示用户输入参数
-user_input = input("请输入参数：")
-user_input = "hexo new" + " \"" +user_input + "\""
-# 使用 subprocess 打开 cmd 并进入目录
-cmd_process = subprocess.Popen(cmd_command, shell=True, stdin=subprocess.PIPE,encoding='gbk')
+<p>该处改动的目的是为了在所有博客文章中统一在底部加入一个评论模块，这个改动很关键、所放位置也很重要。</p>
+<ul>
+<li>新增一个文件 <code>themes/hexo-theme-matery/layout/_partial/utteranc.ejs</code></li>
+</ul>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"card"</span> data<span class="token operator">-</span>aos<span class="token operator">=</span><span class="token string">"fade-up"</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"utteranc-container"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"card-content"</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"https://utteranc.es/client.js"</span>
+                repo<span class="token operator">=</span><span class="token string">"jijunhao/utterances"</span>
+                issue<span class="token operator">-</span>term<span class="token operator">=</span><span class="token string">"pathname"</span>
+                theme<span class="token operator">=</span><span class="token string">"github-light"</span>
+                crossorigin<span class="token operator">=</span><span class="token string">"anonymous"</span>
+                async<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>所有的留言都会出现在自定义评论仓库 <code>issues</code> 的，并且会每次给邮箱发消息。</p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>如果博客中还有单独的一个留言板模块，需要改 <code>themes/hexo-theme-matery/layout/contact.ejs</code></p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span><span class="token operator">%</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>theme<span class="token punctuation">.</span>utteranc <span class="token operator">&amp;&amp;</span> theme<span class="token punctuation">.</span>utteranc<span class="token punctuation">.</span>enable<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">%</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">%</span><span class="token operator">-</span> <span class="token function">partial</span><span class="token punctuation">(</span><span class="token string">'_partial/utteranc'</span><span class="token punctuation">)</span> <span class="token operator">%</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">%</span> <span class="token punctuation">}</span> <span class="token operator">%</span><span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>最后重启hexo，就能在网页拥有评论功能了。</p>
+<p>哈哈哈，项目下面的评论<span class="github-emoji"><span>😆</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> <span class="github-emoji"><span>😂</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f602.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
+<img src="/2023/11/02/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E6%A8%A1%E5%9D%97/image-20231102141449835.png" class="" title="image-20231102141449835">
 
 
-# 向 cmd 中发送用户输入的参数
-cmd_process.stdin.write(user_input + '\n')
-cmd_process.stdin.flush()
 
-time.sleep(5)
-# 使用默认关联的软件打开文件
-file_path = "D:\personalFile\Blog\source\_posts\\" + filename + ".md"
-app_path = "D:\Program Files\Typora\Typora.exe"
-subprocess.Popen([app_path,file_path])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>file_path和app_path替换成自己的</p>
-<p>time.sleep(5)感觉挺蠢的，不过暂时不知道怎么让它执行完cmd之后再执行下一条程序</p>
-<p>然后编写bat文件</p>
-<p>打开记事本输入</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">@echo off
-cd /d "python文件路径" 
-python 文件名.py
-exit<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>创建都有了，在来个上传</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">@echo off
-cd /d "存放笔记的文件夹目录"
-hexo g &amp; hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p><span class="github-emoji"><span>😏</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f60f.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
-<p><span class="github-emoji"><span>😎</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f60e.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
-<p>测试一下emoji语法嘿嘿</p>
 
                 
             </div>
@@ -531,7 +544,7 @@ hexo g &amp; hexo d<span aria-hidden="true" class="line-numbers-rows"><span></sp
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2023/10/30/%E7%94%A8bat%E6%89%B9%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6%E4%BE%BF%E6%8D%B7%E5%88%9B%E5%BB%BA%E7%AC%94%E8%AE%B0/">http://example.com/2023/10/30/%E7%94%A8bat%E6%89%B9%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6%E4%BE%BF%E6%8D%B7%E5%88%9B%E5%BB%BA%E7%AC%94%E8%AE%B0/</a>
+                    <a href="http://example.com/2023/11/02/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E6%A8%A1%E5%9D%97/">http://example.com/2023/11/02/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E6%A8%A1%E5%9D%97/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -569,8 +582,8 @@ hexo g &amp; hexo d<span aria-hidden="true" class="line-numbers-rows"><span></sp
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/bat/">
-                                    <span class="chip bg-color">bat</span>
+                                <a href="/tags/utterances/">
+                                    <span class="chip bg-color">utterances</span>
                                 </a>
                             
                         </div>
@@ -622,17 +635,18 @@ hexo g &amp; hexo d<span aria-hidden="true" class="line-numbers-rows"><span></sp
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2023/10/31/LeetCode42/">
+                <a href="/2023/11/02/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E6%A8%A1%E5%9D%97/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="LeetCode42">
+                        <img src="/medias/featureimages/21.png" class="responsive-img" alt="Hexo博客添加评论模块">
                         
-                        <span class="card-title">LeetCode42</span>
+                        <span class="card-title">Hexo博客添加评论模块</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -642,26 +656,27 @@ hexo g &amp; hexo d<span aria-hidden="true" class="line-numbers-rows"><span></sp
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-10-31
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-02
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Basic/" class="post-category">
-                                    Basic
+                            <a href="/categories/hexo/" class="post-category">
+                                    hexo
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/LeetCode/">
-                        <span class="chip bg-color">LeetCode</span>
+                    <a href="/tags/utterances/">
+                        <span class="chip bg-color">utterances</span>
                     </a>
                     
                 </div>
@@ -675,13 +690,13 @@ hexo g &amp; hexo d<span aria-hidden="true" class="line-numbers-rows"><span></sp
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/10/30/%E5%9C%A8%E7%9C%8B%E4%BB%80%E4%B9%88/">
+                <a href="/2023/11/02/test333/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="在看什么">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="test333">
                         
-                        <span class="card-title">在看什么</span>
+                        <span class="card-title">test333</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -692,14 +707,14 @@ hexo g &amp; hexo d<span aria-hidden="true" class="line-numbers-rows"><span></sp
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-02
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%A8%B1%E4%B9%90/" class="post-category">
-                                    娱乐
+                            <a href="/categories/test/" class="post-category">
+                                    test
                                 </a>
                             
                             
@@ -709,8 +724,8 @@ hexo g &amp; hexo d<span aria-hidden="true" class="line-numbers-rows"><span></sp
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/movies/">
-                        <span class="chip bg-color">movies</span>
+                    <a href="/tags/%E6%B5%8B%E8%AF%95/">
+                        <span class="chip bg-color">测试</span>
                     </a>
                     
                 </div>

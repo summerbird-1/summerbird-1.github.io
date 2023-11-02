@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-11-02T01:47:06.470Z</updated>
+  <updated>2023-11-02T06:16:03.441Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo博客添加评论模块</title>
+    <link href="http://example.com/2023/11/02/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E6%A8%A1%E5%9D%97/"/>
+    <id>http://example.com/2023/11/02/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E6%A8%A1%E5%9D%97/</id>
+    <published>2023-11-02T06:05:28.000Z</published>
+    <updated>2023-11-02T06:16:03.441Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;转载自:&lt;a href=&quot;https://www.cnblogs.com/jijunhao/p/17235903.html&quot;&gt;Hexo-Matery主题评论插件 - 季俊豪 - 博客园</summary>
+        
+      
+    
+    
+    
+    <category term="hexo" scheme="http://example.com/categories/hexo/"/>
+    
+    
+    <category term="utterances" scheme="http://example.com/tags/utterances/"/>
+    
+  </entry>
   
   <entry>
     <title>test333</title>
