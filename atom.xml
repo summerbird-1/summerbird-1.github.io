@@ -3,11 +3,11 @@
   <title>SummerBird</title>
   
   <subtitle>MAKE THE WORLD BETTERRRR!</subtitle>
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="http://summerbird-1.github.io/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
+  <link href="http://summerbird-1.github.io/"/>
   <updated>2023-11-02T08:43:06.076Z</updated>
-  <id>http://example.com/</id>
+  <id>http://summerbird-1.github.io/</id>
   
   <author>
     <name>zjz</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hexo博客加速</title>
-    <link href="http://example.com/2023/11/02/Hexo%E5%8D%9A%E5%AE%A2%E5%8A%A0%E9%80%9F/"/>
-    <id>http://example.com/2023/11/02/Hexo%E5%8D%9A%E5%AE%A2%E5%8A%A0%E9%80%9F/</id>
+    <link href="http://summerbird-1.github.io/2023/11/02/en/"/>
+    <id>http://summerbird-1.github.io/2023/11/02/en/</id>
     <published>2023-11-02T08:40:54.000Z</published>
     <updated>2023-11-02T08:43:06.076Z</updated>
     
@@ -35,17 +35,17 @@
     
     
     
-    <category term="Hexo" scheme="http://example.com/categories/Hexo/"/>
+    <category term="Hexo" scheme="http://summerbird-1.github.io/categories/Hexo/"/>
     
     
-    <category term="博客" scheme="http://example.com/tags/%E5%8D%9A%E5%AE%A2/"/>
+    <category term="博客" scheme="http://summerbird-1.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   
   <entry>
     <title>Hexo博客添加评论模块</title>
-    <link href="http://example.com/2023/11/02/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E6%A8%A1%E5%9D%97/"/>
-    <id>http://example.com/2023/11/02/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E6%A8%A1%E5%9D%97/</id>
+    <link href="http://summerbird-1.github.io/2023/11/02/en/"/>
+    <id>http://summerbird-1.github.io/2023/11/02/en/</id>
     <published>2023-11-02T06:05:28.000Z</published>
     <updated>2023-11-02T06:16:03.441Z</updated>
     
@@ -60,17 +60,17 @@
     
     
     
-    <category term="hexo" scheme="http://example.com/categories/hexo/"/>
+    <category term="hexo" scheme="http://summerbird-1.github.io/categories/hexo/"/>
     
     
-    <category term="utterances" scheme="http://example.com/tags/utterances/"/>
+    <category term="utterances" scheme="http://summerbird-1.github.io/tags/utterances/"/>
     
   </entry>
   
   <entry>
     <title>test333</title>
-    <link href="http://example.com/2023/11/02/test333/"/>
-    <id>http://example.com/2023/11/02/test333/</id>
+    <link href="http://summerbird-1.github.io/2023/11/02/en/"/>
+    <id>http://summerbird-1.github.io/2023/11/02/en/</id>
     <published>2023-11-02T01:43:13.000Z</published>
     <updated>2023-11-02T01:47:06.470Z</updated>
     
@@ -85,17 +85,17 @@
     
     
     
-    <category term="test" scheme="http://example.com/categories/test/"/>
+    <category term="test" scheme="http://summerbird-1.github.io/categories/test/"/>
     
     
-    <category term="测试" scheme="http://example.com/tags/%E6%B5%8B%E8%AF%95/"/>
+    <category term="测试" scheme="http://summerbird-1.github.io/tags/%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>LeetCode3</title>
-    <link href="http://example.com/2023/11/02/LeetCode3/"/>
-    <id>http://example.com/2023/11/02/LeetCode3/</id>
+    <link href="http://summerbird-1.github.io/2023/11/02/en/"/>
+    <id>http://summerbird-1.github.io/2023/11/02/en/</id>
     <published>2023-11-02T01:31:08.000Z</published>
     <updated>2023-11-02T01:39:34.938Z</updated>
     
@@ -110,17 +110,17 @@
     
     
     
-    <category term="Basic" scheme="http://example.com/categories/Basic/"/>
+    <category term="Basic" scheme="http://summerbird-1.github.io/categories/Basic/"/>
     
     
-    <category term="LeetCode" scheme="http://example.com/tags/LeetCode/"/>
+    <category term="LeetCode" scheme="http://summerbird-1.github.io/tags/LeetCode/"/>
     
   </entry>
   
   <entry>
     <title>心动!搭建无限量免费图床</title>
-    <link href="http://example.com/2023/11/01/%E5%BF%83%E5%8A%A8-%E6%90%AD%E5%BB%BA%E6%97%A0%E9%99%90%E9%87%8F%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/"/>
-    <id>http://example.com/2023/11/01/%E5%BF%83%E5%8A%A8-%E6%90%AD%E5%BB%BA%E6%97%A0%E9%99%90%E9%87%8F%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/</id>
+    <link href="http://summerbird-1.github.io/2023/11/01/en/"/>
+    <id>http://summerbird-1.github.io/2023/11/01/en/</id>
     <published>2023-11-01T08:54:10.000Z</published>
     <updated>2023-11-01T14:41:21.585Z</updated>
     
@@ -135,17 +135,17 @@
     
     
     
-    <category term="Basic" scheme="http://example.com/categories/Basic/"/>
+    <category term="Basic" scheme="http://summerbird-1.github.io/categories/Basic/"/>
     
     
-    <category term="图床" scheme="http://example.com/tags/%E5%9B%BE%E5%BA%8A/"/>
+    <category term="图床" scheme="http://summerbird-1.github.io/tags/%E5%9B%BE%E5%BA%8A/"/>
     
   </entry>
   
   <entry>
     <title>自然辩证法笔记</title>
-    <link href="http://example.com/2023/10/31/%E8%87%AA%E7%84%B6%E8%BE%A9%E8%AF%81%E6%B3%95%E7%AC%94%E8%AE%B0/"/>
-    <id>http://example.com/2023/10/31/%E8%87%AA%E7%84%B6%E8%BE%A9%E8%AF%81%E6%B3%95%E7%AC%94%E8%AE%B0/</id>
+    <link href="http://summerbird-1.github.io/2023/10/31/en/"/>
+    <id>http://summerbird-1.github.io/2023/10/31/en/</id>
     <published>2023-10-31T04:58:03.000Z</published>
     <updated>2023-10-31T05:02:28.363Z</updated>
     
@@ -161,17 +161,17 @@
     
     
     
-    <category term="note" scheme="http://example.com/categories/note/"/>
+    <category term="note" scheme="http://summerbird-1.github.io/categories/note/"/>
     
     
-    <category term="自然辩证法" scheme="http://example.com/tags/%E8%87%AA%E7%84%B6%E8%BE%A9%E8%AF%81%E6%B3%95/"/>
+    <category term="自然辩证法" scheme="http://summerbird-1.github.io/tags/%E8%87%AA%E7%84%B6%E8%BE%A9%E8%AF%81%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>LeetCode42</title>
-    <link href="http://example.com/2023/10/31/LeetCode42/"/>
-    <id>http://example.com/2023/10/31/LeetCode42/</id>
+    <link href="http://summerbird-1.github.io/2023/10/31/en/"/>
+    <id>http://summerbird-1.github.io/2023/10/31/en/</id>
     <published>2023-10-31T01:44:15.000Z</published>
     <updated>2023-10-31T02:17:16.887Z</updated>
     
@@ -186,17 +186,17 @@
     
     
     
-    <category term="Basic" scheme="http://example.com/categories/Basic/"/>
+    <category term="Basic" scheme="http://summerbird-1.github.io/categories/Basic/"/>
     
     
-    <category term="LeetCode" scheme="http://example.com/tags/LeetCode/"/>
+    <category term="LeetCode" scheme="http://summerbird-1.github.io/tags/LeetCode/"/>
     
   </entry>
   
   <entry>
     <title>用bat批处理文件便捷创建笔记</title>
-    <link href="http://example.com/2023/10/30/%E7%94%A8bat%E6%89%B9%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6%E4%BE%BF%E6%8D%B7%E5%88%9B%E5%BB%BA%E7%AC%94%E8%AE%B0/"/>
-    <id>http://example.com/2023/10/30/%E7%94%A8bat%E6%89%B9%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6%E4%BE%BF%E6%8D%B7%E5%88%9B%E5%BB%BA%E7%AC%94%E8%AE%B0/</id>
+    <link href="http://summerbird-1.github.io/2023/10/30/en/"/>
+    <id>http://summerbird-1.github.io/2023/10/30/en/</id>
     <published>2023-10-30T14:40:02.000Z</published>
     <updated>2023-10-31T14:58:49.653Z</updated>
     
@@ -215,17 +215,17 @@
     
     
     
-    <category term="CStechnology" scheme="http://example.com/categories/CStechnology/"/>
+    <category term="CStechnology" scheme="http://summerbird-1.github.io/categories/CStechnology/"/>
     
     
-    <category term="bat" scheme="http://example.com/tags/bat/"/>
+    <category term="bat" scheme="http://summerbird-1.github.io/tags/bat/"/>
     
   </entry>
   
   <entry>
     <title>在看什么</title>
-    <link href="http://example.com/2023/10/30/%E5%9C%A8%E7%9C%8B%E4%BB%80%E4%B9%88/"/>
-    <id>http://example.com/2023/10/30/%E5%9C%A8%E7%9C%8B%E4%BB%80%E4%B9%88/</id>
+    <link href="http://summerbird-1.github.io/2023/10/30/en/"/>
+    <id>http://summerbird-1.github.io/2023/10/30/en/</id>
     <published>2023-10-30T12:40:56.000Z</published>
     <updated>2023-10-31T14:59:08.237Z</updated>
     
@@ -240,17 +240,17 @@
     
     
     
-    <category term="娱乐" scheme="http://example.com/categories/%E5%A8%B1%E4%B9%90/"/>
+    <category term="娱乐" scheme="http://summerbird-1.github.io/categories/%E5%A8%B1%E4%B9%90/"/>
     
     
-    <category term="movies" scheme="http://example.com/tags/movies/"/>
+    <category term="movies" scheme="http://summerbird-1.github.io/tags/movies/"/>
     
   </entry>
   
   <entry>
     <title>test3</title>
-    <link href="http://example.com/2023/10/30/test3/"/>
-    <id>http://example.com/2023/10/30/test3/</id>
+    <link href="http://summerbird-1.github.io/2023/10/30/en/"/>
+    <id>http://summerbird-1.github.io/2023/10/30/en/</id>
     <published>2023-10-30T07:46:24.000Z</published>
     <updated>2023-10-30T07:47:03.166Z</updated>
     
@@ -260,21 +260,21 @@
         
         
     <summary type="html">&lt;p&gt;我就不信传不了图片&lt;/p&gt;
-&lt;img src=&quot;/2023/10/30/test3/13341222604877401.jpg&quot; class=&quot;&quot;</summary>
+&lt;img src=&quot;/2023/10/30/en/13341222604877401.jpg&quot; class</summary>
         
       
     
     
     
     
-    <category term="测试" scheme="http://example.com/tags/%E6%B5%8B%E8%AF%95/"/>
+    <category term="测试" scheme="http://summerbird-1.github.io/tags/%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>test2</title>
-    <link href="http://example.com/2023/10/30/test2/"/>
-    <id>http://example.com/2023/10/30/test2/</id>
+    <link href="http://summerbird-1.github.io/2023/10/30/en/"/>
+    <id>http://summerbird-1.github.io/2023/10/30/en/</id>
     <published>2023-10-30T07:36:25.000Z</published>
     <updated>2023-10-30T07:36:53.442Z</updated>
     
@@ -286,21 +286,21 @@
     <summary type="html">&lt;p&gt;121211122&lt;/p&gt;
 &lt;p&gt;1121212&lt;/p&gt;
 &lt;p&gt;上厕所VSvv&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/2023/10/30/test2/2718075060&#92;Desk&#92;软微&#92;13341222604877401.jpg&quot;</summary>
+&lt;p&gt;&lt;img src=&quot;/2023/10/30/en/2718075060&#92;Desk&#92;软微&#92;13341222604877401.jpg&quot;</summary>
         
       
     
     
     
     
-    <category term="测试" scheme="http://example.com/tags/%E6%B5%8B%E8%AF%95/"/>
+    <category term="测试" scheme="http://summerbird-1.github.io/tags/%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>test</title>
-    <link href="http://example.com/2023/10/30/test/"/>
-    <id>http://example.com/2023/10/30/test/</id>
+    <link href="http://summerbird-1.github.io/2023/10/30/en/"/>
+    <id>http://summerbird-1.github.io/2023/10/30/en/</id>
     <published>2023-10-30T07:22:56.000Z</published>
     <updated>2023-10-30T07:23:48.300Z</updated>
     
@@ -316,14 +316,14 @@
     
     
     
-    <category term="测试" scheme="http://example.com/tags/%E6%B5%8B%E8%AF%95/"/>
+    <category term="测试" scheme="http://summerbird-1.github.io/tags/%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://example.com/2023/10/30/hello-world/"/>
-    <id>http://example.com/2023/10/30/hello-world/</id>
+    <link href="http://summerbird-1.github.io/2023/10/30/en/"/>
+    <id>http://summerbird-1.github.io/2023/10/30/en/</id>
     <published>2023-10-30T04:41:31.313Z</published>
     <updated>2023-10-30T06:23:12.810Z</updated>
     
