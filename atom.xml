@@ -6,7 +6,7 @@
   <link href="http://summerbird-1.github.io/atom.xml" rel="self"/>
   
   <link href="http://summerbird-1.github.io/"/>
-  <updated>2023-11-02T08:43:06.076Z</updated>
+  <updated>2023-11-04T07:34:46.568Z</updated>
   <id>http://summerbird-1.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Request failed with status code 405解决方法</title>
+    <link href="http://summerbird-1.github.io/2023/11/04/Request-failed-with-status-code-405%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
+    <id>http://summerbird-1.github.io/2023/11/04/Request-failed-with-status-code-405%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</id>
+    <published>2023-11-04T06:19:45.000Z</published>
+    <updated>2023-11-04T07:34:46.568Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;报错Request-failed-with-status-code-405&quot;&gt;&lt;a href=&quot;#报错Request-failed-with-status-code-405&quot; class=&quot;headerlink&quot; title=&quot;报错Request failed</summary>
+        
+      
+    
+    
+    
+    <category term="Bug" scheme="http://summerbird-1.github.io/categories/Bug/"/>
+    
+    
+    <category term="Vue" scheme="http://summerbird-1.github.io/tags/Vue/"/>
+    
+    <category term="Mybatis-plus" scheme="http://summerbird-1.github.io/tags/Mybatis-plus/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo博客加速</title>
