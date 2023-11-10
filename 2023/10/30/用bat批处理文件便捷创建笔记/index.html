@@ -443,21 +443,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2023-10-31
+                    2023-11-10
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    361
+                    564
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    1 Min
+                    2 Min
                 </div>
                 
 
@@ -480,7 +480,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>使用Hexo+GitHub+Typora搭建博客后，感觉创建笔记好麻烦，计划用bat批处理程序帮忙解决，奈何是在不熟悉，就用python写了，然后再用bat执行python文件</p>
+                <h3 id="有更新🐒↓"><a href="#有更新🐒↓" class="headerlink" title="有更新🐒↓"></a>有更新🐒↓</h3><p>使用Hexo+GitHub+Typora搭建博客后，感觉创建笔记好麻烦，计划用bat批处理程序帮忙解决，奈何是在不熟悉，就用python写了，然后再用bat执行python文件</p>
 <blockquote>
 <p>需求：</p>
 </blockquote>
@@ -490,7 +490,7 @@
 <p>4.打开创建好的md文件</p>
 <p>5.上传写好的笔记</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">import subprocess
-
+import time
 # 指定目录路径
 directory_path = r"D:\\personalFile\Blog\source\\_posts"  # 将其替换为你希望进入的目录路径
 
@@ -498,14 +498,14 @@ directory_path = r"D:\\personalFile\Blog\source\\_posts"  # 将其替换为你�
 cmd_command = f"cmd /K cd /d {directory_path}"
 
 # 提示用户输入参数
-user_input = input("请输入参数：")
-user_input = "hexo new" + " \"" +user_input + "\""
+filename = input("请输入参数：")
+command = "hexo new" + " \"" +filename + "\""
 # 使用 subprocess 打开 cmd 并进入目录
 cmd_process = subprocess.Popen(cmd_command, shell=True, stdin=subprocess.PIPE,encoding='gbk')
 
 
 # 向 cmd 中发送用户输入的参数
-cmd_process.stdin.write(user_input + '\n')
+cmd_process.stdin.write(command + '\n')
 cmd_process.stdin.flush()
 
 time.sleep(5)
@@ -526,11 +526,44 @@ exit<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span
 <p>创建都有了，在来个上传</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">@echo off
 cd /d "存放笔记的文件夹目录"
-hexo g &amp; hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+hexo cl &amp;&amp; hexo g &amp;&amp;  hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p><span class="github-emoji"><span>😏</span><img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="https://github.githubassets.com/images/icons/emoji/unicode/1f60f.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
 <p><span class="github-emoji"><span>😎</span><img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="https://github.githubassets.com/images/icons/emoji/unicode/1f60e.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
 <p>测试一下emoji语法嘿嘿</p>
+<blockquote>
+<p>更新</p>
+</blockquote>
+<p>首先sleep(5)很蠢，可以用while循环查询该文件是否创建好就可以了</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">import subprocess
+import time
+import os
+# 指定目录路径
+directory_path = r"D:\\personalFile\Blog\source\\_posts"  # 将其替换为你希望进入的目录路径
+
+# 构建打开 cmd 并进入目录的命令
+cmd_command = f"cmd /K cd /d {directory_path}"
+
+# 提示用户输入参数
+filename = input("请输入参数：")
+user_input = "hexo new" + " \"" +filename + "\""
+# 使用 subprocess 打开 cmd 并进入目录
+cmd_process = subprocess.Popen(cmd_command, shell=True, stdin=subprocess.PIPE,encoding='gbk')
+
+
+# 向 cmd 中发送用户输入的参数
+cmd_process.stdin.write(user_input + '\n')
+cmd_process.stdin.flush()
+
+filename_new = filename.replace(' ','-')
+
+while(os.path.exists("D:\personalFile\Blog\source\_posts\\" + filename_new + ".md") == False):
+    time.sleep(1)
+# 使用默认关联的软件打开文件
+file_path = "D:\personalFile\Blog\source\_posts\\" + filename_new + ".md"
+app_path = "D:\Program Files\Typora\Typora.exe"
+subprocess.Popen([app_path,file_path])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -934,7 +967,7 @@ hexo g &amp; hexo d<span aria-hidden="true" class="line-numbers-rows"><span></sp
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">38.8k</span>&nbsp;字
+                class="white-color">39k</span>&nbsp;字
             
             
             
@@ -1208,7 +1241,7 @@ $(function () {
                                                                                                                             type="module"></script>
                                                                                                                         
 
-                
+                <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":190,"hOffset":50,"vOffset":-5},"mobile":{"show":false,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script>
         <style>
             [bg-lazy] {
                 background-image: none !important;
@@ -1221,4 +1254,4 @@ $(function () {
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":190,"hOffset":50,"vOffset":-5},"mobile":{"show":false,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
