@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>动态规划之石子合并</title>
+      <link href="/2023/11/10/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/"/>
+      <url>/2023/11/10/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/</url>
+      
+        <content type="html"><![CDATA[<h1 id="动态规划之石子合并"><a href="#动态规划之石子合并" class="headerlink" title="动态规划之石子合并"></a>动态规划之石子合并</h1><p>经典的动态规划问题，期末考试复习用，一般有三种情况</p><h3 id="一、🍀任意合并"><a href="#一、🍀任意合并" class="headerlink" title="一、🍀任意合并"></a>一、🍀任意合并</h3><p>有N堆石子，现要将石子有序的合并成一堆，规定如下：每次只能移动任意的2堆石子合并，合并花费为新合成的一堆石子的数量。求将这N堆石子合并成一堆，输出最少花费</p><p>这个属于贪心问题，和哈夫曼树的思想一致，优先挑选数量最少的两堆石头合并即可，不过多讨论。</p><h3 id="二、🔗相邻合并"><a href="#二、🔗相邻合并" class="headerlink" title="二、🔗相邻合并"></a>二、🔗相邻合并</h3><p>有N堆石子，现要将石子有序的合并成一堆，规定如下：每次只能移动相邻的2堆石子合并，合并花费为新合成的一堆石子的数量。求将这N堆石子合并成一堆的总花费最小。</p><p>设有四堆石子数量分别为num[N]</p><p>1 3 5 2</p><p>使用二维数组<code>dp[i][j]</code>来代表合并第i堆到第j堆需要的最小花费</p><table><thead><tr><th align="center">i   j</th><th align="center">1</th><th align="center">2</th><th align="center">3</th><th align="center">4</th></tr></thead><tbody><tr><td align="center">1</td><td align="center">0</td><td align="center">4</td><td align="center">？</td><td align="center">？</td></tr><tr><td align="center">2</td><td align="center"></td><td align="center">0</td><td align="center">8</td><td align="center">？</td></tr><tr><td align="center">3</td><td align="center"></td><td align="center"></td><td align="center">0</td><td align="center">7</td></tr><tr><td align="center">4</td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center">0</td></tr></tbody></table><p>上面 <code>i=j</code>时很显然<code>dp[i][j]</code> = 0</p><p>i与j相邻时,<code>dp[i][j]</code> = num[i] + num[j] ，表格中打问号的值无法直接得到？</p><p>我们设<code>s[i][j]</code>为第i堆到第j堆石子的数量之和,有：</p><p><code>dp[1][3] = min(dp[1][1] + dp[2][3],dp[1][2] + dp[3][3]) + sum[1][3]</code></p><p><code>dp[2][4] = min(dp[2][2] + dp[3][4],dp[2][3] + dp[4][4]) + sum[2][4]</code></p><p><code>dp[1][4] = min(dp[1][1] + dp[2][4],dp[1][2] + dp[3][4],dp[1][3] + dp[4][4]) + sum[1][4]  </code></p><p>根据分析可以列出状态转移方程：<br>$$<br>\begin{cases}<br>dp[i][j]= 0 \                                                \ i = j; \<br>dp[i][j]= min(dp[i][k]+dp[k+1][j]) + sum[i][j]   \          \  i != j;     \<br>\end{cases}<br>$$<br>按这个思路实现代码：</p><p>优化一下s数组，s[i]表示第1堆到第i堆的数量总和，那么s[j]-s[i-1]就是第i堆到第j堆的数量之和。</p><pre class="line-numbers language-none"><code class="language-none">#include &lt;iostream&gt; #include &lt;cstring&gt; using namespace std;const int N = 310; int n; int a[N], s[N]; // s数组用于前缀和优化int dp[N][N]; // f[i][j]表示合并第i~j堆石子的最小代价 int main() { cin &gt;&gt; n; for (int i = 1; i &lt;= n; i ++ ) cin &gt;&gt; a[i]; // 前缀和优化for (int i = 1; i &lt;= n; i ++ ) s[i] = s[i - 1] + a[i];memset(dp, 0x3f, sizeof dp); // 初值无穷大for (int i = 1; i &lt;= n; i ++ ) dp[i][i] = 0; // 一堆石子不需要合并// 枚举区间长度for (int len = 2; len &lt;= n; len ++ ){    // 枚举区间起点    for (int i = 1; i + len - 1 &lt;= n; i ++ )    {        int j = i + len - 1; // 区间终点        // 枚举划分位置        for (int k = i; k &lt; j; k ++ )        {            dp[i][j] = min(dp[i][j], dp[i][k] + dp[k + 1][j] + s[j] - s[i - 1]);        }    }}cout &lt;&lt; dp[1][n] &lt;&lt; endl;return 0;}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="三、🌍环形合并"><a href="#三、🌍环形合并" class="headerlink" title="三、🌍环形合并"></a>三、🌍环形合并</h3><p>下次吧，今天累了</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Algorithm </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 动态规划 </tag>
+            
+            <tag> 石子合并 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>动态规划之背包问题</title>
       <link href="/2023/11/08/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/"/>
       <url>/2023/11/08/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/</url>

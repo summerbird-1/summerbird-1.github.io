@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Tag: Mybatis-plus, SummerBird">
+    <meta name="keywords" content="动态规划之石子合并, SummerBird">
     <meta name="description" content="向往热烈而自由">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Tag: Mybatis-plus | SummerBird</title>
+    <title>动态规划之石子合并 | SummerBird</title>
     <link rel="icon" type="image/png" href="/favicon.webp">
     <link rel="stylesheet" type="text/css" href="/libs/artitalk/artitalk.min.css">
 
@@ -283,228 +283,650 @@
 
 </header>
 
-                        <div class="bg-cover pd-header about-cover">
-    <div class="container">
-    <div class="row">
-    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-        <div class="brand">
-            <div class="title center-align">
-                
-                MAKE THE WORLD BETTERRRR!
-                
-            </div>
+                        
 
-            <div class="description center-align">
-                
-                <span id="subtitle"></span>
-                <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-                <script>
-                    var typed = new Typed("#subtitle", {
-                        strings: ['从来没有真正的绝境, 只有心灵的迷途','Never really desperate, only the lost of the soul'],
-                        startDelay: 300,
-                        typeSpeed: 100,
-                        loop: true,
-                        backSpeed: 50,
-                        showCursor: true
-                    });
-                </script>
-                
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.webp')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">动态规划之石子合并</h1>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 
-<script>
-    $('.bg-cover').css('background-image', 'url(/medias/banner/4.webp)');
-</script>
 
 
-    </div>
-</div>
-
-<main class="content">
+<main class="post-container content">
 
     
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
 
-<div id="tags" class="container chip-container">
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+    width: 345px;
+    padding-left: 20px;
+    background-color: rgb(255, 255, 255,0.7);
+    border-radius: 10px;
+    box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1) !important;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
     <div class="card">
-        <div class="card-content">
-            <div class="tag-title center-align">
-                <i class="fas fa-tags"></i>&nbsp;&nbsp;Post Tags
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+                                <span class="chip bg-color">动态规划</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/">
+                                <span class="chip bg-color">石子合并</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Algorithm/" class="post-category">
+                                Algorithm
+                            </a>
+                        
+                    </div>
+                    
+                </div>
             </div>
-            <div class="tag-chips">
+
+            <div class="post-info">
                 
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2023-11-10
+                </div>
                 
-                <a href="/tags/%E5%8D%9A%E5%AE%A2/" title="博客: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="博客" style="background-color: #F9EBEA;">博客
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
+
                 
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
+                    2023-11-10
+                </div>
                 
-                <a href="/tags/LeetCode/" title="LeetCode: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="LeetCode" style="background-color: #F5EEF8;">LeetCode
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
+
                 
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    716
+                </div>
                 
-                <a href="/tags/utterances/" title="utterances: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="utterances" style="background-color: #D5F5E3;">utterances
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
+
                 
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
+                    3 Min
+                </div>
                 
-                <a href="/tags/%E6%B5%8B%E8%AF%95/" title="测试: 4">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="测试" style="background-color: #E8F8F5;">测试
-                        <span class="tag-length">4</span>
-                    </span>
-                </a>
+
                 
-                
-                <a href="/tags/Vue/" title="Vue: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Vue" style="background-color: #FEF9E7;">Vue
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Mybatis-plus/" title="Mybatis-plus: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-active "
-                            data-tagname="Mybatis-plus" style="background-color: #F8F9F9;">Mybatis-plus
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/vue-treeselect/" title="vue-treeselect: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="vue-treeselect" style="background-color: #82E0AA;">vue-treeselect
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" title="动态规划: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="动态规划" style="background-color: #D7BDE2;">动态规划
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/" title="石子合并: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="石子合并" style="background-color: #A3E4D7;">石子合并
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/movies/" title="movies: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="movies" style="background-color: #85C1E9;">movies
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E5%9B%BE%E5%BA%8A/" title="图床: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="图床" style="background-color: #F8C471;">图床
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E8%83%8C%E5%8C%85/" title="背包: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="背包" style="background-color: #F9E79F;">背包
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/bat/" title="bat: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="bat" style="background-color: #85C1E9;">bat
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E8%87%AA%E7%84%B6%E8%BE%A9%E8%AF%81%E6%B3%95/" title="自然辩证法: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="自然辩证法" style="background-color: #F5EEF8;">自然辩证法
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
             </div>
         </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="动态规划之石子合并"><a href="#动态规划之石子合并" class="headerlink" title="动态规划之石子合并"></a>动态规划之石子合并</h1><p>经典的动态规划问题，期末考试复习用，一般有三种情况</p>
+<h3 id="一、🍀任意合并"><a href="#一、🍀任意合并" class="headerlink" title="一、🍀任意合并"></a>一、🍀任意合并</h3><p>有N堆石子，现要将石子有序的合并成一堆，规定如下：每次只能移动任意的2堆石子合并，合并花费为新合成的一堆石子的数量。求将这N堆石子合并成一堆，输出最少花费</p>
+<p>这个属于贪心问题，和哈夫曼树的思想一致，优先挑选数量最少的两堆石头合并即可，不过多讨论。</p>
+<h3 id="二、🔗相邻合并"><a href="#二、🔗相邻合并" class="headerlink" title="二、🔗相邻合并"></a>二、🔗相邻合并</h3><p>有N堆石子，现要将石子有序的合并成一堆，规定如下：每次只能移动相邻的2堆石子合并，合并花费为新合成的一堆石子的数量。求将这N堆石子合并成一堆的总花费最小。</p>
+<p>设有四堆石子数量分别为num[N]</p>
+<p>1 3 5 2</p>
+<p>使用二维数组<code>dp[i][j]</code>来代表合并第i堆到第j堆需要的最小花费</p>
+<table>
+<thead>
+<tr>
+<th align="center">i   j</th>
+<th align="center">1</th>
+<th align="center">2</th>
+<th align="center">3</th>
+<th align="center">4</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">4</td>
+<td align="center">？</td>
+<td align="center">？</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center"></td>
+<td align="center">0</td>
+<td align="center">8</td>
+<td align="center">？</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">0</td>
+<td align="center">7</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">0</td>
+</tr>
+</tbody></table>
+<p>上面 <code>i=j</code>时很显然<code>dp[i][j]</code> = 0</p>
+<p>i与j相邻时,<code>dp[i][j]</code> = num[i] + num[j] ，表格中打问号的值无法直接得到？</p>
+<p>我们设<code>s[i][j]</code>为第i堆到第j堆石子的数量之和,有：</p>
+<p><code>dp[1][3] = min(dp[1][1] + dp[2][3],dp[1][2] + dp[3][3]) + sum[1][3]</code></p>
+<p><code>dp[2][4] = min(dp[2][2] + dp[3][4],dp[2][3] + dp[4][4]) + sum[2][4]</code></p>
+<p><code>dp[1][4] = min(dp[1][1] + dp[2][4],dp[1][2] + dp[3][4],dp[1][3] + dp[4][4]) + sum[1][4]  </code></p>
+<p>根据分析可以列出状态转移方程：<br>$$<br>\begin{cases}<br>dp[i][j]= 0 \                                                \ i = j; \<br>dp[i][j]= min(dp[i][k]+dp[k+1][j]) + sum[i][j]   \          \  i != j;     \<br>\end{cases}<br>$$<br>按这个思路实现代码：</p>
+<p>优化一下s数组，s[i]表示第1堆到第i堆的数量总和，那么s[j]-s[i-1]就是第i堆到第j堆的数量之和。</p>
+<pre class="line-numbers language-none"><code class="language-none">#include &lt;iostream&gt; 
+#include &lt;cstring&gt; 
+using namespace std;
+const int N = 310; 
+int n; 
+int a[N], s[N]; // s数组用于前缀和优化
+int dp[N][N]; // f[i][j]表示合并第i~j堆石子的最小代价
+ 
+int main() { 
+	cin &gt;&gt; n; 
+	for (int i = 1; i &lt;= n; i ++ ) 
+		cin &gt;&gt; a[i];
+ 
+	// 前缀和优化
+	for (int i = 1; i &lt;= n; i ++ ) 
+		s[i] = s[i - 1] + a[i];
+	
+	memset(dp, 0x3f, sizeof dp); // 初值无穷大
+	for (int i = 1; i &lt;= n; i ++ ) 
+		dp[i][i] = 0; // 一堆石子不需要合并
+	
+	// 枚举区间长度
+	for (int len = 2; len &lt;= n; len ++ )
+	{
+	    // 枚举区间起点
+	    for (int i = 1; i + len - 1 &lt;= n; i ++ )
+	    {
+	        int j = i + len - 1; // 区间终点
+	
+	        // 枚举划分位置
+	        for (int k = i; k &lt; j; k ++ )
+	        {
+	            dp[i][j] = min(dp[i][j], dp[i][k] + dp[k + 1][j] + s[j] - s[i - 1]);
+	        }
+	    }
+	}
+	
+	cout &lt;&lt; dp[1][n] &lt;&lt; endl;	
+	return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="三、🌍环形合并"><a href="#三、🌍环形合并" class="headerlink" title="三、🌍环形合并"></a>三、🌍环形合并</h3><p>下次吧，今天累了</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">zjz</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://summerbird-1.github.io/2023/11/10/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/">http://summerbird-1.github.io/2023/11/10/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        Reprint policy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    All articles in this blog are used except for special statements
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    reprint polocy. If reproduced, please indicate source
+                    <a href="/about" target="_blank">zjz</a>
+                    !
+                </span>
+            </div>
+        
     </div>
-</div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+                                    <span class="chip bg-color">动态规划</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/">
+                                    <span class="chip bg-color">石子合并</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
 
     
 
-    <article id="articles" class="container articles">
-        <div class="row tags-posts">
-            
-            
-            <div class="article tag-post col s12 m6 l4" data-tags="Vue, Mybatis-plus" data-aos="fade-up">
-                <div class="card">
-                    <a href="/2023/11/04/Request-failed-with-status-code-405%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/featureimages/0.webp" class="responsive-img" alt="Request failed with status code 405解决方法">
-                            
-                            <span class="card-title">Request failed with status code 405解决方法</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-04
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Bug/" class="post-category">
-                                Bug
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
+</div>
+
                 </div>
             </div>
             
         </div>
-    </article>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+        <script src="https://utteranc.es/client.js"
+        repo="summerbird-1/utterancs"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+                
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
+            <div class="card">
+                <a href="/2023/11/10/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/featureimages/7.webp" class="responsive-img" alt="动态规划之石子合并">
+                        
+                        <span class="card-title">动态规划之石子合并</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Algorithm/" class="post-category">
+                                    Algorithm
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+                        <span class="chip bg-color">动态规划</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/">
+                        <span class="chip bg-color">石子合并</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/11/08/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/featureimages/23.webp" class="responsive-img" alt="动态规划之背包问题">
+                        
+                        <span class="card-title">动态规划之背包问题</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-08
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Algorithm/" class="post-category">
+                                    Algorithm
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+                        <span class="chip bg-color">动态规划</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%83%8C%E5%8C%85/">
+                        <span class="chip bg-color">背包</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+    <div id="floating-toc-btn" class="hide-on-med-and-down">
+        <a class="btn-floating btn-large bg-color">
+            <i class="fas fa-list-ul"></i>
+        </a>
+    </div>
+    
+
+        <script src="/libs/tocbot/tocbot.min.js"></script>
+        <script>
+            $(function () {
+                tocbot.init({
+                    tocSelector: '#toc-content',
+                    contentSelector: '#articleContent',
+                    headingsOffset: -($(window).height() * 0.4 - 45),
+                    collapseDepth: Number('0'),
+                    headingSelector: 'h2, h3, h4'
+                });
+
+                // modify the toc link href to support Chinese.
+                let i = 0;
+                let tocHeading = 'toc-heading-';
+                $('#toc-content a').each(function () {
+                    $(this).attr('href', '#' + tocHeading + (++i));
+                });
+
+                // modify the heading title id to support Chinese.
+                i = 0;
+                $('#articleContent').children('h2, h3, h4').each(function () {
+                    $(this).attr('id', tocHeading + (++i));
+                });
+
+                // Set scroll toc fixed.
+                let tocHeight = parseInt($(window).height() * 0.4 - 64);
+                let $tocWidget = $('.toc-widget');
+                $(window).scroll(function () {
+                    let scroll = $(window).scrollTop();
+                    /* add post toc fixed. */
+                    if (scroll > tocHeight) {
+                        $tocWidget.addClass('toc-fixed');
+                    } else {
+                        $tocWidget.removeClass('toc-fixed');
+                    }
+                });
+
+        
+                    /* 修复文章卡片 div 的宽度. */
+                    let fixPostCardWidth = function (srcId, targetId) {
+                        let srcDiv = $('#' + srcId);
+                        if (srcDiv.length === 0) {
+                            return;
+                        }
+
+                        let w = srcDiv.width();
+                        if (w >= 450) {
+                            w = w + 21;
+                        } else if (w >= 350 && w < 450) {
+                            w = w + 18;
+                        } else if (w >= 300 && w < 350) {
+                            w = w + 16;
+                        } else {
+                            w = w + 14;
+                        }
+                        $('#' + targetId).width(w);
+                    };
+
+                    // 切换TOC目录展开收缩的相关操作.
+                    const expandedClass = 'expanded';
+                    let $tocAside = $('#toc-aside');
+                    let $mainContent = $('#main-content');
+                    $('#floating-toc-btn .btn-floating').click(function () {
+                        if ($tocAside.hasClass(expandedClass)) {
+                            $tocAside.removeClass(expandedClass).hide();
+                            $mainContent.removeClass('l9');
+                        } else {
+                            $tocAside.addClass(expandedClass).show();
+                            $mainContent.addClass('l9');
+                        }
+                        fixPostCardWidth('artDetail', 'prenext-posts');
+                    });
+        
+    });
+        </script>
+    
+
 </main>
 
 
