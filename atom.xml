@@ -6,7 +6,7 @@
   <link href="http://summerbird-1.github.io/atom.xml" rel="self"/>
   
   <link href="http://summerbird-1.github.io/"/>
-  <updated>2023-11-12T01:45:18.736Z</updated>
+  <updated>2023-11-12T01:49:46.512Z</updated>
   <id>http://summerbird-1.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>RBAC登录接口简单实现</title>
+    <link href="http://summerbird-1.github.io/2023/11/12/RBAC%E7%99%BB%E5%BD%95%E6%8E%A5%E5%8F%A3%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/"/>
+    <id>http://summerbird-1.github.io/2023/11/12/RBAC%E7%99%BB%E5%BD%95%E6%8E%A5%E5%8F%A3%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/</id>
+    <published>2023-11-12T01:47:09.000Z</published>
+    <updated>2023-11-12T01:49:46.512Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;课上实践—实现RBAC登录功能&lt;/p&gt;
+&lt;h2 id=&quot;🍎一、构建前端UI&quot;&gt;&lt;a href=&quot;#🍎一、构建前端UI&quot; class=&quot;headerlink&quot; title=&quot;🍎一、构建前端UI&quot;&gt;&lt;/a&gt;🍎一、构建前端UI&lt;/h2&gt;&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="SpringBoot" scheme="http://summerbird-1.github.io/categories/SpringBoot/"/>
+    
+    
+    <category term="rbac" scheme="http://summerbird-1.github.io/tags/rbac/"/>
+    
+    <category term="vue" scheme="http://summerbird-1.github.io/tags/vue/"/>
+    
+  </entry>
   
   <entry>
     <title>分治问题</title>
