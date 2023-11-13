@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>RBAC系统一键部署服务器流程</title>
+      <link href="/2023/11/12/RBAC%E7%B3%BB%E7%BB%9F%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%B5%81%E7%A8%8B/"/>
+      <url>/2023/11/12/RBAC%E7%B3%BB%E7%BB%9F%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%B5%81%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>SSAdmin 是一个基于 Spring Boot、MybatisPlus、Spring Security（待更新）、Mysql、Redis （待更新）和 Vue2 的前后端分离的通用后台管理系统。</p><p>就其部署流程做一个记录</p><h2 id="一、将前后端项目上传至gitee仓库"><a href="#一、将前后端项目上传至gitee仓库" class="headerlink" title="一、将前后端项目上传至gitee仓库"></a>一、将前后端项目上传至gitee仓库</h2><p>这一步主要是便于更新以及服务器拉取代码</p><h3 id="1、新建仓库"><a href="#1、新建仓库" class="headerlink" title="1、新建仓库"></a>1、新建仓库</h3><p>参考：<a href="https://blog.csdn.net/qq_42760090/article/details/108780980">gitee首次创建仓库详细步骤_gitee创建仓库-CSDN博客</a></p><h3 id="2、将前后端项目移入同一文件夹"><a href="#2、将前后端项目移入同一文件夹" class="headerlink" title="2、将前后端项目移入同一文件夹"></a>2、将前后端项目移入同一文件夹</h3><h3 id="3、将该文件夹推送到仓库"><a href="#3、将该文件夹推送到仓库" class="headerlink" title="3、将该文件夹推送到仓库"></a>3、将该文件夹推送到仓库</h3><h5 id="用VS-Code打开该文件夹"><a href="#用VS-Code打开该文件夹" class="headerlink" title="用VS Code打开该文件夹"></a>用VS Code打开该文件夹</h5><p>新建终端，输入<code>git init</code></p><img src="/2023/11/12/RBAC%E7%B3%BB%E7%BB%9F%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%B5%81%E7%A8%8B/image-20231112101012251.png" class="" title="image-20231112101012251"><p>后面会发现文件夹下会多处一份名为git的文件夹，（注意： 文件–查看–显示隐藏文件夹 ，记得开启，否则看不到）说明初始化成功</p><h5 id="连接远程仓库"><a href="#连接远程仓库" class="headerlink" title="连接远程仓库"></a>连接远程仓库</h5><p>在终端中输入 <code>git remote add origin https://gitee.com/xxxxx/xxx.git</code></p><h5 id="git-status"><a href="#git-status" class="headerlink" title="git status"></a><code>git status</code></h5><p>终端输入此命令可以获取修改内容，</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Basic </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> rbac </tag>
+            
+            <tag> git </tag>
+            
+            <tag> 部署 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>RBAC登录接口简单实现</title>
       <link href="/2023/11/12/RBAC%E7%99%BB%E5%BD%95%E6%8E%A5%E5%8F%A3%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/"/>
       <url>/2023/11/12/RBAC%E7%99%BB%E5%BD%95%E6%8E%A5%E5%8F%A3%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/</url>
@@ -35,7 +64,7 @@
       <link href="/2023/11/12/%E5%88%86%E6%B2%BB%E9%97%AE%E9%A2%98/"/>
       <url>/2023/11/12/%E5%88%86%E6%B2%BB%E9%97%AE%E9%A2%98/</url>
       
-        <content type="html"><![CDATA[<h1 id="分治算法"><a href="#分治算法" class="headerlink" title="分治算法"></a>分治算法</h1><p>转载自<a href="https://blog.csdn.net/weixin_45031801/article/details/127034720">【精选】归并排序算法C++实现（超详细解析！！！！）_c++归并排序-CSDN博客</a></p><p>分治算法，其本质就是将一个大规模的问题分解为若干个规模较小的相同子问题，分而治之。</p><h3 id="分治算法解题方法"><a href="#分治算法解题方法" class="headerlink" title="分治算法解题方法"></a>分治算法解题方法</h3><h4 id="1-分解"><a href="#1-分解" class="headerlink" title="1.分解"></a>1.分解</h4><p> 将要解决的问题分解为若干个规模较小、相互独立、与原问题形式相同的子问题。</p><h4 id="2-治理"><a href="#2-治理" class="headerlink" title="2.治理"></a>2.治理</h4><p>求解各个子问题。由于各个子问题与原问题形式相同，只是规模较小而已，而当子问题划分得足够小时，就可以用简单的方法解决。</p><h4 id="3-合并"><a href="#3-合并" class="headerlink" title="3.合并"></a>3.合并</h4><p>按原问题的要求，将子问题的解逐层合并构成原问题的解。</p><h3 id="经典题目"><a href="#经典题目" class="headerlink" title="经典题目"></a>经典题目</h3><h4 id="一、归并排序"><a href="#一、归并排序" class="headerlink" title="一、归并排序"></a>一、归并排序</h4><h5 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h5><p>步骤一：首先将待排序的元素分成大小大致相同的两个序列。</p><p>步骤二：再把子序列分成大小大致相同的两个子序列。</p><p>步骤三：如此下去，直到分解成一个元素停止，这时含有一个元素的子序列都是有序的。</p><p>步骤四：进行合并操作，将两个有序的子序列合并为一个有序序列，如此下去，直到所有的元素都合并为一个有序序列。</p><img src="/2023/11/12/%E5%88%86%E6%B2%BB%E9%97%AE%E9%A2%98/fd1e5ee39edc41ff812daad1fbe18e2d.png" class="" title="img"><h5 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h5><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;bits/stdc++.h&gt;using namespace std;int a[100010];void merge(int* a,int low,int mid,int high){    int* b = new int[high-low+1];    int i = low,j = mid+1,k = 0;    while(i &lt;= mid &amp;&amp; j &lt;= high){        if(a[i] &lt;= a[j])        b[k++] = a[i++];        else        b[k++] = a[j++];     }    while(i &lt;= mid)    b[k++] = a[i++];    while (j &lt;= high)    {        b[k++] = a[j++];    }    k = 0;    //注意    for(int i = low;i &lt;= high;i++)    a[i] = b[k++];    delete[] b;}void mergeSort(int* a,int low,int high){    if(low &lt; high){        int mid = (low + high) / 2;        mergeSort(a,low,mid);        mergeSort(a,mid+1,high);        merge(a,low,mid,high);    }}int main(){    int n;    cin &gt;&gt; n;    for(int i = 0;i &lt; n;i++)    cin &gt;&gt; a[i];    mergeSort(a,0,n-1);    for(int i = 0;i &lt; n;i++)    cout &lt;&lt; a[i] &lt;&lt; " ";    return 0;}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+        <content type="html"><![CDATA[<h1 id="分治算法"><a href="#分治算法" class="headerlink" title="分治算法"></a>分治算法</h1><p>分治算法，其本质就是将一个大规模的问题分解为若干个规模较小的相同子问题，分而治之。</p><h3 id="分治算法解题方法"><a href="#分治算法解题方法" class="headerlink" title="分治算法解题方法"></a>分治算法解题方法</h3><h4 id="1-分解"><a href="#1-分解" class="headerlink" title="1.分解"></a>1.分解</h4><p> 将要解决的问题分解为若干个规模较小、相互独立、与原问题形式相同的子问题。</p><h4 id="2-治理"><a href="#2-治理" class="headerlink" title="2.治理"></a>2.治理</h4><p>求解各个子问题。由于各个子问题与原问题形式相同，只是规模较小而已，而当子问题划分得足够小时，就可以用简单的方法解决。</p><h4 id="3-合并"><a href="#3-合并" class="headerlink" title="3.合并"></a>3.合并</h4><p>按原问题的要求，将子问题的解逐层合并构成原问题的解。</p><h3 id="经典题目"><a href="#经典题目" class="headerlink" title="经典题目"></a>经典题目</h3><h4 id="一、归并排序"><a href="#一、归并排序" class="headerlink" title="一、归并排序"></a>一、归并排序</h4><h5 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h5><p>步骤一：首先将待排序的元素分成大小大致相同的两个序列。</p><p>步骤二：再把子序列分成大小大致相同的两个子序列。</p><p>步骤三：如此下去，直到分解成一个元素停止，这时含有一个元素的子序列都是有序的。</p><p>步骤四：进行合并操作，将两个有序的子序列合并为一个有序序列，如此下去，直到所有的元素都合并为一个有序序列。</p><img src="/2023/11/12/%E5%88%86%E6%B2%BB%E9%97%AE%E9%A2%98/fd1e5ee39edc41ff812daad1fbe18e2d.png" class="" title="img"><h5 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h5><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;bits/stdc++.h&gt;using namespace std;int a[100010];void merge(int* a,int low,int mid,int high){    int* b = new int[high-low+1];    int i = low,j = mid+1,k = 0;    while(i &lt;= mid &amp;&amp; j &lt;= high){        if(a[i] &lt;= a[j])        b[k++] = a[i++];        else        b[k++] = a[j++];     }    while(i &lt;= mid)    b[k++] = a[i++];    while (j &lt;= high)    {        b[k++] = a[j++];    }    k = 0;    //注意    for(int i = low;i &lt;= high;i++)    a[i] = b[k++];    delete[] b;}void mergeSort(int* a,int low,int high){    if(low &lt; high){        int mid = (low + high) / 2;        mergeSort(a,low,mid);        mergeSort(a,mid+1,high);        merge(a,low,mid,high);    }}int main(){    int n;    cin &gt;&gt; n;    for(int i = 0;i &lt; n;i++)    cin &gt;&gt; a[i];    mergeSort(a,0,n-1);    for(int i = 0;i &lt; n;i++)    cout &lt;&lt; a[i] &lt;&lt; " ";    return 0;}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>转载自<a href="https://blog.csdn.net/weixin_45031801/article/details/127034720">【精选】归并排序算法C++实现（超详细解析！！！！）_c++归并排序-CSDN博客</a></p><h4 id="二、逆序对问题"><a href="#二、逆序对问题" class="headerlink" title="二、逆序对问题"></a>二、逆序对问题</h4><p><strong>描述：</strong></p><p>给定一个长度为 <code>n</code> 的整数数列，你的目标是计算出数列中逆序对的总数。</p><p>逆序对定义为数列中一对元素 <code>(a[i], a[j])</code>，其中 <code>i &lt; j</code> 且 <code>a[i] &gt; a[j]</code>。</p><p><strong>输入格式：</strong></p><p>第一行包含一个整数 <code>n</code>，表示数列中的元素个数。</p><p>第二行包含 <code>n</code> 个整数，表示数列的元素，元素之间由一个空格分隔。</p><p><strong>输出格式：</strong></p><p>输出一个整数，表示数列中逆序对的总数。</p><p><strong>数据范围：</strong></p><p>1≤n≤100,0001≤�≤100,000</p><p>数列中的每个元素都是 1≤元素值≤1091≤元素值≤109 的整数。</p><p><strong>样例输入：</strong></p><pre class="line-numbers language-none"><code class="language-none">59 7 8 3 2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p><strong>样例输出：</strong></p><pre class="line-numbers language-none"><code class="language-none">7<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><strong>说明：</strong></p><p>请不要使用简单的双重循环来直接计算逆序对的数量，因为这种方法在最坏的情况下的时间复杂度为 O(n^2)，可能无法在合理的时间内处理大数据量。推荐使用分治策略，如通过修改归并排序算法来计算逆序对，以实现更高效的解法。</p><h5 id="思路："><a href="#思路：" class="headerlink" title="思路："></a><strong>思路：</strong></h5><p>使用分治法求解逆序对问题时，考虑逆序对出现的三种不同情况是很重要的。这三种情况指的是两个元素 A[i]和 A[j]形成逆序对 i&lt;j时，这两个元素可以位于：</p><ol><li><strong>左半部分</strong>：这意味着逆序对都位于分治法中左边的部分。在这种情况下，左半部分的递归调用将会计算出这些逆序对。</li><li><strong>右半部分</strong>：这意味着逆序对都位于分治法中右边的部分。同样，右半部分的递归调用将会找到这些逆序对。</li><li><strong>跨越中点</strong>：这是最关键的情况，逆序对的一个元素在左半部分，而另一个元素在右半部分。这些逆序对不能单独在左半部分或右半部分的递归调用中找到，因为它们跨越了两部分。它们必须在合并这两个有序子数组的过程中被计算出来。</li></ol><p>在归并排序的合并阶段，对于最后一种情况，即跨越中点的逆序对，我们可以这样计算：当我们从左半部分取出元素 L[i] 并且这个元素大于从右半部分取出的元素 R[j] 时，不仅 L[i]和 R[j] 形成了逆序对，L[i]与 R 中 j 之后的所有元素也都将形成逆序对，因为右半部分已经是有序的。因此，我们可以直接添加逆序对的数量为 mid−i+1（如果 mid 是左半部分的最后一个元素的索引）。</p><p>这种分治的方法允许我们在 O(nlogn)时间内计算出整个数组的逆序对数量，这是非常高效的，尤其是对于大数据集来说。</p><h5 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h5><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;bits/stdc++.h&gt;using namespace std;int a[100010];int b[100010];long long merge_sort(int l,int r){    if(l &gt;= r) return 0;    int mid = (l+r) &gt;&gt; 1;        long long ans = 0;    ans = merge_sort(l,mid) + merge_sort(mid+1,r);   //递归计算左右两边逆序对    //合并时计算跨越中点的逆序对数    int i  = l,j = mid +1,k = 0;    while(i &lt;= mid &amp;&amp; j &lt;= r){        if(a[i] &lt;= a[j])  b[k++] = a[i++];        else{            b[k++] = a[j++];            ans += mid - i + 1;    //理解a[i]与a[j]成逆序，a[i]~a[mid]都与a[j]成逆序        }    }    while(i &lt;= mid) b[k++] = a[i++];    while(j &lt;= r)  b[k++] = a[j++];    for(int i = l,k = 0;i &lt;= r;k++,i++) a[i] = b[k];    return ans;}int main(){     int n;     cin &gt;&gt; n;     for(int i = 0;i &lt; n;i++){        cin &gt;&gt; a[i];     }     long long res = merge_sort(0,n-1);     cout &lt;&lt; res;     return 0;}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
       
       
       <categories>
@@ -237,31 +266,6 @@
     
     
     <entry>
-      <title>test333</title>
-      <link href="/2023/11/02/test333/"/>
-      <url>/2023/11/02/test333/</url>
-      
-        <content type="html"><![CDATA[<p><span class="github-emoji"><span>🔹</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f539.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p><p><span class="github-emoji"><span>😱</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f631.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p><p><span class="github-emoji"><span>🌗</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f317.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p><p><span class="github-emoji"><span>😗</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f617.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> test </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 测试 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>LeetCode3</title>
       <link href="/2023/11/02/LeetCode3/"/>
       <url>/2023/11/02/LeetCode3/</url>
@@ -412,49 +416,11 @@
     
     
     <entry>
-      <title>test3</title>
-      <link href="/2023/10/30/test3/"/>
-      <url>/2023/10/30/test3/</url>
-      
-        <content type="html"><![CDATA[<p>我就不信传不了图片</p><img src="/2023/10/30/test3/13341222604877401.jpg" class="" width="13341222604877401">]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 测试 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>test2</title>
       <link href="/2023/10/30/test2/"/>
       <url>/2023/10/30/test2/</url>
       
         <content type="html"><![CDATA[<p>121211122</p><p>1121212</p><p>上厕所VSvv</p><p><img src="/2023/10/30/test2/2718075060\Desk\软微\13341222604877401.jpg" alt="13341222604877401"></p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 测试 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>test</title>
-      <link href="/2023/10/30/test/"/>
-      <url>/2023/10/30/test/</url>
-      
-        <content type="html"><![CDATA[<h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><h3 id="2"><a href="#2" class="headerlink" title="2"></a>2</h3><p><img src="/2023/10/30/test/2718075060\Desk\软微\13341222604877401.jpg" alt="13341222604877401"></p>]]></content>
       
       
       

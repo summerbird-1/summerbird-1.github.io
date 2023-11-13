@@ -443,21 +443,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2023-11-12
+                    2023-11-13
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    508
+                    1.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    2 Min
+                    5 Min
                 </div>
                 
 
@@ -480,8 +480,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="分治算法"><a href="#分治算法" class="headerlink" title="分治算法"></a>分治算法</h1><p>转载自<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45031801/article/details/127034720">【精选】归并排序算法C++实现（超详细解析！！！！）_c++归并排序-CSDN博客</a></p>
-<p>分治算法，其本质就是将一个大规模的问题分解为若干个规模较小的相同子问题，分而治之。</p>
+                <h1 id="分治算法"><a href="#分治算法" class="headerlink" title="分治算法"></a>分治算法</h1><p>分治算法，其本质就是将一个大规模的问题分解为若干个规模较小的相同子问题，分而治之。</p>
 <h3 id="分治算法解题方法"><a href="#分治算法解题方法" class="headerlink" title="分治算法解题方法"></a>分治算法解题方法</h3><h4 id="1-分解"><a href="#1-分解" class="headerlink" title="1.分解"></a>1.分解</h4><p> 将要解决的问题分解为若干个规模较小、相互独立、与原问题形式相同的子问题。</p>
 <h4 id="2-治理"><a href="#2-治理" class="headerlink" title="2.治理"></a>2.治理</h4><p>求解各个子问题。由于各个子问题与原问题形式相同，只是规模较小而已，而当子问题划分得足够小时，就可以用简单的方法解决。</p>
 <h4 id="3-合并"><a href="#3-合并" class="headerlink" title="3.合并"></a>3.合并</h4><p>按原问题的要求，将子问题的解逐层合并构成原问题的解。</p>
@@ -535,6 +534,74 @@ int main(){
     return 0;
 
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>转载自<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45031801/article/details/127034720">【精选】归并排序算法C++实现（超详细解析！！！！）_c++归并排序-CSDN博客</a></p>
+<h4 id="二、逆序对问题"><a href="#二、逆序对问题" class="headerlink" title="二、逆序对问题"></a>二、逆序对问题</h4><p><strong>描述：</strong></p>
+<p>给定一个长度为 <code>n</code> 的整数数列，你的目标是计算出数列中逆序对的总数。</p>
+<p>逆序对定义为数列中一对元素 <code>(a[i], a[j])</code>，其中 <code>i &lt; j</code> 且 <code>a[i] &gt; a[j]</code>。</p>
+<p><strong>输入格式：</strong></p>
+<p>第一行包含一个整数 <code>n</code>，表示数列中的元素个数。</p>
+<p>第二行包含 <code>n</code> 个整数，表示数列的元素，元素之间由一个空格分隔。</p>
+<p><strong>输出格式：</strong></p>
+<p>输出一个整数，表示数列中逆序对的总数。</p>
+<p><strong>数据范围：</strong></p>
+<p>1≤n≤100,0001≤�≤100,000</p>
+<p>数列中的每个元素都是 1≤元素值≤1091≤元素值≤109 的整数。</p>
+<p><strong>样例输入：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">5
+9 7 8 3 2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>样例输出：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">7<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>说明：</strong></p>
+<p>请不要使用简单的双重循环来直接计算逆序对的数量，因为这种方法在最坏的情况下的时间复杂度为 O(n^2)，可能无法在合理的时间内处理大数据量。推荐使用分治策略，如通过修改归并排序算法来计算逆序对，以实现更高效的解法。</p>
+<h5 id="思路："><a href="#思路：" class="headerlink" title="思路："></a><strong>思路：</strong></h5><p>使用分治法求解逆序对问题时，考虑逆序对出现的三种不同情况是很重要的。这三种情况指的是两个元素 A[i]和 A[j]形成逆序对 i&lt;j时，这两个元素可以位于：</p>
+<ol>
+<li><strong>左半部分</strong>：这意味着逆序对都位于分治法中左边的部分。在这种情况下，左半部分的递归调用将会计算出这些逆序对。</li>
+<li><strong>右半部分</strong>：这意味着逆序对都位于分治法中右边的部分。同样，右半部分的递归调用将会找到这些逆序对。</li>
+<li><strong>跨越中点</strong>：这是最关键的情况，逆序对的一个元素在左半部分，而另一个元素在右半部分。这些逆序对不能单独在左半部分或右半部分的递归调用中找到，因为它们跨越了两部分。它们必须在合并这两个有序子数组的过程中被计算出来。</li>
+</ol>
+<p>在归并排序的合并阶段，对于最后一种情况，即跨越中点的逆序对，我们可以这样计算：当我们从左半部分取出元素 L[i] 并且这个元素大于从右半部分取出的元素 R[j] 时，不仅 L[i]和 R[j] 形成了逆序对，L[i]与 R 中 j 之后的所有元素也都将形成逆序对，因为右半部分已经是有序的。因此，我们可以直接添加逆序对的数量为 mid−i+1（如果 mid 是左半部分的最后一个元素的索引）。</p>
+<p>这种分治的方法允许我们在 O(nlogn)时间内计算出整个数组的逆序对数量，这是非常高效的，尤其是对于大数据集来说。</p>
+<h5 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h5><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+int a[100010];
+int b[100010];
+long long merge_sort(int l,int r){
+    if(l &gt;= r) return 0;
+    int mid = (l+r) &gt;&gt; 1;
+    
+    long long ans = 0;
+
+    ans = merge_sort(l,mid) + merge_sort(mid+1,r);   //递归计算左右两边逆序对
+
+    //合并时计算跨越中点的逆序对数
+    int i  = l,j = mid +1,k = 0;
+    while(i &lt;= mid &amp;&amp; j &lt;= r){
+        if(a[i] &lt;= a[j])  b[k++] = a[i++];
+        else{
+            b[k++] = a[j++];
+            ans += mid - i + 1;    //理解a[i]与a[j]成逆序，a[i]~a[mid]都与a[j]成逆序
+        }
+    }
+    while(i &lt;= mid) b[k++] = a[i++];
+    while(j &lt;= r)  b[k++] = a[j++];
+    for(int i = l,k = 0;i &lt;= r;k++,i++) a[i] = b[k];
+    return ans;
+}
+
+int main(){
+     int n;
+     cin &gt;&gt; n;
+     for(int i = 0;i &lt; n;i++){
+        cin &gt;&gt; a[i];
+     }
+     long long res = merge_sort(0,n-1);
+     cout &lt;&lt; res;
+
+     return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
                 
@@ -943,7 +1010,7 @@ int main(){
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">43.5k</span>&nbsp;字
+                class="white-color">44.7k</span>&nbsp;字
             
             
             
@@ -1217,7 +1284,7 @@ $(function () {
                                                                                                                             type="module"></script>
                                                                                                                         
 
-                <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":190,"hOffset":50,"vOffset":-5},"mobile":{"show":false,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script>
+                
         <style>
             [bg-lazy] {
                 background-image: none !important;
@@ -1230,4 +1297,4 @@ $(function () {
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":190,"hOffset":50,"vOffset":-5},"mobile":{"show":false,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
