@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="test2, SummerBird">
+    <meta name="keywords" content="DockerFile部署学习, SummerBird">
     <meta name="description" content="向往热烈而自由">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>test2 | SummerBird</title>
+    <title>DockerFile部署学习 | SummerBird</title>
     <link rel="icon" type="image/png" href="/avatar.webp">
     <link rel="stylesheet" type="text/css" href="/libs/artitalk/artitalk.min.css">
 
@@ -287,12 +287,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.webp')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.webp')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">test2</h1>
+                    <h1 class="description center-align post-title">DockerFile部署学习</h1>
                 </div>
             </div>
         </div>
@@ -411,14 +411,23 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%B5%8B%E8%AF%95/">
-                                <span class="chip bg-color">测试</span>
+                            <a href="/tags/DockerFile/">
+                                <span class="chip bg-color">DockerFile</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E9%83%A8%E7%BD%B2/" class="post-category">
+                                部署
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -427,21 +436,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2023-10-30
+                    2023-11-14
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2023-10-30
+                    2023-11-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    6
+                    226
                 </div>
                 
 
@@ -471,10 +480,34 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>121211122</p>
-<p>1121212</p>
-<p>上厕所VSvv</p>
-<p><img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/2023/10/30/test2/2718075060\Desk\软微\13341222604877401.jpg" alt="13341222604877401"></p>
+                <h2 id="🐋进化➡️DockerFile部署🐳"><a href="#🐋进化➡️DockerFile部署🐳" class="headerlink" title="🐋进化➡️DockerFile部署🐳"></a>🐋进化➡️DockerFile部署🐳</h2><p>🦊可自行学习文档：<a target="_blank" rel="noopener" href="https://docs.docker.com/engine/reference/builder/">Dockerfile reference | Docker Docs</a></p>
+<h3 id="一、😧为什么要用DockerFile"><a href="#一、😧为什么要用DockerFile" class="headerlink" title="一、😧为什么要用DockerFile"></a>一、😧为什么要用DockerFile</h3><p>等我明白了再写，大致因为方便，不重复，节省空间速度快</p>
+<h3 id="二、🔞入门"><a href="#二、🔞入门" class="headerlink" title="二、🔞入门"></a>二、🔞入门</h3><h4 id="构建Helloworld镜像"><a href="#构建Helloworld镜像" class="headerlink" title="构建Helloworld镜像"></a>构建Helloworld镜像</h4><p>步骤</p>
+<ol>
+<li>创建DockerFile文件</li>
+<li>编写指令</li>
+<li>编译镜像</li>
+</ol>
+<h5 id="指令内容"><a href="#指令内容" class="headerlink" title="指令内容"></a>指令内容</h5><pre class="line-numbers language-docker" data-language="docker"><code class="language-docker">FROM centos:7
+CMD ["echo","Helloworld"]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h5 id="编译指令"><a href="#编译指令" class="headerlink" title="编译指令"></a>编译指令</h5><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker build -t [镜像标签] -f [DockerFile文件名] [文件路径]
+#示例
+docker build -t hello:1.0 -f Helloworld .<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="查看镜像是否存在docker-images"><a href="#查看镜像是否存在docker-images" class="headerlink" title="查看镜像是否存在docker images"></a>查看镜像是否存在<code>docker images</code></h5><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">REPOSITORY   TAG       IMAGE ID       CREATED              SIZE
+hello        1.0       6bb126809f51   About a minute ago   204MB
+centos       7         eeb6ee3f44bd   2 years ago          204MB
+nginx        latest    ad4c705f24d3   2 years ago          133MB<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>已存在</p>
+<h5 id="运行容器测试"><a href="#运行容器测试" class="headerlink" title="运行容器测试"></a>运行容器测试</h5><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker run hello:1.0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>控制台输出Helloworld，成功🎉</p>
+<h3 id="三、常见指令"><a href="#三、常见指令" class="headerlink" title="三、常见指令"></a>三、常见指令</h3><h4 id="1、FROM"><a href="#1、FROM" class="headerlink" title="1、FROM"></a>1、FROM</h4><p>定义基础镜像</p>
+<p>用法 ：<code>FROM 镜像名:标签名</code></p>
+<h4 id="2、CMD"><a href="#2、CMD" class="headerlink" title="2、CMD"></a>2、CMD</h4><p>定义容器运行时的默认命令，可被docker run 命令中CMD覆盖</p>
+<p>用法：<code>CMD ["命令","参数1","参数2"]</code></p>
 
                 
             </div>
@@ -501,7 +534,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://summerbird-1.github.io/2023/10/30/test2/">http://summerbird-1.github.io/2023/10/30/test2/</a>
+                    <a href="http://summerbird-1.github.io/2023/11/14/DockerFile%E9%83%A8%E7%BD%B2%E5%AD%A6%E4%B9%A0/">http://summerbird-1.github.io/2023/11/14/DockerFile%E9%83%A8%E7%BD%B2%E5%AD%A6%E4%B9%A0/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -539,8 +572,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%B5%8B%E8%AF%95/">
-                                    <span class="chip bg-color">测试</span>
+                                <a href="/tags/DockerFile/">
+                                    <span class="chip bg-color">DockerFile</span>
                                 </a>
                             
                         </div>
@@ -592,17 +625,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2023/10/30/%E5%9C%A8%E7%9C%8B%E4%BB%80%E4%B9%88/">
+                <a href="/2023/11/14/DockerFile%E9%83%A8%E7%BD%B2%E5%AD%A6%E4%B9%A0/">
                     <div class="card-image">
                         
                         
-                        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/featureimages/11.webp" class="responsive-img" alt="在看什么">
+                        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/featureimages/16.webp" class="responsive-img" alt="DockerFile部署学习">
                         
-                        <span class="card-title">在看什么</span>
+                        <span class="card-title">DockerFile部署学习</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -612,26 +646,27 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-10-30
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%A8%B1%E4%B9%90/" class="post-category">
-                                    娱乐
+                            <a href="/categories/%E9%83%A8%E7%BD%B2/" class="post-category">
+                                    部署
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/movies/">
-                        <span class="chip bg-color">movies</span>
+                    <a href="/tags/DockerFile/">
+                        <span class="chip bg-color">DockerFile</span>
                     </a>
                     
                 </div>
@@ -645,13 +680,13 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/10/30/hello-world/">
+                <a href="/2023/11/14/Docker%E9%83%A8%E7%BD%B2%E5%AE%9E%E4%BE%8B%E5%AD%A6%E4%B9%A0/">
                     <div class="card-image">
                         
                         
-                        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/featureimages/12.webp" class="responsive-img" alt="Hello World">
+                        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/featureimages/1.webp" class="responsive-img" alt="Docker部署实例学习">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">Docker部署实例学习</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -662,15 +697,27 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-14
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            zjz
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E9%83%A8%E7%BD%B2/" class="post-category">
+                                    部署
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Docker/">
+                        <span class="chip bg-color">Docker</span>
+                    </a>
+                    
                 </div>
                 
             </div>

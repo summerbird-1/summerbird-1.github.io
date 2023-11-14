@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="test2, SummerBird">
+    <meta name="keywords" content="Docker部署实例学习, SummerBird">
     <meta name="description" content="向往热烈而自由">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>test2 | SummerBird</title>
+    <title>Docker部署实例学习 | SummerBird</title>
     <link rel="icon" type="image/png" href="/avatar.webp">
     <link rel="stylesheet" type="text/css" href="/libs/artitalk/artitalk.min.css">
 
@@ -287,12 +287,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.webp')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.webp')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">test2</h1>
+                    <h1 class="description center-align post-title">Docker部署实例学习</h1>
                 </div>
             </div>
         </div>
@@ -411,14 +411,23 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%B5%8B%E8%AF%95/">
-                                <span class="chip bg-color">测试</span>
+                            <a href="/tags/Docker/">
+                                <span class="chip bg-color">Docker</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E9%83%A8%E7%BD%B2/" class="post-category">
+                                部署
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -427,28 +436,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2023-10-30
+                    2023-11-14
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2023-10-30
+                    2023-11-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    6
+                    983
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    1 Min
+                    4 Min
                 </div>
                 
 
@@ -471,10 +480,194 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>121211122</p>
-<p>1121212</p>
-<p>上厕所VSvv</p>
-<p><img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/2023/10/30/test2/2718075060\Desk\软微\13341222604877401.jpg" alt="13341222604877401"></p>
+                <h2 id="Docker部署案例学习"><a href="#Docker部署案例学习" class="headerlink" title="Docker部署案例学习"></a>Docker部署案例学习</h2><h3 id="一、🐬mysql容器部署"><a href="#一、🐬mysql容器部署" class="headerlink" title="一、🐬mysql容器部署"></a>一、🐬mysql容器部署</h3><h4 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h4><p>能用的5.7版本的mysql容器</p>
+<p>细化要求</p>
+<ol>
+<li>使用的镜像是mysql:5.7</li>
+<li>后台运行      -d</li>
+<li>数据持久化存储     -v</li>
+<li>开放3306端口    -p</li>
+<li>设置root密码    -e</li>
+<li>停止后自动重启   –restart</li>
+<li>容器命名为 rbac_mysql</li>
+</ol>
+<h4 id="命令编写"><a href="#命令编写" class="headerlink" title="命令编写"></a>命令编写</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker run -d \
+-v mysql_data:/var/lib/mysql \
+-p 3306:3306 \
+-e MYSQL_ROOT_PASSWORD=root \
+--name rbac_mysql \
+--restart always \
+mysql:5.7<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>可以使用Navicat连接数据库建库建表</p>
+<h3 id="二、🎞️redis容器部署"><a href="#二、🎞️redis容器部署" class="headerlink" title="二、🎞️redis容器部署"></a>二、🎞️redis容器部署</h3><h4 id="要求-1"><a href="#要求-1" class="headerlink" title="要求"></a>要求</h4><p>能用的7版本redis</p>
+<p>细化</p>
+<ol>
+<li>redis 7</li>
+<li>后台运行      -d</li>
+<li>数据持久化存储     -v</li>
+<li>开放6379端口    -p</li>
+<li>停止后自动重启   –restart</li>
+<li>容器命名为 rbac_redis</li>
+<li>开启redis时，开启aof持久化   redis-server –appendonly yes</li>
+</ol>
+<h4 id="命令编写-1"><a href="#命令编写-1" class="headerlink" title="命令编写"></a>命令编写</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker run \
+-d \
+-v redis_data:/data \
+-p 6379:6379 \
+--restart always \
+--name rbac_redis \
+redis:7.0 redis-server --appendonly yes
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="三、🍀后端应用部署"><a href="#三、🍀后端应用部署" class="headerlink" title="三、🍀后端应用部署"></a>三、🍀后端应用部署</h3><h4 id="要求-2"><a href="#要求-2" class="headerlink" title="要求"></a>要求</h4><p>使用openjdk 8u111版木，去运行springboot服务，保证该服务能正常使用java -jar ssadmin-server-2.7.17.jar</p>
+<p>server.port=xxxx</p>
+<p>细化</p>
+<ol>
+<li>镜像java:openjdk-8u111</li>
+<li>开放端口 7777</li>
+<li>后台运行    -d</li>
+<li>数据卷同步jar包到容器   -v</li>
+<li>停止后自动重启   –restart</li>
+<li>容器命名为 rbac_admin</li>
+</ol>
+<h4 id="命令编写-2"><a href="#命令编写-2" class="headerlink" title="命令编写"></a>命令编写</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker run \
+-p 7777:7777 \
+-d \
+-v /usr/rbac:/usr/rbac \
+--restart always \
+--name rbac_admin \
+java:openjdk-8u111 java -jar ./usr/rbac/ssadmin-server-2.7.17.jar<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="测试接口"><a href="#测试接口" class="headerlink" title="测试接口"></a>测试接口</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">curl --location --request POST 'http://localhost:7777/user/login' \
+--header 'Content-Type: application/json' \
+--data '{
+     "username":"zjz",
+     "password":"1234"
+}'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>发现无法连通，这是因为后端容器和mysql容器还不在一个网络内，无法相互通信</p>
+<h3 id="四、🌍Docker网络"><a href="#四、🌍Docker网络" class="headerlink" title="四、🌍Docker网络"></a>四、🌍Docker网络</h3><p>查看容器ip</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker inspect ID<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>输出ip</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">"SandboxKey": "/var/run/docker/netns/79e611004096",
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "a66189ddab990418b0fc04599852e7670d5fc3b6d3899d55a1666c866330bee5",
+            "Gateway": "172.17.0.1",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "172.17.0.2",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "MacAddress": "02:42:ac:11:00:02",<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>进入后端应用</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker exec -it rbac_admin /bin/sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>ping  <code>IPAddress</code></p>
+<p>发现可以容器之间通信</p>
+<p>目标：将需要互相通信的容器加入到一个网络内，用容器名代替ip</p>
+<h4 id="相关操作"><a href="#相关操作" class="headerlink" title="相关操作"></a>相关操作</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">#创建网络
+docker network create 网络名
+#查看网络
+docker network ls
+#加入网络
+#1.创建容器时加入 
+docker run --network 网络名 镜像名      
+#2.创建后加入 docker network connect rbac_net rbac_admin
+docker network connect [选项] 网路名 容器名|容器id  
+#删除网络
+docker network rm 网络名或id<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>查看网络内部</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker network inspect rbac_net<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>可以看到rbac_admin已加入</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">"Containers": {
+           "51784461bc26048b43d4d2de7908b8ce4bb7b2b2a04113359a814f951226d66d": {
+               "Name": "rbac_admin",
+               "EndpointID": "631b8309458d29eb3c6d6c905e69a5cdebcf91cf2ac251cdcdb3fb0cc1319c7e",
+               "MacAddress": "02:42:ac:12:00:02",
+               "IPv4Address": "172.18.0.2/16",
+               "IPv6Address": ""
+           }
+       },<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>将rbac_mysql容器加入</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker network connect rbac_net rbac_mysql <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>进入rbac_admin容器执行<code>ping rbac_mysql</code>发现</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">ping rbac_admin
+PING rbac_admin (172.18.0.2): 56 data bytes
+64 bytes from 172.18.0.2: icmp_seq=0 ttl=64 time=0.054 ms
+64 bytes from 172.18.0.2: icmp_seq=1 ttl=64 time=0.075 ms
+64 bytes from 172.18.0.2: icmp_seq=2 ttl=64 time=0.083 ms
+64 bytes from 172.18.0.2: icmp_seq=3 ttl=64 time=0.086 ms<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="五、🐕‍🦺容器网络连通"><a href="#五、🐕‍🦺容器网络连通" class="headerlink" title="五、🐕‍🦺容器网络连通"></a>五、🐕‍🦺容器网络连通</h3><h4 id="创建网络"><a href="#创建网络" class="headerlink" title="创建网络"></a>创建网络</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker network create rbac_net<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="将容器加入网络"><a href="#将容器加入网络" class="headerlink" title="将容器加入网络"></a>将容器加入网络</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker network connect rbac_net rbac_mysql
+docker network connect rbac_net rbac_redis<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>后端应用容器在创建时加入</p>
+<p>先删除原来的后端应用容器</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker rm -f 容器名或ID<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker run \
+-p 7777:7777 \
+-d \
+--network rbac_net \
+-v /usr/rbac:/usr/rbac \
+--restart always \
+--name rbac_admin \
+java:openjdk-8u111 java -jar ./usr/rbac/ssadmin-server-2.7.17.jar \
+"--spring.datasource.url=jdbc:mysql://rbac_mysql:3306/rbac?characterEncoding=utf-8&amp;serverTimezone=UTC" \
+"--spring.datasource.username=root" \
+"--spring.datasource.password=root" \
+"--spring.redis.host=rbac_redis" \<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>再次测试登录接口</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">curl --location --request POST 'http://localhost:7777/user/login' \
+--header 'Content-Type: application/json' \
+--data '{
+     "username":"zjz",
+     "password":"1234"
+}'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>发现</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json">{
+    "code":200,
+    "msg":"登录成功",
+    "data":{
+        "accessToken":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ6anoiLCJleHAiOjE2OTk5NTUwMjEsImlhdCI6MTY5OTk1MTQyMX0.mHSIBKpOkN77dd4tGsAj25OGFjAjk2wvPdR3-t593kU",
+        "refreshToken":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ6anoiLCJleHAiOjE3MDA1NTYyMjEsImlhdCI6MTY5OTk1MTQyMX0.zrPZWDVsa4bRn7bPeqOMxu2ULHbaV__8MegX6j-uGSQ"}
+}
+[root@iZuf6hb114aa40iltf16d9Z ~]# <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>通了🎉</p>
+<h3 id="六、👗部署前端应用"><a href="#六、👗部署前端应用" class="headerlink" title="六、👗部署前端应用"></a>六、👗部署前端应用</h3><h4 id="要求-3"><a href="#要求-3" class="headerlink" title="要求"></a>要求</h4><p>使月nginx1.21.5版本部署sg-blog-vue让用户能正常访问</p>
+<p>细化</p>
+<ol>
+<li>镜像nginx:1.21.5</li>
+<li>开放端口 80</li>
+<li>数据卷方式同步静态资源  -v</li>
+<li>停止后自动重启  –restart</li>
+<li>后台运行  -d</li>
+<li>容器命名为 rbac_vue</li>
+</ol>
+<h4 id="编写命令"><a href="#编写命令" class="headerlink" title="编写命令"></a>编写命令</h4><pre class="line-numbers language-none"><code class="language-none">docker run -d \
+-p 80:80 \
+-v /usr/rbac/rbac_vue/dist:/usr/share/nginx/html \
+--restart always \
+--name rbac_vue \
+nginx:1.21.5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>不用加入网络，但是要将baseURL修改为宿主机的ip</p>
+<p>浏览器输入服务器（宿主机）ip……</p>
 
                 
             </div>
@@ -501,7 +694,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://summerbird-1.github.io/2023/10/30/test2/">http://summerbird-1.github.io/2023/10/30/test2/</a>
+                    <a href="http://summerbird-1.github.io/2023/11/14/Docker%E9%83%A8%E7%BD%B2%E5%AE%9E%E4%BE%8B%E5%AD%A6%E4%B9%A0/">http://summerbird-1.github.io/2023/11/14/Docker%E9%83%A8%E7%BD%B2%E5%AE%9E%E4%BE%8B%E5%AD%A6%E4%B9%A0/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -539,8 +732,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%B5%8B%E8%AF%95/">
-                                    <span class="chip bg-color">测试</span>
+                                <a href="/tags/Docker/">
+                                    <span class="chip bg-color">Docker</span>
                                 </a>
                             
                         </div>
@@ -596,13 +789,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2023/10/30/%E5%9C%A8%E7%9C%8B%E4%BB%80%E4%B9%88/">
+                <a href="/2023/11/14/DockerFile%E9%83%A8%E7%BD%B2%E5%AD%A6%E4%B9%A0/">
                     <div class="card-image">
                         
                         
-                        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/featureimages/11.webp" class="responsive-img" alt="在看什么">
+                        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/featureimages/16.webp" class="responsive-img" alt="DockerFile部署学习">
                         
-                        <span class="card-title">在看什么</span>
+                        <span class="card-title">DockerFile部署学习</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -613,14 +806,14 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-10-30
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-14
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%A8%B1%E4%B9%90/" class="post-category">
-                                    娱乐
+                            <a href="/categories/%E9%83%A8%E7%BD%B2/" class="post-category">
+                                    部署
                                 </a>
                             
                             
@@ -630,8 +823,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/movies/">
-                        <span class="chip bg-color">movies</span>
+                    <a href="/tags/DockerFile/">
+                        <span class="chip bg-color">DockerFile</span>
                     </a>
                     
                 </div>
@@ -645,13 +838,13 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/10/30/hello-world/">
+                <a href="/2023/11/12/RBAC%E7%B3%BB%E7%BB%9F%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%B5%81%E7%A8%8B/">
                     <div class="card-image">
                         
                         
-                        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/featureimages/12.webp" class="responsive-img" alt="Hello World">
+                        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/featureimages/8.webp" class="responsive-img" alt="RBAC系统一键部署服务器流程">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">RBAC系统一键部署服务器流程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -662,15 +855,35 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-12
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            zjz
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Basic/" class="post-category">
+                                    Basic
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/rbac/">
+                        <span class="chip bg-color">rbac</span>
+                    </a>
+                    
+                    <a href="/tags/git/">
+                        <span class="chip bg-color">git</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%83%A8%E7%BD%B2/">
+                        <span class="chip bg-color">部署</span>
+                    </a>
+                    
                 </div>
                 
             </div>
