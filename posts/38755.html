@@ -1,0 +1,1899 @@
+<!DOCTYPE HTML>
+<html lang="zh_CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="分治问题, SummerBird">
+    <meta name="description" content="向往热烈而自由">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>分治问题 | SummerBird</title>
+    <link rel="icon" type="image/png" href="/avatar.webp">
+    <link rel="stylesheet" type="text/css" href="/libs/artitalk/artitalk.min.css">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="SummerBird" type="application/atom+xml">
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+
+    
+        <style>
+    body{
+       background-image: url(https://telegraph-image-17t.pages.dev/file/07572ef64a5cdcc1030fb.png);
+       background-repeat:no-repeat;
+       background-size:cover;
+       background-attachment:fixed;
+    }
+</style>
+
+            
+
+                <body>
+                    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    <div>
+                        
+                            <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/avatar.webp" class="logo-img" alt="LOGO">
+                            
+                                <span class="logo-span">
+                                    SummerBird
+                                </span>
+                    </div>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/artitalk" class="waves-effect waves-light">
+      
+      <i class="fas fa-pen-alt" style="zoom: 0.6;"></i>
+      
+      <span>说说</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友链</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/avatar.webp" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">SummerBird</div>
+        <div class="logo-desc">
+            
+            向往热烈而自由
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/artitalk" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-pen-alt"></i>
+			
+			说说
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友链
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+                        
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.webp')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">分治问题</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+    width: 345px;
+    padding-left: 20px;
+    background-color: rgb(255, 255, 255,0.7);
+    border-radius: 10px;
+    box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1) !important;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%88%86%E6%B2%BB/">
+                                <span class="chip bg-color">分治</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Algorithm/" class="post-category">
+                                Algorithm
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2023-11-12
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
+                    2023-11-15
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    5k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
+                    20 Min
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="分治算法🦀"><a href="#分治算法🦀" class="headerlink" title="分治算法🦀"></a>分治算法🦀</h1><p>分治算法，其本质就是将一个大规模的问题分解为若干个规模较小的相同子问题，分而治之。</p>
+<h3 id="分治算法解题方法"><a href="#分治算法解题方法" class="headerlink" title="分治算法解题方法"></a>分治算法解题方法</h3><h4 id="1-分解"><a href="#1-分解" class="headerlink" title="1.分解"></a>1.分解</h4><p> 将要解决的问题分解为若干个规模较小、相互独立、与原问题形式相同的子问题。</p>
+<h4 id="2-治理"><a href="#2-治理" class="headerlink" title="2.治理"></a>2.治理</h4><p>求解各个子问题。由于各个子问题与原问题形式相同，只是规模较小而已，而当子问题划分得足够小时，就可以用简单的方法解决。</p>
+<h4 id="3-合并"><a href="#3-合并" class="headerlink" title="3.合并"></a>3.合并</h4><p>按原问题的要求，将子问题的解逐层合并构成原问题的解。</p>
+<h4 id="注意🆘"><a href="#注意🆘" class="headerlink" title="注意🆘"></a>注意🆘</h4><p>在整数二分搜索算法中，为了防止在更新搜索区间时产生死循环，需要保证区间的左界（L）或右界（R）在每次迭代时都能够逐渐接近目标值。如果我们不合理地更新这两个界限，有可能会出现无法缩小区间的情况。</p>
+<p>通常情况下，中点（Mid）的计算方式是 <code>(L + R) / 2</code>。当 <code>L</code> 和 <code>R</code> 相邻时（即 <code>L = R - 1</code>），中点的计算可能会导致 <code>L</code> 始终等于 <code>Mid</code>。具体来说：</p>
+<ul>
+<li>当 <code>L = R - 1</code> 时，计算 <code>Mid = (L + R) / 2</code> 将得到 <code>Mid = (L + L + 1) / 2</code>（因为此时 <code>R = L + 1</code>）。</li>
+<li>根据整数除法向下取整的规则，我们得到 <code>Mid = 2L + 1 / 2</code>，进一步简化后 <code>Mid = L</code>（整数部分）。</li>
+</ul>
+<p>这种情况下，如果我们将左界更新为 <code>L = Mid</code>，那么左界实际上并没有变化，因此搜索区间并没有缩小，可能会导致死循环。</p>
+<p>为了解决这个问题，当我们需要更新左界时，中点的计算应该稍作修改，以确保左界能够向右移动。这可以通过在计算中点时加1来实现，即使用 <code>Mid = (L + R + 1) / 2</code>。这样即使在 <code>L</code> 和 <code>R</code> 相邻的情况下，中点也会等于 <code>R</code>，从而避免死循环。具体的数学推导如下：</p>
+<ul>
+<li>令 <code>Mid = (L + R + 1) / 2</code>。</li>
+<li>当 <code>L = R - 1</code> 时，<code>Mid = (L + L + 1 + 1) / 2 = (2L + 2) / 2 = L + 1</code>。</li>
+<li>因此，<code>Mid = R</code>，而不是 <code>L</code>。</li>
+</ul>
+<p>当我们需要更新 <code>L</code> 为 <code>Mid</code> 时，使用修改后的中点计算方法可以保证区间大小在每一步都会减少，从而保证算法能够收敛。</p>
+<h3 id="🐡🐡经典题目"><a href="#🐡🐡经典题目" class="headerlink" title="🐡🐡经典题目"></a>🐡🐡经典题目</h3><h4 id="一、👥归并排序"><a href="#一、👥归并排序" class="headerlink" title="一、👥归并排序"></a>一、👥归并排序</h4><h5 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h5><p>步骤一：首先将待排序的元素分成大小大致相同的两个序列。</p>
+<p>步骤二：再把子序列分成大小大致相同的两个子序列。</p>
+<p>步骤三：如此下去，直到分解成一个元素停止，这时含有一个元素的子序列都是有序的。</p>
+<p>步骤四：进行合并操作，将两个有序的子序列合并为一个有序序列，如此下去，直到所有的元素都合并为一个有序序列。</p>
+<img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/posts/undefined/fd1e5ee39edc41ff812daad1fbe18e2d.png" class="" title="img">
+
+<h5 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h5><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+int a[100010];
+
+void merge(int* a,int low,int mid,int high){
+    int* b = new int[high-low+1];
+    int i = low,j = mid+1,k = 0;
+    while(i &lt;= mid &amp;&amp; j &lt;= high){
+        if(a[i] &lt;= a[j])
+        b[k++] = a[i++];
+        else
+        b[k++] = a[j++]; 
+    }
+    while(i &lt;= mid)
+    b[k++] = a[i++];
+    while (j &lt;= high)
+    {
+        b[k++] = a[j++];
+    }
+    k = 0;    //注意
+    for(int i = low;i &lt;= high;i++)
+    a[i] = b[k++];
+    delete[] b;
+}
+void mergeSort(int* a,int low,int high){
+    if(low &lt; high){
+        int mid = (low + high) / 2;
+        mergeSort(a,low,mid);
+        mergeSort(a,mid+1,high);
+        merge(a,low,mid,high);
+    }
+}
+int main(){
+    int n;
+    cin &gt;&gt; n;
+    for(int i = 0;i &lt; n;i++)
+    cin &gt;&gt; a[i];
+    mergeSort(a,0,n-1);
+    for(int i = 0;i &lt; n;i++)
+    cout &lt;&lt; a[i] &lt;&lt; " ";
+
+    return 0;
+
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>转载自<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45031801/article/details/127034720">【精选】归并排序算法C++实现（超详细解析！！！！）_c++归并排序-CSDN博客</a></p>
+<h4 id="二、⬆️⬇️逆序对问题"><a href="#二、⬆️⬇️逆序对问题" class="headerlink" title="二、⬆️⬇️逆序对问题"></a>二、⬆️⬇️逆序对问题</h4><p><strong>描述：</strong></p>
+<p>给定一个长度为 <code>n</code> 的整数数列，你的目标是计算出数列中逆序对的总数。</p>
+<p>逆序对定义为数列中一对元素 <code>(a[i], a[j])</code>，其中 <code>i &lt; j</code> 且 <code>a[i] &gt; a[j]</code>。</p>
+<p><strong>输入格式：</strong></p>
+<p>第一行包含一个整数 <code>n</code>，表示数列中的元素个数。</p>
+<p>第二行包含 <code>n</code> 个整数，表示数列的元素，元素之间由一个空格分隔。</p>
+<p><strong>输出格式：</strong></p>
+<p>输出一个整数，表示数列中逆序对的总数。</p>
+<p><strong>数据范围：</strong></p>
+<p>1≤n≤100,000</p>
+<p>数列中的每个元素都是 1≤元素值≤1091≤元素值≤109 的整数。</p>
+<p><strong>样例输入：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">5
+9 7 8 3 2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>样例输出：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">7<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>说明：</strong></p>
+<p>请不要使用简单的双重循环来直接计算逆序对的数量，因为这种方法在最坏的情况下的时间复杂度为 O(n^2)，可能无法在合理的时间内处理大数据量。推荐使用分治策略，如通过修改归并排序算法来计算逆序对，以实现更高效的解法。</p>
+<h5 id="思路："><a href="#思路：" class="headerlink" title="思路："></a><strong>思路：</strong></h5><p>使用分治法求解逆序对问题时，考虑逆序对出现的三种不同情况是很重要的。这三种情况指的是两个元素 A[i]和 A[j]形成逆序对 i&lt;j时，这两个元素可以位于：</p>
+<ol>
+<li><strong>左半部分</strong>：这意味着逆序对都位于分治法中左边的部分。在这种情况下，左半部分的递归调用将会计算出这些逆序对。</li>
+<li><strong>右半部分</strong>：这意味着逆序对都位于分治法中右边的部分。同样，右半部分的递归调用将会找到这些逆序对。</li>
+<li><strong>跨越中点</strong>：这是最关键的情况，逆序对的一个元素在左半部分，而另一个元素在右半部分。这些逆序对不能单独在左半部分或右半部分的递归调用中找到，因为它们跨越了两部分。它们必须在合并这两个有序子数组的过程中被计算出来。</li>
+</ol>
+<p>在归并排序的合并阶段，对于最后一种情况，即跨越中点的逆序对，我们可以这样计算：当我们从左半部分取出元素 L[i] 并且这个元素大于从右半部分取出的元素 R[j] 时，不仅 L[i]和 R[j] 形成了逆序对，L[i]与 R 中 j 之后的所有元素也都将形成逆序对，因为右半部分已经是有序的。因此，我们可以直接添加逆序对的数量为 mid−i+1（如果 mid 是左半部分的最后一个元素的索引）。</p>
+<p>这种分治的方法允许我们在 O(nlogn)时间内计算出整个数组的逆序对数量，这是非常高效的，尤其是对于大数据集来说。</p>
+<h5 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h5><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+int a[100010];
+int b[100010];
+long long merge_sort(int l,int r){
+    if(l &gt;= r) return 0;
+    int mid = (l+r) &gt;&gt; 1;
+    
+    long long ans = 0;
+
+    ans = merge_sort(l,mid) + merge_sort(mid+1,r);   //递归计算左右两边逆序对
+
+    //合并时计算跨越中点的逆序对数
+    int i  = l,j = mid +1,k = 0;
+    while(i &lt;= mid &amp;&amp; j &lt;= r){
+        if(a[i] &lt;= a[j])  b[k++] = a[i++];
+        else{
+            b[k++] = a[j++];
+            ans += mid - i + 1;    //理解a[i]与a[j]成逆序，a[i]~a[mid]都与a[j]成逆序
+        }
+    }
+    while(i &lt;= mid) b[k++] = a[i++];
+    while(j &lt;= r)  b[k++] = a[j++];
+    for(int i = l,k = 0;i &lt;= r;k++,i++) a[i] = b[k];
+    return ans;
+}
+
+int main(){
+     int n;
+     cin &gt;&gt; n;
+     for(int i = 0;i &lt; n;i++){
+        cin &gt;&gt; a[i];
+     }
+     long long res = merge_sort(0,n-1);
+     cout &lt;&lt; res;
+
+     return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="三、🙉快速选择"><a href="#三、🙉快速选择" class="headerlink" title="三、🙉快速选择"></a>三、🙉快速选择</h4><p><strong>描述：</strong></p>
+<p>给定一个长度为 <code>n</code> 的整数数列和一个整数 <code>k</code>，你需要编写一个程序，使用快速选择算法找出并返回数列中第 <code>k</code> 小的元素。</p>
+<p><strong>输入格式：</strong></p>
+<p>第一行包含两个整数 <code>n</code> 和 <code>k</code>。</p>
+<p>第二行包含 <code>n</code> 个整数，这些整数构成你需要处理的数列，每两个整数之间用空格分隔。</p>
+<p><strong>输出格式：</strong></p>
+<p>输出仅包含一个整数，即数列中第 <code>k</code> 小的元素。</p>
+<p><strong>数据范围：</strong></p>
+<p>1≤n≤100,000</p>
+<p>1≤k≤n</p>
+<p>数列中的每个元素都是一个 1≤元素值≤10^9</p>
+<p><strong>样例输入：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">7 4
+10 7 8 9 1 5 2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>样例输出：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">7<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>说明：</strong></p>
+<p>在编写程序时，应当使用快速选择算法的原理来实现找到第 <code>k</code> 小的元素。快速选择是快速排序算法的一个变种，它采用了类似于快速排序的分治策略来寻找未排序数列中第 <code>k</code> 小的元素。快速选择算法的平均时间复杂度为 O(n)，但最坏情况下会退化到 O(n2)。请尽量实现一个效率较高的快速选择算法，以处理大数据量的输入。</p>
+<h5 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h5><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;iostream&gt;
+using namespace std;
+int a[100010];
+int quick_sel(int l,int h,int k){
+    if(l == h) return a[l];    //保证k在区间(l,r)内，当区间中只有一个数时，就是排第k的数
+    int x = a[l];
+    int i = l-1;
+    int j = h+1;
+    while(i &lt; j){
+        while(a[++i] &lt; x);
+        while(a[--j] &gt; x);
+        if(i &lt; j) swap(a[i],a[j]);
+    }
+    int m = j - l + 1;//求出区间的长度，之所以用j，是因为这个是由下面如何递归决定的。递归的是solve(l,j,k)，说明区间长度就是j-l+1。如果换成i，就必须用递归区间为i的方式
+    if(k &lt;= m)
+        return quick_sel(l,j,k);
+    else
+        return quick_sel(j+1,h,k-m);
+}
+
+int main(){
+    int n,k;
+    cin &gt;&gt; n &gt;&gt; k;
+    for(int i = 0;i &lt; n;i++)
+        cin &gt;&gt; a[i];
+    
+    cout &lt;&lt; quick_sel(0,n-1,k);
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="四、👇🏻最大子数组和"><a href="#四、👇🏻最大子数组和" class="headerlink" title="四、👇🏻最大子数组和"></a>四、👇🏻<strong>最大子数组和</strong></h4><p><strong>描述：</strong></p>
+<p>给定一个整数数组 <code>nums</code>，找出其中的连续子数组（至少包含一个元素）使得该子数组的和最大，并返回这个最大的和。</p>
+<p><strong>输入：</strong></p>
+<ul>
+<li>第一行数组长度<code>n</code></li>
+<li>一个整数数组 <code>nums</code>，其中 <code>1 &lt;= nums.length &lt;= 1000</code> 且 <code>-10^4 &lt;= nums[i] &lt;= 10^4</code>。</li>
+</ul>
+<p><strong>输出：</strong></p>
+<ul>
+<li>返回该数组中具有最大和的连续子数组的和。</li>
+</ul>
+<h5 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h5><p>分治法求解最大子序和算法，递归地将数组分为两个部分，并分别求解这两部分的最大子序和，最后它会找出横跨两个部分的最大子序和，从而计算出整个区间的最大子序和。</p>
+<p>以下是算法的主要步骤：</p>
+<ol>
+<li><strong>基本情况处理</strong>：如果当前区间只有一个元素，即<code>l == r</code>，则最大子序和就是该元素本身，因为没有其他选择。</li>
+<li><strong>分解问题</strong>：<ul>
+<li>找到中间点<code>m</code>，将当前区间分为<code>[l, m]</code>和<code>[m+1, r]</code>两部分。</li>
+</ul>
+</li>
+<li><strong>递归解决子问题</strong>：<ul>
+<li>递归计算左半部分的最大子序和<code>L</code>；</li>
+<li>递归计算右半部分的最大子序和<code>R</code>。</li>
+</ul>
+</li>
+<li><strong>合并解决方案</strong>：<ul>
+<li>通过计算横跨中间的最大子序和<code>LR</code>，这涉及从中间向左扫描求左半边最大值，以及从中间向右扫描求右半边最大值，最后相加。</li>
+<li>三者中的最大值即为当前区间的最大子序和，可以通过<code>max(max(L,R),LR)</code>来计算。</li>
+</ul>
+</li>
+<li><strong>返回结果</strong>：<ul>
+<li>最后，<code>max_sum(1, n)</code>返回的就是整个数组的最大子序和。</li>
+</ul>
+</li>
+</ol>
+<h5 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h5><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;iostream&gt;
+using namespace std;
+int a[1010];
+int abc(int l,int m,int r){
+    int ansL = a[m],ansR = a[m+1];
+    int sumL = 0,sumR = 0;
+    for(int i = m;i &gt;= l;i--){
+        sumL += a[i];
+        ansL = max(sum,ansL);
+    }
+    for(int i = m+1;i &lt;= r;i++){
+        sumR += a[i];
+        ansR = max(sumR,ansR);
+    }
+    return ansR + ansL;
+}
+int max_sum(int l,int r){
+    if(l == r) return a[l];  //结束条件
+    int m = l + r &gt;&gt; 1;
+    int L = max_sum(l,m);   //最大连续子数组在左边
+    int R = max_sum(m+1,r);  //最大连续子数组在右边
+    //横跨左右子数组
+    int LR = abc(l,m,r);
+    return max(max(L,R),LR); 
+}
+int main(){
+    int n;
+    cin &gt;&gt; n;
+    for(int i = 0;i &lt; n;i++){
+        cin &gt;&gt; a[i];
+    }
+    cout &lt;&lt; max_sum(0,n-1);
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="👣二分查找"><a href="#👣二分查找" class="headerlink" title="👣二分查找"></a>👣二分查找</h2><h3 id="整数二分搜索步骤"><a href="#整数二分搜索步骤" class="headerlink" title="整数二分搜索步骤"></a><strong>整数二分搜索步骤</strong></h3><p>整数二分搜索的四个基本步骤，具体内容如下：</p>
+<ol>
+<li><strong>区间确定</strong>：确定一个区间 [L, R]（注意此时是<strong>左闭右闭</strong>区间）。使得答案一定在这区间中。</li>
+<li><strong>条件判断</strong>：确定一个判断条件。使得判断条件关于答案具有二段性，并且答案一定是该二段性的分界点。。</li>
+<li><strong>中点计算</strong>：令 Mid = (L + R) / 2。通过判断条件在Mid是否成立，缩小区间；</li>
+<li><strong>区间缩小</strong>：根据判断条件，更新L 或 R（<code>R=Mid</code> 或 <code>L=Mid</code>），缩小区间（注意也必须是<strong>左闭右闭</strong>区间）。</li>
+</ol>
+<h3 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h3><h4 id="一、🪆有序数组中查找数"><a href="#一、🪆有序数组中查找数" class="headerlink" title="一、🪆有序数组中查找数"></a>一、🪆有序数组中查找数</h4><p>给定一个严格单调递增的序列，这个序列经过一次旋转后，可能在某个枢轴点上发生了旋转，导致原有序列被分为两部分，前面部分的所有元素都大于后面部分的所有元素，如下图所示：</p>
+<pre class="line-numbers language-none"><code class="language-none">原始序列：1 -&gt; 2 -&gt; 3 -&gt; 4 -&gt; 5 -&gt; 6 -&gt; 7
+旋转后的序列：4 -&gt; 5 -&gt; 6 -&gt; 7 -&gt; 1 -&gt; 2 -&gt; 3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>旋转后的序列依旧保持了分段的单调递增特性。请编写一个算法，找出并返回旋转后序列中的最小元素。</p>
+<p>假设序列中不存在重复元素。</p>
+<p><strong>输入</strong>：</p>
+<ul>
+<li>第一行 n, (0 &lt; n &lt; 10000000)</li>
+<li>第二行，n个整数，一个整数数组，代表旋转后的序列。</li>
+</ul>
+<p><strong>输出</strong>：序列中的最小元素。</p>
+<p><strong>示例</strong>：</p>
+<p><strong>输入:</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">7
+4 5 6 7 0 1 2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>输出:</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h5 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h5><p>这个问题可以通过二分查找算法高效地解决。基本思想是，通过比较中间元素和序列最右边的元素来决定最小值是在左边还是右边的分段中。</p>
+<ul>
+<li>如果中间元素大于最右边的元素，则最小值一定在中间元素的右边。</li>
+<li>如果中间元素小于最右边的元素，则最小值一定在中间元素的左边（包括它自己）。</li>
+</ul>
+<p>通过不断地缩小搜索范围来查找最小元素。</p>
+<h5 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h5><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;iostream&gt;
+using namespace std;
+int a[10000010];
+int main(){
+    int n;
+    cin &gt;&gt; n;
+    for(int i = 0;i &lt; n;i++){
+        scanf("%d",&amp;a[i]);             //这里用scanf,因为效率高
+    }
+    int l = 0,r = n-1;
+    while(l &lt; r){
+        int mid =l+r &gt;&gt; 1;
+        if(a[mid] &gt; a[r])
+            l = mid + 1;    
+        else
+            r = mid;     //a[mid]可能是答案
+    }
+    cout &lt;&lt; a[r] &lt;&lt; endl;
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="二、🤿有序数组中查找数"><a href="#二、🤿有序数组中查找数" class="headerlink" title="二、🤿有序数组中查找数"></a>二、🤿<strong>有序数组中查找数</strong></h4><p>实现一个算法，在一个升序排列的整数数组中找到一个给定整数 <code>k</code> 的起始位置和终止位置。如果这个整数在数组中出现多次，起始位置指的是 <code>k</code> 首次出现的索引(索引从0开始计算)，终止位置是 <code>k</code> 最后一次出现的索引。如果 <code>k</code> 在数组中没有出现，则需要返回一对 <code>-1</code>。</p>
+<p><strong>输入格式：</strong></p>
+<ul>
+<li>第一行包含两个整数 <code>n</code> 和 <code>q</code>，其中 <code>n</code> 是数组的长度，<code>q</code> 是查询的次数。</li>
+<li>第二行包含 <code>n</code> 个升序排列的整数，表示数组的内容。</li>
+<li>接下来的 <code>q</code> 行，每行包含一个整数 <code>k</code>，表示需要查询的数字。</li>
+</ul>
+<p><strong>输出格式：</strong></p>
+<ul>
+<li>对于每个查询，输出一行，包含两个整数，即数字 <code>k</code> 的起始位置和终止位置。</li>
+<li>如果数组中不存在该元素，则输出 <code>-1 -1</code>。</li>
+</ul>
+<p><strong>数据范围：</strong></p>
+<ul>
+<li><code>1 ≤ n ≤ 100000</code></li>
+<li><code>1 ≤ q ≤ 10000</code></li>
+<li>数组中的整数和查询的整数 <code>k</code> 的取值范围都是 <code>1</code> 到 <code>10000</code>。</li>
+</ul>
+<p><strong>输入样例：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">6 3
+1 2 3 3 3 4
+3
+4
+5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>输出样例：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">2 4
+5 5
+-1 -1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h5><p>同样用二分的思路，先找要找数字的左边界，如果能找到左边界，再确定右边界，否则输出<code>-1 -1</code></p>
+<h5 id="代码-5"><a href="#代码-5" class="headerlink" title="代码"></a>代码</h5><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;iostream&gt;
+using namespace std;
+int a[100010];
+int main(){
+    int n,k;
+    cin &gt;&gt; n &gt;&gt; k;
+    for(int i = 0;i &lt; n;i++)
+        cin &gt;&gt; a[i];
+    while(k--){
+        int t;
+        cin &gt;&gt; t;
+        int l = 0,r = n-1;
+        while(l &lt; r){
+            int m = l+r &gt;&gt; 1;
+            if(a[m] &gt;= t)
+                r = m;
+            else
+                l = m + 1;
+        }
+        if(a[r] == k){
+        cout &lt;&lt; r &lt;&lt; " ";
+        //找结束位置
+        r = n-1;           //l已经是左边界，无需定义
+        while(l &lt; r){
+            int m = l+r+1 &gt;&gt; 1;
+            if(a[m] &lt;= t)
+                l = m;
+            else
+                r = m - 1; 
+        }
+        cout &lt;&lt; l &lt;&lt; endl;
+    }else
+        cout &lt;&lt; "-1 -1" &lt;&lt; endl;
+    }
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h4 id="三、👨‍👧‍👦数的三次方根"><a href="#三、👨‍👧‍👦数的三次方根" class="headerlink" title="三、👨‍👧‍👦数的三次方根"></a>三、👨‍👧‍👦<strong>数的三次方根</strong></h4><p><strong>题目描述：</strong></p>
+<p>编写一个程序来找出一个给定的浮点数 n� 的三次方根。</p>
+<p><strong>输入格式：</strong></p>
+<p>输入只有一行，这一行包含一个浮点数 n�。</p>
+<p><strong>输出格式：</strong></p>
+<p>输出也是一行，包含一个浮点数，即 n� 的三次方根。输出结果需保留六位小数。</p>
+<p><strong>数据范围：</strong></p>
+<p>−10000≤n≤10000−10000≤�≤10000</p>
+<p><strong>样例：</strong></p>
+<p>输入：</p>
+<pre class="line-numbers language-none"><code class="language-none">-1000.00<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>输出：</p>
+<pre class="line-numbers language-none"><code class="language-none">-10.000000<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h5 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h5><p>由于是浮点数，不用担心会陷入死循环，但是左右边界只会无限接近，由于题目要求精确到小数点后六位，所有只要左右边界的误差小于<code>1e-6</code>即可输出边界值</p>
+<h5 id="代码-6"><a href="#代码-6" class="headerlink" title="代码"></a>代码</h5><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;iostream&gt;
+#include&lt;iomanip&gt;
+using namespace std;
+
+int main(){
+    double n;
+    cin &gt;&gt; n;
+    double l = -10000,r = 10000;
+    while(r - l &gt; 1e-8){
+        double m = (l + r) / 2.0;
+    	if(m*m*m &lt;= n)
+          l = m;
+        else
+          r = m;
+    }
+
+    //cout&lt;&lt;fixd&lt;&lt;setprecision(6)&lt;&lt; endl;
+    printf("%lf",l);
+	return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="四、🌲🌳🌴砍树"><a href="#四、🌲🌳🌴砍树" class="headerlink" title="四、🌲🌳🌴砍树"></a>四、🌲🌳🌴<strong>砍树</strong></h4><p><strong>题目描述：</strong></p>
+<p>在一片森林里，有 n 棵树，每棵树的高度不尽相同。伐木工人需要从这些树中砍下 k 段等长的木材。为了使得所砍的木材尽可能地长，需要确定砍树时每段木材的最大可能长度。要求输出的木材长度是整数。</p>
+<p><strong>输入说明：</strong></p>
+<ul>
+<li>第一行输入包含两个整数 n 和 k，其中 n 表示树的总数，k 表示需要砍下的木材段数。</li>
+<li>第二行输入包含 n 个整数，每个整数表示一棵树的高度。</li>
+</ul>
+<p><strong>输出说明：</strong></p>
+<ul>
+<li>输出一个整数，表示伐木工人能砍得的最长木材长度。</li>
+</ul>
+<p><strong>输入示例：</strong></p>
+<p><strong>输入：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">3 4
+3 5 4<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>输出：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>数据范围：</strong></p>
+<ul>
+<li>1 &lt;=<code>n</code>&lt;= 10^5</li>
+<li>1 &lt;=<code>k</code>&lt;= 10^8</li>
+<li>1 &lt;=<code>L_i</code>&lt;= 10^8 代表每棵树的长度</li>
+</ul>
+<h5 id="代码-7"><a href="#代码-7" class="headerlink" title="代码"></a>代码</h5><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;iostream&gt;
+using namespace std;
+int a[100010];
+int main(){
+    int n,k;
+    cin &gt;&gt; n &gt;&gt; k;
+    int l = 0,r = 0,ans = 0;             //确定可行解区间
+     for(int i = 0;i &lt; n;i++){
+        cin &gt;&gt; a[i];
+        if(a[i] &gt; r)
+            r = a[i];
+     }
+    while(l &lt; r){
+        int m = l+r+1 &gt;&gt; 1;
+        long long sum = 0;
+        for(int i = 0;i &lt; n;i++){
+            sum += a[i]/m;
+        }
+        if(sum &lt; k)
+            r = m -1;
+        else
+        {
+            l = m;
+            ans = m;
+        }
+    }
+    cout &lt;&lt; ans &lt;&lt; endl;
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="五、🐸数列分段"><a href="#五、🐸数列分段" class="headerlink" title="五、🐸数列分段"></a>五、🐸<strong>数列分段</strong></h4><p><strong>题目描述：</strong></p>
+<p>对于一个长度为 N 的正整数数列，现要将其分成 M 段（M ≤ N），要求每段连续，并使每段的和的最大值尽可能小。</p>
+<p><strong>输入格式：</strong></p>
+<ul>
+<li>第一行包含两个正整数 N 和 M。</li>
+<li>第二行包含 N 个由空格隔开的非负整数，表示数列中的每个元素。</li>
+</ul>
+<p><strong>输出格式：</strong></p>
+<ul>
+<li>输出一个正整数，表示分段后每段和的最大值的最小可能值。</li>
+</ul>
+<p><strong>示例：</strong></p>
+<p><strong>输入：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">5 3
+4 2 4 5 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>输出：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">6<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>数据范围：</strong></p>
+<ul>
+<li>1 &lt; <code>M &lt;= N</code> &lt; 1e5</li>
+<li><code>A_i</code> &lt; 1e9</li>
+</ul>
+<h5 id="代码-8"><a href="#代码-8" class="headerlink" title="代码"></a>代码</h5><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;iostream&gt;
+using namespace std;
+int a[100010];
+int n,m;
+bool check(long long mid){
+    int cnt = 1;
+    int sum = 0;
+    for(int i = 0;i &lt; n;i++){
+        if(a[i] &gt; mid) return false;
+        if(sum + a[i] &gt; mid)
+        {
+            cnt++;
+            sum = a[i];
+        }else{
+            sum+=a[i];
+        }
+    }
+    return cnt &lt;= m;
+}
+int main(){
+    cin &gt;&gt; n &gt;&gt; m;
+    int l = 0,r = 0;
+    for(int i = 0;i &lt; n;i++){        //确定好初始边界
+        cin &gt;&gt; a[i];
+        l = max(a[i],l);
+        r += a[i];
+    }
+    long long ans = 0;
+    while(l &lt;= r){
+        long long mid = (l + r) &gt;&gt; 1;
+        if(check(mid)){
+            r = mid - 1;
+            ans = mid;
+        }else
+        {
+            l = mid + 1;
+        }
+    }
+    cout &lt;&lt; ans &lt;&lt; endl;
+    return 0;
+    
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>期末可能会考二分查找次数，给个序列，问查找次数</p>
+<img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/posts/undefined/image-20231115095239468.png" class="" title="image-20231115095239468">
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">zjz</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://summerbird-1.github.io/posts/38755.html">http://summerbird-1.github.io/posts/38755.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        Reprint policy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    All articles in this blog are used except for special statements
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    reprint polocy. If reproduced, please indicate source
+                    <a href="/about" target="_blank">zjz</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E5%88%86%E6%B2%BB/">
+                                    <span class="chip bg-color">分治</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/reward/wechatpay.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+        <script src="https://utteranc.es/client.js"
+        repo="summerbird-1/utterancs"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+                
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/posts/37262.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/featureimages/9.webp" class="responsive-img" alt="RBAC登录接口简单实现">
+                        
+                        <span class="card-title">RBAC登录接口简单实现</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-12
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/SpringBoot/" class="post-category">
+                                    SpringBoot
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/rbac/">
+                        <span class="chip bg-color">rbac</span>
+                    </a>
+                    
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/46660.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/featureimages/1.webp" class="responsive-img" alt="自然辩证法与马克思主义思想中的知识建构">
+                        
+                        <span class="card-title">自然辩证法与马克思主义思想中的知识建构</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-11
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/HomeWork/" class="post-category">
+                                    HomeWork
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%87%AA%E7%84%B6%E8%BE%A9%E8%AF%81%E6%B3%95/">
+                        <span class="chip bg-color">自然辩证法</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + 'From: SummerBird<br />'
+            + 'Author: zjz<br />'
+            + 'Link: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+    <div id="floating-toc-btn" class="hide-on-med-and-down">
+        <a class="btn-floating btn-large bg-color">
+            <i class="fas fa-list-ul"></i>
+        </a>
+    </div>
+    
+
+        <script src="/libs/tocbot/tocbot.min.js"></script>
+        <script>
+            $(function () {
+                tocbot.init({
+                    tocSelector: '#toc-content',
+                    contentSelector: '#articleContent',
+                    headingsOffset: -($(window).height() * 0.4 - 45),
+                    collapseDepth: Number('0'),
+                    headingSelector: 'h2, h3, h4'
+                });
+
+                // modify the toc link href to support Chinese.
+                let i = 0;
+                let tocHeading = 'toc-heading-';
+                $('#toc-content a').each(function () {
+                    $(this).attr('href', '#' + tocHeading + (++i));
+                });
+
+                // modify the heading title id to support Chinese.
+                i = 0;
+                $('#articleContent').children('h2, h3, h4').each(function () {
+                    $(this).attr('id', tocHeading + (++i));
+                });
+
+                // Set scroll toc fixed.
+                let tocHeight = parseInt($(window).height() * 0.4 - 64);
+                let $tocWidget = $('.toc-widget');
+                $(window).scroll(function () {
+                    let scroll = $(window).scrollTop();
+                    /* add post toc fixed. */
+                    if (scroll > tocHeight) {
+                        $tocWidget.addClass('toc-fixed');
+                    } else {
+                        $tocWidget.removeClass('toc-fixed');
+                    }
+                });
+
+        
+                    /* 修复文章卡片 div 的宽度. */
+                    let fixPostCardWidth = function (srcId, targetId) {
+                        let srcDiv = $('#' + srcId);
+                        if (srcDiv.length === 0) {
+                            return;
+                        }
+
+                        let w = srcDiv.width();
+                        if (w >= 450) {
+                            w = w + 21;
+                        } else if (w >= 350 && w < 450) {
+                            w = w + 18;
+                        } else if (w >= 300 && w < 350) {
+                            w = w + 16;
+                        } else {
+                            w = w + 14;
+                        }
+                        $('#' + targetId).width(w);
+                    };
+
+                    // 切换TOC目录展开收缩的相关操作.
+                    const expandedClass = 'expanded';
+                    let $tocAside = $('#toc-aside');
+                    let $mainContent = $('#main-content');
+                    $('#floating-toc-btn .btn-floating').click(function () {
+                        if ($tocAside.hasClass(expandedClass)) {
+                            $tocAside.removeClass(expandedClass).hide();
+                            $mainContent.removeClass('l9');
+                        } else {
+                            $tocAside.addClass(expandedClass).show();
+                            $mainContent.addClass('l9');
+                        }
+                        fixPostCardWidth('artDetail', 'prenext-posts');
+                    });
+        
+    });
+        </script>
+    
+
+</main>
+
+
+
+
+                            <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="3140214705"
+                   fixed='true'
+                   autoplay='true'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2023</span>
+            
+            <span id="year">2023</span>
+            <a href="/about" target="_blank">zjz</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">49.4k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2023";
+                    var startMonth = "10";
+                    var startDate = "30";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/summerbird-1" class="tooltipped" target="https://github.com/summerbird-1" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:2718075060@qq.com" class="tooltipped" target="2718075060@qq.com" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2718075060" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2718075060" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+                                <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+                                    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+                                        <!-- 切换夜间/白天模式按钮 -->
+                                        <a onclick="switchNightMode()" id="sma"> <i class="fa fa-moon-o" id="nightMode"
+                                                aria-hidden="true"></i> </a>
+                                        <script
+                                            src="/libs/materialize/materialize.min.js"></script>
+                                        <script
+                                            src="/libs/masonry/masonry.pkgd.min.js"></script>
+                                        <script
+                                            src="/libs/aos/aos.js"></script>
+                                        <script
+                                            src="/libs/scrollprogress/scrollProgress.min.js"></script>
+                                        <script
+                                            src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+                                        <script
+                                            src="/js/matery.js"></script>
+
+                                        <!-- Baidu Analytics -->
+
+                                            <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+                                                
+                                                    <script
+                                                        src="/libs/others/clicklove.js"
+                                                        async="async"></script>
+                                                    
+                                                        
+                                                            <script async
+                                                                src="/libs/others/busuanzi.pure.mini.js"></script>
+                                                            
+
+                                                                
+
+                                                                        
+
+                                                                                
+                                                                                        
+
+                                                                                                
+
+                                                                                                            
+
+                                                                                                                    
+                                                                                                                        <script
+                                                                                                                            src="/libs/instantpage/instantpage.js"
+                                                                                                                            type="module"></script>
+                                                                                                                        
+
+                
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":190,"hOffset":50,"vOffset":-5},"mobile":{"show":false,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
