@@ -8,7 +8,7 @@
       <link href="/2023/11/16/DockerCompose%E9%83%A8%E7%BD%B2%E5%AD%A6%E4%B9%A0/"/>
       <url>/2023/11/16/DockerCompose%E9%83%A8%E7%BD%B2%E5%AD%A6%E4%B9%A0/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h3 id="一、为什么用DockerCompose？"><a href="#一、为什么用DockerCompose？" class="headerlink" title="一、为什么用DockerCompose？"></a>一、为什么用DockerCompose？</h3><p>之前学习docker到DockerFile发现部署变得简洁了，但是要部署多个容器时还是要一个一个运行，麻烦</p><p>DockerCompose用来定义一个或多个容器运行和应用</p><p>当前版本docker带有dockercompose不用单独安装</p><p>输入<code>docker-compose version</code>有版本输出说明已安装</p><p>二、入门</p><p>编写dockercompose文件</p><p>docker-compose.yml</p><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">services:  rbac:    image: rbac:01<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>rbac:01是你当前拥有的 镜像名:tag</p><p>运行命令</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker—compose up -d<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>看到容器开始运行了，rbac:01是后端应用</p><img src="/2023/11/16/DockerCompose%E9%83%A8%E7%BD%B2%E5%AD%A6%E4%B9%A0/image-20231116212122431.png" class="" title="image-20231116212122431"><p>docker ps 查看容器运行情况</p>]]></content>
       
       
       <categories>
