@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="test2, SummerBird">
+    <meta name="keywords" content="Springboot中使用Redis, SummerBird">
     <meta name="description" content="向往热烈而自由">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>test2 | SummerBird</title>
+    <title>Springboot中使用Redis | SummerBird</title>
     <link rel="icon" type="image/png" href="/avatar.webp">
     <link rel="stylesheet" type="text/css" href="/libs/artitalk/artitalk.min.css">
 
@@ -287,12 +287,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.webp')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.webp')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">test2</h1>
+                    <h1 class="description center-align post-title">Springboot中使用Redis</h1>
                 </div>
             </div>
         </div>
@@ -411,14 +411,23 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%B5%8B%E8%AF%95/">
-                                <span class="chip bg-color">测试</span>
+                            <a href="/tags/Redis/">
+                                <span class="chip bg-color">Redis</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Springboot/" class="post-category">
+                                Springboot
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -427,7 +436,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2023-10-30
+                    2023-11-15
                 </div>
                 
 
@@ -441,14 +450,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    6
+                    461
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    1 Min
+                    2 Min
                 </div>
                 
 
@@ -471,9 +480,90 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>121211122</p>
-<p>1121212</p>
-<p>上厕所VSvv</p>
+                <p>用缓存，主要有两个用途：<strong>高性能、高并发</strong>。</p>
+<h2 id="Redis简介🍎🍎"><a href="#Redis简介🍎🍎" class="headerlink" title="Redis简介🍎🍎"></a><strong>Redis简介</strong>🍎🍎</h2><ul>
+<li><strong>高性能</strong>：Redis将大部分数据存储在内存中，提供极高的读写速度。</li>
+<li><strong>持久化</strong>：支持RDB和AOF两种持久化方式，确保数据安全。</li>
+<li><strong>数据结构丰富</strong>：支持多种数据结构，适应不同的应用场景。</li>
+</ul>
+<p>如何在Springboot中使用Redis呢？</p>
+<h3 id="前提：电脑安装了Redis服务，并打开。"><a href="#前提：电脑安装了Redis服务，并打开。" class="headerlink" title="前提：电脑安装了Redis服务，并打开。"></a>前提：电脑安装了Redis服务，并打开。</h3><h2 id="一、添加依赖🐸"><a href="#一、添加依赖🐸" class="headerlink" title="一、添加依赖🐸"></a>一、添加依赖🐸</h2><p>在项目依赖文件<code>pom.xml</code>中添加依赖项</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependencies</span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment">&lt;!-- Spring Data Redis依赖 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-boot-starter-data-redis<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment">&lt;!-- Jedis客户端依赖 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>redis.clients<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>jedis<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencies</span><span class="token punctuation">&gt;</span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="二、配置Redis🙉"><a href="#二、配置Redis🙉" class="headerlink" title="二、配置Redis🙉"></a>二、配置Redis🙉</h2><p>在<code>application.yml</code>文件中配置Redis服务器的连接信息。</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">spring:
+  redis:
+    host: localhost  # Redis服务器地址
+    port: 6379       # Redis服务器端口
+    password:        # Redis服务器密码，如果有的话
+    jedis:
+      pool:
+        max-active: 10    # 连接池最大连接数
+        max-idle: 5       # 连接池中的最大空闲连接
+        min-idle: 1       # 连接池中的最小空闲连接
+        max-wait: 10000ms # 连接池最大阻塞等待时间<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="三、使用RedisTemplate🌳"><a href="#三、使用RedisTemplate🌳" class="headerlink" title="三、使用RedisTemplate🌳"></a>三、使用RedisTemplate🌳</h2><p>首先自定义RedisConfig类</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@Configuration
+public class RedisConfig {
+
+    @Bean
+    public RedisTemplate&lt;String, Object&gt; redisTemplate(RedisConnectionFactory redisConnectionFactory) {
+        RedisTemplate&lt;String, Object&gt; template = new RedisTemplate&lt;&gt;();
+        template.setConnectionFactory(redisConnectionFactory);
+
+        // 使用默认的序列化器
+        template.setKeySerializer(new StringRedisSerializer());
+        template.setValueSerializer(new StringRedisSerializer());
+
+        return template;
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>后面可在服务中注入模板操作redis</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@Autowired
+private RedisTemplate&lt;String, Object&gt; redisTemplate;
+
+@Autowired
+private StringRedisTemplate stringRedisTemplate;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="四、操作Redis🐊"><a href="#四、操作Redis🐊" class="headerlink" title="四、操作Redis🐊"></a>四、操作Redis🐊</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java">// 设置键值对
+redisTemplate.opsForValue().set("key", "value");
+
+// 获取键对应的值
+String value = (String) redisTemplate.opsForValue().get("key");
+
+// 删除键
+redisTemplate.delete("key");
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="五、测试🤿"><a href="#五、测试🤿" class="headerlink" title="五、测试🤿"></a>五、测试🤿</h2><p>编写单元测试验证Redis是否正确</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@SpringBootTest
+public class RedisTest {
+
+    @Autowired
+    private RedisTemplate&lt;String, Object&gt; redisTemplate;
+
+    @Test
+    public void testRedis() {
+        redisTemplate.opsForValue().set("testKey", "testValue");
+        assertEquals("testValue", redisTemplate.opsForValue().get("testKey"));
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -500,7 +590,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://summerbird-1.github.io/2023/10/30/test2/">http://summerbird-1.github.io/2023/10/30/test2/</a>
+                    <a href="http://summerbird-1.github.io/2023/11/15/Springboot%E4%B8%AD%E4%BD%BF%E7%94%A8redis/">http://summerbird-1.github.io/2023/11/15/Springboot%E4%B8%AD%E4%BD%BF%E7%94%A8redis/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -538,8 +628,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%B5%8B%E8%AF%95/">
-                                    <span class="chip bg-color">测试</span>
+                                <a href="/tags/Redis/">
+                                    <span class="chip bg-color">Redis</span>
                                 </a>
                             
                         </div>
@@ -717,17 +807,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2023/10/30/%E5%9C%A8%E7%9C%8B%E4%BB%80%E4%B9%88/">
+                <a href="/2023/11/15/Springboot%E4%B8%AD%E4%BD%BF%E7%94%A8redis/">
                     <div class="card-image">
                         
                         
-                        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/featureimages/11.webp" class="responsive-img" alt="在看什么">
+                        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/featureimages/12.webp" class="responsive-img" alt="Springboot中使用Redis">
                         
-                        <span class="card-title">在看什么</span>
+                        <span class="card-title">Springboot中使用Redis</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -737,26 +828,27 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-10-30
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-15
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%A8%B1%E4%B9%90/" class="post-category">
-                                    娱乐
+                            <a href="/categories/Springboot/" class="post-category">
+                                    Springboot
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/movies/">
-                        <span class="chip bg-color">movies</span>
+                    <a href="/tags/Redis/">
+                        <span class="chip bg-color">Redis</span>
                     </a>
                     
                 </div>
@@ -770,13 +862,13 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/10/30/hello-world/">
+                <a href="/2023/11/14/DockerFile%E9%83%A8%E7%BD%B2%E5%AD%A6%E4%B9%A0/">
                     <div class="card-image">
                         
                         
-                        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/featureimages/12.webp" class="responsive-img" alt="Hello World">
+                        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/featureimages/16.webp" class="responsive-img" alt="DockerFile部署学习">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">DockerFile部署学习</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -787,15 +879,27 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-14
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            zjz
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E9%83%A8%E7%BD%B2/" class="post-category">
+                                    部署
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/DockerFile/">
+                        <span class="chip bg-color">DockerFile</span>
+                    </a>
+                    
                 </div>
                 
             </div>

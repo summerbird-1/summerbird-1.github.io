@@ -6,7 +6,7 @@
   <link href="http://summerbird-1.github.io/atom.xml" rel="self"/>
   
   <link href="http://summerbird-1.github.io/"/>
-  <updated>2023-11-15T09:30:52.282Z</updated>
+  <updated>2023-11-15T12:05:40.109Z</updated>
   <id>http://summerbird-1.github.io/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Springboot中使用Redis</title>
+    <link href="http://summerbird-1.github.io/2023/11/15/Springboot%E4%B8%AD%E4%BD%BF%E7%94%A8redis/"/>
+    <id>http://summerbird-1.github.io/2023/11/15/Springboot%E4%B8%AD%E4%BD%BF%E7%94%A8redis/</id>
+    <published>2023-11-15T11:50:57.000Z</published>
+    <updated>2023-11-15T12:05:40.109Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;用缓存，主要有两个用途：&lt;strong&gt;高性能、高并发&lt;/strong&gt;。&lt;/p&gt;
+&lt;h2 id=&quot;Redis简介🍎🍎&quot;&gt;&lt;a href=&quot;#Redis简介🍎🍎&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Springboot" scheme="http://summerbird-1.github.io/categories/Springboot/"/>
+    
+    
+    <category term="Redis" scheme="http://summerbird-1.github.io/tags/Redis/"/>
+    
+  </entry>
+  
+  <entry>
     <title>DockerFile部署学习</title>
     <link href="http://summerbird-1.github.io/2023/11/14/DockerFile%E9%83%A8%E7%BD%B2%E5%AD%A6%E4%B9%A0/"/>
     <id>http://summerbird-1.github.io/2023/11/14/DockerFile%E9%83%A8%E7%BD%B2%E5%AD%A6%E4%B9%A0/</id>
     <published>2023-11-14T12:18:48.000Z</published>
-    <updated>2023-11-15T09:30:52.282Z</updated>
+    <updated>2023-11-15T12:58:21.415Z</updated>
     
     
       
@@ -489,7 +515,7 @@
     <link href="http://summerbird-1.github.io/2023/10/30/test2/"/>
     <id>http://summerbird-1.github.io/2023/10/30/test2/</id>
     <published>2023-10-30T07:36:25.000Z</published>
-    <updated>2023-11-15T10:35:02.330Z</updated>
+    <updated>2023-11-15T12:44:21.034Z</updated>
     
     
       
@@ -499,7 +525,7 @@
     <summary type="html">&lt;p&gt;121211122&lt;/p&gt;
 &lt;p&gt;1121212&lt;/p&gt;
 &lt;p&gt;上厕所VSvv&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/2023/10/30/test2/2718075060&#92;Desk&#92;软微&#92;13341222604877401.jpg&quot;</summary>
+</summary>
         
       
     
@@ -507,27 +533,6 @@
     
     
     <category term="测试" scheme="http://summerbird-1.github.io/tags/%E6%B5%8B%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://summerbird-1.github.io/2023/10/30/hello-world/"/>
-    <id>http://summerbird-1.github.io/2023/10/30/hello-world/</id>
-    <published>2023-10-30T04:41:31.313Z</published>
-    <updated>2023-11-15T06:31:24.673Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
-        
-      
-    
-    
-    
     
   </entry>
   

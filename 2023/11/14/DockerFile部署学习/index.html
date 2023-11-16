@@ -450,14 +450,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    477
+                    570
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    1 Min
+                    2 Min
                 </div>
                 
 
@@ -515,12 +515,12 @@ ENV CONTENT="HelloWorld"
 CMD echo $CONTENT  #或  CMD ["sh","-c","echo $CONTENT"]
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="4、WORKDIR-，RUN"><a href="#4、WORKDIR-，RUN" class="headerlink" title="4、WORKDIR ，RUN"></a>4、WORKDIR ，RUN</h4><p>需求：定义一个CONTENT变量，默认值为hellodocker,在镜像的/app目录下创建一个sg目录，在其中创建一个content.txt文件，文件的内容为CONTENT:变量的值。容器启动时打印content.txt的内容</p>
-<h5 id="WORKDIR"><a href="#WORKDIR" class="headerlink" title="WORKDIR"></a>WORKDIR</h5><p>设置当前工作目录，如果没有会自动创建</p>
+<h4 id="4、WORKDIR"><a href="#4、WORKDIR" class="headerlink" title="4、WORKDIR"></a>4、WORKDIR</h4><p>设置当前工作目录，如果没有会自动创建</p>
 <p>用法</p>
 <pre class="line-numbers language-docker" data-language="docker"><code class="language-docker">WORKDIR 目录
 #例子  WORKDIR /root/app<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
+<h4 id="5、RUN"><a href="#5、RUN" class="headerlink" title="5、RUN"></a>5、RUN</h4><p>构建容器时使用</p>
 <p>需求：定义一个CONTENT变量，默认值为hellodocker,在镜像的/app目录下创建一个sg目录，在其中创建一个content.txt文件，文件的内容为CONTENT:变量的值。容器启动时打印content.txt的内容</p>
 <p>命令编写</p>
 <pre class="line-numbers language-docker" data-language="docker"><code class="language-docker">FROM centos:7
@@ -531,7 +531,22 @@ CMD ["cat","content.txt"]<span aria-hidden="true" class="line-numbers-rows"><spa
 
 
 
-<h5 id="RUN"><a href="#RUN" class="headerlink" title="RUN"></a>RUN</h5>
+<h4 id="6、ADD"><a href="#6、ADD" class="headerlink" title="6、ADD"></a>6、ADD</h4><p>把构建上下文中的文件或者网络文件添加到镜像中</p>
+<p>用法</p>
+<pre class="line-numbers language-docker" data-language="docker"><code class="language-docker">ADD 原路径 目标路径
+#ADD vue.tar.gz .   点代表当前目录<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
+<p>需求:在构建目录下存放一个vue.tar.gz包，构建镜像的时候把这个包添加到镜像的/pp目录下解压，然后把其中的dist目录的内容存放到存放在nginx的html目录下，声明开放80端口nginx,用 1.21.5版本</p>
+<p>命令编写</p>
+<pre class="line-numbers language-docker" data-language="docker"><code class="language-docker">FROM nginx:1.21.5
+WORKDIR /app
+ADD rbac_vue.tar.gz .
+RUN tar -xzvf rbac_vue.tar.gz
+RUN cp -r rbac_vue/dist/*:/usr/share/nginx/html<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
                 
             </div>
             <hr/>
@@ -774,18 +789,17 @@ CMD ["cat","content.txt"]<span aria-hidden="true" class="line-numbers-rows"><spa
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;Current
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2023/11/14/DockerFile%E9%83%A8%E7%BD%B2%E5%AD%A6%E4%B9%A0/">
+                <a href="/2023/11/15/Springboot%E4%B8%AD%E4%BD%BF%E7%94%A8redis/">
                     <div class="card-image">
                         
                         
-                        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/featureimages/16.webp" class="responsive-img" alt="DockerFile部署学习">
+                        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/featureimages/12.webp" class="responsive-img" alt="Springboot中使用Redis">
                         
-                        <span class="card-title">DockerFile部署学习</span>
+                        <span class="card-title">Springboot中使用Redis</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -795,27 +809,26 @@ CMD ["cat","content.txt"]<span aria-hidden="true" class="line-numbers-rows"><spa
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-14
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-15
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E9%83%A8%E7%BD%B2/" class="post-category">
-                                    部署
+                            <a href="/categories/Springboot/" class="post-category">
+                                    Springboot
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/DockerFile/">
-                        <span class="chip bg-color">DockerFile</span>
+                    <a href="/tags/Redis/">
+                        <span class="chip bg-color">Redis</span>
                     </a>
                     
                 </div>
@@ -1099,7 +1112,7 @@ CMD ["cat","content.txt"]<span aria-hidden="true" class="line-numbers-rows"><spa
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">49.6k</span>&nbsp;字
+                class="white-color">50.2k</span>&nbsp;字
             
             
             
@@ -1373,7 +1386,7 @@ $(function () {
                                                                                                                             type="module"></script>
                                                                                                                         
 
-                <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":190,"hOffset":50,"vOffset":-5},"mobile":{"show":false,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script>
+                
         <style>
             [bg-lazy] {
                 background-image: none !important;
@@ -1386,4 +1399,4 @@ $(function () {
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":190,"hOffset":50,"vOffset":-5},"mobile":{"show":false,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
