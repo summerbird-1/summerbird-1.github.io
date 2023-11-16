@@ -6,7 +6,7 @@
   <link href="http://summerbird-1.github.io/atom.xml" rel="self"/>
   
   <link href="http://summerbird-1.github.io/"/>
-  <updated>2023-11-15T12:05:40.109Z</updated>
+  <updated>2023-11-16T13:01:24.550Z</updated>
   <id>http://summerbird-1.github.io/</id>
   
   <author>
@@ -17,11 +17,83 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>DockerCompose部署学习</title>
+    <link href="http://summerbird-1.github.io/2023/11/16/DockerCompose%E9%83%A8%E7%BD%B2%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://summerbird-1.github.io/2023/11/16/DockerCompose%E9%83%A8%E7%BD%B2%E5%AD%A6%E4%B9%A0/</id>
+    <published>2023-11-16T13:00:53.000Z</published>
+    <updated>2023-11-16T13:01:24.550Z</updated>
+    
+    
+    
+    
+    <category term="部署" scheme="http://summerbird-1.github.io/categories/%E9%83%A8%E7%BD%B2/"/>
+    
+    
+    <category term="DockerCompose" scheme="http://summerbird-1.github.io/tags/DockerCompose/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何推送镜像到dockerhub</title>
+    <link href="http://summerbird-1.github.io/2023/11/16/%E5%A6%82%E4%BD%95%E6%8E%A8%E9%80%81%E9%95%9C%E5%83%8F%E5%88%B0dockerhub/"/>
+    <id>http://summerbird-1.github.io/2023/11/16/%E5%A6%82%E4%BD%95%E6%8E%A8%E9%80%81%E9%95%9C%E5%83%8F%E5%88%B0dockerhub/</id>
+    <published>2023-11-16T12:37:58.000Z</published>
+    <updated>2023-11-16T12:59:52.625Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;在公司开发环境中，一般需要把打包好的镜像推送到镜像仓库，然后拉取部署&lt;/p&gt;
+&lt;h2 id=&quot;一、注册dockerhub账号😹&quot;&gt;&lt;a href=&quot;#一、注册dockerhub账号😹&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="部署" scheme="http://summerbird-1.github.io/categories/%E9%83%A8%E7%BD%B2/"/>
+    
+    
+    <category term="docker" scheme="http://summerbird-1.github.io/tags/docker/"/>
+    
+    <category term="dockerhub" scheme="http://summerbird-1.github.io/tags/dockerhub/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>动态规划刷题</title>
+    <link href="http://summerbird-1.github.io/2023/11/16/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%88%B7%E9%A2%98/"/>
+    <id>http://summerbird-1.github.io/2023/11/16/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%88%B7%E9%A2%98/</id>
+    <published>2023-11-16T02:28:14.000Z</published>
+    <updated>2023-11-16T03:05:59.806Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;动态规划🙉🙉&quot;&gt;&lt;a href=&quot;#动态规划🙉🙉&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Algorithm" scheme="http://summerbird-1.github.io/categories/Algorithm/"/>
+    
+    
+    <category term="LeetCode" scheme="http://summerbird-1.github.io/tags/LeetCode/"/>
+    
+    <category term="动态规划" scheme="http://summerbird-1.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Springboot中使用Redis</title>
     <link href="http://summerbird-1.github.io/2023/11/15/Springboot%E4%B8%AD%E4%BD%BF%E7%94%A8redis/"/>
     <id>http://summerbird-1.github.io/2023/11/15/Springboot%E4%B8%AD%E4%BD%BF%E7%94%A8redis/</id>
     <published>2023-11-15T11:50:57.000Z</published>
-    <updated>2023-11-15T12:05:40.109Z</updated>
+    <updated>2023-11-16T01:37:03.735Z</updated>
     
     
       
@@ -47,7 +119,7 @@
     <link href="http://summerbird-1.github.io/2023/11/14/DockerFile%E9%83%A8%E7%BD%B2%E5%AD%A6%E4%B9%A0/"/>
     <id>http://summerbird-1.github.io/2023/11/14/DockerFile%E9%83%A8%E7%BD%B2%E5%AD%A6%E4%B9%A0/</id>
     <published>2023-11-14T12:18:48.000Z</published>
-    <updated>2023-11-15T12:58:21.415Z</updated>
+    <updated>2023-11-16T12:25:24.110Z</updated>
     
     
       
@@ -457,82 +529,6 @@
     
     
     <category term="LeetCode" scheme="http://summerbird-1.github.io/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>用bat批处理文件便捷创建笔记</title>
-    <link href="http://summerbird-1.github.io/2023/10/30/%E7%94%A8bat%E6%89%B9%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6%E4%BE%BF%E6%8D%B7%E5%88%9B%E5%BB%BA%E7%AC%94%E8%AE%B0/"/>
-    <id>http://summerbird-1.github.io/2023/10/30/%E7%94%A8bat%E6%89%B9%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6%E4%BE%BF%E6%8D%B7%E5%88%9B%E5%BB%BA%E7%AC%94%E8%AE%B0/</id>
-    <published>2023-10-30T14:40:02.000Z</published>
-    <updated>2023-11-15T06:31:24.690Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;有更新🐒↓&quot;&gt;&lt;a href=&quot;#有更新🐒↓&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="CStechnology" scheme="http://summerbird-1.github.io/categories/CStechnology/"/>
-    
-    
-    <category term="bat" scheme="http://summerbird-1.github.io/tags/bat/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>在看什么</title>
-    <link href="http://summerbird-1.github.io/2023/10/30/%E5%9C%A8%E7%9C%8B%E4%BB%80%E4%B9%88/"/>
-    <id>http://summerbird-1.github.io/2023/10/30/%E5%9C%A8%E7%9C%8B%E4%BB%80%E4%B9%88/</id>
-    <published>2023-10-30T12:40:56.000Z</published>
-    <updated>2023-11-15T06:31:24.690Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;一、《性教育》-Sex-Education💕🥰😍&quot;&gt;&lt;a href=&quot;#一、《性教育》-Sex-Education💕🥰😍&quot; class=&quot;headerlink&quot; title=&quot;一、《性教育》 Sex</summary>
-        
-      
-    
-    
-    
-    <category term="娱乐" scheme="http://summerbird-1.github.io/categories/%E5%A8%B1%E4%B9%90/"/>
-    
-    
-    <category term="movies" scheme="http://summerbird-1.github.io/tags/movies/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>test2</title>
-    <link href="http://summerbird-1.github.io/2023/10/30/test2/"/>
-    <id>http://summerbird-1.github.io/2023/10/30/test2/</id>
-    <published>2023-10-30T07:36:25.000Z</published>
-    <updated>2023-11-15T12:44:21.034Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;121211122&lt;/p&gt;
-&lt;p&gt;1121212&lt;/p&gt;
-&lt;p&gt;上厕所VSvv&lt;/p&gt;
-</summary>
-        
-      
-    
-    
-    
-    
-    <category term="测试" scheme="http://summerbird-1.github.io/tags/%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   

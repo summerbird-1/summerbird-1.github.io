@@ -443,21 +443,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2023-11-15
+                    2023-11-16
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    570
+                    1.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    2 Min
+                    6 Min
                 </div>
                 
 
@@ -504,7 +504,7 @@ nginx        latest    ad4c705f24d3   2 years ago          133MB<span aria-hidde
 <h5 id="运行容器测试"><a href="#运行容器测试" class="headerlink" title="运行容器测试"></a>运行容器测试</h5><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker run hello:1.0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>控制台输出Helloworld，成功🎉</p>
-<h3 id="三、常见指令"><a href="#三、常见指令" class="headerlink" title="三、常见指令"></a>三、常见指令</h3><h4 id="1、FROM"><a href="#1、FROM" class="headerlink" title="1、FROM"></a>1、FROM</h4><p>定义基础镜像</p>
+<h3 id="三、🪆常见指令"><a href="#三、🪆常见指令" class="headerlink" title="三、🪆常见指令"></a>三、🪆常见指令</h3><h4 id="1、FROM"><a href="#1、FROM" class="headerlink" title="1、FROM"></a>1、FROM</h4><p>定义基础镜像</p>
 <p>用法 ：<code>FROM 镜像名:标签名</code></p>
 <h4 id="2、CMD"><a href="#2、CMD" class="headerlink" title="2、CMD"></a>2、CMD</h4><p>定义容器运行时的默认命令，可被docker run 命令中CMD覆盖</p>
 <p>用法：<code>CMD ["命令","参数1","参数2"]</code></p>
@@ -532,6 +532,7 @@ CMD ["cat","content.txt"]<span aria-hidden="true" class="line-numbers-rows"><spa
 
 
 <h4 id="6、ADD"><a href="#6、ADD" class="headerlink" title="6、ADD"></a>6、ADD</h4><p>把构建上下文中的文件或者网络文件添加到镜像中</p>
+<p><strong>注意:如果上下文文件是压缩包，ADD会将其解压在添加到镜像中，如果是网络文件，就要手动解压</strong></p>
 <p>用法</p>
 <pre class="line-numbers language-docker" data-language="docker"><code class="language-docker">ADD 原路径 目标路径
 #ADD vue.tar.gz .   点代表当前目录<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
@@ -539,13 +540,145 @@ CMD ["cat","content.txt"]<span aria-hidden="true" class="line-numbers-rows"><spa
 
 
 <p>需求:在构建目录下存放一个vue.tar.gz包，构建镜像的时候把这个包添加到镜像的/pp目录下解压，然后把其中的dist目录的内容存放到存放在nginx的html目录下，声明开放80端口nginx,用 1.21.5版本</p>
-<p>命令编写</p>
+<p>命令编写 test</p>
 <pre class="line-numbers language-docker" data-language="docker"><code class="language-docker">FROM nginx:1.21.5
 WORKDIR /app
 ADD rbac_vue.tar.gz .
 RUN tar -xzvf rbac_vue.tar.gz
-RUN cp -r rbac_vue/dist/*:/usr/share/nginx/html<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+RUN cp -r rbac_vue/dist/* /usr/share/nginx/html
+CMD ["nginx","-g","daemon off;"]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<p>执行<code>docker build -t test01:1 -f test .</code> </p>
+<p>报错：<code>tar (child): rbac_vue.tar.gz: Cannot open: No such file or directory</code></p>
+<p>这是由于ADD有解压功能，所以不用第4行命令，删掉❌</p>
+<p>再次构建镜像成功</p>
+<p>运行<code>docker run -d test01:1</code></p>
+<p>进入容器 <code>docker exec -it 容器名</code></p>
+<p>测试<code>curl 127.0.0.1:80</code>看到返回html文件，说明容器正确运行</p>
+<h4 id="7、EXPOSE"><a href="#7、EXPOSE" class="headerlink" title="7、EXPOSE"></a>7、EXPOSE</h4><pre class="line-numbers language-docker" data-language="docker"><code class="language-docker">EXPOSE 端口号<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h4 id="8、COPY"><a href="#8、COPY" class="headerlink" title="8、COPY"></a>8、COPY</h4><p>将构建上下文文件复制到镜像目录中</p>
+<p>注意：COPY不会解压</p>
+<p>用法</p>
+<pre class="line-numbers language-docker" data-language="docker"><code class="language-docker">COPY 原路径 目标路径<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>需求：在构建目录下存放一个rbac_vue.tar.gz包，构建镜像的时候把这个包复制到镜像的/app目录下解压，然后把其中的dist目录的内容存放到存放在nginx的html目录下，声明开放80端口</p>
+<p>命令</p>
+<pre class="line-numbers language-docker" data-language="docker"><code class="language-docker">FROM nginx:1.21.5
+WORKDIR /app
+COPY rbac_vue.tar.gz .
+RUN tar -xzvf rbac_vue.tar.gz
+RUN cp -r rbac_vue/dist/* /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx","-g","daemon off;"]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>docker build </p>
+<p>docker run</p>
+<h4 id="9、ENTRYPOINT"><a href="#9、ENTRYPOINT" class="headerlink" title="9、ENTRYPOINT"></a>9、ENTRYPOINT</h4><p>定义容器运行时的默认命令可以在docker run的时候无法覆盖掉ENTRYPOINT中的命令</p>
+<p>ENTRYPOINT [“命令1”，”参数1”，”参数2”]</p>
+<p>ENTRYPOINT [“echo”,”helloworld”]</p>
+<pre class="line-numbers language-docker" data-language="docker"><code class="language-docker">FROM nginx:1.21.5
+WORKDIR /app
+COPY rbac_vue.tar.gz .
+RUN tar -xzvf rbac_vue.tar.gz
+RUN cp -r rbac_vue/dist/* /usr/share/nginx/html
+EXPOSE 80
+ENTRYPOINT ["nginx","-g","daemon off;"]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="四、🐘部署实例"><a href="#四、🐘部署实例" class="headerlink" title="四、🐘部署实例"></a>四、🐘部署实例</h3><h4 id="1、后端应用优化"><a href="#1、后端应用优化" class="headerlink" title="1、后端应用优化"></a>1、后端应用优化</h4><p>假设mysql以部署好，加入了rbac_net网络</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker run -d \
+-v mysql_data:/var/lib/mysql \
+-p 3306:3306 \
+-e MYSQL_ROOT_PASSWORD=root \
+--name rbac_mysql \
+--restart always \
+mysql:5.7<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker network create rbac_net
+docker network connect rbac_net rbac_mysql<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h5 id="编写DockerFile"><a href="#编写DockerFile" class="headerlink" title="编写DockerFile"></a>编写DockerFile</h5><p>rbac_dockerfile</p>
+<pre class="line-numbers language-docker" data-language="docker"><code class="language-docker">FROM openjdk:8u111
+
+# 指定工作目录
+WORKDIR /app
+
+# 添加jar包到镜像中
+ADD ssadmin-server-2.7.17.jar /app/
+
+# 声明开放端口
+EXPOSE 28080
+
+# 启动命令
+CMD ["java", "-jar", "ssadmin-server-2.7.17.jar", "--spring.datasource.url=jdbc:mysql://rbac_mysql:3306/rbac?characterEncoding=utf-8&amp;serverTimezone=UTC", "--spring.datasource.username=root", "--spring.datasource.password=root"]
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="构建运行"><a href="#构建运行" class="headerlink" title="构建运行"></a>构建运行</h5><p>构建<code>docker build -t rbac:01 -f rbac_dockerfile .</code></p>
+<p>运行容器</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker run \
+-d \
+-p 28080:28080 \
+--network rbac_net \
+--restart always \
+--name rbac_admin \
+rbac:01<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>运行<code>docker ps</code>查看</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">CONTAINER ID   IMAGE       COMMAND      CREATED         STATUS       PORTS       NAMES
+d46848f3325e   rbac:01     "java -jar ' ssadmin…"   3 seconds ago   Up Less than a second   0.0.0.0:28080-&gt;28080/tcp, :::28080-&gt;28080/tcp          rbac_admin
+2d3fa411a2e5   mysql:5.7   "docker-entrypoint.s…"   9 minutes ago   Up 9 minutes            0.0.0.0:3306-&gt;3306/tcp, :::3306-&gt;3306/tcp, 33060/tcp   rbac_mysql<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h5><p>使用curl命令测试，由于我上传的是rbac权限管理系统jar包，测试一个登录接口</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">curl --location --request POST 'http://localhost:28080/user/login' \
+--header 'Content-Type: application/json' \
+--data '{
+     "username":"zjz",
+     "password":"1234"
+}'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>返回，成功🤠</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json">{
+    "code": 200,
+    "msg": "登录成功",
+    "data": {
+        "accessToken": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ6anoiLCJleHAiOjE3MDAxMzkzMjcsImlhdCI6MTcwMDEzNTcyN30.cz8iJCn51WY1cnNqyrc2cn25VchdJuNToKubpNJy2Ew",
+        "refreshToken": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ6anoiLCJleHAiOjE3MDA3NDA1MjgsImlhdCI6MTcwMDEzNTcyOH0.qeqQFjUPJyiivFAC-7mjqRk7UzxR_voCVGN5sY6lfAY"
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>前提，你有提前创建好数据库</strong></p>
+<h4 id="2、前端应用优化"><a href="#2、前端应用优化" class="headerlink" title="2、前端应用优化"></a>2、前端应用优化</h4><h5 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h5><p>将前端vue项目打包为dist文件夹，复制到服务器/usr/rbac/rbac_vue/文件夹下</p>
+<p>编写DockerFile</p>
+<p>/usr/rbac/rbac_vue_dockerfile</p>
+<pre class="line-numbers language-docker" data-language="docker"><code class="language-docker">FROM nginx:1.21.5
+WORKDIR /app
+COPY rbac_vue .
+RUN cp -r rbac_vue/dist/* /usr/share/nginx/html
+EXPOSE 80
+ENTRYPOINT ["nginx","-g","daemon off;"]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>使用该DockerFile构建时报错， No such file or directory</p>
+<p>实际上COPY命令只是将rbac_vue文件夹下的dist文件夹复制到容器的./app文件夹下，故改为</p>
+<pre class="line-numbers language-docker" data-language="docker"><code class="language-docker">FROM nginx:1.21.5
+WORKDIR /app
+COPY rbac_vue .
+RUN cp -r dist/* /usr/share/nginx/html
+EXPOSE 80
+ENTRYPOINT ["nginx","-g","daemon off;"]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>即可，构建<code>docker build -t rbac_vue:01 -f rbac_vue_dockerfile .</code></p>
+<p>成功！</p>
+<p>运行</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker run \
+-d \
+-p 80:80 \
+--restart always \
+--name rbac_vue \
+rbac_vue:01<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>浏览器输入服务器ip即可</p>
 
                 
             </div>
@@ -1112,7 +1245,7 @@ RUN cp -r rbac_vue/dist/*:/usr/share/nginx/html<span aria-hidden="true" class="l
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.2k</span>&nbsp;字
+                class="white-color">52k</span>&nbsp;字
             
             
             
