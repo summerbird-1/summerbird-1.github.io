@@ -640,15 +640,15 @@ public interface TaskMapper {
 
 <p>注意@Mapper注解</p>
 <h5 id="Mapper实现层"><a href="#Mapper实现层" class="headerlink" title="Mapper实现层"></a>Mapper实现层</h5><p>这个需要在idea安装Mybatis插件，自行百度</p>
-<img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/2023/11/17/todo%E5%BA%94%E7%94%A8%E7%BC%96%E5%86%99%E5%88%B0%E9%83%A8%E7%BD%B2/image-20231117205552929.png" class="" title="image-20231117205552929">
+<img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/2023/11/17/todo%E5%BA%94%E7%94%A8%E7%BC%96%E5%86%99%E5%88%B0%E9%83%A8%E7%BD%B2/image-20231117205552929.png" class title="image-20231117205552929">
 
 <p>点击接口名，Alt+Enter选择生成xml文件</p>
-<img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/2023/11/17/todo%E5%BA%94%E7%94%A8%E7%BC%96%E5%86%99%E5%88%B0%E9%83%A8%E7%BD%B2/image-20231117205721047.png" class="" title="image-20231117205721047">
+<img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/2023/11/17/todo%E5%BA%94%E7%94%A8%E7%BC%96%E5%86%99%E5%88%B0%E9%83%A8%E7%BD%B2/image-20231117205721047.png" class title="image-20231117205721047">
 
 <p>mapper自己创建，选择ok</p>
 <p>会在mapper文件夹下生成一个名为TaskMapper.xml文件，这个文件允许我们对数据库进行操作</p>
 <p>回到mapper接口文件，点击方法名，Alt+Enter生成</p>
-<img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/2023/11/17/todo%E5%BA%94%E7%94%A8%E7%BC%96%E5%86%99%E5%88%B0%E9%83%A8%E7%BD%B2/image-20231117205924139.png" class="" title="image-20231117205924139">
+<img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/2023/11/17/todo%E5%BA%94%E7%94%A8%E7%BC%96%E5%86%99%E5%88%B0%E9%83%A8%E7%BD%B2/image-20231117205924139.png" class title="image-20231117205924139">
 
 <p>编写sql语句</p>
 <pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>getAllTasks<span class="token punctuation">"</span></span> <span class="token attr-name">resultType</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com.zjz.domain.task<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
@@ -1199,7 +1199,7 @@ button:hover {
 <p>终端输入：</p>
 <p><code>npm run serve</code></p>
 <p>浏览器输网址即可</p>
-<img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/2023/11/17/todo%E5%BA%94%E7%94%A8%E7%BC%96%E5%86%99%E5%88%B0%E9%83%A8%E7%BD%B2/image-20231117225313296.png" class="" title="image-20231117225313296">
+<img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/2023/11/17/todo%E5%BA%94%E7%94%A8%E7%BC%96%E5%86%99%E5%88%B0%E9%83%A8%E7%BD%B2/image-20231117225313296.png" class title="image-20231117225313296">
 
 <p>后面再看看那个跨域为啥不行🥲</p>
 <h3 id="三、部署"><a href="#三、部署" class="headerlink" title="三、部署"></a>三、部署</h3>
@@ -1723,56 +1723,6 @@ button:hover {
 
                             <footer class="page-footer bg-color">
     
-        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
-<style>
-    .aplayer .aplayer-lrc p {
-        
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 16px !important;
-    }
-
-    .aplayer .aplayer-lrc p.aplayer-lrc-current {
-        
-        font-size: 15px;
-        color: #42b983;
-    }
-
-    
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
-        left: -66px !important;
-    }
-
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
-        left: 0px !important;
-    }
-
-    
-</style>
-<div class="">
-    
-    <div class="row">
-        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
-                   server="netease"
-                   type="playlist"
-                   id="3140214705"
-                   fixed='true'
-                   autoplay='true'
-                   theme='#42b983'
-                   loop='all'
-                   order='random'
-                   preload='auto'
-                   volume='0.7'
-                   list-folded='true'
-        >
-        </meting-js>
-    </div>
-</div>
-
-<script src="/libs/aplayer/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
-
-    
     <div class="container row center-align" style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
@@ -1786,7 +1736,7 @@ button:hover {
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">56.3k</span>&nbsp;字
+                class="white-color">56.4k</span>&nbsp;字
             
             
             
