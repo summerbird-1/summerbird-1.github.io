@@ -30,9 +30,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 6.3.0">
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="SummerBird" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="SummerBird" type="application/atom+xml">
 </head>
 
 
@@ -495,13 +495,13 @@
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker—compose up -d<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>看到容器开始运行了，rbac:01是后端应用</p>
-<img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/2023/11/16/DockerCompose%E9%83%A8%E7%BD%B2%E5%AD%A6%E4%B9%A0/image-20231116212122431.png" class title="image-20231116212122431">
+<img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/2023/11/16/DockerCompose%E9%83%A8%E7%BD%B2%E5%AD%A6%E4%B9%A0/image-20231116212122431.png" class="" title="image-20231116212122431">
 
 <p>docker ps 查看容器运行情况</p>
 <p>停止运行</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker-compose down<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h3 id="三、一些命令项㊙️"><a href="#三、一些命令项㊙️" class="headerlink" title="三、一些命令项㊙️"></a>三、一些命令项㊙️</h3><img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/2023/11/16/DockerCompose%E9%83%A8%E7%BD%B2%E5%AD%A6%E4%B9%A0/image-20231117185544961.png" class title="image-20231117185544961">
+<h3 id="三、一些命令项㊙️"><a href="#三、一些命令项㊙️" class="headerlink" title="三、一些命令项㊙️"></a>三、一些命令项㊙️</h3><img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/2023/11/16/DockerCompose%E9%83%A8%E7%BD%B2%E5%AD%A6%E4%B9%A0/image-20231117185544961.png" class="" title="image-20231117185544961">
 
 <h3 id="四、部署实例🧻🧻"><a href="#四、部署实例🧻🧻" class="headerlink" title="四、部署实例🧻🧻"></a>四、部署实例🧻🧻</h3><p>编写docker-compose.yml</p>
 <pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">services:
@@ -586,14 +586,14 @@ ENTRYPOINT ["nginx","-g","daemon off;"]<span aria-hidden="true" class="line-numb
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker-compose up -d<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>然后就</p>
-<img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/2023/11/16/DockerCompose%E9%83%A8%E7%BD%B2%E5%AD%A6%E4%B9%A0/image-20231117195411208.png" class title="image-20231117195411208">
+<img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/2023/11/16/DockerCompose%E9%83%A8%E7%BD%B2%E5%AD%A6%E4%B9%A0/image-20231117195411208.png" class="" title="image-20231117195411208">
 
 <p><code>docker ps</code> 查看</p>
-<img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/2023/11/16/DockerCompose%E9%83%A8%E7%BD%B2%E5%AD%A6%E4%B9%A0/image-20231117195455773.png" class title="image-20231117195455773">
+<img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/2023/11/16/DockerCompose%E9%83%A8%E7%BD%B2%E5%AD%A6%E4%B9%A0/image-20231117195455773.png" class="" title="image-20231117195455773">
 
 <p>完事！不想用就down一下</p>
 <p><code>docker-compose down</code></p>
-<img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/2023/11/16/DockerCompose%E9%83%A8%E7%BD%B2%E5%AD%A6%E4%B9%A0/04099f6774f94c95bfd233c841b3acc7.gif" class title="img">
+<img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/2023/11/16/DockerCompose%E9%83%A8%E7%BD%B2%E5%AD%A6%E4%B9%A0/04099f6774f94c95bfd233c841b3acc7.gif" class="" title="img">
 
                 
             </div>
