@@ -451,21 +451,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2023-11-17
+                    2023-11-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    2.9k
+                    2.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    14 Min
+                    13 Min
                 </div>
                 
 
@@ -552,6 +552,17 @@ mybatis:
     name VARCHAR(255) NOT NULL,
     completed BOOLEAN
 );<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="主程序"><a href="#主程序" class="headerlink" title="主程序"></a>主程序</h5><p>com/zjz/TodoAdminApplication.java</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@SpringBootApplication
+public class TodoAdminApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(TodoAdminApplication.class, args);
+    }
+
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h5 id="添加实体类task-java"><a href="#添加实体类task-java" class="headerlink" title="添加实体类task.java"></a>添加实体类task.java</h5><p>添加包domain，包下添加实体类task</p>
 <p>com/zjz/domain/Task.java</p>
@@ -671,10 +682,11 @@ public class TaskController {
 
     /**
      * 获取当前所有task
+     *
      * @return
      */
     @GetMapping
-    public CommonResult&lt;?&gt; getAllTasks(){
+    public CommonResult&lt;?&gt; getAllTasks() {
         return taskService.getAllTasks();
     }
 
@@ -684,36 +696,39 @@ public class TaskController {
      * @return
      */
     @DeleteMapping("/{id}")
-    public CommonResult&lt;?&gt; delTask(@PathVariable("id") Integer id){
+    public CommonResult&lt;?&gt; delTask(@PathVariable("id") Integer id) {
         return taskService.delTask(id);
     }
 
     /**
      * 添加Task
+     *
      * @param task
      * @return
      */
     @PostMapping
-    public CommonResult&lt;?&gt; addTask(@RequestBody Task task){
+    public CommonResult&lt;?&gt; addTask(@RequestBody Task task) {
         return taskService.addTask(task);
     }
 
     /**
      * 更新task
+     *
      * @param task
      * @return
      */
     @PutMapping
-    public CommonResult&lt;?&gt; updateTask(@RequestBody Task task){
+    public CommonResult&lt;?&gt; updateTask(@RequestBody Task task) {
+
         return taskService.updateTask(task);
     }
 
 }
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h5 id="service接口层-1"><a href="#service接口层-1" class="headerlink" title="service接口层"></a>service接口层</h5><pre class="line-numbers language-java" data-language="java"><code class="language-java">public interface TaskService {
 
-    public CommonResult&lt;?&gt; getAllTasks();
+    CommonResult&lt;?&gt; getAllTasks();
 
     CommonResult&lt;?&gt; delTask(Integer id);
 
@@ -735,19 +750,19 @@ public class TaskServiceImpl implements TaskService {
     @Override
     public CommonResult&lt;?&gt; delTask(Integer id) {
         taskMapper.delTask(id);
-        return CommonResult.success("");
+        return CommonResult.success("删除成功");
     }
 
     @Override
     public CommonResult&lt;?&gt; addTask(Task task) {
         taskMapper.addTask(task);
-        return CommonResult.success("");
+        return CommonResult.success("添加成功");
     }
 
     @Override
     public CommonResult&lt;?&gt; updateTask(Task task) {
         taskMapper.updateTask(task);
-        return CommonResult.success("");
+        return CommonResult.success("更新成功");
     }
 }
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -762,7 +777,8 @@ public interface TaskMapper {
     void addTask(Task task);
 
     void updateTask(Task task);
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>mapper实现层</p>
 <pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mapper</span> <span class="token attr-name">namespace</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com.zjz.mapper.TaskMapper<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
@@ -771,7 +787,7 @@ public interface TaskMapper {
         values (#{name},#{completed})
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>insert</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>update</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>updateTask<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-        update tasks set name = #{name},completed = #{completed} where id = #{id}
+        update tasks set completed = #{completed} where id = #{id}
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>update</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>delete</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>delTask<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
         delete from tasks where id = #{id}
@@ -814,13 +830,57 @@ public class WebMvcConfig implements WebMvcConfigurer {
 <h4 id="2、页面"><a href="#2、页面" class="headerlink" title="2、页面"></a>2、页面</h4><p>App.vue</p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
   &lt;div id="app"&gt;
-    &lt;input type="text" v-model="newTask" placeholder="请输入你的任务名称"&gt;
-    &lt;button @click="addTask"&gt;添加&lt;/button&gt;
-    &lt;div&gt;
+    &lt;router-view/&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  name: 'App',
+}
+&lt;/script&gt;
+
+&lt;style lang="scss"&gt;
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+nav {
+  padding: 30px;
+
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+
+    &amp;.router-link-exact-active {
+      color: #42b983;
+    }
+  }
+}
+&lt;/style&gt;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>views/Task.vue</p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
+  &lt;div id="app"&gt;
+    &lt;div class="header"&gt;
+      &lt;h1 class="todo-header"&gt;Todo&lt;/h1&gt;
+    &lt;/div&gt;
+
+    &lt;div class="task-input"&gt;
+      &lt;input type="text" v-model="newTask" placeholder="添加新任务..." @keyup.enter="addNewTask"&gt;
+      &lt;button @click="addNewTask"&gt;添加&lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;div class="task-list"&gt;
       &lt;ul&gt;
         &lt;li v-for="task in tasks" :key="task.id" :class="{ completed: task.completed }"&gt;
-          &lt;span @click="toggleCompletion(task)"&gt;{{ task.name }}&lt;/span&gt;
-          &lt;button @click="deleteTask(task)"&gt;删除&lt;/button&gt;
+          &lt;span @click="toggleCompletion(task)" class="task-name"&gt;{{ task.name }}&lt;/span&gt;
+          &lt;button @click="deleteTask(task)" class="delete-button"&gt;删除&lt;/button&gt;
         &lt;/li&gt;
       &lt;/ul&gt;
     &lt;/div&gt;
@@ -828,9 +888,9 @@ public class WebMvcConfig implements WebMvcConfigurer {
 &lt;/template&gt;
 
 &lt;script&gt;
-import {getAllTask,addTask,delTask,updateTask} from "@/api/task"
+import { getAllTask, addTask, delTask, updateTask } from '@/api/task';
 export default {
-  name: 'App',
+  name: 'task',
   data() {
     return {
       newTask: '',
@@ -838,118 +898,131 @@ export default {
     };
   },
   created() {
-    this.fetchTasks();
+    console.log('created');
+    this.getTasks();
   },
   methods: {
-    addTask() {
-      if (this.newTask.trim()) {
-        this.tasks.push({ id: Date.now(), name: this.newTask.trim(), completed: false });
-        this.newTask = '';
-      }
+    getTasks() {
+      console.log('getTasks');
+      getAllTask().then(res =&gt; {
+        this.tasks = res.data;
+      });
     },
-    fetchTasks() {
-      getAllTask()
-        .then(response =&gt; {
-          if (response.data.code === 200) {
-            this.tasks = response.data.data;
-          } else {
-            console.error(response.data.msg);
-          }
-        })
-        .catch(error =&gt; {
-          console.error(error);
+    addNewTask() {
+      if (this.newTask.trim()) {
+        const task = {
+          name: this.newTask,
+          completed: false,
+        };
+        addTask(task).then(res =&gt; {
+          this.getTasks();
+          this.newTask = '';
         });
+      }
     },
     deleteTask(task) {
-      delTask(task.id)
-        .then(response =&gt; {
-          if (response.data.code === 200) {
-            this.fetchTasks();  // 重新获取任务列表
-          } else {
-            console.error(response.data.msg);
-          }
-        })
-        .catch(error =&gt; {
-          console.error(error);
-        });
-    },
-    addTask() {
-      if (this.newTask.trim()) {
-        const task = { name: this.newTask.trim(), completed: false };
-       addTask(task)
-          .then(response =&gt; {
-            if (response.data.code === 200) {
-              this.newTask = '';
-              this.fetchTasks();  // 重新获取任务列表
-            } else {
-              console.error(response.data.msg);
-            }
-          })
-          .catch(error =&gt; {
-            console.error(error);
-          });
-      }
+      delTask(task.id).then((res) =&gt; {
+        this.getTasks();
+
+      })
     },
     toggleCompletion(task) {
-      task.completed = !task.completed;
-      updateTask(task)
-        .then(response =&gt; {
-          if (response.data.code !== 200) {
-            console.error(response.data.msg);
-          }
-        })
-        .catch(error =&gt; {
-          console.error(error);
-        });
+        task = {
+         id:task.id,
+         completed:!task.completed
+      }
+      updateTask(task).then((res) =&gt; {
+        this.getTasks();
+      })
     }
-  },
-};
+  }
+}
 &lt;/script&gt;
-
 &lt;style&gt;
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #F7F9FC;
+  background-color: #f4f4f4;
+  margin: 0;
+}
+
+.header {
+  background-color: #3498db;
   padding: 20px;
+  text-align: center;
 }
 
-li {
-  color: #333;
-  cursor: pointer;
-  padding: 5px;
-  border-radius: 3px;
-  transition: background-color 0.3s ease;
+.todo-header {
+  color: #fff;
+  margin: 0;
 }
 
-li:hover {
-  background-color: #E4E7ED;
+.task-input {
+  margin-top: 20px;
+  text-align: center;
 }
 
-.completed {
-  color: #A5ACB3;
-  text-decoration: line-through;
-}
-
-input[type="text"],
-button {
-  padding: 10px;
-  border: 1px solid #D4D9E1;
+input {
+  padding: 8px;
+  margin-right: 8px;
+  border: 1px solid #3498db;
   border-radius: 4px;
-  font-size: 16px;
-  margin-right: 10px;
 }
 
 button {
-  background-color: #4C8EF7;
-  color: #FFF;
+  padding: 8px 16px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #357ABD;
+  background-color: #2980b9;
 }
-&lt;/style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+.task-list {
+  margin-top: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.task-name {
+  cursor: pointer;
+}
+
+.delete-button {
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: #c0392b;
+}
+&lt;/style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><code>import {getAllTask,addTask,delTask,updateTask} from "@/api/task"</code>这有几个接口要实现</p>
 <h4 id="3、request封装"><a href="#3、request封装" class="headerlink" title="3、request封装"></a>3、request封装</h4><p>首先安装axios </p>
@@ -997,22 +1070,23 @@ service<span class="token punctuation">.</span>interceptors<span class="token pu
 <h4 id="4、api接口"><a href="#4、api接口" class="headerlink" title="4、api接口"></a>4、api接口</h4><p>src/api/task.js</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> request <span class="token keyword">from</span> <span class="token string">'@/utils/request'</span>
 
-<span class="token comment">// 获取所有task信息</span>
-<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">getAllTask</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-      <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token string">'/task'</span><span class="token punctuation">,</span>
-      <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">'get'</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span>
-  <span class="token punctuation">}</span>
-<span class="token comment">// 添加task</span>
-<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">addTask</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-    <span class="token keyword">return</span> <span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-      <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token string">'/task'</span><span class="token punctuation">,</span>
-      <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">'post'</span><span class="token punctuation">,</span>
-      <span class="token literal-property property">data</span><span class="token operator">:</span> data
-    <span class="token punctuation">}</span><span class="token punctuation">)</span>
-  <span class="token punctuation">}</span>
+<span class="token comment">// 获取所有任务的接口</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">getAllTask</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token string">'/task'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">'get'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 添加task</span>
+<span class="token comment">// 添加任务的接口</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">addTask</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token string">'/task'</span><span class="token punctuation">,</span> <span class="token comment">// 接口路径</span>
+    <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">'post'</span><span class="token punctuation">,</span> <span class="token comment">// 请求方法</span>
+    <span class="token literal-property property">data</span><span class="token operator">:</span> data <span class="token comment">// 请求参数</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
   <span class="token comment">// 删除task</span>
 <span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">delTask</span><span class="token punctuation">(</span><span class="token parameter">id</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -1031,7 +1105,7 @@ service<span class="token punctuation">.</span>interceptors<span class="token pu
       <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">'put'</span><span class="token punctuation">,</span>
       <span class="token literal-property property">data</span><span class="token operator">:</span> data
     <span class="token punctuation">}</span><span class="token punctuation">)</span>
-  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="5、跨域配置"><a href="#5、跨域配置" class="headerlink" title="5、跨域配置"></a>5、跨域配置</h4><p>打开vue.config.js文件</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token punctuation">{</span> defineConfig <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'@vue/cli-service'</span><span class="token punctuation">)</span>
@@ -1052,157 +1126,15 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><code>target: "http://localhost:8080"</code>这个端口号根据你自己实际情况来</p>
-<h4 id="6、有点问题🤡"><a href="#6、有点问题🤡" class="headerlink" title="6、有点问题🤡"></a>6、有点问题🤡</h4><p>回到第2步，不封装b了</p>
-<p>App.vue</p>
-<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
-  &lt;div id="app"&gt;
-    &lt;div&gt;
-      &lt;input type="text" v-model="newTask" placeholder="请输入你的任务名称"&gt;
-      &lt;button @click="addTask"&gt;添加&lt;/button&gt;
-    &lt;/div&gt;
-
-    &lt;div&gt;
-      &lt;ul&gt;
-        &lt;li v-for="task in tasks" :key="task.id" :class="{ completed: task.completed }"&gt;
-          &lt;span @click="toggleCompletion(task)"&gt;{{ task.name }}&lt;/span&gt;
-          &lt;button @click="deleteTask(task)"&gt;删除&lt;/button&gt;
-        &lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
-&lt;script&gt;
-import axios from 'axios';
-export default {
-  name: 'App',
-  data() {
-    return {
-      newTask: '',
-      tasks: [],
-    };
-  },
-  created() {
-    this.fetchTasks();
-  },
-  methods: {
-    addTask() {
-      if (this.newTask.trim()) {
-        this.tasks.push({ id: Date.now(), name: this.newTask.trim(), completed: false });
-        this.newTask = '';
-      }
-    },
-    fetchTasks() {
-      axios.get('http://localhost:8080/task')
-        .then(response =&gt; {
-          if (response.data.code === 200) {
-            this.tasks = response.data.data;
-          } else {
-            console.error(response.data.msg);
-          }
-        })
-        .catch(error =&gt; {
-          console.error(error);
-        });
-    },
-    deleteTask(task) {
-      axios.delete(`http://localhost:8080/task/${task.id}`)
-        .then(response =&gt; {
-          if (response.data.code === 200) {
-            this.fetchTasks();  // 重新获取任务列表
-          } else {
-            console.error(response.data.msg);
-          }
-        })
-        .catch(error =&gt; {
-          console.error(error);
-        });
-    },
-    addTask() {
-      if (this.newTask.trim()) {
-        const task = { name: this.newTask.trim(), completed: false };
-        axios.post('http://localhost:8080/task', task)
-          .then(response =&gt; {
-            if (response.data.code === 200) {
-              this.newTask = '';
-              this.fetchTasks();  // 重新获取任务列表
-            } else {
-              console.error(response.data.msg);
-            }
-          })
-          .catch(error =&gt; {
-            console.error(error);
-          });
-      }
-    },
-    toggleCompletion(task) {
-      task.completed = !task.completed;
-      axios.put(`http://localhost:8080/tasks`, task)
-        .then(response =&gt; {
-          if (response.data.code !== 200) {
-            console.error(response.data.msg);
-          }
-        })
-        .catch(error =&gt; {
-          console.error(error);
-        });
-    }
-  },
-};
-&lt;/script&gt;
-
-&lt;style&gt;
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #F7F9FC;
-  padding: 20px;
-}
-
-li {
-  color: #333;
-  cursor: pointer;
-  padding: 5px;
-  border-radius: 3px;
-  transition: background-color 0.3s ease;
-}
-
-li:hover {
-  background-color: #E4E7ED;
-}
-
-.completed {
-  color: #A5ACB3;
-  text-decoration: line-through;
-}
-
-input[type="text"],
-button {
-  padding: 10px;
-  border: 1px solid #D4D9E1;
-  border-radius: 4px;
-  font-size: 16px;
-  margin-right: 10px;
-}
-
-button {
-  background-color: #4C8EF7;
-  color: #FFF;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #357ABD;
-}
-&lt;/style&gt;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>终端输入：</p>
+<h4 id="6、有点问题🤡-已解决"><a href="#6、有点问题🤡-已解决" class="headerlink" title="6、有点问题🤡(已解决)"></a>6、有点问题🤡(已解决)</h4><p>前端项目终端输入：</p>
 <p><code>npm run serve</code></p>
+<p>后端也要启动</p>
 <p>浏览器输网址即可</p>
-<img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/2023/11/17/todo%E5%BA%94%E7%94%A8%E7%BC%96%E5%86%99%E5%88%B0%E9%83%A8%E7%BD%B2/image-20231117225313296.png" class="" title="image-20231117225313296">
+<img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/2023/11/17/todo%E5%BA%94%E7%94%A8%E7%BC%96%E5%86%99%E5%88%B0%E9%83%A8%E7%BD%B2/image-20231122161654585.png" class="" title="image-20231122161654585">
 
-<p>后面再看看那个跨域为啥不行🥲</p>
-<h3 id="三、部署"><a href="#三、部署" class="headerlink" title="三、部署"></a>三、部署</h3>
+<h5 id="！以上内容已更新😏-up"><a href="#！以上内容已更新😏-up" class="headerlink" title="！以上内容已更新😏:up:"></a>！以上内容已更新😏<span class="github-emoji"><span>🆙</span><img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="https://github.githubassets.com/images/icons/emoji/unicode/1f199.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></h5><h3 id="三、部署"><a href="#三、部署" class="headerlink" title="三、部署"></a>三、部署</h3><h4 id="1、在github上建仓库，并将项目同步到仓库"><a href="#1、在github上建仓库，并将项目同步到仓库" class="headerlink" title="1、在github上建仓库，并将项目同步到仓库"></a>1、在github上建仓库，并将项目同步到仓库</h4><p>不说了，就当建好了😏 也可以参考这篇博客</p>
+<p>2、</p>
+
                 
             </div>
             <hr/>
@@ -1730,7 +1662,7 @@ button:hover {
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">58.6k</span>&nbsp;字
+                class="white-color">58.7k</span>&nbsp;字
             
             
             

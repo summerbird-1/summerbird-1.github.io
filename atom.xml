@@ -6,7 +6,7 @@
   <link href="http://summerbird-1.github.io/atom.xml" rel="self"/>
   
   <link href="http://summerbird-1.github.io/"/>
-  <updated>2023-11-22T05:05:41.989Z</updated>
+  <updated>2023-11-22T14:46:36.109Z</updated>
   <id>http://summerbird-1.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>项目同步Github仓库</title>
+    <link href="http://summerbird-1.github.io/2023/11/22/%E9%A1%B9%E7%9B%AE%E5%90%8C%E6%AD%A5Github%E4%BB%93%E5%BA%93/"/>
+    <id>http://summerbird-1.github.io/2023/11/22/%E9%A1%B9%E7%9B%AE%E5%90%8C%E6%AD%A5Github%E4%BB%93%E5%BA%93/</id>
+    <published>2023-11-22T08:40:20.000Z</published>
+    <updated>2023-11-22T14:46:36.109Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;把项目同步到github需要几步，即答：”散步!”🪅&lt;/p&gt;
+&lt;h4 id=&quot;1、登录建一个仓库，取个名字🙉&quot;&gt;&lt;a href=&quot;#1、登录建一个仓库，取个名字🙉&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="git" scheme="http://summerbird-1.github.io/categories/git/"/>
+    
+    
+    <category term="GitHub" scheme="http://summerbird-1.github.io/tags/GitHub/"/>
+    
+  </entry>
   
   <entry>
     <title>贪心问题</title>
@@ -74,7 +100,7 @@
     <link href="http://summerbird-1.github.io/2023/11/17/todo%E5%BA%94%E7%94%A8%E7%BC%96%E5%86%99%E5%88%B0%E9%83%A8%E7%BD%B2/"/>
     <id>http://summerbird-1.github.io/2023/11/17/todo%E5%BA%94%E7%94%A8%E7%BC%96%E5%86%99%E5%88%B0%E9%83%A8%E7%BD%B2/</id>
     <published>2023-11-17T12:13:38.000Z</published>
-    <updated>2023-11-17T14:57:54.747Z</updated>
+    <updated>2023-11-22T14:47:26.196Z</updated>
     
     
       
@@ -518,31 +544,6 @@
     
     
     <category term="utterances" scheme="http://summerbird-1.github.io/tags/utterances/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode3</title>
-    <link href="http://summerbird-1.github.io/2023/11/02/LeetCode3/"/>
-    <id>http://summerbird-1.github.io/2023/11/02/LeetCode3/</id>
-    <published>2023-11-02T01:31:08.000Z</published>
-    <updated>2023-11-15T06:31:24.650Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;LeetCode3-无重复字符的最长子串&quot;&gt;&lt;a href=&quot;#LeetCode3-无重复字符的最长子串&quot; class=&quot;headerlink&quot; title=&quot;LeetCode3. 无重复字符的最长子串&quot;&gt;&lt;/a&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="Basic" scheme="http://summerbird-1.github.io/categories/Basic/"/>
-    
-    
-    <category term="LeetCode" scheme="http://summerbird-1.github.io/tags/LeetCode/"/>
     
   </entry>
   
