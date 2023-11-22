@@ -6,7 +6,7 @@
   <link href="http://summerbird-1.github.io/atom.xml" rel="self"/>
   
   <link href="http://summerbird-1.github.io/"/>
-  <updated>2023-11-21T01:27:09.197Z</updated>
+  <updated>2023-11-22T03:08:56.780Z</updated>
   <id>http://summerbird-1.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>贪心问题</title>
+    <link href="http://summerbird-1.github.io/2023/11/22/%E8%B4%AA%E5%BF%83%E9%97%AE%E9%A2%98/"/>
+    <id>http://summerbird-1.github.io/2023/11/22/%E8%B4%AA%E5%BF%83%E9%97%AE%E9%A2%98/</id>
+    <published>2023-11-22T01:20:46.000Z</published>
+    <updated>2023-11-22T03:08:56.780Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;一、区间选点🅰️&quot;&gt;&lt;a href=&quot;#一、区间选点🅰️&quot; class=&quot;headerlink&quot; title=&quot;一、区间选点🅰️&quot;&gt;&lt;/a&gt;一、区间选点🅰️&lt;/h3&gt;&lt;p&gt;Description&lt;/p&gt;
+&lt;p&gt;给定 ( N ) 个闭区间 ([a_i,</summary>
+        
+      
+    
+    
+    
+    <category term="Algorithm" scheme="http://summerbird-1.github.io/categories/Algorithm/"/>
+    
+    
+    <category term="贪心" scheme="http://summerbird-1.github.io/tags/%E8%B4%AA%E5%BF%83/"/>
+    
+  </entry>
   
   <entry>
     <title>数组刷题</title>
@@ -517,31 +543,6 @@
     
     
     <category term="LeetCode" scheme="http://summerbird-1.github.io/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>心动!搭建无限量免费图床</title>
-    <link href="http://summerbird-1.github.io/2023/11/01/%E5%BF%83%E5%8A%A8-%E6%90%AD%E5%BB%BA%E6%97%A0%E9%99%90%E9%87%8F%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/"/>
-    <id>http://summerbird-1.github.io/2023/11/01/%E5%BF%83%E5%8A%A8-%E6%90%AD%E5%BB%BA%E6%97%A0%E9%99%90%E9%87%8F%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/</id>
-    <published>2023-11-01T08:54:10.000Z</published>
-    <updated>2023-11-15T06:31:24.690Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;strong&gt;拥有图床多是一件美式&lt;/strong&gt; 免费不限量&lt;span class=&quot;github-emoji&quot;&gt;&lt;span&gt;🙀&lt;/span&gt;&lt;img</summary>
-        
-      
-    
-    
-    
-    <category term="Basic" scheme="http://summerbird-1.github.io/categories/Basic/"/>
-    
-    
-    <category term="图床" scheme="http://summerbird-1.github.io/tags/%E5%9B%BE%E5%BA%8A/"/>
     
   </entry>
   

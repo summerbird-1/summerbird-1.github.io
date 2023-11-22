@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="如何推送镜像到dockerhub, SummerBird">
+    <meta name="keywords" content="贪心问题, SummerBird">
     <meta name="description" content="向往热烈而自由">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>如何推送镜像到dockerhub | SummerBird</title>
+    <title>贪心问题 | SummerBird</title>
     <link rel="icon" type="image/png" href="/avatar.webp">
     <link rel="stylesheet" type="text/css" href="/libs/artitalk/artitalk.min.css">
 
@@ -287,12 +287,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.webp')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.webp')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">如何推送镜像到dockerhub</h1>
+                    <h1 class="description center-align post-title">贪心问题</h1>
                 </div>
             </div>
         </div>
@@ -411,12 +411,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/docker/">
-                                <span class="chip bg-color">docker</span>
-                            </a>
-                        
-                            <a href="/tags/dockerhub/">
-                                <span class="chip bg-color">dockerhub</span>
+                            <a href="/tags/%E8%B4%AA%E5%BF%83/">
+                                <span class="chip bg-color">贪心</span>
                             </a>
                         
                     </div>
@@ -427,8 +423,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E9%83%A8%E7%BD%B2/" class="post-category">
-                                部署
+                            <a href="/categories/Algorithm/" class="post-category">
+                                Algorithm
                             </a>
                         
                     </div>
@@ -440,28 +436,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2023-11-16
+                    2023-11-22
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2023-11-16
+                    2023-11-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    206
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    1 Min
+                    4 Min
                 </div>
                 
 
@@ -484,31 +480,201 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>在公司开发环境中，一般需要把打包好的镜像推送到镜像仓库，然后拉取部署</p>
-<h2 id="一、注册dockerhub账号😹"><a href="#一、注册dockerhub账号😹" class="headerlink" title="一、注册dockerhub账号😹"></a>一、注册dockerhub账号😹</h2><p>略 总之用github账号或邮箱都可以</p>
-<h2 id="二、登录镜像仓库💑🏽"><a href="#二、登录镜像仓库💑🏽" class="headerlink" title="二、登录镜像仓库💑🏽"></a>二、登录镜像仓库💑🏽</h2><p>在服务器终端输入</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker login<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <h3 id="一、区间选点🅰️"><a href="#一、区间选点🅰️" class="headerlink" title="一、区间选点🅰️"></a>一、区间选点🅰️</h3><p>Description</p>
+<p>给定 ( N ) 个闭区间 ([a_i, b_i])，需要在数轴上选择尽可能少的点，以确保每个区间内至少包含一个选出的点。位于区间端点上的点也算作区间内。</p>
+<p>Input</p>
+<ul>
+<li>第一行包含整数 ( N )，表示区间数量。</li>
+<li>接下来的 ( N ) 行，每行包含两个整数 ( a_i, b_i )，表示一个区间的两个端点。</li>
+</ul>
+<p>数据范围</p>
+<ul>
+<li>( 1 &lt;= N &lt;= 10^5 )</li>
+<li>( -10^9 &lt;= a_i &lt;= b_i &lt;= 10^9 )</li>
+</ul>
+<p>Output</p>
+<ul>
+<li>输出一个整数，表示所需选择的点的最小数量。</li>
+</ul>
+<p>Sample Input 1 </p>
+<pre class="line-numbers language-none"><code class="language-none">3
+-1 1
+2 4
+3 5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>按提示输入你dockerhub的用户名和密码即可</p>
-<img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/2023/11/16/%E5%A6%82%E4%BD%95%E6%8E%A8%E9%80%81%E9%95%9C%E5%83%8F%E5%88%B0dockerhub/image-20231116204149131.png" class="" title="image-20231116204149131">
+<p>Sample Output 1</p>
+<pre class="line-numbers language-none"><code class="language-none">2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>看到这个就是登录成功</p>
-<h2 id="三、构建镜像🙈"><a href="#三、构建镜像🙈" class="headerlink" title="三、构建镜像🙈"></a>三、构建镜像🙈</h2><p>输入docker images查看镜像</p>
-<img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/2023/11/16/%E5%A6%82%E4%BD%95%E6%8E%A8%E9%80%81%E9%95%9C%E5%83%8F%E5%88%B0dockerhub/image-20231116204449550.png" class="" title="image-20231116204449550">
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>先用一个结构体存储起点和终点，用<code>cnt</code>记录选点的数量</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">struct node{
+    int a_i;
+    int b_i
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>使用命令</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker build username/镜像名:tag dockerfile文件 DockerFile目录
-#例 docker build -t summerbird162/rbac_admin:01 -f rbac_dockerfile .<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>按终点从小到大排序（为什么不按照起点从大到小排序？）因为区间按照右端点排序后，每一个 <code>选点</code> 都是没有被覆盖的区间右端点，则说明这 <code>选点</code> 个区间是两两不交的，则<strong>至少需要 <code>cnt</code> 个选点才能将这些两两不交的区间进行覆盖</strong></p>
+<p>排序后，判断只要下一个区间的起点小于当前区间的终点，<code>cnt</code>就不用加1</p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+#include &lt;algorithm&gt;
+using namespace std;
 
-<p>至于DockerFile文件可见上篇博客<a href="http://summerbird-1.github.io/2023/11/14/DockerFile%E9%83%A8%E7%BD%B2%E5%AD%A6%E4%B9%A0/">DockerFile部署学习</a></p>
-<h2 id="四、打标签🦫"><a href="#四、打标签🦫" class="headerlink" title="四、打标签🦫"></a>四、打标签🦫</h2><p>使其与Docker Hub上镜像仓库关联</p>
-<p>命令</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker tag username/镜像名:tag  username/镜像名:tag 
-#例 docker tag summerbird162/rbac_admin:01 summerbird162/rbac_admin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+// 尽量帮助后面的线段，因此点尽量往后放
+// 寻找第一个点，需要找第一个结束的线段，因此按照结束先后排序
 
-<h2 id="五、推送镜像🐏"><a href="#五、推送镜像🐏" class="headerlink" title="五、推送镜像🐏"></a>五、推送镜像🐏</h2><p>命令</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker push username/镜像名:tag
-#例  docker push summerbird162/rbac_admin:01<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+// 每寻找到一个点，可以将其可以覆盖的线段去掉
+
+struct node {
+    int b, e;
+};
+
+node a[100005];
+
+bool cmp(node a, node b) {
+    return a.e &lt; b.e;
+}
+
+int main() {
+    int n;
+    cin &gt;&gt; n;
+
+    for (int i = 1; i &lt;= n; i++)
+        cin &gt;&gt; a[i].b &gt;&gt; a[i].e;
+
+    sort(a + 1, a + 1 + n, cmp);
+    int cnt = 0;
+    int be = -2e9;
+    for (int i = 1; i &lt;= n; i++) {
+        //处理能被帮助的线段
+        while (i &lt;= n &amp;&amp; a[i].b &lt;= be)
+            i++;
+        if (i &gt; n)
+            break;
+
+        //找下一个点
+        cnt++;
+        be = a[i].e;
+    }
+
+    cout &lt;&lt; cnt &lt;&lt; endl;
+    return 0;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="二、区间覆盖"><a href="#二、区间覆盖" class="headerlink" title="二、区间覆盖"></a>二、区间覆盖</h3><p>Description</p>
+<p>给定 N 个闭区间 [a_i, b_i] 以及一个指定的线段区间 [s, t] ，需要选择尽可能少的区间来完全覆盖指定的线段区间。</p>
+<p>Input</p>
+<ul>
+<li>第一行包含两个整数 ( s ) 和 ( t )，表示给定线段区间的两个端点。</li>
+<li>第二行包含整数 ( N )，表示给定的区间数量。</li>
+<li>接下来的 ( N ) 行，每行包含两个整数 ( a_i, b_i )，表示一个区间的两个端点。</li>
+</ul>
+<p>数据范围：</p>
+<ul>
+<li>( 1 &lt;= N &lt;= 10^5 )</li>
+<li>( -10^9 &lt;= a_i &lt;= b_i &lt;= 10^9 )</li>
+<li>( -10^9 &lt;= s &lt;= t &lt;= 10^9 )</li>
+</ul>
+<p>Output</p>
+<ul>
+<li>输出一个整数，表示所需的最少区间数。</li>
+<li>如果无法完全覆盖给定的线段区间，则输出 (-1)。</li>
+</ul>
+<p>Sample Input 1 </p>
+<pre class="line-numbers language-none"><code class="language-none">1 5
+3
+-1 3
+2 4
+3 5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>Sample Output 1</p>
+<pre class="line-numbers language-none"><code class="language-none">2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h4><h4 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h4><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+struct node
+{
+    int s, e;
+};
+node a[100010];
+bool cmp(node a, node b)
+{
+    return a.s &lt; b.s;
+}
+int main()
+{
+    int s, t, N;
+    cin &gt;&gt; s &gt;&gt; t &gt;&gt; N;
+    for (int i = 1; i &lt;= N; i++)
+    {
+        cin &gt;&gt; a[i].s &gt;&gt; a[i].e;
+    }
+    sort(a + 1, a + N + 1, cmp);
+    int cnt = 0;
+    int temp = s;
+    bool flag = true;
+    for (int i = 1; i &lt;= N; i++)
+    {
+        // 寻找满足要求，右端点最远的区间
+        int maxRight = -2e9;
+        int j = i;
+        while (j &lt;= N &amp;&amp; a[j].s &lt;= temp)
+        {
+            maxRight = max(maxRight, a[j].e);
+            j++;
+        }
+        if (maxRight &lt; temp) // 没有找到满足题意的区间，退出循环
+        {
+            flag = false;
+            break;
+        }
+        else
+        {
+            temp = maxRight; // 更新右端点
+            cnt++;
+            if (temp &gt;= t) // 找到了满足题意的区间，退出循环
+            {
+                flag = true;
+                break;
+            }
+        }
+    }
+    if (flag)
+        cout &lt;&lt; cnt &lt;&lt; endl;
+    else
+        cout &lt;&lt; "-1" &lt;&lt; endl;
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>三、数列分段</p>
+<p>Description</p>
+<p>给定一个长度为 ( N ) 的正整数数列 ( A_i )，需要将其分割成若干连续的子段，使得每个子段的元素和不超过 ( M )（可以等于 ( M )）。目标是找出最少能将数列分成多少段，以满足上述条件。</p>
+<p>Input</p>
+<ul>
+<li>第一行包含两个正整数 ( N, M )，分别表示数列 ( A_i ) 的长度和每段的最大和。</li>
+<li>第二行包含 ( N ) 个由空格隔开的非负整数 ( A_i )。</li>
+</ul>
+<p>数据范围：</p>
+<ul>
+<li>( 1 &lt;= N &lt;= 10^5 )</li>
+<li>( 1 &lt;= M &lt;= 10^9 )</li>
+<li>( 1 &lt;= A_i &lt;= M )</li>
+</ul>
+<p>Output</p>
+<ul>
+<li>输出一个正整数，表示最少划分的段数。</li>
+</ul>
+<p>Sample Input 1 </p>
+<pre class="line-numbers language-none"><code class="language-none">5 6
+4 2 4 5 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>Sample Output 1</p>
+<pre class="line-numbers language-none"><code class="language-none">3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>思路</p>
+<p>代码</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
                 
@@ -536,7 +702,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://summerbird-1.github.io/2023/11/16/%E5%A6%82%E4%BD%95%E6%8E%A8%E9%80%81%E9%95%9C%E5%83%8F%E5%88%B0dockerhub/">http://summerbird-1.github.io/2023/11/16/%E5%A6%82%E4%BD%95%E6%8E%A8%E9%80%81%E9%95%9C%E5%83%8F%E5%88%B0dockerhub/</a>
+                    <a href="http://summerbird-1.github.io/2023/11/22/%E8%B4%AA%E5%BF%83%E9%97%AE%E9%A2%98/">http://summerbird-1.github.io/2023/11/22/%E8%B4%AA%E5%BF%83%E9%97%AE%E9%A2%98/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -574,12 +740,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/docker/">
-                                    <span class="chip bg-color">docker</span>
-                                </a>
-                            
-                                <a href="/tags/dockerhub/">
-                                    <span class="chip bg-color">dockerhub</span>
+                                <a href="/tags/%E8%B4%AA%E5%BF%83/">
+                                    <span class="chip bg-color">贪心</span>
                                 </a>
                             
                         </div>
@@ -757,17 +919,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2023/11/16/DockerCompose%E9%83%A8%E7%BD%B2%E5%AD%A6%E4%B9%A0/">
+                <a href="/2023/11/22/%E8%B4%AA%E5%BF%83%E9%97%AE%E9%A2%98/">
                     <div class="card-image">
                         
                         
-                        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/featureimages/6.webp" class="responsive-img" alt="DockerCompose部署学习">
+                        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/featureimages/3.webp" class="responsive-img" alt="贪心问题">
                         
-                        <span class="card-title">DockerCompose部署学习</span>
+                        <span class="card-title">贪心问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -777,26 +940,27 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-22
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E9%83%A8%E7%BD%B2/" class="post-category">
-                                    部署
+                            <a href="/categories/Algorithm/" class="post-category">
+                                    Algorithm
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/DockerCompose/">
-                        <span class="chip bg-color">DockerCompose</span>
+                    <a href="/tags/%E8%B4%AA%E5%BF%83/">
+                        <span class="chip bg-color">贪心</span>
                     </a>
                     
                 </div>
@@ -810,13 +974,13 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/11/16/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%88%B7%E9%A2%98/">
+                <a href="/2023/11/20/%E6%95%B0%E7%BB%84%E5%88%B7%E9%A2%98/">
                     <div class="card-image">
                         
                         
-                        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/featureimages/0.webp" class="responsive-img" alt="动态规划刷题">
+                        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/featureimages/13.webp" class="responsive-img" alt="数组刷题">
                         
-                        <span class="card-title">动态规划刷题</span>
+                        <span class="card-title">数组刷题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -827,7 +991,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-20
                             </span>
                         <span class="publish-author">
                             
@@ -844,12 +1008,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/LeetCode/">
-                        <span class="chip bg-color">LeetCode</span>
+                    <a href="/tags/%E6%95%B0%E7%BB%84/">
+                        <span class="chip bg-color">数组</span>
                     </a>
                     
-                    <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
-                        <span class="chip bg-color">动态规划</span>
+                    <a href="/tags/Leetcode/">
+                        <span class="chip bg-color">Leetcode</span>
                     </a>
                     
                 </div>
