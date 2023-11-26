@@ -6,7 +6,7 @@
   <link href="http://summerbird-1.github.io/atom.xml" rel="self"/>
   
   <link href="http://summerbird-1.github.io/"/>
-  <updated>2023-11-25T10:12:01.958Z</updated>
+  <updated>2023-11-26T11:21:46.019Z</updated>
   <id>http://summerbird-1.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>RBAC权限模型</title>
+    <link href="http://summerbird-1.github.io/2023/11/26/RBAC%E6%9D%83%E9%99%90%E6%A8%A1%E5%9E%8B/"/>
+    <id>http://summerbird-1.github.io/2023/11/26/RBAC%E6%9D%83%E9%99%90%E6%A8%A1%E5%9E%8B/</id>
+    <published>2023-11-26T11:02:22.000Z</published>
+    <updated>2023-11-26T11:21:46.019Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h5 id=&quot;RBAC权限模型&quot;&gt;&lt;a href=&quot;#RBAC权限模型&quot; class=&quot;headerlink&quot; title=&quot;RBAC权限模型&quot;&gt;&lt;/a&gt;RBAC权限模型&lt;/h5&gt;&lt;p&gt;​	RBAC权限模型（Role-Based Access</summary>
+        
+      
+    
+    
+    
+    <category term="SpringSecurity" scheme="http://summerbird-1.github.io/categories/SpringSecurity/"/>
+    
+    
+    <category term="RBAC" scheme="http://summerbird-1.github.io/tags/RBAC/"/>
+    
+  </entry>
   
   <entry>
     <title>项目同步Github仓库</title>
@@ -47,7 +72,7 @@
     <link href="http://summerbird-1.github.io/2023/11/22/%E8%B4%AA%E5%BF%83%E9%97%AE%E9%A2%98/"/>
     <id>http://summerbird-1.github.io/2023/11/22/%E8%B4%AA%E5%BF%83%E9%97%AE%E9%A2%98/</id>
     <published>2023-11-22T01:20:46.000Z</published>
-    <updated>2023-11-22T05:05:41.989Z</updated>
+    <updated>2023-11-26T03:15:02.694Z</updated>
     
     
       
@@ -73,7 +98,7 @@
     <link href="http://summerbird-1.github.io/2023/11/20/%E6%95%B0%E7%BB%84%E5%88%B7%E9%A2%98/"/>
     <id>http://summerbird-1.github.io/2023/11/20/%E6%95%B0%E7%BB%84%E5%88%B7%E9%A2%98/</id>
     <published>2023-11-20T01:25:05.000Z</published>
-    <updated>2023-11-21T01:27:09.197Z</updated>
+    <updated>2023-11-26T06:29:37.715Z</updated>
     
     
       
@@ -118,9 +143,9 @@
     
     <category term="Docker" scheme="http://summerbird-1.github.io/tags/Docker/"/>
     
-    <category term="Springboot" scheme="http://summerbird-1.github.io/tags/Springboot/"/>
-    
     <category term="Vue" scheme="http://summerbird-1.github.io/tags/Vue/"/>
+    
+    <category term="Springboot" scheme="http://summerbird-1.github.io/tags/Springboot/"/>
     
   </entry>
   
@@ -519,31 +544,6 @@
     
     
     <category term="博客" scheme="http://summerbird-1.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo博客添加评论模块</title>
-    <link href="http://summerbird-1.github.io/2023/11/02/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E6%A8%A1%E5%9D%97/"/>
-    <id>http://summerbird-1.github.io/2023/11/02/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E6%A8%A1%E5%9D%97/</id>
-    <published>2023-11-02T06:05:28.000Z</published>
-    <updated>2023-11-15T06:31:24.650Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;转载自:&lt;a href=&quot;https://www.cnblogs.com/jijunhao/p/17235903.html&quot;&gt;Hexo-Matery主题评论插件 - 季俊豪 - 博客园</summary>
-        
-      
-    
-    
-    
-    <category term="hexo" scheme="http://summerbird-1.github.io/categories/hexo/"/>
-    
-    
-    <category term="utterances" scheme="http://summerbird-1.github.io/tags/utterances/"/>
     
   </entry>
   
