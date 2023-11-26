@@ -5,7 +5,7 @@
 <head>
     <meta name="referrer" content="no-referrer-when-downgrade">
     <meta charset="utf-8">
-    <meta name="keywords" content="动态规划之背包问题, SummerBird">
+    <meta name="keywords" content="系统测试学习, SummerBird">
     <meta name="description" content="向往热烈而自由">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>动态规划之背包问题 | SummerBird</title>
+    <title>系统测试学习 | SummerBird</title>
     <link rel="icon" type="image/png" href="/avatar.webp">
     <link rel="stylesheet" type="text/css" href="/libs/artitalk/artitalk.min.css">
 
@@ -288,12 +288,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.webp')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.webp')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">动态规划之背包问题</h1>
+                    <h1 class="description center-align post-title">系统测试学习</h1>
                 </div>
             </div>
         </div>
@@ -412,12 +412,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
-                                <span class="chip bg-color">动态规划</span>
-                            </a>
-                        
-                            <a href="/tags/%E8%83%8C%E5%8C%85/">
-                                <span class="chip bg-color">背包</span>
+                            <a href="/tags/SpringBoot/">
+                                <span class="chip bg-color">SpringBoot</span>
                             </a>
                         
                     </div>
@@ -428,8 +424,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Algorithm/" class="post-category">
-                                Algorithm
+                            <a href="/categories/%E6%B5%8B%E8%AF%95/" class="post-category">
+                                测试
                             </a>
                         
                     </div>
@@ -441,28 +437,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2023-11-08
+                    2023-11-22
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2023-11-15
+                    2023-11-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.8k
+                    668
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    8 Min
+                    2 Min
                 </div>
                 
 
@@ -485,397 +481,64 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="joy-动态规划之背包问题"><a href="#joy-动态规划之背包问题" class="headerlink" title=":joy:动态规划之背包问题"></a><span class="github-emoji"><span>😂</span><img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="https://github.githubassets.com/images/icons/emoji/unicode/1f602.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>动态规划之背包问题</h1><p>经典的背包问题，期末考试复习用</p>
-<h4 id="一、01背包问题"><a href="#一、01背包问题" class="headerlink" title="一、01背包问题"></a>一、01背包问题</h4><p><strong>Description</strong></p>
-<p>给定 N 件物品和一个容量为 V 的背包。每件物品只能使用一次。</p>
-<p>第<code>i</code>件物品的体积是<code>vi</code>，价值是<code>wi</code>。</p>
-<p>你的任务是决定将哪些物品装入背包，以使得这些物品的总体积不超过背包容量，同时总价值最大。请输出最大价值。</p>
-<p><strong>Input</strong></p>
+                <h2 id="1-测试基本概念"><a href="#1-测试基本概念" class="headerlink" title="1. 测试基本概念"></a><strong>1. 测试基本概念</strong></h2><p><strong>目的与重要性</strong>：</p>
 <ul>
-<li>第一行包含两个整数，分别为<code>N</code>和<code>V</code>，表示物品数量和背包容量。</li>
-<li>接下来的 N 行，每行包含两个整数<code>vi</code>和<code>wi</code>，表示第<code>i</code>件物品的体积和价值。</li>
+<li><strong>定义</strong>: 软件测试是一种评估软件的活动，旨在发现程序中的错误并验证其是否满足预定的功能和性能要求。</li>
+<li><strong>目的</strong>: 测试的主要目的是确保软件的质量和可靠性，通过发现并修复错误来提高软件的稳定性。</li>
+<li><strong>重要性</strong>: 在软件开发过程中，测试是不可或缺的一部分，因为它帮助开发者及早发现问题，避免在软件发布后出现严重的运行故障。</li>
 </ul>
-<p><strong>Output</strong></p>
-<p>输出一个整数，表示最大价值。</p>
-<p>Sample Input 1 </p>
-<pre class="line-numbers language-none"><code class="language-none">4 5
-1 2
-2 4
-3 4
-4 5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>Sample Output 1</p>
-<pre class="line-numbers language-none"><code class="language-none">8<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>01背包在于每件物品只有一个，要么装，要么不装</p>
-<h5 id="1、思路"><a href="#1、思路" class="headerlink" title="1、思路"></a>1、思路</h5><h5 id="每个物品有两个状态，装与不装。构造dp数组记录每一种情况"><a href="#每个物品有两个状态，装与不装。构造dp数组记录每一种情况" class="headerlink" title="每个物品有两个状态，装与不装。构造dp数组记录每一种情况"></a>每个物品有两个状态，装与不装。构造dp数组记录每一种情况</h5><p>根据以上例子构建dp数组，第一维代表第i个物品，第二维代表背包当前容积，所以**<code>dp[i][j]</code>代表i个物品，背包容积为j时能够装到的最大价值**</p>
-<p>下面是模拟过程的矩阵</p>
-<table>
-<thead>
-<tr>
-<th align="center">i j</th>
-<th align="center">0</th>
-<th align="center">1</th>
-<th align="center">2</th>
-<th align="center">3</th>
-<th align="center">4</th>
-<th align="center">5</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-</tr>
-<tr>
-<td align="center">1</td>
-<td align="center">0</td>
-<td align="center">2</td>
-<td align="center">2</td>
-<td align="center">2</td>
-<td align="center">2</td>
-<td align="center">2</td>
-</tr>
-<tr>
-<td align="center">2</td>
-<td align="center">0</td>
-<td align="center">2</td>
-<td align="center">4</td>
-<td align="center">6</td>
-<td align="center">6</td>
-<td align="center">6</td>
-</tr>
-<tr>
-<td align="center">3</td>
-<td align="center">0</td>
-<td align="center">2</td>
-<td align="center">4</td>
-<td align="center">6</td>
-<td align="center">6</td>
-<td align="center">8</td>
-</tr>
-<tr>
-<td align="center">4</td>
-<td align="center">0</td>
-<td align="center">2</td>
-<td align="center">4</td>
-<td align="center">6</td>
-<td align="center">6</td>
-<td align="center">8</td>
-</tr>
-</tbody></table>
-<p>状态转移方程为</p>
-<p>if 当前物品体积 &gt; 当前背包容积：</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">dp[i][j] = dp[i-1][j]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>else</p>
-<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">dp[i][j] = max(dp[i-1][j],dp[i-1][j-当前物品体积]+当前物品价值)   //判断装这个物品是否会价值变大<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h5 id="2、代码"><a href="#2、代码" class="headerlink" title="2、代码"></a>2、代码</h5><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;iostream&gt;
-#include&lt;vector&gt;
-using namespace std;
-
-int main(){
-    int N,V;
-    vector&lt;int&gt; v(N+1);
-    vector&lt;int&gt; w(N+1);
-    cin &gt;&gt; N &gt;&gt; V;
-    for(int i = 1;i &lt;= N;i++){
-        cin &gt;&gt; v[i] &gt;&gt; w[i];
-    }
-    vector&lt;vector&lt;int&gt;&gt; dp(N+1,vector&lt;int&gt;(V+1));
-    for(int i = 1;i &lt;= N;i++){
-        for(int j = 1;j &lt;= V;j++)
-        {  
-            if(j &lt; v[i])       //如果前物品体积大于当前背包容积，则取未装该物品时能够得到的最大价值
-            dp[i][j] = dp[i-1][j];
-            else             //否则判断是否值得装这件物品
-            dp[i][j] = max(dp[i-1][j],dp[i-1][j-v[i]]+w[i]);
-
-        }
-      
-    }
-    cout &lt;&lt; dp[N][V] &lt;&lt; endl;
-    return 0;
-
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="二、完全背包"><a href="#二、完全背包" class="headerlink" title="二、完全背包"></a>二、完全背包</h4><p><strong>Description</strong></p>
-<p>有一个背包，它的容量为<code>V</code>。还有<code>N</code>种不同类型的物品，每种物品都有无限数量可供选择。</p>
-<p>每种物品的体积为<code>v_i</code>，价值为<code>w_i</code>。</p>
-<p>请你确定如何选择物品放入背包，以确保物品的总体积不超过背包的容量，并且物品的总价值达到最大。你需要输出最大的价值。</p>
-<p><strong>Input</strong></p>
+<p><strong>测试的基本原则</strong>：</p>
+<ol>
+<li><strong>全面性</strong>: 测试应该覆盖软件的所有功能和性能方面。</li>
+<li><strong>系统性</strong>: 测试应该有计划和系统地进行，以确保不遗漏任何潜在的错误。</li>
+<li><strong>持续性</strong>: 测试不是一次性的活动，应随着软件开发的进展而持续进行。</li>
+</ol>
+<h2 id="2-常见测试类型与方法"><a href="#2-常见测试类型与方法" class="headerlink" title="2. 常见测试类型与方法"></a><strong>2. 常见测试类型与方法</strong></h2><p><strong>不同的测试类型</strong>：</p>
+<ol>
+<li><strong>单元测试</strong>：针对程序的最小可测试单元（通常是函数或方法）进行的测试。<ul>
+<li><strong>目标</strong>: 确保每个独立单元按照预期工作。</li>
+<li><strong>实施方法</strong>: 使用框架如JUnit（Java）或Google Test（C++）。</li>
+</ul>
+</li>
+<li><strong>集成测试</strong>：测试多个单元协同工作的能力。<ul>
+<li><strong>目标</strong>: 确保模块间接口和交互的正确性。</li>
+<li><strong>实施方法</strong>: 逐步集成模块并测试其交互。</li>
+</ul>
+</li>
+<li><strong>系统测试</strong>：在整个软件系统级别上的测试。<ul>
+<li><strong>目标</strong>: 验证软件满足所有规定的需求。</li>
+<li><strong>实施方法</strong>: 考虑所有组件和外部接口。</li>
+</ul>
+</li>
+<li><strong>性能测试</strong>：评估软件的速度、响应时间和稳定性。<ul>
+<li><strong>目标</strong>: 确保软件在不同条件下的性能符合预期。</li>
+<li><strong>实施方法</strong>: 使用负载测试、压力测试等技术。</li>
+</ul>
+</li>
+</ol>
+<p><strong>选择合适的测试策略</strong>：</p>
 <ul>
-<li>第一行：两个整数，分别代表物品的种数<code>N</code>和背包的容积<code>V</code>。</li>
-<li>接下来的<code>N</code>行：每行包含两个整数，分别代表一种物品的体积<code>v_i</code>和价值<code>w_i</code>。</li>
+<li>根据项目需求和资源选择测试类型。</li>
+<li>综合考虑软件的复杂性、重要性和风险。</li>
 </ul>
-<p><strong>Output</strong></p>
+<h2 id="3-自动化测试工具与实践"><a href="#3-自动化测试工具与实践" class="headerlink" title="3. 自动化测试工具与实践"></a><strong>3. 自动化测试工具与实践</strong></h2><p><strong>自动化测试的优势</strong>：</p>
 <ul>
-<li>输出一个整数，表示能够获得的最大价值。</li>
+<li>提高测试效率和一致性。</li>
+<li>使回归测试更加容易和可靠。</li>
+<li>能够更频繁地执行测试。</li>
 </ul>
-<p>Sample Input 1 </p>
-<pre class="line-numbers language-none"><code class="language-none">4 5
-1 2
-2 4
-3 4
-4 5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>Sample Output 1</p>
-<pre class="line-numbers language-none"><code class="language-none">10<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h5 id="1、思路-1"><a href="#1、思路-1" class="headerlink" title="1、思路"></a>1、思路</h5><p>物品还是只有两种状态，装与不装，不过现在每件物品有无限多个而已</p>
-<p>此时**<code>dp[i][j]</code>代表装第i种物品，背包容积为j时能够装到的最大价值**</p>
-<p>模拟矩阵</p>
-<table>
-<thead>
-<tr>
-<th align="center">i j</th>
-<th align="center">0</th>
-<th align="center">1</th>
-<th align="center">2</th>
-<th align="center">3</th>
-<th align="center">4</th>
-<th align="center">5</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-</tr>
-<tr>
-<td align="center">1</td>
-<td align="center">0</td>
-<td align="center">2</td>
-<td align="center">4</td>
-<td align="center">6</td>
-<td align="center">8</td>
-<td align="center">10</td>
-</tr>
-<tr>
-<td align="center">2</td>
-<td align="center">0</td>
-<td align="center">2</td>
-<td align="center">4</td>
-<td align="center">6</td>
-<td align="center">8</td>
-<td align="center">10</td>
-</tr>
-<tr>
-<td align="center">3</td>
-<td align="center">0</td>
-<td align="center">2</td>
-<td align="center">4</td>
-<td align="center">6</td>
-<td align="center">8</td>
-<td align="center">10</td>
-</tr>
-<tr>
-<td align="center">4</td>
-<td align="center">0</td>
-<td align="center">2</td>
-<td align="center">4</td>
-<td align="center">6</td>
-<td align="center">6</td>
-<td align="center">10</td>
-</tr>
-</tbody></table>
-<p>状态转移方程为</p>
-<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">for(int i = 1;i &lt;= N;i++){
-        for(int j = 1;j &lt;= V;j++){
-            if(v[i] &gt; j)
-            dp[i][j] = dp[i-1][j];
-            else{
-                for(int k = 0;k * v[i] &lt;= j; k++)
-                 dp[i][j] = max(dp[i-1][j],dp[i-1][j-k*v[i]]+k*w[i]);
-            }
-        }
-    }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h5 id="2、代码-1"><a href="#2、代码-1" class="headerlink" title="2、代码"></a>2、代码</h5><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;iostream&gt;
-#include&lt;vector&gt;
-using namespace std;
-
-
-int main(){
-    int N,V;
-    cin &gt;&gt; N &gt;&gt; V;
-    vector&lt;int&gt; v(N+1);
-    vector&lt;int&gt; w(N+1);
-    
-    for(int i = 1;i &lt;= N;i++){
-        cin &gt;&gt; v[i] &gt;&gt; w[i];
-    }
-    vector&lt;vector&lt;int&gt;&gt; dp(N+1,vector&lt;int&gt;(V+1));
-    for(int i = 1;i &lt;= N;i++){
-        for(int j = 1;j &lt;= V;j++){
-            if(v[i] &gt; j)
-            dp[i][j] = dp[i-1][j];
-            else{
-                for(int k = 0;k * v[i] &lt;= j; k++)
-                 dp[i][j] = max(dp[i-1][j],dp[i-1][j-k*v[i]]+k*w[i]);
-            }
-        }
-    }
-    cout &lt;&lt; dp[N][V] &lt;&lt; endl;
-    return 0;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h5 id="3、优化"><a href="#3、优化" class="headerlink" title="3、优化"></a>3、优化</h5><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">if(v[i] &gt; j)
-      dp[i][j] = dp[i-1][j];
-      else{
-               for(int k = 0;k * v[i] &lt;= j; k++)
-                dp[i][j] = max(dp[i-1][j],dp[i-1][j-k*v[i]]+k*w[i]);
-           }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>可以优化成</p>
-<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">if(j &lt; vv[i]) 
-      dp[i][j] = dp[i-1][j];
-              else{
-                    dp[i][j] = max(dp[i-1][j],  
-                                   dp[i][j-vv[i]] + ww[i]);
-                }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>可以理解为既然能放第i件物品，就只用考虑用不用放最后一件物品i <span class="github-emoji"><span>😕</span><img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="https://github.githubassets.com/images/icons/emoji/unicode/1f615.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
-<h4 id="二、多重背包"><a href="#二、多重背包" class="headerlink" title="二、多重背包"></a>二、多重背包</h4><p><strong>Description</strong></p>
-<p>你有一个背包，容量为<code>V</code>，以及<code>N</code>种不同类型的物品。每种物品有限数量供选择。</p>
-<p>对于第<code>i</code>种物品：</p>
+<p><strong>流行的自动化测试工具</strong>：</p>
+<ol>
+<li><strong>Selenium</strong>：用于Web应用的自动化测试。</li>
+<li><strong>JUnit</strong>：Java的单元测试框架。</li>
+<li><strong>TestNG</strong>：适用于多种类型的测试，如单元测试、集成测试等。</li>
+</ol>
+<p><strong>实现有效自动化测试的方法</strong>：</p>
 <ul>
-<li>它有<code>s_i</code>件可用。</li>
-<li>每件的体积是<code>v_i</code>。</li>
-<li>每件的价值是<code>w_i</code>。</li>
+<li>选择适合项目和团队技能的工具。</li>
+<li>设计可重用和易于维护的测试脚本。</li>
+<li>将自动化测试集成到持续集成/持续部署（CI/CD）流程中。</li>
 </ul>
-<p>请确定如何选择物品放入背包，以确保所选物品的总体积不超过背包的容量，并使所选物品的总价值最大化。输出能够获得的最大价值。</p>
-<p><strong>Input</strong></p>
-<ul>
-<li>第一行：两个整数，分别代表物品的种数<code>N</code>和背包的容积<code>V</code>。</li>
-<li>接下来的<code>N</code>行：每行包含三个整数，代表一种物品的体积<code>v_i</code>、价值<code>w_i</code>和数量<code>s_i</code>。</li>
-</ul>
-<p><strong>Output</strong></p>
-<ul>
-<li>输出一个整数，表示能够获得的最大价值。</li>
-</ul>
-<p>Sample Input 1 </p>
-<pre class="line-numbers language-none"><code class="language-none">4 5
-1 2 3
-2 4 1
-3 4 3
-4 5 2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>Sample Output 1</p>
-<pre class="line-numbers language-none"><code class="language-none">10<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h5 id="1、思路-2"><a href="#1、思路-2" class="headerlink" title="1、思路"></a>1、思路</h5><p>物品还是只有两种状态，装与不装，不过现在每件物品有多个而已</p>
-<p>此时**<code>dp[i][j]</code>代表装第i种物品，背包容积为j时能够装到的最大价值**</p>
-<p>状态矩阵如下：</p>
-<table>
-<thead>
-<tr>
-<th align="center">i j</th>
-<th align="center">0</th>
-<th align="center">1</th>
-<th align="center">2</th>
-<th align="center">3</th>
-<th align="center">4</th>
-<th align="center">5</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-</tr>
-<tr>
-<td align="center">1</td>
-<td align="center">0</td>
-<td align="center">2</td>
-<td align="center">4</td>
-<td align="center">6</td>
-<td align="center">6</td>
-<td align="center">6</td>
-</tr>
-<tr>
-<td align="center">2</td>
-<td align="center">0</td>
-<td align="center">2</td>
-<td align="center">4</td>
-<td align="center">6</td>
-<td align="center">8</td>
-<td align="center">10</td>
-</tr>
-<tr>
-<td align="center">3</td>
-<td align="center">0</td>
-<td align="center">2</td>
-<td align="center">4</td>
-<td align="center">6</td>
-<td align="center">6</td>
-<td align="center">10</td>
-</tr>
-<tr>
-<td align="center">4</td>
-<td align="center">0</td>
-<td align="center">2</td>
-<td align="center">4</td>
-<td align="center">6</td>
-<td align="center">6</td>
-<td align="center">10</td>
-</tr>
-</tbody></table>
-<p>转移方程略有变化</p>
-<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">if(当前物品体积 &gt; 当前背包容积)
-	dp[i][j] = dp[i-1][j];
-else{
-                当前背包可以装下物品i的数量 = j/v[i];
-                if(当前背包可以装下物品i的数量 &lt;= 物品i的数量)
-                dp[i][j] = max(dp[i-1][j],dp[i][j- 当前背包可以装下物品i的数量 * v[i] ]+当前背包可以装下物品i的数量 * w[i]);
-                else   
-                dp[i][j] = max(dp[i-1][j],dp[i][j-物品i的数量*v[i]] + 物品i的数量 * w[i]);
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h5 id="2、代码-2"><a href="#2、代码-2" class="headerlink" title="2、代码"></a>2、代码</h5><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;iostream&gt;
-#include&lt;vector&gt;
-using namespace std;
-
-
-int main(){
-    int N,V;
-    cin &gt;&gt; N &gt;&gt; V;
-    vector&lt;int&gt; v(N+1);
-    vector&lt;int&gt; w(N+1);
-    vector&lt;int&gt; t(N+1);
-    
-    for(int i = 1;i &lt;= N;i++){
-        cin &gt;&gt; v[i] &gt;&gt; w[i] &gt;&gt; t[i];
-    }
-    vector&lt;vector&lt;int&gt;&gt; dp(N+1,vector&lt;int&gt;(V+1));
-    for(int i = 1;i &lt;= N;i++){
-        for(int j = 1;j &lt;= V;j++){
-            if(v[i] &gt; j)
-            dp[i][j] = dp[i-1][j];
-            else{
-                for(int k = 0;k &lt;= t[i] &amp;&amp; k * v[i] &lt;= j; k++)
-                 dp[i][j] = max(dp[i][j],dp[i-1][j-k*v[i]]+k*w[i]);
-            }
-        }
-    }
-    cout &lt;&lt; dp[N][V] &lt;&lt; endl;
-    return 0;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>暂时到这里吧！<span class="github-emoji"><span>🌟</span><img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="https://github.githubassets.com/images/icons/emoji/unicode/1f31f.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
 
                 
             </div>
@@ -902,7 +565,7 @@ int main(){
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://summerbird-1.github.io/2023/11/08/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">http://summerbird-1.github.io/2023/11/08/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/</a>
+                    <a href="http://summerbird-1.github.io/2023/11/22/%E7%B3%BB%E7%BB%9F%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/">http://summerbird-1.github.io/2023/11/22/%E7%B3%BB%E7%BB%9F%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -940,12 +603,8 @@ int main(){
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
-                                    <span class="chip bg-color">动态规划</span>
-                                </a>
-                            
-                                <a href="/tags/%E8%83%8C%E5%8C%85/">
-                                    <span class="chip bg-color">背包</span>
+                                <a href="/tags/SpringBoot/">
+                                    <span class="chip bg-color">SpringBoot</span>
                                 </a>
                             
                         </div>
@@ -1127,13 +786,13 @@ int main(){
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2023/11/10/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/">
+                <a href="/2023/11/26/RBAC%E6%9D%83%E9%99%90%E6%A8%A1%E5%9E%8B/">
                     <div class="card-image">
                         
                         
-                        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/featureimages/7.webp" class="responsive-img" alt="动态规划之石子合并">
+                        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/featureimages/23.webp" class="responsive-img" alt="RBAC权限模型">
                         
-                        <span class="card-title">动态规划之石子合并</span>
+                        <span class="card-title">RBAC权限模型</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1144,14 +803,14 @@ int main(){
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-10
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-26
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Algorithm/" class="post-category">
-                                    Algorithm
+                            <a href="/categories/SpringSecurity/" class="post-category">
+                                    SpringSecurity
                                 </a>
                             
                             
@@ -1161,12 +820,8 @@ int main(){
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
-                        <span class="chip bg-color">动态规划</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/">
-                        <span class="chip bg-color">石子合并</span>
+                    <a href="/tags/RBAC/">
+                        <span class="chip bg-color">RBAC</span>
                     </a>
                     
                 </div>
@@ -1180,13 +835,13 @@ int main(){
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/11/06/vue%E4%BD%BF%E7%94%A8%E4%B8%8B%E6%8B%89%E6%A0%91%E7%BB%84%E4%BB%B6-riophae-vue-treeselect/">
+                <a href="/2023/11/22/%E9%A1%B9%E7%9B%AE%E5%90%8C%E6%AD%A5Github%E4%BB%93%E5%BA%93/">
                     <div class="card-image">
                         
                         
-                        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/featureimages/2.webp" class="responsive-img" alt="vue使用下拉树组件@riophae/vue-treeselect">
+                        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/featureimages/23.webp" class="responsive-img" alt="项目同步Github仓库">
                         
-                        <span class="card-title">vue使用下拉树组件@riophae/vue-treeselect</span>
+                        <span class="card-title">项目同步Github仓库</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1197,14 +852,14 @@ int main(){
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-06
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-22
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Vue/" class="post-category">
-                                    Vue
+                            <a href="/categories/git/" class="post-category">
+                                    git
                                 </a>
                             
                             
@@ -1214,8 +869,8 @@ int main(){
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/vue-treeselect/">
-                        <span class="chip bg-color">vue-treeselect</span>
+                    <a href="/tags/GitHub/">
+                        <span class="chip bg-color">GitHub</span>
                     </a>
                     
                 </div>
