@@ -6,7 +6,7 @@
   <link href="http://summerbird-1.github.io/atom.xml" rel="self"/>
   
   <link href="http://summerbird-1.github.io/"/>
-  <updated>2023-11-26T11:22:01.887Z</updated>
+  <updated>2023-11-27T05:56:24.361Z</updated>
   <id>http://summerbird-1.github.io/</id>
   
   <author>
@@ -15,6 +15,61 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Springboot3+SpringSecurity6+jwt集成流程</title>
+    <link href="http://summerbird-1.github.io/2023/11/27/Springboot3-SpringSecurity6-jwt%E9%9B%86%E6%88%90%E6%B5%81%E7%A8%8B/"/>
+    <id>http://summerbird-1.github.io/2023/11/27/Springboot3-SpringSecurity6-jwt%E9%9B%86%E6%88%90%E6%B5%81%E7%A8%8B/</id>
+    <published>2023-11-27T05:24:31.000Z</published>
+    <updated>2023-11-27T05:56:24.361Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;一觉醒来，idea已经不支持使用Springboot3.0以下版本，就意味着必须拥抱jdk17或者21了🥲🥲🦫&lt;/p&gt;
+&lt;h2 id=&quot;一、创建工程🚲&quot;&gt;&lt;a href=&quot;#一、创建工程🚲&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="SpringBoot" scheme="http://summerbird-1.github.io/categories/SpringBoot/"/>
+    
+    
+    <category term="SpringSecurity" scheme="http://summerbird-1.github.io/tags/SpringSecurity/"/>
+    
+    <category term="JWT" scheme="http://summerbird-1.github.io/tags/JWT/"/>
+    
+    <category term="jdk17" scheme="http://summerbird-1.github.io/tags/jdk17/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>链表刷题</title>
+    <link href="http://summerbird-1.github.io/2023/11/27/%E9%93%BE%E8%A1%A8%E5%88%B7%E9%A2%98/"/>
+    <id>http://summerbird-1.github.io/2023/11/27/%E9%93%BE%E8%A1%A8%E5%88%B7%E9%A2%98/</id>
+    <published>2023-11-27T01:34:58.000Z</published>
+    <updated>2023-11-27T01:41:16.613Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;203-移除链表元素&quot;&gt;&lt;a href=&quot;#203-移除链表元素&quot; class=&quot;headerlink&quot; title=&quot;203. 移除链表元素&quot;&gt;&lt;/a&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="LeetCode" scheme="http://summerbird-1.github.io/categories/LeetCode/"/>
+    
+    
+    <category term="链表" scheme="http://summerbird-1.github.io/tags/%E9%93%BE%E8%A1%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>RBAC权限模型</title>
@@ -46,7 +101,7 @@
     <link href="http://summerbird-1.github.io/2023/11/22/%E7%B3%BB%E7%BB%9F%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/"/>
     <id>http://summerbird-1.github.io/2023/11/22/%E7%B3%BB%E7%BB%9F%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/</id>
     <published>2023-11-22T10:06:07.000Z</published>
-    <updated>2023-11-26T11:22:42.423Z</updated>
+    <updated>2023-11-26T11:29:55.847Z</updated>
     
     
       
@@ -335,7 +390,7 @@
     <link href="http://summerbird-1.github.io/2023/11/12/RBAC%E7%B3%BB%E7%BB%9F%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%B5%81%E7%A8%8B/"/>
     <id>http://summerbird-1.github.io/2023/11/12/RBAC%E7%B3%BB%E7%BB%9F%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%B5%81%E7%A8%8B/</id>
     <published>2023-11-12T01:56:53.000Z</published>
-    <updated>2023-11-15T06:31:24.665Z</updated>
+    <updated>2023-11-27T05:56:54.754Z</updated>
     
     
       
@@ -490,59 +545,6 @@
     <category term="动态规划" scheme="http://summerbird-1.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
     <category term="背包" scheme="http://summerbird-1.github.io/tags/%E8%83%8C%E5%8C%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue使用下拉树组件@riophae/vue-treeselect</title>
-    <link href="http://summerbird-1.github.io/2023/11/06/vue%E4%BD%BF%E7%94%A8%E4%B8%8B%E6%8B%89%E6%A0%91%E7%BB%84%E4%BB%B6-riophae-vue-treeselect/"/>
-    <id>http://summerbird-1.github.io/2023/11/06/vue%E4%BD%BF%E7%94%A8%E4%B8%8B%E6%8B%89%E6%A0%91%E7%BB%84%E4%BB%B6-riophae-vue-treeselect/</id>
-    <published>2023-11-06T06:22:39.000Z</published>
-    <updated>2023-11-15T06:31:24.680Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;在vue中, 因为element-ui 2.X是没有tree-select组件的，到了element-plus就有了 @riophae/vue-treeselect是一个基于 Vue.js</summary>
-        
-      
-    
-    
-    
-    <category term="Vue" scheme="http://summerbird-1.github.io/categories/Vue/"/>
-    
-    
-    <category term="vue-treeselect" scheme="http://summerbird-1.github.io/tags/vue-treeselect/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Request failed with status code 405解决方法</title>
-    <link href="http://summerbird-1.github.io/2023/11/04/Request-failed-with-status-code-405%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
-    <id>http://summerbird-1.github.io/2023/11/04/Request-failed-with-status-code-405%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</id>
-    <published>2023-11-04T06:19:45.000Z</published>
-    <updated>2023-11-15T06:31:24.665Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;报错Request-failed-with-status-code-405&quot;&gt;&lt;a href=&quot;#报错Request-failed-with-status-code-405&quot; class=&quot;headerlink&quot; title=&quot;报错Request failed</summary>
-        
-      
-    
-    
-    
-    <category term="Bug" scheme="http://summerbird-1.github.io/categories/Bug/"/>
-    
-    
-    <category term="Vue" scheme="http://summerbird-1.github.io/tags/Vue/"/>
-    
-    <category term="Mybatis-plus" scheme="http://summerbird-1.github.io/tags/Mybatis-plus/"/>
     
   </entry>
   
