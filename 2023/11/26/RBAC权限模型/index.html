@@ -31,9 +31,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 6.3.0">
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="SummerBird" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="SummerBird" type="application/atom+xml">
 </head>
 
 
@@ -444,21 +444,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2023-11-26
+                    2023-11-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    48
+                    4.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    1 Min
+                    26 Min
                 </div>
                 
 
@@ -482,6 +482,999 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h5 id="RBAC权限模型"><a href="#RBAC权限模型" class="headerlink" title="RBAC权限模型"></a>RBAC权限模型</h5><p>​	RBAC权限模型（Role-Based Access Control）即：基于角色的权限控制。这是目前最常被开发者使用也是相对易用、通用权限模型。</p>
+<h2 id="一、后端工程"><a href="#一、后端工程" class="headerlink" title="一、后端工程"></a>一、后端工程</h2><h3 id="1、创建Springboot3-2-0项目"><a href="#1、创建Springboot3-2-0项目" class="headerlink" title="1、创建Springboot3.2.0项目"></a>1、创建Springboot3.2.0项目</h3><h3 id="2、添加依赖"><a href="#2、添加依赖" class="headerlink" title="2、添加依赖"></a>2、添加依赖</h3><p>pom.xml</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependencies</span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-boot-starter-web<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+       <span class="token comment">&lt;!-- MySQL JDBC driver --&gt;</span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>mysql<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>mysql-connector-java<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>8.0.33<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>com.baomidou<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>mybatis-plus-boot-starter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>3.5.2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-boot-devtools<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scope</span><span class="token punctuation">&gt;</span></span>runtime<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>scope</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>optional</span><span class="token punctuation">&gt;</span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>optional</span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+       <span class="token comment">&lt;!-- Spring Data Redis依赖 --&gt;</span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-boot-starter-data-redis<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+       <span class="token comment">&lt;!-- Jedis客户端依赖 --&gt;</span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>redis.clients<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>jedis<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.projectlombok<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>lombok<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>optional</span><span class="token punctuation">&gt;</span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>optional</span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+       <span class="token comment">&lt;!--fastjson依赖--&gt;</span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>com.alibaba<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>fastjson<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>1.2.33<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+       <span class="token comment">&lt;!--jwt依赖--&gt;</span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>io.jsonwebtoken<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>jjwt<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>0.9.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-boot-starter-test<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scope</span><span class="token punctuation">&gt;</span></span>test<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>scope</span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencies</span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>repositories</span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>repository</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>id</span><span class="token punctuation">&gt;</span></span>huaweicloud<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>id</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>huawei<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">&gt;</span></span>https://mirrors.huaweicloud.com/repository/maven/<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>url</span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>repository</span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>repository</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>id</span><span class="token punctuation">&gt;</span></span>aliyunmaven<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>id</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>aliyun<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">&gt;</span></span>https://maven.aliyun.com/repository/public<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>url</span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>repository</span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>repositories</span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pluginRepositories</span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pluginRepository</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>id</span><span class="token punctuation">&gt;</span></span>public<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>id</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>aliyun nexus<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">&gt;</span></span>https://maven.aliyun.com/nexus/content/groups/public/<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>url</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>releases</span><span class="token punctuation">&gt;</span></span>
+               <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>enabled</span><span class="token punctuation">&gt;</span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>enabled</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>releases</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>snapshots</span><span class="token punctuation">&gt;</span></span>
+               <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>enabled</span><span class="token punctuation">&gt;</span></span>false<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>enabled</span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>snapshots</span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>pluginRepository</span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>pluginRepositories</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>application.yml</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/rbac?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+      timeout: 10000
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+
+
+jwt:
+  secret: gx4SN/4gh6QPvLfVWCW8Aoo4l2n66d2338IwXyu1koDT1W94XS35OZJPYkA2IIMMgmlz96LCHSNc8jLYuzwB1IreKOZz2TZhsWODfjHAS9bYlduniCUSuSPZ5/OP15O63fn1kN1N5w64frpyWcWbTtiCgLMkJpnfjmqFMAr7fgcOGyt2rmunvFYni9T78Q4fn/0gpx3qm8zXw3oBbFb1Ge9Wnh1UCSapXd/EzLau3iaXqp9f+8FHmSCo9vbEaRSRMPHdcpnB4WKHKySE/BCNSsWM+kHmHyrAbvKErPCz2XXMnIalUoAtquq03LnmYjrBHyI230VcYEVzGmzLOTsSJw==
+  access_token:
+    expiration: 36000 # in seconds
+  refresh_token:
+    expiration: 604800 # in seconds<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="3、数据库创建"><a href="#3、数据库创建" class="headerlink" title="3、数据库创建"></a>3、数据库创建</h3><p>rbac_init.sql</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">/*
+ Navicat Premium Data Transfer
+
+ Source Server         : 123
+ Source Server Type    : MySQL
+ Source Server Version : 80029
+ Source Host           : localhost:3306
+ Source Schema         : rbac
+
+ Target Server Type    : MySQL
+ Target Server Version : 80029
+ File Encoding         : 65001
+
+ Date: 14/11/2023 13:48:18
+*/
+
+SET NAMES utf8;
+SET FOREIGN_KEY_CHECKS = 0;
+CREATE DATABASE IF NOT EXISTS `rbac` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
+USE `rbac`;
+-- ----------------------------
+-- Table structure for menu
+-- ----------------------------
+DROP TABLE IF EXISTS `menu`;
+CREATE TABLE `menu`  (
+  `id` bigint NOT NULL AUTO_INCREMENT COMMENT '菜单ID',
+  `menu_name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '菜单名称',
+  `parent_id` bigint NULL DEFAULT 0 COMMENT '父菜单ID',
+  `order_num` int NULL DEFAULT 0 COMMENT '显示顺序',
+  `path` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '路由地址',
+  `component` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '组件路径',
+  `is_frame` int NULL DEFAULT 1 COMMENT '是否为外链（0是 1否）',
+  `menu_type` char(1) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '菜单类型（M目录 C菜单 F按钮）',
+  `visible` char(1) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '0' COMMENT '菜单状态（0显示 1隐藏）',
+  `status` char(1) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '0' COMMENT '菜单状态（0正常 1停用）',
+  `perms` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '权限标识',
+  `icon` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '#' COMMENT '菜单图标',
+  `create_by` bigint NULL DEFAULT NULL COMMENT '创建者',
+  `create_time` datetime NULL DEFAULT NULL COMMENT '创建时间',
+  `update_by` bigint NULL DEFAULT NULL COMMENT '更新者',
+  `update_time` datetime NULL DEFAULT NULL COMMENT '更新时间',
+  `remark` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '备注',
+  `del_flag` char(1) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '0',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 2035 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '菜单权限表' ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of menu
+-- ----------------------------
+INSERT INTO `menu` VALUES (100, '用户管理', 0, 1, 'user', 'view/user', 1, 'C', '0', '0', 'user:list', 'user', 0, '2021-11-12 10:46:19', 1, '2022-07-31 15:47:58', '用户管理菜单', '0');
+INSERT INTO `menu` VALUES (101, '角色管理', 0, 2, 'role', 'view/role', 1, 'C', '0', '0', 'role:list', 'peoples', 0, '2021-11-12 10:46:19', 0, NULL, '角色管理菜单', '0');
+INSERT INTO `menu` VALUES (102, '菜单管理', 0, 3, 'menu', 'view/menu', 1, 'C', '0', '0', 'menu:list', 'tree-table', 0, '2021-11-12 10:46:19', 0, NULL, '菜单管理菜单', '0');
+INSERT INTO `menu` VALUES (1001, '用户查询', 100, 1, '', '', 1, 'F', '0', '0', 'user:query', '#', 0, '2021-11-12 10:46:19', 0, NULL, '', '0');
+INSERT INTO `menu` VALUES (1002, '用户新增', 100, 2, '', '', 1, 'F', '0', '0', 'user:add', '#', 0, '2021-11-12 10:46:19', 0, NULL, '', '0');
+INSERT INTO `menu` VALUES (1003, '用户修改', 100, 3, '', '', 1, 'F', '0', '0', 'user:edit', '#', 0, '2021-11-12 10:46:19', 0, NULL, '', '0');
+INSERT INTO `menu` VALUES (1004, '用户删除', 100, 4, '', '', 1, 'F', '0', '0', 'user:remove', '#', 0, '2021-11-12 10:46:19', 0, NULL, '', '0');
+INSERT INTO `menu` VALUES (1008, '角色查询', 101, 1, '', '', 1, 'F', '0', '0', 'role:query', '#', 0, '2021-11-12 10:46:19', 0, NULL, '', '0');
+INSERT INTO `menu` VALUES (1009, '角色新增', 101, 2, '', '', 1, 'F', '0', '0', 'role:add', '#', 0, '2021-11-12 10:46:19', 0, NULL, '', '0');
+INSERT INTO `menu` VALUES (1010, '角色修改', 101, 3, '', '', 1, 'F', '0', '0', 'role:edit', '#', 0, '2021-11-12 10:46:19', 0, NULL, '', '0');
+INSERT INTO `menu` VALUES (1011, '角色删除', 101, 4, '', '', 1, 'F', '0', '0', 'role:remove', '#', 0, '2021-11-12 10:46:19', 0, NULL, '', '0');
+INSERT INTO `menu` VALUES (1013, '菜单查询', 102, 1, '', '', 1, 'F', '0', '0', 'menu:query', '#', 0, '2021-11-12 10:46:19', 0, NULL, '', '0');
+INSERT INTO `menu` VALUES (1014, '菜单新增', 102, 2, '', '', 1, 'F', '0', '0', 'menu:add', '#', 0, '2021-11-12 10:46:19', 0, NULL, '', '0');
+INSERT INTO `menu` VALUES (1015, '菜单修改', 102, 3, '', '', 1, 'F', '0', '0', 'menu:edit', '#', 0, '2021-11-12 10:46:19', 0, NULL, '', '0');
+INSERT INTO `menu` VALUES (1016, '菜单删除', 102, 4, '', '', 1, 'F', '0', '0', 'menu:remove', '#', 0, '2021-11-12 10:46:19', 0, NULL, '', '0');
+INSERT INTO `menu` VALUES (2035, '权限管理', 0, 4, '/permission', NULL, 1, 'M', '0', '0', NULL, 'lock', NULL, NULL, NULL, NULL, '', '1');
+
+-- ----------------------------
+-- Table structure for role
+-- ----------------------------
+DROP TABLE IF EXISTS `role`;
+CREATE TABLE `role`  (
+  `roleId` bigint NOT NULL AUTO_INCREMENT,
+  `rolename` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT '',
+  `description` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT '',
+  `status` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
+  PRIMARY KEY (`roleId`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 21 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of role
+-- ----------------------------
+INSERT INTO `role` VALUES (1, '管理员', '系统管理员', '0');
+INSERT INTO `role` VALUES (2, '编辑', '文章编辑员', '0');
+INSERT INTO `role` VALUES (3, '普通用户', '系统普通用户', '0');
+INSERT INTO `role` VALUES (20, '咸鱼', '管理用户', '0');
+INSERT INTO `role` VALUES (21, '虎鲸', '虎鲸呼呼呼呼', '0');
+
+-- ----------------------------
+-- Table structure for role_menu
+-- ----------------------------
+DROP TABLE IF EXISTS `role_menu`;
+CREATE TABLE `role_menu`  (
+  `role_id` bigint NOT NULL COMMENT '角色ID',
+  `menu_id` bigint NOT NULL COMMENT '菜单ID',
+  PRIMARY KEY (`role_id`, `menu_id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '角色和菜单关联表' ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of role_menu
+-- ----------------------------
+INSERT INTO `role_menu` VALUES (0, 0);
+INSERT INTO `role_menu` VALUES (2, 1);
+INSERT INTO `role_menu` VALUES (2, 102);
+INSERT INTO `role_menu` VALUES (2, 1013);
+INSERT INTO `role_menu` VALUES (2, 1014);
+INSERT INTO `role_menu` VALUES (2, 1015);
+INSERT INTO `role_menu` VALUES (2, 1016);
+INSERT INTO `role_menu` VALUES (2, 2000);
+INSERT INTO `role_menu` VALUES (3, 100);
+INSERT INTO `role_menu` VALUES (3, 1003);
+INSERT INTO `role_menu` VALUES (11, 1);
+INSERT INTO `role_menu` VALUES (11, 100);
+INSERT INTO `role_menu` VALUES (11, 101);
+INSERT INTO `role_menu` VALUES (11, 102);
+INSERT INTO `role_menu` VALUES (11, 1001);
+INSERT INTO `role_menu` VALUES (11, 1002);
+INSERT INTO `role_menu` VALUES (11, 1003);
+INSERT INTO `role_menu` VALUES (11, 1004);
+INSERT INTO `role_menu` VALUES (11, 1005);
+INSERT INTO `role_menu` VALUES (11, 1006);
+INSERT INTO `role_menu` VALUES (11, 1007);
+INSERT INTO `role_menu` VALUES (11, 1008);
+INSERT INTO `role_menu` VALUES (11, 1009);
+INSERT INTO `role_menu` VALUES (11, 1010);
+INSERT INTO `role_menu` VALUES (11, 1011);
+INSERT INTO `role_menu` VALUES (11, 1012);
+INSERT INTO `role_menu` VALUES (11, 1013);
+INSERT INTO `role_menu` VALUES (11, 1014);
+INSERT INTO `role_menu` VALUES (11, 1015);
+INSERT INTO `role_menu` VALUES (11, 1016);
+INSERT INTO `role_menu` VALUES (11, 2017);
+INSERT INTO `role_menu` VALUES (11, 2018);
+INSERT INTO `role_menu` VALUES (11, 2019);
+INSERT INTO `role_menu` VALUES (11, 2021);
+INSERT INTO `role_menu` VALUES (11, 2022);
+INSERT INTO `role_menu` VALUES (11, 2024);
+INSERT INTO `role_menu` VALUES (11, 2025);
+INSERT INTO `role_menu` VALUES (11, 2026);
+INSERT INTO `role_menu` VALUES (11, 2027);
+INSERT INTO `role_menu` VALUES (11, 2028);
+INSERT INTO `role_menu` VALUES (12, 2017);
+INSERT INTO `role_menu` VALUES (12, 2022);
+INSERT INTO `role_menu` VALUES (12, 2024);
+INSERT INTO `role_menu` VALUES (12, 2025);
+INSERT INTO `role_menu` VALUES (12, 2026);
+INSERT INTO `role_menu` VALUES (12, 2027);
+INSERT INTO `role_menu` VALUES (13, 1);
+INSERT INTO `role_menu` VALUES (13, 100);
+INSERT INTO `role_menu` VALUES (13, 101);
+INSERT INTO `role_menu` VALUES (13, 102);
+INSERT INTO `role_menu` VALUES (13, 1001);
+INSERT INTO `role_menu` VALUES (13, 1002);
+INSERT INTO `role_menu` VALUES (13, 1003);
+INSERT INTO `role_menu` VALUES (13, 1004);
+INSERT INTO `role_menu` VALUES (13, 1005);
+INSERT INTO `role_menu` VALUES (13, 1006);
+INSERT INTO `role_menu` VALUES (13, 1007);
+INSERT INTO `role_menu` VALUES (13, 1008);
+INSERT INTO `role_menu` VALUES (13, 1009);
+INSERT INTO `role_menu` VALUES (13, 1010);
+INSERT INTO `role_menu` VALUES (13, 1011);
+INSERT INTO `role_menu` VALUES (13, 1012);
+INSERT INTO `role_menu` VALUES (13, 1013);
+INSERT INTO `role_menu` VALUES (13, 1014);
+INSERT INTO `role_menu` VALUES (13, 1015);
+INSERT INTO `role_menu` VALUES (13, 1016);
+INSERT INTO `role_menu` VALUES (13, 2017);
+INSERT INTO `role_menu` VALUES (13, 2018);
+INSERT INTO `role_menu` VALUES (13, 2019);
+INSERT INTO `role_menu` VALUES (13, 2021);
+INSERT INTO `role_menu` VALUES (13, 2022);
+INSERT INTO `role_menu` VALUES (13, 2023);
+INSERT INTO `role_menu` VALUES (13, 2024);
+INSERT INTO `role_menu` VALUES (13, 2025);
+INSERT INTO `role_menu` VALUES (13, 2026);
+INSERT INTO `role_menu` VALUES (13, 2027);
+INSERT INTO `role_menu` VALUES (13, 2028);
+INSERT INTO `role_menu` VALUES (18, 100);
+INSERT INTO `role_menu` VALUES (18, 1001);
+INSERT INTO `role_menu` VALUES (18, 1002);
+INSERT INTO `role_menu` VALUES (18, 1003);
+INSERT INTO `role_menu` VALUES (18, 1004);
+INSERT INTO `role_menu` VALUES (19, 100);
+INSERT INTO `role_menu` VALUES (19, 1001);
+INSERT INTO `role_menu` VALUES (19, 1002);
+INSERT INTO `role_menu` VALUES (19, 1003);
+INSERT INTO `role_menu` VALUES (19, 1004);
+INSERT INTO `role_menu` VALUES (20, 100);
+INSERT INTO `role_menu` VALUES (20, 1001);
+INSERT INTO `role_menu` VALUES (20, 1002);
+INSERT INTO `role_menu` VALUES (20, 1003);
+INSERT INTO `role_menu` VALUES (20, 1004);
+INSERT INTO `role_menu` VALUES (21, 100);
+INSERT INTO `role_menu` VALUES (21, 101);
+INSERT INTO `role_menu` VALUES (21, 102);
+INSERT INTO `role_menu` VALUES (21, 1001);
+INSERT INTO `role_menu` VALUES (21, 1002);
+INSERT INTO `role_menu` VALUES (21, 1003);
+INSERT INTO `role_menu` VALUES (21, 1004);
+INSERT INTO `role_menu` VALUES (21, 1008);
+INSERT INTO `role_menu` VALUES (21, 1009);
+INSERT INTO `role_menu` VALUES (21, 1010);
+INSERT INTO `role_menu` VALUES (21, 1011);
+INSERT INTO `role_menu` VALUES (21, 1013);
+INSERT INTO `role_menu` VALUES (21, 1014);
+INSERT INTO `role_menu` VALUES (21, 1015);
+INSERT INTO `role_menu` VALUES (21, 1016);
+
+-- ----------------------------
+-- Table structure for sys_user
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_user`;
+CREATE TABLE `sys_user`  (
+  `userId` bigint NOT NULL AUTO_INCREMENT COMMENT '主键',
+  `username` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci  NOT NULL DEFAULT 'NULL' COMMENT '用户名',
+  `password` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci  NOT NULL DEFAULT 'NULL' COMMENT '密码',
+  `status` char(1) CHARACTER SET utf8 COLLATE utf8_general_ci  NULL DEFAULT '0' COMMENT '账号状态（0正常 1停用）',
+  `email` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci  NULL DEFAULT NULL COMMENT '邮箱',
+  `phone` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci  NULL DEFAULT NULL COMMENT '手机号',
+  PRIMARY KEY (`userId`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 16 CHARACTER SET = utf8 COLLATE = utf8_general_ci  COMMENT = '用户表' ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of sys_user
+-- ----------------------------
+INSERT INTO `sys_user` VALUES (2, 'zjz', '$2a$10$UQ4gucaGvylXWHO7oB9G7.aXVeOrF8zMxztZrLBDtFU0waYJwDx7O', '0', '123@qq.com', '13031939607');
+INSERT INTO `sys_user` VALUES (3, 'hj', '$2a$10$UQ4gucaGvylXWHO7oB9G7.aXVeOrF8zMxztZrLBDtFU0waYJwDx7O', '0', '123@qq.com', '12121212112');
+INSERT INTO `sys_user` VALUES (4, '张军钊', '$2a$10$UQ4gucaGvylXWHO7oB9G7.aXVeOrF8zMxztZrLBDtFU0waYJwDx7O', '0', '2718075060@qq.com', '13031939607');
+INSERT INTO `sys_user` VALUES (11, '徒生安', '$2a$10$UQ4gucaGvylXWHO7oB9G7.aXVeOrF8zMxztZrLBDtFU0waYJwDx7O', '0', 'zhangcoder@foxmail.com', '130319396');
+INSERT INTO `sys_user` VALUES (16, '撒贝宁', '$2a$10$UQ4gucaGvylXWHO7oB9G7.aXVeOrF8zMxztZrLBDtFU0waYJwDx7O', '0', '2324@wew.com', '123432134');
+
+-- ----------------------------
+-- Table structure for user_roles
+-- ----------------------------
+DROP TABLE IF EXISTS `user_roles`;
+CREATE TABLE `user_roles`  (
+  `userId` bigint NOT NULL,
+  `roleId` bigint NOT NULL,
+  PRIMARY KEY (`userId`, `roleId`) USING BTREE,
+  INDEX `role_id`(`roleId`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of user_roles
+-- ----------------------------
+INSERT INTO `user_roles` VALUES (1, 1);
+INSERT INTO `user_roles` VALUES (1, 2);
+INSERT INTO `user_roles` VALUES (2, 2);
+INSERT INTO `user_roles` VALUES (4, 2);
+INSERT INTO `user_roles` VALUES (11, 2);
+INSERT INTO `user_roles` VALUES (1, 3);
+INSERT INTO `user_roles` VALUES (3, 3);
+INSERT INTO `user_roles` VALUES (4, 3);
+INSERT INTO `user_roles` VALUES (11, 20);
+INSERT INTO `user_roles` VALUES (16, 20);
+
+SET FOREIGN_KEY_CHECKS = 1;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="4、用户实体类"><a href="#4、用户实体类" class="headerlink" title="4、用户实体类"></a>4、用户实体类</h3><p>com/zjz/entity/User.java</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">/**
+ * 用户表(User)表实体类
+ *
+ * @author makejava
+ * @since 2023-11-28 21:51:06
+ */
+@SuppressWarnings("serial")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@TableName("sys_user")
+public class User  {
+    //主键
+    @TableId
+    private Long userid;
+
+    //用户名
+    private String username;
+    //密码
+    private String password;
+    //账号状态（0正常 1停用）
+    private String status;
+    //邮箱
+    private String email;
+    //手机号
+    private String phone;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="5、登录接口实现"><a href="#5、登录接口实现" class="headerlink" title="5、登录接口实现"></a>5、登录接口实现</h3><p>登录接口需求：</p>
+<ol>
+<li>用户输出用户名密码，验证是否存在用户，密码是否正确。</li>
+<li>验证成功，返回accessToken和refreshToken</li>
+</ol>
+<h4 id="统一返回类"><a href="#统一返回类" class="headerlink" title="统一返回类"></a>统一返回类</h4><p>com/zjz/entity/ResponseResult.java</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">import com.fasterxml.jackson.annotation.JsonInclude;
+import com.zjz.enums.AppHttpCodeEnum;
+
+import java.io.Serializable;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class ResponseResult&lt;T&gt; implements Serializable {
+    private Integer code;
+    private String msg;
+    private T data;
+
+    public ResponseResult() {
+        this.code = AppHttpCodeEnum.SUCCESS.getCode();
+        this.msg = AppHttpCodeEnum.SUCCESS.getMsg();
+    }
+
+    public ResponseResult(Integer code, T data) {
+        this.code = code;
+        this.data = data;
+    }
+
+    public ResponseResult(Integer code, String msg, T data) {
+        this.code = code;
+        this.msg = msg;
+        this.data = data;
+    }
+
+    public ResponseResult(Integer code, String msg) {
+        this.code = code;
+        this.msg = msg;
+    }
+
+    public static ResponseResult errorResult(int code, String msg) {
+        ResponseResult result = new ResponseResult();
+        return result.error(code, msg);
+    }
+    public static ResponseResult okResult() {
+        ResponseResult result = new ResponseResult();
+        return result;
+    }
+    public static ResponseResult okResult(int code, String msg) {
+        ResponseResult result = new ResponseResult();
+        return result.ok(code, null, msg);
+    }
+
+    public static ResponseResult okResult(Object data) {
+        ResponseResult result = setAppHttpCodeEnum(AppHttpCodeEnum.SUCCESS, AppHttpCodeEnum.SUCCESS.getMsg());
+        if(data!=null) {
+            result.setData(data);
+        }
+        return result;
+    }
+
+    public static ResponseResult errorResult(AppHttpCodeEnum enums){
+        return setAppHttpCodeEnum(enums,enums.getMsg());
+    }
+
+    public static ResponseResult errorResult(AppHttpCodeEnum enums, String msg){
+        return setAppHttpCodeEnum(enums,msg);
+    }
+
+    public static ResponseResult setAppHttpCodeEnum(AppHttpCodeEnum enums){
+        return okResult(enums.getCode(),enums.getMsg());
+    }
+
+    private static ResponseResult setAppHttpCodeEnum(AppHttpCodeEnum enums, String msg){
+        return okResult(enums.getCode(),msg);
+    }
+
+    public ResponseResult&lt;?&gt; error(Integer code, String msg) {
+        this.code = code;
+        this.msg = msg;
+        return this;
+    }
+
+    public ResponseResult&lt;?&gt; ok(Integer code, T data) {
+        this.code = code;
+        this.data = data;
+        return this;
+    }
+
+    public ResponseResult&lt;?&gt; ok(Integer code, T data, String msg) {
+        this.code = code;
+        this.data = data;
+        this.msg = msg;
+        return this;
+    }
+
+    public ResponseResult&lt;?&gt; ok(T data) {
+        this.data = data;
+        return this;
+    }
+
+    public Integer getCode() {
+        return code;
+    }
+
+    public void setCode(Integer code) {
+        this.code = code;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public T getData() {
+        return data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
+    }
+
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>com/zjz/enums/AppHttpCodeEnum.java</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public enum AppHttpCodeEnum {
+    // 成功
+    SUCCESS(200,"操作成功"),
+    // 登录
+    NEED_LOGIN(401,"需要登录后操作"),
+    NO_OPERATOR_AUTH(403,"无权限操作"),
+    SYSTEM_ERROR(500,"出现错误"),
+    USERNAME_EXIST(501,"用户名已存在"),
+    PHONENUMBER_EXIST(502,"手机号已存在"), EMAIL_EXIST(503, "邮箱已存在"),
+    REQUIRE_USERNAME(504, "必需填写用户名"),
+    LOGIN_ERROR(505,"用户名或密码错误"),
+    CONTENT_NOT_NULL(506,"评论内容不为空"),
+    FILE_TYPE_ERROR(507,"文件类型错误，请上传PNG文件"),
+    USERNAME_NOT_NULL(508,"用户名不能为空"),
+    NICKNAME_NOT_NULL(509,"昵称不能为空"),
+    PASSWORD_NOT_NULL(510,"邮箱不能为空"),
+    EMAIL_NOT_NULL(511,"用户名不能为空"),
+    NICK_EXIST(512,"昵称已存在");
+
+
+    int code;
+    String msg;
+
+    AppHttpCodeEnum(int code, String errorMessage){
+        this.code = code;
+        this.msg = errorMessage;
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>用户</p>
+<h4 id="controller层"><a href="#controller层" class="headerlink" title="controller层"></a>controller层</h4><p>com/zjz/controller/LoginController.java</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@RestController
+public class LoginController {
+
+    @Autowired
+    private LoginService loginService;
+    @PostMapping("/login")
+    public ResponseResult login(@RequestBody LoginRequest loginRequest){
+        
+        return  loginService.login(loginRequest);
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="请求体封装"><a href="#请求体封装" class="headerlink" title="请求体封装"></a>请求体封装</h4><p>com/zjz/entity/dto/LoginRequest.java</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@Data
+public class LoginRequest {
+    private String username;
+    private String password;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="service接口层"><a href="#service接口层" class="headerlink" title="service接口层"></a>service接口层</h4><p>com/zjz/service/LoginService.java</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public interface LoginService {
+    ResponseResult login(LoginRequest loginRequest);
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="返回Token类"><a href="#返回Token类" class="headerlink" title="返回Token类"></a>返回Token类</h4><p>com/zjz/entity/vo/ResponseToken.java</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class ResponseToken {
+    private String accessToken;
+    private String refreshToken;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="jwt工具类"><a href="#jwt工具类" class="headerlink" title="jwt工具类"></a>jwt工具类</h4><p>com/zjz/utils/JwtTokenUtil.java</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.zjz.rbacmybatisplus.utils;
+
+import com.zjz.rbacmybatisplus.enums.AppHttpCodeEnum;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.JwtException;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Function;
+
+@Component
+public class JwtTokenUtil {
+
+    @Value("${jwt.secret}")
+    private String secret;
+
+    @Value("${jwt.access_token.expiration}")
+    private Long accessTokenExpiration;
+
+    @Value("${jwt.refresh_token.expiration}")
+    private Long refreshTokenExpiration;
+
+    public String generateAccessToken(String username) {
+        Map&lt;String, Object&gt; claims = new HashMap&lt;&gt;();
+        return doGenerateToken(claims, username, accessTokenExpiration);
+    }
+
+    public String generateRefreshToken(String username) {
+        Map&lt;String, Object&gt; claims = new HashMap&lt;&gt;();
+        return doGenerateToken(claims, username, refreshTokenExpiration);
+    }
+
+    private String doGenerateToken(Map&lt;String, Object&gt; claims, String username, Long expiration) {
+        return Jwts.builder()
+                .setClaims(claims)
+                .setSubject(username)
+                .setIssuedAt(new Date(System.currentTimeMillis()))
+                .setExpiration(new Date(System.currentTimeMillis() + expiration * 1000))
+                .signWith(SignatureAlgorithm.HS256,secret)
+                .compact();
+    }
+
+    public String getUsernameFromToken(String token) {
+                return getClaimFromToken(token, Claims::getSubject);
+    }
+
+    public Date getExpirationDateFromToken(String token) {
+        return getClaimFromToken(token, Claims::getExpiration);
+    }
+
+    public &lt;T&gt; T getClaimFromToken(String token, Function&lt;Claims, T&gt; claimsResolver) {
+        Claims claims = getAllClaimsFromToken(token);
+        return claimsResolver.apply(claims);
+    }
+
+    private Claims getAllClaimsFromToken(String token) {
+        return Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody();
+    }
+
+    private Boolean isTokenExpired(String token) {
+        Date expiration = getExpirationDateFromToken(token);
+        return expiration.before(new Date());
+    }
+
+    public Boolean validateToken(String token) {
+        try {
+            Jwts.parser().setSigningKey(secret).parseClaimsJws(token);
+            return !isTokenExpired(token);
+        } catch (JwtException | IllegalArgumentException e) {
+            return false;
+        }
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h4 id="service实现层"><a href="#service实现层" class="headerlink" title="service实现层"></a>service实现层</h4><p>com/zjz/service/impl/LoginServiceImpl.java</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@Service
+public class LoginServiceImpl implements LoginService {
+
+    @Autowired
+    private JwtTokenUtil jwtTokenUtil;
+        /**
+     * 用户登录方法
+     * 
+     * @param loginRequest 登录请求对象
+     * @return 登录结果
+     */
+    @Override
+    public ResponseResult login(LoginRequest loginRequest) {
+        if(!StringUtils.hasText(loginRequest.getUsername())){
+            throw new SystemException(AppHttpCodeEnum.USERNAME_NOT_NULL);
+        }
+        LambdaQueryWrapper&lt;User&gt; queryWrapper =new  LambdaQueryWrapper&lt;&gt;();
+        queryWrapper.eq(User::getUsername,loginRequest.getUsername());
+        List&lt;User&gt; userList = (List&lt;User&gt;) queryWrapper;
+
+        // 判断用户名是否存在
+        if(userList.size()&gt;0) {
+            User user = userList.get(0);
+            
+            // 判断密码是否匹配
+            if(user.getPassword().equals(loginRequest.getPassword())){
+                String userId = user.getUserid().toString();
+                String accessToken = jwtTokenUtil.generateAccessToken(userId);
+                String refreshToken = jwtTokenUtil.generateRefreshToken(userId);
+                ResponseToken responseToken = new ResponseToken(accessToken, refreshToken);
+                return ResponseResult.okResult(responseToken);
+            }
+            return ResponseResult.errorResult(AppHttpCodeEnum.LOGIN_ERROR);
+        }
+        return ResponseResult.errorResult(AppHttpCodeEnum.LOGIN_ERROR);
+    }
+
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="6、跨域配置"><a href="#6、跨域配置" class="headerlink" title="6、跨域配置"></a>6、跨域配置</h3><p>com/zjz/config/WebMvcConfig.java</p>
+<pre class="line-numbers language-none"><code class="language-none">@Configuration
+public class WebMvcConfig implements WebMvcConfigurer {
+
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**")
+                .allowedOriginPatterns("*") // 使用allowedOriginPatterns替代allowedOrigins
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS")
+                .allowedHeaders("Authorization", "Cache-Control", "Content-Type")
+                .allowCredentials(true)
+                .maxAge(3600);
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>此</p>
+<h2 id="二、前端工程"><a href="#二、前端工程" class="headerlink" title="二、前端工程"></a>二、前端工程</h2><h3 id="1、创建vue2-0项目"><a href="#1、创建vue2-0项目" class="headerlink" title="1、创建vue2.0项目"></a>1、创建vue2.0项目</h3><p>这个不说了</p>
+<h3 id="2、登录页面"><a href="#2、登录页面" class="headerlink" title="2、登录页面"></a>2、登录页面</h3><p>初始化后的工程，改删的要删掉</p>
+<p>首先使用Element-ui组件 参考文档 <a target="_blank" rel="noopener" href="https://element.eleme.cn/#/zh-CN/component/quickstart">组件 | Element</a></p>
+<p>顺便装下跨域所需的库</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npm i element-ui
+npm i axios   <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>在 main.js 中写入以下内容：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> ElementUI <span class="token keyword">from</span> <span class="token string">'element-ui'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'element-ui/lib/theme-chalk/index.css'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> App <span class="token keyword">from</span> <span class="token string">'./App.vue'</span><span class="token punctuation">;</span>
+
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>ElementUI<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">el</span><span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">render</span><span class="token operator">:</span> <span class="token parameter">h</span> <span class="token operator">=&gt;</span> <span class="token function">h</span><span class="token punctuation">(</span>App<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>src/App.vue</p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
+  &lt;div id="app"&gt;
+    &lt;router-view/&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&lt;style lang="scss"&gt;
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+&lt;/style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="封装axios请求"><a href="#封装axios请求" class="headerlink" title="封装axios请求"></a>封装axios请求</h4><p>src/utils/request.js</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">'axios'</span><span class="token punctuation">;</span>
+
+
+<span class="token keyword">const</span> service <span class="token operator">=</span> axios<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">baseURL</span><span class="token operator">:</span> <span class="token string">'/api'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">timeout</span><span class="token operator">:</span> <span class="token number">5000</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+service<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>request<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>
+  <span class="token parameter">config</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 在请求发送之前对请求数据进行处理</span>
+    <span class="token comment">// ...</span>
+
+    <span class="token keyword">return</span> config<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token parameter">error</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 对请求错误做些什么</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+service<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>response<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>
+  <span class="token parameter">response</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 对响应数据进行处理</span>
+    <span class="token comment">// ...</span>
+
+    <span class="token keyword">return</span> response<span class="token punctuation">.</span>data<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token parameter">error</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 对响应错误做些什么</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> service<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="跨域配置"><a href="#跨域配置" class="headerlink" title="跨域配置"></a>跨域配置</h4><p>vue.config.js</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token function">defineConfig</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">transpileDependencies</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">devServer</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">proxy</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token string-property property">"/api"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token string">"http://localhost:8080"</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">changeOrigin</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">pathRewrite</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token string-property property">"^/api"</span><span class="token operator">:</span> <span class="token string">''</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="登录界面"><a href="#登录界面" class="headerlink" title="登录界面"></a>登录界面</h4><p>src\views\login.vue</p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
+    &lt;div class="login-container"&gt;
+        &lt;div class="login-box"&gt;
+            &lt;div class="login-logo"&gt;
+                &lt;a href="#"&gt;
+                    &lt;img src="../assets/logo.png" alt="logo"&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="login-form"&gt;
+                &lt;h3&gt;用户登录&lt;/h3&gt;
+                &lt;el-form ref="form" :model="loginForm" :rules="rules" label-position="left" label-width="0"&gt;
+                    &lt;el-form-item prop="username"&gt;
+                        &lt;el-input v-model="loginForm.username" placeholder="请输入用户名"&gt;&lt;/el-input&gt;
+                    &lt;/el-form-item&gt;
+                    &lt;el-form-item prop="password"&gt;
+                        &lt;el-input type="password" v-model="loginForm.password" placeholder="请输入密码"&gt;&lt;/el-input&gt;
+                    &lt;/el-form-item&gt;
+                    &lt;el-form-item&gt;
+                        &lt;el-button type="primary" @click="do_login" :loading="loading"&gt;登录&lt;/el-button&gt;
+                    &lt;/el-form-item&gt;
+                &lt;/el-form&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+  
+&lt;script&gt;
+import { login } from '@/api/login.js'
+import { setToken } from '@/utils/auth'
+export default {
+    data() {
+        return {
+            loginForm: {
+                username: 'zjz',
+                password: '1234'
+            },
+            rules: {
+                username: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
+                password: [{ required: true, message: '请输入密码', trigger: 'blur' }]
+            },
+            loading: false
+        }
+    },
+    methods: {
+        do_login() {
+            this.$refs.form.validate(valid =&gt; {
+                if (valid) {
+                    this.loading = true
+                    // 登录处理逻辑中增加网络请求
+                    login(this.loginForm.username, this.loginForm.password).then(res =&gt; {
+                        // 假设res.data.token是从后端接口返回的token
+                        setToken(res.data.accessToken,res.data.refreshToken)
+                        this.$router.push({ path: '/' })
+                    }).catch(() =&gt; {
+                        // 登录失败，显示错误提示
+                        this.$message.error('用户名或密码错误')
+                        this.loading = false
+                    })
+                }
+            })
+        },
+
+    }
+}
+
+&lt;/script&gt;
+  
+&lt;style lang="scss"&gt;
+.login-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .login-box {
+        width: 400px;
+        height: 400px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px #ccc;
+
+        .login-logo {
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                height: 80%;
+            }
+        }
+
+        .login-form {
+            padding: 20px;
+
+            h3 {
+                font-size: 24px;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+        }
+    }
+}
+&lt;/style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="登录接口"><a href="#登录接口" class="headerlink" title="登录接口"></a>登录接口</h4><p>src\api\login.js</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> request <span class="token keyword">from</span> <span class="token string">'@/utils/request'</span>
+
+<span class="token comment">// 用户登录</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">login</span><span class="token punctuation">(</span><span class="token parameter">username<span class="token punctuation">,</span> password</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token punctuation">{</span>
+    username<span class="token punctuation">,</span>
+    password
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> <span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token string">'/login'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">'post'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">data</span><span class="token operator">:</span> data
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="token管理"><a href="#token管理" class="headerlink" title="token管理"></a>token管理</h4><p>src\utils\auth.js</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> AccessTokenKey <span class="token operator">=</span> <span class="token string">'ACCESS_TOKEN'</span>
+<span class="token keyword">const</span> RefreshTokenKey <span class="token operator">=</span> <span class="token string">'REFRESH_TOKEN'</span>
+<span class="token comment">// 获取 Token</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">getAccessToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span>AccessTokenKey<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">getRefreshToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span>RefreshTokenKey<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 设置 Token</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">setToken</span><span class="token punctuation">(</span><span class="token parameter">accessToken<span class="token punctuation">,</span>refreshToken</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span>AccessTokenKey<span class="token punctuation">,</span> accessToken<span class="token punctuation">)</span>
+  localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span>RefreshTokenKey<span class="token punctuation">,</span> refreshToken<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 删除 Token</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">removeToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  localStorage<span class="token punctuation">.</span><span class="token function">removeItem</span><span class="token punctuation">(</span>AccessTokenKey<span class="token punctuation">)</span>
+  localStorage<span class="token punctuation">.</span><span class="token function">removeItem</span><span class="token punctuation">(</span>RefreshTokenKey<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="路由配置"><a href="#路由配置" class="headerlink" title="路由配置"></a>路由配置</h4><p>src\router\index.js</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
+<span class="token keyword">import</span> VueRouter <span class="token keyword">from</span> <span class="token string">'vue-router'</span>
+
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>VueRouter<span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> routes <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/login'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'login'</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">component</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'../views/login.vue'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+
+<span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueRouter</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">mode</span><span class="token operator">:</span> <span class="token string">'history'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">base</span><span class="token operator">:</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">BASE_URL</span><span class="token punctuation">,</span>
+  routes
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> router
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -998,7 +1991,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">65.7k</span>&nbsp;字
+                class="white-color">73.7k</span>&nbsp;字
             
             
             
