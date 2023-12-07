@@ -5,7 +5,7 @@
 <head>
     <meta name="referrer" content="no-referrer-when-downgrade">
     <meta charset="utf-8">
-    <meta name="keywords" content="动态规划之背包问题, SummerBird">
+    <meta name="keywords" content="回溯问题, SummerBird">
     <meta name="description" content="向往热烈而自由">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>动态规划之背包问题 | SummerBird</title>
+    <title>回溯问题 | SummerBird</title>
     <link rel="icon" type="image/png" href="/avatar.webp">
     <link rel="stylesheet" type="text/css" href="/libs/artitalk/artitalk.min.css">
 
@@ -288,12 +288,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.webp')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.webp')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">动态规划之背包问题</h1>
+                    <h1 class="description center-align post-title">回溯问题</h1>
                 </div>
             </div>
         </div>
@@ -412,12 +412,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
-                                <span class="chip bg-color">动态规划</span>
-                            </a>
-                        
-                            <a href="/tags/%E8%83%8C%E5%8C%85/">
-                                <span class="chip bg-color">背包</span>
+                            <a href="/tags/%E5%9B%9E%E6%BA%AF/">
+                                <span class="chip bg-color">回溯</span>
                             </a>
                         
                     </div>
@@ -441,28 +437,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2023-11-08
+                    2023-12-07
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2023-11-15
+                    2023-12-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.8k
+                    2.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    8 Min
+                    12 Min
                 </div>
                 
 
@@ -485,397 +481,364 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="joy-动态规划之背包问题"><a href="#joy-动态规划之背包问题" class="headerlink" title=":joy:动态规划之背包问题"></a><span class="github-emoji"><span>😂</span><img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="https://github.githubassets.com/images/icons/emoji/unicode/1f602.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>动态规划之背包问题</h1><p>经典的背包问题，期末考试复习用</p>
-<h4 id="一、01背包问题"><a href="#一、01背包问题" class="headerlink" title="一、01背包问题"></a>一、01背包问题</h4><p><strong>Description</strong></p>
-<p>给定 N 件物品和一个容量为 V 的背包。每件物品只能使用一次。</p>
-<p>第<code>i</code>件物品的体积是<code>vi</code>，价值是<code>wi</code>。</p>
-<p>你的任务是决定将哪些物品装入背包，以使得这些物品的总体积不超过背包容量，同时总价值最大。请输出最大价值。</p>
-<p><strong>Input</strong></p>
+                <p>内容来自<a target="_blank" rel="noopener" href="https://programmercarl.com/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80.html#%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80">代码随想录 (programmercarl.com)</a></p>
+<p>回溯法，一般可以解决如下几种问题：</p>
 <ul>
-<li>第一行包含两个整数，分别为<code>N</code>和<code>V</code>，表示物品数量和背包容量。</li>
-<li>接下来的 N 行，每行包含两个整数<code>vi</code>和<code>wi</code>，表示第<code>i</code>件物品的体积和价值。</li>
+<li>组合问题：N个数里面按一定规则找出k个数的集合</li>
+<li>切割问题：一个字符串按一定规则有几种切割方式</li>
+<li>子集问题：一个N个数的集合里有多少符合条件的子集</li>
+<li>排列问题：N个数按一定规则全排列，有几种排列方式</li>
+<li>棋盘问题：N皇后，解数独等等</li>
 </ul>
-<p><strong>Output</strong></p>
-<p>输出一个整数，表示最大价值。</p>
-<p>Sample Input 1 </p>
-<pre class="line-numbers language-none"><code class="language-none">4 5
-1 2
-2 4
-3 4
-4 5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>回溯法解决的问题都可以抽象为树形结构</strong>，因为回溯法解决的都是在集合中递归查找子集，<strong>集合的大小就构成了树的宽度，递归的深度，都构成的树的深度</strong>。</p>
+<p>回溯算法模版</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void backtracking(参数) {
+    if (终止条件) {
+        存放结果;
+        return;
+    }
 
-<p>Sample Output 1</p>
-<pre class="line-numbers language-none"><code class="language-none">8<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+    for (选择：本层集合中元素（树中节点孩子的数量就是集合的大小）) {
+        处理节点;
+        backtracking(路径，选择列表); // 递归
+        回溯，撤销处理结果
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>01背包在于每件物品只有一个，要么装，要么不装</p>
-<h5 id="1、思路"><a href="#1、思路" class="headerlink" title="1、思路"></a>1、思路</h5><h5 id="每个物品有两个状态，装与不装。构造dp数组记录每一种情况"><a href="#每个物品有两个状态，装与不装。构造dp数组记录每一种情况" class="headerlink" title="每个物品有两个状态，装与不装。构造dp数组记录每一种情况"></a>每个物品有两个状态，装与不装。构造dp数组记录每一种情况</h5><p>根据以上例子构建dp数组，第一维代表第i个物品，第二维代表背包当前容积，所以**<code>dp[i][j]</code>代表i个物品，背包容积为j时能够装到的最大价值**</p>
-<p>下面是模拟过程的矩阵</p>
-<table>
-<thead>
-<tr>
-<th align="center">i j</th>
-<th align="center">0</th>
-<th align="center">1</th>
-<th align="center">2</th>
-<th align="center">3</th>
-<th align="center">4</th>
-<th align="center">5</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-</tr>
-<tr>
-<td align="center">1</td>
-<td align="center">0</td>
-<td align="center">2</td>
-<td align="center">2</td>
-<td align="center">2</td>
-<td align="center">2</td>
-<td align="center">2</td>
-</tr>
-<tr>
-<td align="center">2</td>
-<td align="center">0</td>
-<td align="center">2</td>
-<td align="center">4</td>
-<td align="center">6</td>
-<td align="center">6</td>
-<td align="center">6</td>
-</tr>
-<tr>
-<td align="center">3</td>
-<td align="center">0</td>
-<td align="center">2</td>
-<td align="center">4</td>
-<td align="center">6</td>
-<td align="center">6</td>
-<td align="center">8</td>
-</tr>
-<tr>
-<td align="center">4</td>
-<td align="center">0</td>
-<td align="center">2</td>
-<td align="center">4</td>
-<td align="center">6</td>
-<td align="center">6</td>
-<td align="center">8</td>
-</tr>
-</tbody></table>
-<p>状态转移方程为</p>
-<p>if 当前物品体积 &gt; 当前背包容积：</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">dp[i][j] = dp[i-1][j]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="刷题："><a href="#刷题：" class="headerlink" title="刷题："></a>刷题：</h2><h3 id="77-组合"><a href="#77-组合" class="headerlink" title="77. 组合"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/combinations/">77. 组合</a></h3><p>给定两个整数 <code>n</code> 和 <code>k</code>，返回范围 <code>[1, n]</code> 中所有可能的 <code>k</code> 个数的组合。</p>
+<p>你可以按 <strong>任何顺序</strong> 返回答案。</p>
+<p><strong>示例 1：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">输入：n = 4, k = 2
+输出：
+[
+  [2,4],
+  [3,4],
+  [2,3],
+  [1,2],
+  [1,3],
+  [1,4],
+]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>else</p>
-<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">dp[i][j] = max(dp[i-1][j],dp[i-1][j-当前物品体积]+当前物品价值)   //判断装这个物品是否会价值变大<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>示例 2：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">输入：n = 1, k = 1
+输出：[[1]]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h5 id="2、代码"><a href="#2、代码" class="headerlink" title="2、代码"></a>2、代码</h5><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;iostream&gt;
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= n &lt;= 20</code></li>
+<li><code>1 &lt;= k &lt;= n</code></li>
+</ul>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>组合问题一般用回溯解，n个数里面挑选k个数组合，抽象为树，高度为两层。第一层是从1,2,3,4里面取一个数，第二层是从父节点之后的数中取，避免重复，例如取2点的子节点智能从3,4中选一个数。这个可以用一个参数来限定。我们严格按照模版来实现。</p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;iostream&gt;
 #include&lt;vector&gt;
 using namespace std;
-
+vector&lt;vector&lt;int&gt;&gt; res;
+vector&lt;int&gt; path;
+void backtracking(int n,int k,int index){
+    //终止条件
+    if(path.size() == k){
+        res.push_back(path);  //存放结果
+        return;
+    }
+    for(int i = index;i &lt;= n;i++){    //每层集合中元素取决于上一层所选元素的后面的元素
+        path.push_back(i);          //处理节点
+        backtracking(n,k,i+1);     //递归 
+        path.pop_back();            //回溯
+    }
+}
 int main(){
-    int N,V;
-    vector&lt;int&gt; v(N+1);
-    vector&lt;int&gt; w(N+1);
-    cin &gt;&gt; N &gt;&gt; V;
-    for(int i = 1;i &lt;= N;i++){
-        cin &gt;&gt; v[i] &gt;&gt; w[i];
-    }
-    vector&lt;vector&lt;int&gt;&gt; dp(N+1,vector&lt;int&gt;(V+1));
-    for(int i = 1;i &lt;= N;i++){
-        for(int j = 1;j &lt;= V;j++)
-        {  
-            if(j &lt; v[i])       //如果前物品体积大于当前背包容积，则取未装该物品时能够得到的最大价值
-            dp[i][j] = dp[i-1][j];
-            else             //否则判断是否值得装这件物品
-            dp[i][j] = max(dp[i-1][j],dp[i-1][j-v[i]]+w[i]);
-
+    int n,k;
+    cin &gt;&gt; n &gt;&gt; k;
+    backtracking(n,k,1);
+    for(int i = 0;i &lt; res.size();i++){
+        for(int j = 0;j &lt; k;j++){
+            cout &lt;&lt; res[i][j] &lt;&lt; " ";
         }
-      
+        cout &lt;&lt; endl;
     }
-    cout &lt;&lt; dp[N][V] &lt;&lt; endl;
-    return 0;
-
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="二、完全背包"><a href="#二、完全背包" class="headerlink" title="二、完全背包"></a>二、完全背包</h4><p><strong>Description</strong></p>
-<p>有一个背包，它的容量为<code>V</code>。还有<code>N</code>种不同类型的物品，每种物品都有无限数量可供选择。</p>
-<p>每种物品的体积为<code>v_i</code>，价值为<code>w_i</code>。</p>
-<p>请你确定如何选择物品放入背包，以确保物品的总体积不超过背包的容量，并且物品的总价值达到最大。你需要输出最大的价值。</p>
-<p><strong>Input</strong></p>
-<ul>
-<li>第一行：两个整数，分别代表物品的种数<code>N</code>和背包的容积<code>V</code>。</li>
-<li>接下来的<code>N</code>行：每行包含两个整数，分别代表一种物品的体积<code>v_i</code>和价值<code>w_i</code>。</li>
-</ul>
-<p><strong>Output</strong></p>
-<ul>
-<li>输出一个整数，表示能够获得的最大价值。</li>
-</ul>
-<p>Sample Input 1 </p>
-<pre class="line-numbers language-none"><code class="language-none">4 5
-1 2
-2 4
-3 4
-4 5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>Sample Output 1</p>
-<pre class="line-numbers language-none"><code class="language-none">10<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h5 id="1、思路-1"><a href="#1、思路-1" class="headerlink" title="1、思路"></a>1、思路</h5><p>物品还是只有两种状态，装与不装，不过现在每件物品有无限多个而已</p>
-<p>此时**<code>dp[i][j]</code>代表装第i种物品，背包容积为j时能够装到的最大价值**</p>
-<p>模拟矩阵</p>
-<table>
-<thead>
-<tr>
-<th align="center">i j</th>
-<th align="center">0</th>
-<th align="center">1</th>
-<th align="center">2</th>
-<th align="center">3</th>
-<th align="center">4</th>
-<th align="center">5</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-</tr>
-<tr>
-<td align="center">1</td>
-<td align="center">0</td>
-<td align="center">2</td>
-<td align="center">4</td>
-<td align="center">6</td>
-<td align="center">8</td>
-<td align="center">10</td>
-</tr>
-<tr>
-<td align="center">2</td>
-<td align="center">0</td>
-<td align="center">2</td>
-<td align="center">4</td>
-<td align="center">6</td>
-<td align="center">8</td>
-<td align="center">10</td>
-</tr>
-<tr>
-<td align="center">3</td>
-<td align="center">0</td>
-<td align="center">2</td>
-<td align="center">4</td>
-<td align="center">6</td>
-<td align="center">8</td>
-<td align="center">10</td>
-</tr>
-<tr>
-<td align="center">4</td>
-<td align="center">0</td>
-<td align="center">2</td>
-<td align="center">4</td>
-<td align="center">6</td>
-<td align="center">6</td>
-<td align="center">10</td>
-</tr>
-</tbody></table>
-<p>状态转移方程为</p>
-<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">for(int i = 1;i &lt;= N;i++){
-        for(int j = 1;j &lt;= V;j++){
-            if(v[i] &gt; j)
-            dp[i][j] = dp[i-1][j];
-            else{
-                for(int k = 0;k * v[i] &lt;= j; k++)
-                 dp[i][j] = max(dp[i-1][j],dp[i-1][j-k*v[i]]+k*w[i]);
-            }
-        }
-    }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h5 id="2、代码-1"><a href="#2、代码-1" class="headerlink" title="2、代码"></a>2、代码</h5><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;iostream&gt;
-#include&lt;vector&gt;
-using namespace std;
-
-
-int main(){
-    int N,V;
-    cin &gt;&gt; N &gt;&gt; V;
-    vector&lt;int&gt; v(N+1);
-    vector&lt;int&gt; w(N+1);
-    
-    for(int i = 1;i &lt;= N;i++){
-        cin &gt;&gt; v[i] &gt;&gt; w[i];
-    }
-    vector&lt;vector&lt;int&gt;&gt; dp(N+1,vector&lt;int&gt;(V+1));
-    for(int i = 1;i &lt;= N;i++){
-        for(int j = 1;j &lt;= V;j++){
-            if(v[i] &gt; j)
-            dp[i][j] = dp[i-1][j];
-            else{
-                for(int k = 0;k * v[i] &lt;= j; k++)
-                 dp[i][j] = max(dp[i-1][j],dp[i-1][j-k*v[i]]+k*w[i]);
-            }
-        }
-    }
-    cout &lt;&lt; dp[N][V] &lt;&lt; endl;
-    return 0;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h5 id="3、优化"><a href="#3、优化" class="headerlink" title="3、优化"></a>3、优化</h5><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">if(v[i] &gt; j)
-      dp[i][j] = dp[i-1][j];
-      else{
-               for(int k = 0;k * v[i] &lt;= j; k++)
-                dp[i][j] = max(dp[i-1][j],dp[i-1][j-k*v[i]]+k*w[i]);
-           }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>可以优化成</p>
-<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">if(j &lt; vv[i]) 
-      dp[i][j] = dp[i-1][j];
-              else{
-                    dp[i][j] = max(dp[i-1][j],  
-                                   dp[i][j-vv[i]] + ww[i]);
-                }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>可以理解为既然能放第i件物品，就只用考虑用不用放最后一件物品i <span class="github-emoji"><span>😕</span><img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="https://github.githubassets.com/images/icons/emoji/unicode/1f615.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
-<h4 id="二、多重背包"><a href="#二、多重背包" class="headerlink" title="二、多重背包"></a>二、多重背包</h4><p><strong>Description</strong></p>
-<p>你有一个背包，容量为<code>V</code>，以及<code>N</code>种不同类型的物品。每种物品有限数量供选择。</p>
-<p>对于第<code>i</code>种物品：</p>
-<ul>
-<li>它有<code>s_i</code>件可用。</li>
-<li>每件的体积是<code>v_i</code>。</li>
-<li>每件的价值是<code>w_i</code>。</li>
-</ul>
-<p>请确定如何选择物品放入背包，以确保所选物品的总体积不超过背包的容量，并使所选物品的总价值最大化。输出能够获得的最大价值。</p>
-<p><strong>Input</strong></p>
-<ul>
-<li>第一行：两个整数，分别代表物品的种数<code>N</code>和背包的容积<code>V</code>。</li>
-<li>接下来的<code>N</code>行：每行包含三个整数，代表一种物品的体积<code>v_i</code>、价值<code>w_i</code>和数量<code>s_i</code>。</li>
-</ul>
-<p><strong>Output</strong></p>
-<ul>
-<li>输出一个整数，表示能够获得的最大价值。</li>
-</ul>
-<p>Sample Input 1 </p>
-<pre class="line-numbers language-none"><code class="language-none">4 5
-1 2 3
-2 4 1
-3 4 3
-4 5 2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>Sample Output 1</p>
-<pre class="line-numbers language-none"><code class="language-none">10<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h5 id="1、思路-2"><a href="#1、思路-2" class="headerlink" title="1、思路"></a>1、思路</h5><p>物品还是只有两种状态，装与不装，不过现在每件物品有多个而已</p>
-<p>此时**<code>dp[i][j]</code>代表装第i种物品，背包容积为j时能够装到的最大价值**</p>
-<p>状态矩阵如下：</p>
-<table>
-<thead>
-<tr>
-<th align="center">i j</th>
-<th align="center">0</th>
-<th align="center">1</th>
-<th align="center">2</th>
-<th align="center">3</th>
-<th align="center">4</th>
-<th align="center">5</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-</tr>
-<tr>
-<td align="center">1</td>
-<td align="center">0</td>
-<td align="center">2</td>
-<td align="center">4</td>
-<td align="center">6</td>
-<td align="center">6</td>
-<td align="center">6</td>
-</tr>
-<tr>
-<td align="center">2</td>
-<td align="center">0</td>
-<td align="center">2</td>
-<td align="center">4</td>
-<td align="center">6</td>
-<td align="center">8</td>
-<td align="center">10</td>
-</tr>
-<tr>
-<td align="center">3</td>
-<td align="center">0</td>
-<td align="center">2</td>
-<td align="center">4</td>
-<td align="center">6</td>
-<td align="center">6</td>
-<td align="center">10</td>
-</tr>
-<tr>
-<td align="center">4</td>
-<td align="center">0</td>
-<td align="center">2</td>
-<td align="center">4</td>
-<td align="center">6</td>
-<td align="center">6</td>
-<td align="center">10</td>
-</tr>
-</tbody></table>
-<p>转移方程略有变化</p>
-<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">if(当前物品体积 &gt; 当前背包容积)
-	dp[i][j] = dp[i-1][j];
-else{
-                当前背包可以装下物品i的数量 = j/v[i];
-                if(当前背包可以装下物品i的数量 &lt;= 物品i的数量)
-                dp[i][j] = max(dp[i-1][j],dp[i][j- 当前背包可以装下物品i的数量 * v[i] ]+当前背包可以装下物品i的数量 * w[i]);
-                else   
-                dp[i][j] = max(dp[i-1][j],dp[i][j-物品i的数量*v[i]] + 物品i的数量 * w[i]);
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h5 id="2、代码-2"><a href="#2、代码-2" class="headerlink" title="2、代码"></a>2、代码</h5><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;iostream&gt;
-#include&lt;vector&gt;
-using namespace std;
-
-
-int main(){
-    int N,V;
-    cin &gt;&gt; N &gt;&gt; V;
-    vector&lt;int&gt; v(N+1);
-    vector&lt;int&gt; w(N+1);
-    vector&lt;int&gt; t(N+1);
-    
-    for(int i = 1;i &lt;= N;i++){
-        cin &gt;&gt; v[i] &gt;&gt; w[i] &gt;&gt; t[i];
-    }
-    vector&lt;vector&lt;int&gt;&gt; dp(N+1,vector&lt;int&gt;(V+1));
-    for(int i = 1;i &lt;= N;i++){
-        for(int j = 1;j &lt;= V;j++){
-            if(v[i] &gt; j)
-            dp[i][j] = dp[i-1][j];
-            else{
-                for(int k = 0;k &lt;= t[i] &amp;&amp; k * v[i] &lt;= j; k++)
-                 dp[i][j] = max(dp[i][j],dp[i-1][j-k*v[i]]+k*w[i]);
-            }
-        }
-    }
-    cout &lt;&lt; dp[N][V] &lt;&lt; endl;
     return 0;
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>暂时到这里吧！<span class="github-emoji"><span>🌟</span><img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="https://github.githubassets.com/images/icons/emoji/unicode/1f31f.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
+<p>很好地解决了上述问题，可是回溯和递归是离不开的，回溯实际上时枚举所有解，所以学会如何剪枝是优化算法的关键，上述代码完全没有考虑剪枝的事情，可以考虑一下，4个数里找两个数的组合，所以第一轮挑选时最大从3开始，还有4可以选，所以第一轮4这一支可以剪除。这个例子中优化效果还不是很明显。想一下，如果是4个数里选4个数的组合，那么第一轮就可以排除2,3,4三个节点，只能选1，第二轮排除3,4两个节点，选2，第三轮排除4节点，只能选3，最后一轮选4，遇到这样的问题时，剪枝对算法的优化程度是很大的。</p>
+<p>所以可以在backtracking函数中对<code>i</code>的取值范围进行优化，根据上面分析，<code>i&lt;=n</code>可以改为<code>i &lt;= n - (k-path.size()) + 1</code>，为什么有个+1呢，因为包括起始位置，我们要是一个左闭的集合。</p>
+<h4 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h4><p>后代码如下</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;iostream&gt;
+#include&lt;vector&gt;
+using namespace std;
+vector&lt;vector&lt;int&gt;&gt; res;
+vector&lt;int&gt; path;
+void backtracking(int n,int k,int index){
+    //终止条件
+    if(path.size() == k){
+        res.push_back(path);  //存放结果
+        return;
+    }
+    for(int i = index;i &lt;= n - (k - path.size()) + 1;i++){    //每层集合中元素取决于上一层所选元素的后面的元素
+        path.push_back(i);          //处理节点
+        backtracking(n,k,i+1);     //递归 
+        path.pop_back();            //回溯
+    }
+}
+int main(){
+    int n,k;
+    cin &gt;&gt; n &gt;&gt; k;
+    backtracking(n,k,1);
+    for(int i = 0;i &lt; res.size();i++){
+        for(int j = 0;j &lt; k;j++){
+            cout &lt;&lt; res[i][j] &lt;&lt; " ";
+        }
+        cout &lt;&lt; endl;
+    }
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="216-组合总和-III"><a href="#216-组合总和-III" class="headerlink" title="216. 组合总和 III"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/combination-sum-iii/">216. 组合总和 III</a></h3><p>找出所有相加之和为 <code>n</code> 的 <code>k</code> 个数的组合，且满足下列条件：</p>
+<ul>
+<li>只使用数字1到9</li>
+<li>每个数字 <strong>最多使用一次</strong></li>
+</ul>
+<p>返回 <em>所有可能的有效组合的列表</em> 。该列表不能包含相同的组合两次，组合可以以任何顺序返回。</p>
+<p><strong>示例 1:</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">输入: k = 3, n = 7
+输出: [[1,2,4]]
+解释:
+1 + 2 + 4 = 7
+没有其他符合的组合了。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>示例 2:</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">输入: k = 3, n = 9
+输出: [[1,2,6], [1,3,5], [2,3,4]]
+解释:
+1 + 2 + 6 = 9
+1 + 3 + 5 = 9
+2 + 3 + 4 = 9
+没有其他符合的组合了。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>示例 3:</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">输入: k = 4, n = 1
+输出: []
+解释: 不存在有效的组合。
+在[1,9]范围内使用4个不同的数字，我们可以得到的最小和是1+2+3+4 = 10，因为10 &gt; 1，没有有效的组合<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>提示:</strong></p>
+<ul>
+<li><code>2 &lt;= k &lt;= 9</code></li>
+<li><code>1 &lt;= n &lt;= 60</code></li>
+</ul>
+<h4 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h4><p>这种组合问题还是回溯啊，只不过得多加个参数，判断一下路径和是否为条件值。</p>
+<h4 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h4><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;iostream&gt;
+#include&lt;vector&gt;
+using namespace std;
+vector&lt;vector&lt;int&gt;&gt; res;
+vector&lt;int&gt; path;
+void backtracking(int targetSum,int k,int index){
+    //剪枝
+    if(targetSum &lt; 0)
+    return;
+    //终止条件
+    if(path.size() == k){
+        if(targetSum == 0)
+        res.push_back(path);  //存放结果
+        return;
+    }
+    for(int i = index;i &lt;= 9 - (k - path.size()) + 1;i++){    //每层集合中元素取决于上一层所选元素的后面的元素
+        path.push_back(i);          //处理节点
+        targetSum -= i;
+        backtracking(targetSum,k,i+1);     //递归 
+        path.pop_back();            //回溯
+        targetSum += i;
+    }
+}
+int main(){
+    int n,k;
+    cin &gt;&gt; n &gt;&gt; k;
+    backtracking(n,k,1);
+    for(int i = 0;i &lt; res.size();i++){
+        for(int j = 0;j &lt; k;j++){
+            cout &lt;&lt; res[i][j] &lt;&lt; " ";
+        }
+        cout &lt;&lt; endl;
+    }
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>顺便参照上题剪了枝，同时还有一处剪枝操作，当<code>targetSum</code>值为负数的时候，再往后已经没有意义，直接返回🥳</p>
+<h3 id="17-电话号码的字母组合"><a href="#17-电话号码的字母组合" class="headerlink" title="17.电话号码的字母组合"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/letter-combinations-of-a-phone-number/">17.电话号码的字母组合</a></h3><p>给定一个仅包含数字 <code>2-9</code> 的字符串，返回所有它能表示的字母组合。答案可以按 <strong>任意顺序</strong> 返回。</p>
+<p>给出数字到字母的映射如下（与电话按键相同）。注意 1 不对应任何字母。</p>
+<img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/2023/12/07/%E5%9B%9E%E6%BA%AF%E9%97%AE%E9%A2%98/200px-telephone-keypad2svg.png" class="" title="img">
+
+<p><strong>示例 1：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">输入：digits = "23"
+输出：["ad","ae","af","bd","be","bf","cd","ce","cf"]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>示例 2：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">输入：digits = ""
+输出：[]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>示例 3：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">输入：digits = "2"
+输出：["a","b","c"]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>0 &lt;= digits.length &lt;= 4</code></li>
+<li><code>digits[i]</code> 是范围 <code>['2', '9']</code> 的一个数字。</li>
+</ul>
+<h4 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h4><p>这个和上面组合问题稍有不同，上面组合问题的结果都是在一个集合里组合，这个是多个集合组合。首先得做好数字到字母组合的映射，然后每次从一个组合挑选一个字母然后组合为最后的字符串，如何控制所选择字母的位次，做到不重不漏比较重要</p>
+<h5 id="确定回溯函数参数"><a href="#确定回溯函数参数" class="headerlink" title="确定回溯函数参数"></a>确定回溯函数参数</h5><p>首先题目中给出digits字符串，还要有一个int型的index，记录遍历第几个字符，也可以表示树的深度。</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">vector&lt;string&gt; res;
+string s;
+void backtracking(string digits,int index);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="确定终止条件"><a href="#确定终止条件" class="headerlink" title="确定终止条件"></a>确定终止条件</h5><p>很显然，以“23”为例，树有两层，所以路径长度和输入字符串长度一样时，即可终止</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">if(path.size() == digits.size()){
+    res.push_back(path);
+    return;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="确定单层循环逻辑"><a href="#确定单层循环逻辑" class="headerlink" title="确定单层循环逻辑"></a>确定单层循环逻辑</h5><p>首先用index获取当前字符串，然后依次遍历字符串中字符，每遍历一个字符，递归进入下一次，即从下一个字符串中挑选一个字符进行组合。</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">string s = tel[digits[index]-'0'];
+for(int i = 0;i &lt; s.size();i++){
+    path.push_back(s[i]);
+    backtracking(digits,index+1);
+    path.pop_back();
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h4 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h4><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;iostream&gt;
+#include&lt;vector&gt;
+#include&lt;string&gt;
+#include&lt;unordered_map&gt;
+using namespace std;
+vector&lt;string&gt; res;
+string path;
+unordered_map&lt;int,string&gt;tel {
+        {2,"abc"},
+        {3,"def"},
+        {4,"ghi"},
+        {5,"jkl"},
+        {6,"mno"},
+        {7,"pqrs"},
+        {8,"tuv"},
+        {9,"wxyz"}};
+
+void backtracking(string digits,int index){
+    
+    //终止条件
+    if(path.size() == digits.size()){
+        res.push_back(path);  //存放结果
+        return;
+    }
+      
+           string s = tel[digits[index]-'0'];
+           for(int j = 0;j &lt; s.size();j++){
+               path.push_back(s[j]);
+               backtracking(digits,index+1);
+               path.pop_back();
+           }
+}
+int main(){
+    string digits;
+    cin &gt;&gt; digits;
+    backtracking(digits,0);
+    for(int i = 0;i &lt; res.size();i++)
+         cout &lt;&lt; res[i] &lt;&lt; endl;
+     
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="39-组合总和"><a href="#39-组合总和" class="headerlink" title="39. 组合总和"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/combination-sum/">39. 组合总和</a></h3><p>给你一个 <strong>无重复元素</strong> 的整数数组 <code>candidates</code> 和一个目标整数 <code>target</code> ，找出 <code>candidates</code> 中可以使数字和为目标数 <code>target</code> 的 所有 <strong>不同组合</strong> ，并以列表形式返回。你可以按 <strong>任意顺序</strong> 返回这些组合。</p>
+<p><code>candidates</code> 中的 <strong>同一个</strong> 数字可以 <strong>无限制重复被选取</strong> 。如果至少一个数字的被选数量不同，则两种组合是不同的。 </p>
+<p>对于给定的输入，保证和为 <code>target</code> 的不同组合数少于 <code>150</code> 个。</p>
+<p><strong>示例 1：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">输入：candidates = [2,3,6,7], target = 7
+输出：[[2,2,3],[7]]
+解释：
+2 和 3 可以形成一组候选，2 + 2 + 3 = 7 。注意 2 可以使用多次。
+7 也是一个候选， 7 = 7 。
+仅有这两种组合。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>示例 2：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">输入: candidates = [2,3,5], target = 8
+输出: [[2,2,2,2],[2,3,3],[3,5]]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>示例 3：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">输入: candidates = [2], target = 1
+输出: []<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= candidates.length &lt;= 30</code></li>
+<li><code>2 &lt;= candidates[i] &lt;= 40</code></li>
+<li><code>candidates</code> 的所有元素 <strong>互不相同</strong></li>
+<li><code>1 &lt;= target &lt;= 40</code></li>
+</ul>
+<h4 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h4><p>这一道题和之前的组合总和有不同，首先每个数字可以循环使用，其次还要去重。还是在脑海中用树模拟，</p>
+<h5 id="确定递归参数"><a href="#确定递归参数" class="headerlink" title="确定递归参数"></a>确定递归参数</h5><p>首先candidates数组必须，target必须，需要用target==0判断是否符合条件，以及可以用target判断终止条件。<code>startIndex</code>控制遍历范围。</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">vector&lt;vector&lt;int&gt;&gt; res;
+vector&lt;int&gt; path;
+void backtracking(vector&lt;int&gt; candidates,int target,int startindex);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="确定终止条件-1"><a href="#确定终止条件-1" class="headerlink" title="确定终止条件"></a>确定终止条件</h5><p>target值，每次要减去加入路径中的数，当target &lt; 0 时可以终止，当target==0时，先将路径加入res中再终止</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">if(target &lt; 0)
+    return;
+if(target == 0)
+{
+    res.push_back(path);
+    return;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="确定单层搜索逻辑"><a href="#确定单层搜索逻辑" class="headerlink" title="确定单层搜索逻辑"></a>确定单层搜索逻辑</h5><p>搜索范围由上一层选取数据决定，从上层选取数据开始往后遍历而不是从上层选取数据下一个遍历，因为每个数字可以循环选取，至于为什么不每次都从头选取，当然是为了避免重复。</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">for(int i = startindex;i &lt; candidates.size();i++){
+    path.push_back(candidates[i]);
+    target -= candidates[i];
+    backtracking(candidates,target,i);
+    path.pop_back();
+    target += candidates[i];
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="代码😓"><a href="#代码😓" class="headerlink" title="代码😓"></a>代码😓</h4><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;iostream&gt;
+#include&lt;vector&gt;
+using namespace std;
+vector&lt;vector&lt;int&gt;&gt; res;
+vector&lt;int&gt; path;
+void backtracking(vector&lt;int&gt; candidates,int target,int startindex){
+    //终止条件
+    if(target &lt; 0)
+    return;
+    if(target == 0)
+    {
+        res.push_back(path);
+        return;
+    }
+    for(int i = startindex;i &lt; candidates.size();i++){
+        path.push_back(candidates[i]);
+        backtracking(candidates,target - candidates[i],i);
+        path.pop_back();
+    }
+}
+int main(){
+    int n;
+    int target;
+    cin &gt;&gt; n &gt;&gt; target;
+     vector&lt;int&gt; candidates(n);  //我犯了愚蠢的错误，竟然把初始化放在了输入n之前
+    for(int i = 0;i &lt; n;i++){
+        cin &gt;&gt; candidates[i];
+    }
+    backtracking(candidates,target,0);
+    for(int i = 0;i &lt; res.size();i++){
+        for(int j = 0;j &lt; res[i].size();j++){
+            cout &lt;&lt; res[i][j] &lt;&lt; " ";
+        }
+        cout &lt;&lt; endl;
+    }
+     
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 
                 
             </div>
@@ -902,7 +865,7 @@ int main(){
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://summerbird-1.github.io/2023/11/08/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">http://summerbird-1.github.io/2023/11/08/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/</a>
+                    <a href="http://summerbird-1.github.io/2023/12/07/%E5%9B%9E%E6%BA%AF%E9%97%AE%E9%A2%98/">http://summerbird-1.github.io/2023/12/07/%E5%9B%9E%E6%BA%AF%E9%97%AE%E9%A2%98/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -940,12 +903,8 @@ int main(){
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
-                                    <span class="chip bg-color">动态规划</span>
-                                </a>
-                            
-                                <a href="/tags/%E8%83%8C%E5%8C%85/">
-                                    <span class="chip bg-color">背包</span>
+                                <a href="/tags/%E5%9B%9E%E6%BA%AF/">
+                                    <span class="chip bg-color">回溯</span>
                                 </a>
                             
                         </div>
@@ -1123,17 +1082,18 @@ int main(){
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2023/11/10/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/">
+                <a href="/2023/12/07/%E5%9B%9E%E6%BA%AF%E9%97%AE%E9%A2%98/">
                     <div class="card-image">
                         
                         
-                        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/featureimages/7.webp" class="responsive-img" alt="动态规划之石子合并">
+                        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/featureimages/3.webp" class="responsive-img" alt="回溯问题">
                         
-                        <span class="card-title">动态规划之石子合并</span>
+                        <span class="card-title">回溯问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1143,9 +1103,9 @@ int main(){
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-12-07
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1158,15 +1118,12 @@ int main(){
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
-                        <span class="chip bg-color">动态规划</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/">
-                        <span class="chip bg-color">石子合并</span>
+                    <a href="/tags/%E5%9B%9E%E6%BA%AF/">
+                        <span class="chip bg-color">回溯</span>
                     </a>
                     
                 </div>
@@ -1180,13 +1137,13 @@ int main(){
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/11/06/vue%E4%BD%BF%E7%94%A8%E4%B8%8B%E6%8B%89%E6%A0%91%E7%BB%84%E4%BB%B6-riophae-vue-treeselect/">
+                <a href="/2023/12/04/stream%E6%B5%81%E5%AD%A6%E4%B9%A0/">
                     <div class="card-image">
                         
                         
-                        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/featureimages/2.webp" class="responsive-img" alt="vue使用下拉树组件@riophae/vue-treeselect">
+                        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/featureimages/13.webp" class="responsive-img" alt="stream流学习">
                         
-                        <span class="card-title">vue使用下拉树组件@riophae/vue-treeselect</span>
+                        <span class="card-title">stream流学习</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1197,14 +1154,14 @@ int main(){
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-06
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-12-04
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Vue/" class="post-category">
-                                    Vue
+                            <a href="/categories/stream%E6%B5%81/" class="post-category">
+                                    stream流
                                 </a>
                             
                             
@@ -1214,8 +1171,12 @@ int main(){
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/vue-treeselect/">
-                        <span class="chip bg-color">vue-treeselect</span>
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/">
+                        <span class="chip bg-color">函数式编程</span>
                     </a>
                     
                 </div>
