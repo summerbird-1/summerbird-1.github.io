@@ -459,14 +459,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    4.4k
+                    4.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    23 Min
+                    24 Min
                 </div>
                 
 
@@ -545,6 +545,12 @@ public class ApiResponse {
 }
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@Data
+public class LoginRequest {
+    String username;
+    String password;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">import lombok.Data;
 
 import java.util.List;
@@ -591,21 +597,13 @@ public class ResData {
     private List&lt;Menu&gt; menus;
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="controller"><a href="#controller" class="headerlink" title="controller"></a>controller</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java">import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-@RestController
-@RequestMapping("/api/user")
+<h4 id="controller"><a href="#controller" class="headerlink" title="controller"></a>controller</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java">@RestController
+@RequestMapping("/user")
 public class UserController {
 
 
     @PostMapping("/login")
-    public ResponseEntity&lt;Map&lt;String, Object&gt;&gt; login() {
+    public ResponseEntity&lt;Map&lt;String, Object&gt;&gt; login(@RequestBody LoginRequest loginRequest) {
         Map&lt;String, Object&gt; response = new HashMap&lt;&gt;();
         Map&lt;String, Object&gt; data = new HashMap&lt;&gt;();
 
@@ -678,8 +676,7 @@ public class UserController {
         return menu;
     }
 
-}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><p>打开浏览器输入：<a target="_blank" rel="noopener" href="http://127.0.0.1:28080/api/user/getInfo">http://127.0.0.1:28080/api/user/getInfo</a></p>
 <p>查看输出</p>
@@ -990,44 +987,53 @@ padding: 20px;
 &lt;/style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>router/index.js</strong>：</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">/* Layout */</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
+<span class="token keyword">import</span> VueRouter <span class="token keyword">from</span> <span class="token string">'vue-router'</span>
+
+<span class="token comment">/* Layout */</span>
 <span class="token keyword">import</span> Layout <span class="token keyword">from</span> <span class="token string">'@/layout'</span>
 
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>VueRouter<span class="token punctuation">)</span>
 
-<span class="token keyword">const</span> routes <span class="token operator">=</span> <span class="token punctuation">[</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> constantRoutes <span class="token operator">=</span> <span class="token punctuation">[</span>
   <span class="token punctuation">{</span>
     <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">meta</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">'首页'</span><span class="token punctuation">,</span> <span class="token literal-property property">icon</span><span class="token operator">:</span> <span class="token string">'dashboard'</span><span class="token punctuation">,</span> <span class="token literal-property property">affix</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
     <span class="token literal-property property">component</span><span class="token operator">:</span> Layout<span class="token punctuation">,</span> <span class="token comment">// 修改为 Layout 组件</span>
     <span class="token literal-property property">children</span><span class="token operator">:</span> <span class="token punctuation">[</span>
       <span class="token punctuation">{</span>
         <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
         <span class="token function-variable function">component</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span> <span class="token string">'../views/HomeView.vue'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'home'</span>
+        <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'home'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">meta</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">'首页'</span><span class="token punctuation">,</span> <span class="token literal-property property">icon</span><span class="token operator">:</span> <span class="token string">'dashboard'</span><span class="token punctuation">,</span> <span class="token literal-property property">affix</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">}</span>
       <span class="token punctuation">}</span>
     <span class="token punctuation">]</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token punctuation">{</span>
-    <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/rbac'</span><span class="token punctuation">,</span>
-    <span class="token literal-property property">component</span><span class="token operator">:</span> Layout<span class="token punctuation">,</span>
-    <span class="token literal-property property">children</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
-        <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'user/list'</span><span class="token punctuation">,</span>
-        <span class="token function-variable function">component</span><span class="token operator">:</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span> <span class="token string">'../views/User/List.vue'</span><span class="token punctuation">)</span>
-      <span class="token punctuation">}</span><span class="token punctuation">,</span>
-      <span class="token punctuation">{</span>
-        <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'user/add'</span><span class="token punctuation">,</span>
-        <span class="token function-variable function">component</span><span class="token operator">:</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span> <span class="token string">'../views/User/Add.vue'</span><span class="token punctuation">)</span>
-      <span class="token punctuation">}</span>
-    <span class="token punctuation">]</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-
+    <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/about'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'about'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">hidden</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">// route level code-splitting</span>
+    <span class="token comment">// this generates a separate chunk (about.[hash].js) for this route</span>
+    <span class="token comment">// which is lazy-loaded when the route is visited.</span>
+    <span class="token function-variable function">component</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token comment">/* webpackChunkName: "about" */</span> <span class="token string">'../views/AboutView.vue'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
 <span class="token punctuation">]</span>
 
+<span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueRouter</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">mode</span><span class="token operator">:</span> <span class="token string">'history'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">base</span><span class="token operator">:</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">BASE_URL</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">routes</span><span class="token operator">:</span> constantRoutes
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
 
 <span class="token comment">// 防止连续点击多次路由报错</span>
 <span class="token keyword">let</span> routerPush <span class="token operator">=</span> <span class="token class-name">VueRouter</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>push<span class="token punctuation">;</span>
 <span class="token class-name">VueRouter</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">push</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token function">push</span><span class="token punctuation">(</span><span class="token parameter">location</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> <span class="token function">routerPush</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> location<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token parameter">err</span> <span class="token operator">=&gt;</span> err<span class="token punctuation">)</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> router
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="实现登录功能"><a href="#实现登录功能" class="headerlink" title="实现登录功能"></a>实现登录功能</h4><p><strong>utils/request.js</strong>：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">'axios'</span><span class="token punctuation">;</span>
@@ -1729,7 +1735,21 @@ export default {
   <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>后端跨域配置</p>
-<pre class="line-numbers language-none"><code class="language-none"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@Configuration
+public class WebMvcConfig implements WebMvcConfigurer {
+
+        @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        // 添加CORS映射
+        registry.addMapping("/**") // 通配符路径表示所有路径都匹配
+                .allowedOriginPatterns("*") // 使用allowedOriginPatterns替代allowedOrigins
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS") // 允许的请求方法
+                .allowedHeaders("Authorization", "Cache-Control", "Content-Type") // 允许的请求头
+                .allowCredentials(true) // 允许带凭据的请求
+                .maxAge(3600); // 允许的跨域最大缓存时间
+    }
+
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
                 
@@ -1982,18 +2002,17 @@ export default {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;Current
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2023/12/07/%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1demo/">
+                <a href="/2023/12/09/IDEA%E6%97%A0%E6%B3%95%E8%AF%86%E5%88%ABMaven%E9%A1%B9%E7%9B%AE/">
                     <div class="card-image">
                         
                         
-                        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/featureimages/22.webp" class="responsive-img" alt="动态路由demo">
+                        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/featureimages/1.webp" class="responsive-img" alt="IDEA无法识别Maven项目">
                         
-                        <span class="card-title">动态路由demo</span>
+                        <span class="card-title">IDEA无法识别Maven项目</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -2003,35 +2022,30 @@ export default {
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-12-07
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-12-09
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%BC%80%E5%8F%91/" class="post-category">
-                                    开发
+                            <a href="/categories/SpringBoot/" class="post-category">
+                                    SpringBoot
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/rbac/">
-                        <span class="chip bg-color">rbac</span>
+                    <a href="/tags/maven/">
+                        <span class="chip bg-color">maven</span>
                     </a>
                     
-                    <a href="/tags/vue2/">
-                        <span class="chip bg-color">vue2</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1/">
-                        <span class="chip bg-color">动态路由</span>
+                    <a href="/tags/IDEA/">
+                        <span class="chip bg-color">IDEA</span>
                     </a>
                     
                 </div>
@@ -2228,7 +2242,7 @@ export default {
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">81k</span>&nbsp;字
+                class="white-color">80k</span>&nbsp;字
             
             
             

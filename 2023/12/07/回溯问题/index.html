@@ -444,21 +444,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2023-12-07
+                    2023-12-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    2.8k
+                    3.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    12 Min
+                    14 Min
                 </div>
                 
 
@@ -837,7 +837,79 @@ int main(){
     return 0;
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h3 id="40-组合总和-II"><a href="#40-组合总和-II" class="headerlink" title="40. 组合总和 II"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/combination-sum-ii/">40. 组合总和 II</a></h3><p>给定一个候选人编号的集合 <code>candidates</code> 和一个目标数 <code>target</code> ，找出 <code>candidates</code> 中所有可以使数字和为 <code>target</code> 的组合。<code>candidates</code> 中的每个数字在每个组合中只能使用 <strong>一次</strong> 。</p>
+<p><strong>注意：</strong>解集不能包含重复的组合。 </p>
+<p><strong>示例 1:</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">输入: candidates = [10,1,2,7,6,1,5], target = 8,
+输出:
+[
+[1,1,6],
+[1,2,5],
+[1,7],
+[2,6]
+]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<p><strong>示例 2:</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">输入: candidates = [2,5,2,1,2], target = 5,
+输出:
+[
+[1,2,2],
+[5]
+]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>提示:</strong></p>
+<ul>
+<li><code>1 &lt;= candidates.length &lt;= 100</code></li>
+<li><code>1 &lt;= candidates[i] &lt;= 50</code></li>
+<li><code>1 &lt;= target &lt;= 30</code></li>
+</ul>
+<h4 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h4><p>这个和上一题的区别在于多了去重的要求，关于去重，可以分为树枝去重和树层去重，根据本题要求，树枝去重不必要，重要的是树层去重，首先对candidates数组排序，需要有一个used数组记录candidates数组的使用情况，用来判断上一个数字是父节点还是兄弟节点。如下图：来自<a target="_blank" rel="noopener" href="https://programmercarl.com/0040.%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8CII.html#%E6%80%9D%E8%B7%AF">代码随想录</a></p>
+<img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/2023/12/07/%E5%9B%9E%E6%BA%AF%E9%97%AE%E9%A2%98/20230310000918.png" class="" title="40.组合总和II">
+
+<h4 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h4><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include&lt;algorithm&gt;
+using namespace std;
+vector&lt;vector&lt;int&gt;&gt; res;
+vector&lt;int&gt; path;
+int used[110];   //用于记录数组元素使用情况，判断当前处理的节点是上一个的子节点还是兄弟节点
+
+void backtracking(vector&lt;int&gt; candidates,int target,int startIndex){
+    if(target &lt; 0)
+    return;
+    if(target == 0)
+    {
+        res.push_back(path);
+        return;
+    }
+    for(int i = startIndex;i &lt; candidates.size();i++){
+        if(i &gt; 0 &amp;&amp; candidates[i] == candidates[i-1] &amp;&amp; used[i-1] == 0) //如果当前值和上一个节点值相同，并且还是上一个节点的兄弟节点的话，就不用进入
+        continue;
+        used[i] = 1;
+        path.push_back(candidates[i]);
+        backtracking(candidates,target - candidates[i],i + 1);
+        path.pop_back();
+        used[i] = 0;
+    }
+}
+int main()
+{
+    int n,target;
+    cin &gt;&gt; n &gt;&gt; target;
+    vector&lt;int&gt; candidates(n);
+    for(int i = 0;i &lt; n;i++){
+        cin &gt;&gt; candidates[i];
+    }
+    sort(candidates.begin(),candidates.end());
+    backtracking(candidates,target,0);
+    for(int i = 0;i &lt; res.size();i++){
+        for(int j = 0;j &lt; res[i].size();j++){
+            cout &lt;&lt; res[i][j] &lt;&lt; " ";
+        }
+        cout &lt;&lt; endl;
+    }
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
                 
@@ -1330,7 +1402,7 @@ int main(){
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">81k</span>&nbsp;字
+                class="white-color">80k</span>&nbsp;字
             
             
             
