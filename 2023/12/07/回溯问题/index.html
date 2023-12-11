@@ -444,21 +444,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2023-12-09
+                    2023-12-11
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    3.3k
+                    5.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    14 Min
+                    23 Min
                 </div>
                 
 
@@ -910,6 +910,293 @@ int main()
     }
     return 0;
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="131-分割回文串"><a href="#131-分割回文串" class="headerlink" title="131. 分割回文串"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/palindrome-partitioning/">131. 分割回文串</a></h3><p>给你一个字符串 <code>s</code>，请你将 <code>s</code> 分割成一些子串，使每个子串都是 <strong>回文串</strong> 。返回 <code>s</code> 所有可能的分割方案。</p>
+<p><strong>回文串</strong> 是正着读和反着读都一样的字符串。</p>
+<p><strong>示例 1：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">输入：s = "aab"
+输出：[["a","a","b"],["aa","b"]]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>示例 2：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">输入：s = "a"
+输出：[["a"]]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 16</code></li>
+<li><code>s</code> 仅由小写英文字母组成</li>
+</ul>
+<h4 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h4><img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/2023/12/07/%E5%9B%9E%E6%BA%AF%E9%97%AE%E9%A2%98/131.%E5%88%86%E5%89%B2%E5%9B%9E%E6%96%87%E4%B8%B2.jpg" class="" title="131.分割回文串">
+
+<h5 id="确定递归参数-1"><a href="#确定递归参数-1" class="headerlink" title="确定递归参数"></a>确定递归参数</h5><p>说先一个vector&lt;vector<string>&gt; res来存放最终结果，vector<string>path存放路径结果，int startIndex用来控制切割的点。</string></string></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">vector&lt;vector&lt;string&gt;&gt; res;
+vector&lt;string&gt;path;
+void backtracking(string s,int startIndex);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="确定递归终止条件"><a href="#确定递归终止条件" class="headerlink" title="确定递归终止条件"></a>确定递归终止条件</h5><p>当切割点到了字符串最后说明找到了切割方法，此时是本层递归的终点。</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">if(startIndex == s.size()){
+    res.push_back(path);
+    return;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="单层搜索逻辑"><a href="#单层搜索逻辑" class="headerlink" title="单层搜索逻辑"></a>单层搜索逻辑</h5><p>在<code>for(int i = startIndex;i &lt; s.size();i++)</code>中<code>[startIndex,i]</code>就是要切割的字串，判断该字串是否为回文串，是就加入path，递归，不是，循环进入下一个（i++）</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">for(int i = startIndex;i &lt; s.size();i++){
+    if(!IsPalindrome(s, startIndex, i)){
+        continue;
+    }
+    string str = s.substr(startIndex, i - startIndex + 1);
+    path.push_back(str);
+    backtracking(s,i+1);
+    path.pop_back();
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="判断是否为回文串"><a href="#判断是否为回文串" class="headerlink" title="判断是否为回文串"></a>判断是否为回文串</h5><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">bool IsPalindrome(string s,int start,int end){
+    while(start &lt; end){
+        if(s[start] == s[end]){
+            start++;
+            end--;
+        }else
+            return false;
+    }
+    return true;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h4 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h4><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+vector&lt;vector&lt;string&gt;&gt; res;
+vector&lt;string&gt; path;
+bool IsPalindrome(string s,int start,int end){
+    while(start &lt; end){
+        if(s[start] == s[end])
+        {
+            start++;
+            end--;
+        }
+        else
+        return false;
+    }
+    return true;
+}
+void backtracking(string s,int startIndex){
+    if(startIndex == s.size())
+    {
+        res.push_back(path);
+        return;
+    }
+    for(int i = startIndex;i &lt; s.size();i++){
+        if(!IsPalindrome(s,startIndex,i))
+          continue;
+        string str = s.substr(startIndex,i - startIndex + 1);
+        path.push_back(str);
+        backtracking(s,i + 1);
+        path.pop_back();
+    }
+}
+int main(){
+    string s;
+    cin &gt;&gt; s;
+    backtracking(s,0);
+    for(int i = 0;i &lt; res.size();i++){
+        for(int j = 0;j &lt; res[i].size();j++){
+            cout  &lt;&lt; res[i][j] &lt;&lt; " ";
+        }
+        cout &lt;&lt; endl;
+    }
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="优化-1"><a href="#优化-1" class="headerlink" title="优化"></a>优化</h4><p>对于判断回文串还是有可以优化的地方的，具体来说, 给定一个字符串<code>s</code>, 长度为<code>n</code>, 它成为回文字串的充分必要条件是<code>s[0] == s[n-1]</code>且<code>s[1:n-1]</code>是回文字串。可以用动态规划的方法通过查询字串是否为回文串来判断。</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+vector&lt;vector&lt;string&gt;&gt; res;
+vector&lt;string&gt; path;
+vector&lt;vector&lt;bool&gt;&gt; isPalindrome; // 放事先计算好的是否回文子串的结果
+void computeIsPalindrome(string s){
+   isPalindrome.resize(s.size(), vector&lt;bool&gt;(s.size(), false)); // 根据字符串s, 刷新布尔矩阵的大小
+   for (int i = s.size() - 1; i &gt;= 0; i--) { 
+            // 需要倒序计算, 保证在i行时, i+1行已经计算好了
+            for (int j = i; j &lt; s.size(); j++) {
+                if (j == i) {isPalindrome[i][j] = true;}
+                else if (j - i == 1) {isPalindrome[i][j] = (s[i] == s[j]);}
+                else {isPalindrome[i][j] = (s[i] == s[j] &amp;&amp; isPalindrome[i+1][j-1]);}
+            }
+        }
+}
+void backtracking(string s,int startIndex){
+    if(startIndex == s.size())
+    {
+        res.push_back(path);
+        return;
+    }
+    for(int i = startIndex;i &lt; s.size();i++){
+        if(!isPalindrome[startIndex][i])
+          continue;
+        string str = s.substr(startIndex,i - startIndex + 1);
+        path.push_back(str);
+        backtracking(s,i + 1);
+        path.pop_back();
+    }
+}
+int main(){
+    string s;
+    cin &gt;&gt; s;
+    computeIsPalindrome(s);
+    backtracking(s,0);
+    for(int i = 0;i &lt; res.size();i++){
+        for(int j = 0;j &lt; res[i].size();j++){
+            cout  &lt;&lt; res[i][j] &lt;&lt; " ";
+        }
+        cout &lt;&lt; endl;
+    }
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="93-复原-IP-地址"><a href="#93-复原-IP-地址" class="headerlink" title="93. 复原 IP 地址"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/restore-ip-addresses/">93. 复原 IP 地址</a></h3><p><strong>有效 IP 地址</strong> 正好由四个整数（每个整数位于 <code>0</code> 到 <code>255</code> 之间组成，且不能含有前导 <code>0</code>），整数之间用 <code>'.'</code> 分隔。</p>
+<ul>
+<li>例如：<code>"0.1.2.201"</code> 和<code> "192.168.1.1"</code> 是 <strong>有效</strong> IP 地址，但是 <code>"0.011.255.245"</code>、<code>"192.168.1.312"</code> 和 <code>"192.168@1.1"</code> 是 <strong>无效</strong> IP 地址。</li>
+</ul>
+<p>给定一个只包含数字的字符串 <code>s</code> ，用以表示一个 IP 地址，返回所有可能的<strong>有效 IP 地址</strong>，这些地址可以通过在 <code>s</code> 中插入 <code>'.'</code> 来形成。你 <strong>不能</strong> 重新排序或删除 <code>s</code> 中的任何数字。你可以按 <strong>任何</strong> 顺序返回答案。</p>
+<p><strong>示例 1：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">输入：s = "25525511135"
+输出：["255.255.11.135","255.255.111.35"]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>示例 2：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">输入：s = "0000"
+输出：["0.0.0.0"]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>示例 3：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">输入：s = "101023"
+输出：["1.0.10.23","1.0.102.3","10.1.0.23","10.10.2.3","101.0.2.3"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 20</code></li>
+<li><code>s</code> 仅由数字组成</li>
+</ul>
+<h4 id="思路-6"><a href="#思路-6" class="headerlink" title="思路"></a>思路</h4><p>本题和切割回文串相似，需要写一个判断当前所切字符串是否符合ip地址要求的函数，其他的大差不差。</p>
+<h5 id="确定递归参数-2"><a href="#确定递归参数-2" class="headerlink" title="确定递归参数"></a>确定递归参数</h5><p>需要一个<code>vector&lt;string&gt; res</code>接收符合条件的ip。</p>
+<p>参数首先字符串s传进去，和上一题一样需要一个起始下标<code>startIndex</code>，最后需要有一个pointNum记录插入的点数。</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">vector&lt;string&gt; res;
+void backtracking(string s,int startIndex,int pointNum);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h5 id="确定终结条件"><a href="#确定终结条件" class="headerlink" title="确定终结条件"></a>确定终结条件</h5><p>当<code>pointNum==3</code>时说明当前字符串已经分成4段，这时判断最后一段是否符合Ip要求，符合就把它送入res中</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">if(pointNum == 3){
+    if(IsIp(s,startIndex,s.size()-1))
+    {
+        res.push_back(s);
+        return;
+    }
+    return;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="单层搜索过程"><a href="#单层搜索过程" class="headerlink" title="单层搜索过程"></a>单层搜索过程</h5><p>对于每层首先判断当前层字符串是否符合要求，符合在进行下一步，不然跳出循环</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">for(int i = startIndex;i &lt; s.size();i++){
+    if(IsIp(s,startIndex,i)){
+        s.insert(s.begin()+i+1,'.');
+        backtracking(s,i+2,pointNum+1); //为啥加2,因为s插入了'.'，所以下一步切割点需要往后挪2个
+        s.erase(s.begin()+i+1);
+    }else
+        break;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="判断函数"><a href="#判断函数" class="headerlink" title="判断函数"></a>判断函数</h5><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">bool IsIp(string s,int start,int end){
+    if(start &gt; end)
+        return false;
+    if(s[start] == '0' &amp;&amp; end != start)
+        return false;
+    int sum = 0;
+    for(int i = 0;i &lt;= end;i++){
+        if(s[i] &gt;= '0' &amp;&amp; s[i] &lt;= '9')
+        {
+            sum = sum * 10 + (s[i] - '0');
+            if(sum &gt; 255)
+                return false;
+        }else
+            return false;
+    }
+    return true;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="代码-5"><a href="#代码-5" class="headerlink" title="代码"></a>代码</h4><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+vector&lt;string&gt; res;
+// 判断给定字符串s中从索引start到end之间的子串是否是一个合法的IP地址
+bool IsIp(string s, int start, int end)
+{
+    // 如果start大于end，则不是一个合法的IP地址
+    if(start &gt; end)
+        return false;
+
+    // 如果子串的起始字符是'0'且子串长度大于1，则不是一个合法的IP地址
+    if(s[start] == '0' &amp;&amp; start != end)
+        return false;
+
+    int sum = 0; // 用于计算IP地址每个段的数值
+
+    // 遍历子串，计算每个段的数值
+    for(int i = start; i &lt;= end; i++)
+    {
+        // 如果子串中的字符不是数字，则不是一个合法的IP地址
+        if(s[i] &lt; '0' || s[i] &gt; '9')
+            return false;
+
+        sum = sum * 10 + s[i] - '0'; // 将字符串转换成数字
+        // 如果某个段的数值大于255，则不是一个合法的IP地址
+        if(sum &gt; 255)
+            return false;
+    }
+
+    // 返回true表示是一个合法的IP地址
+    return true;
+}
+    void backtracking(string s, int startIndex, int pointNum)
+    {
+        // 递归回溯函数，用于生成IP地址
+        // 参数s为输入的字符串
+        // 参数startIndex为起始索引
+        // 参数pointNum为已点的数
+
+        if (pointNum == 3)
+        {
+            // 如果点的数量已经达到了3个
+            if (IsIp(s, startIndex, s.size() - 1))
+            {
+                // 如果当前字符串是合法的IP地址
+                res.push_back(s);
+                return; // 将其加入结果集合中并返回
+            }
+            return; // 不满足条件，返回
+        }
+        
+        // 遍历字符串，从起始索引到末尾
+        for (int i = startIndex; i &lt; s.size(); i++)
+        {
+            // 如果当前子字符串是合法的IP地址
+            if (IsIp(s, startIndex, i))
+            {
+                // 在第i+1位插入点，并继续递归调用回溯函数
+                s.insert(s.begin() + i + 1, '.');
+                backtracking(s, i + 2, pointNum + 1);
+                s.erase(s.begin() + i + 1); // 回溯，移除插入的点
+            }
+        }
+    }
+    int main()
+    {
+        string s;
+        cin &gt;&gt; s;
+        backtracking(s, 0, 0);
+        for (int i = 0; i &lt; res.size(); i++)
+        {
+            cout &lt;&lt; res[i] &lt;&lt; endl;
+        }
+            res.clear();
+            return 0;       
+    }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
                 
@@ -1402,7 +1689,7 @@ int main()
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">80k</span>&nbsp;字
+                class="white-color">81.9k</span>&nbsp;字
             
             
             
