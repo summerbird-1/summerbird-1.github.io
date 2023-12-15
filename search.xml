@@ -4,11 +4,38 @@
   
     
     <entry>
+      <title>后端奇怪bug</title>
+      <link href="/2023/12/14/%E5%90%8E%E7%AB%AF%E5%A5%87%E6%80%AAbug/"/>
+      <url>/2023/12/14/%E5%90%8E%E7%AB%AF%E5%A5%87%E6%80%AAbug/</url>
+      
+        <content type="html"><![CDATA[<h3 id="1、MySQL8报错：Public-Key-Retrieval-is-not-allowed"><a href="#1、MySQL8报错：Public-Key-Retrieval-is-not-allowed" class="headerlink" title="1、MySQL8报错：Public Key Retrieval is not allowed"></a>1、MySQL8报错：Public Key Retrieval is not allowed</h3><p>参考：方案二不错</p><p><a href="https://blog.csdn.net/white0718/article/details/131790493">https://blog.csdn.net/white0718/article/details/131790493</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 后端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> bug </tag>
+            
+            <tag> SpringBoot </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Vue中奇怪bug</title>
       <link href="/2023/12/09/Vue%E4%B8%AD%E5%A5%87%E6%80%AAbug/"/>
       <url>/2023/12/09/Vue%E4%B8%AD%E5%A5%87%E6%80%AAbug/</url>
       
-        <content type="html"><![CDATA[<h3 id="一、"><a href="#一、" class="headerlink" title="一、"></a>一、</h3><h4 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h4><p> <strong>Error: Package path ./lib/locale/lang/zh-cn is not exported from package</strong></p><p>运行npm run serve后</p><img src="/2023/12/09/Vue%E4%B8%AD%E5%A5%87%E6%80%AAbug/image-20231209163647478.png" class="" title="image-20231209163647478"><p>从报错语句上分析是element-plus这个包缺了什么东西，进入main.js看看，有一行相关语句</p><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> locale <span class="token keyword">from</span> <span class="token string">'element-plus/lib/locale/lang/zh-cn'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>但是看了看<code> element-plus/lib/locale/lang/zh-cn</code>是存在的</p><p>后面查了查有个网友说吧这句话改为</p><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> locale <span class="token keyword">from</span> <span class="token string">'element-plus/es/locale/lang/zh-cn'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>就好了</p>]]></content>
+        <content type="html"><![CDATA[<h3 id="一、报错-Error-Package-path-lib-locale-lang-zh-cn-is-not-exported-from-package"><a href="#一、报错-Error-Package-path-lib-locale-lang-zh-cn-is-not-exported-from-package" class="headerlink" title="一、报错 Error: Package path ./lib/locale/lang/zh-cn is not exported from package"></a>一、报错 <strong>Error: Package path ./lib/locale/lang/zh-cn is not exported from package</strong></h3><p>运行npm run serve后</p><img src="/2023/12/09/Vue%E4%B8%AD%E5%A5%87%E6%80%AAbug/image-20231209163647478.png" class="" title="image-20231209163647478"><p>从报错语句上分析是element-plus这个包缺了什么东西，进入main.js看看，有一行相关语句</p><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> locale <span class="token keyword">from</span> <span class="token string">'element-plus/lib/locale/lang/zh-cn'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>但是看了看<code> element-plus/lib/locale/lang/zh-cn</code>是存在的</p><p>后面查了查有个网友说吧这句话改为</p><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> locale <span class="token keyword">from</span> <span class="token string">'element-plus/es/locale/lang/zh-cn'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>就好了</p><h3 id="二、报错Module-not-found-Error-Can’t-resolve-‘core-js-core-dict’"><a href="#二、报错Module-not-found-Error-Can’t-resolve-‘core-js-core-dict’" class="headerlink" title="二、报错Module not found: Error: Can’t resolve ‘core-js/core/dict’"></a>二、报错Module not found: Error: Can’t resolve ‘core-js/core/dict’</h3><p>顶部多了一行代码：</p><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">import {get } from 'core-js/core/dict';<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>把它删掉问题就解决了。</p>]]></content>
       
       
       <categories>

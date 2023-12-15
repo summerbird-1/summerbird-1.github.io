@@ -6,7 +6,7 @@
   <link href="http://summerbird-1.github.io/atom.xml" rel="self"/>
   
   <link href="http://summerbird-1.github.io/"/>
-  <updated>2023-12-09T13:12:56.780Z</updated>
+  <updated>2023-12-14T08:20:00.586Z</updated>
   <id>http://summerbird-1.github.io/</id>
   
   <author>
@@ -17,18 +17,45 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>后端奇怪bug</title>
+    <link href="http://summerbird-1.github.io/2023/12/14/%E5%90%8E%E7%AB%AF%E5%A5%87%E6%80%AAbug/"/>
+    <id>http://summerbird-1.github.io/2023/12/14/%E5%90%8E%E7%AB%AF%E5%A5%87%E6%80%AAbug/</id>
+    <published>2023-12-14T08:18:24.000Z</published>
+    <updated>2023-12-14T08:20:00.586Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;1、MySQL8报错：Public-Key-Retrieval-is-not-allowed&quot;&gt;&lt;a href=&quot;#1、MySQL8报错：Public-Key-Retrieval-is-not-allowed&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="后端" scheme="http://summerbird-1.github.io/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+    <category term="bug" scheme="http://summerbird-1.github.io/tags/bug/"/>
+    
+    <category term="SpringBoot" scheme="http://summerbird-1.github.io/tags/SpringBoot/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Vue中奇怪bug</title>
     <link href="http://summerbird-1.github.io/2023/12/09/Vue%E4%B8%AD%E5%A5%87%E6%80%AAbug/"/>
     <id>http://summerbird-1.github.io/2023/12/09/Vue%E4%B8%AD%E5%A5%87%E6%80%AAbug/</id>
     <published>2023-12-09T08:34:59.000Z</published>
-    <updated>2023-12-09T13:12:56.780Z</updated>
+    <updated>2023-12-11T05:17:45.590Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h3 id=&quot;一、&quot;&gt;&lt;a href=&quot;#一、&quot; class=&quot;headerlink&quot; title=&quot;一、&quot;&gt;&lt;/a&gt;一、&lt;/h3&gt;&lt;h4 id=&quot;报错&quot;&gt;&lt;a href=&quot;#报错&quot; class=&quot;headerlink&quot; title=&quot;报错&quot;&gt;&lt;/a&gt;报错&lt;/h4&gt;&lt;p&gt;</summary>
+    <summary type="html">&lt;h3 id=&quot;一、报错-Error-Package-path-lib-locale-lang-zh-cn-is-not-exported-from-package&quot;&gt;&lt;a</summary>
         
       
     
@@ -517,35 +544,6 @@
     
     
     <category term="Docker" scheme="http://summerbird-1.github.io/tags/Docker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>RBAC系统一键部署服务器流程</title>
-    <link href="http://summerbird-1.github.io/2023/11/12/RBAC%E7%B3%BB%E7%BB%9F%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%B5%81%E7%A8%8B/"/>
-    <id>http://summerbird-1.github.io/2023/11/12/RBAC%E7%B3%BB%E7%BB%9F%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%B5%81%E7%A8%8B/</id>
-    <published>2023-11-12T01:56:53.000Z</published>
-    <updated>2023-11-27T05:56:54.754Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h1&gt;&lt;p&gt;SSAdmin 是一个基于 Spring Boot、MybatisPlus、Spring</summary>
-        
-      
-    
-    
-    
-    <category term="Basic" scheme="http://summerbird-1.github.io/categories/Basic/"/>
-    
-    
-    <category term="rbac" scheme="http://summerbird-1.github.io/tags/rbac/"/>
-    
-    <category term="git" scheme="http://summerbird-1.github.io/tags/git/"/>
-    
-    <category term="部署" scheme="http://summerbird-1.github.io/tags/%E9%83%A8%E7%BD%B2/"/>
     
   </entry>
   
