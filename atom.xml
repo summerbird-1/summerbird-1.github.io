@@ -6,7 +6,7 @@
   <link href="http://summerbird-1.github.io/atom.xml" rel="self"/>
   
   <link href="http://summerbird-1.github.io/"/>
-  <updated>2023-12-20T04:11:36.099Z</updated>
+  <updated>2023-12-24T08:55:32.177Z</updated>
   <id>http://summerbird-1.github.io/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>在线笔记平台部署</title>
+    <link href="http://summerbird-1.github.io/2023/12/24/%E5%9C%A8%E7%BA%BF%E7%AC%94%E8%AE%B0%E5%B9%B3%E5%8F%B0%E9%83%A8%E7%BD%B2/"/>
+    <id>http://summerbird-1.github.io/2023/12/24/%E5%9C%A8%E7%BA%BF%E7%AC%94%E8%AE%B0%E5%B9%B3%E5%8F%B0%E9%83%A8%E7%BD%B2/</id>
+    <published>2023-12-24T06:14:56.000Z</published>
+    <updated>2023-12-24T08:55:32.177Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一、部署流程🐳&quot;&gt;&lt;a href=&quot;#一、部署流程🐳&quot; class=&quot;headerlink&quot; title=&quot;一、部署流程🐳&quot;&gt;&lt;/a&gt;一、部署流程🐳&lt;/h2&gt;&lt;p&gt;⭕⭕&lt;strong&gt;确保服务器已经配置好docker以及docker</summary>
+        
+      
+    
+    
+    
+    <category term="开发" scheme="http://summerbird-1.github.io/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="Docker" scheme="http://summerbird-1.github.io/tags/Docker/"/>
+    
+    <category term="部署" scheme="http://summerbird-1.github.io/tags/%E9%83%A8%E7%BD%B2/"/>
+    
+  </entry>
+  
+  <entry>
     <title>秒杀系统demo</title>
     <link href="http://summerbird-1.github.io/2023/12/20/%E7%A7%92%E6%9D%80%E7%B3%BB%E7%BB%9Fdemo/"/>
     <id>http://summerbird-1.github.io/2023/12/20/%E7%A7%92%E6%9D%80%E7%B3%BB%E7%BB%9Fdemo/</id>
     <published>2023-12-20T03:23:06.000Z</published>
-    <updated>2023-12-20T04:11:36.099Z</updated>
+    <updated>2023-12-20T04:12:35.769Z</updated>
     
     
       
@@ -75,7 +102,7 @@
     <link href="http://summerbird-1.github.io/2023/12/09/Vue%E4%B8%AD%E5%A5%87%E6%80%AAbug/"/>
     <id>http://summerbird-1.github.io/2023/12/09/Vue%E4%B8%AD%E5%A5%87%E6%80%AAbug/</id>
     <published>2023-12-09T08:34:59.000Z</published>
-    <updated>2023-12-11T05:17:45.590Z</updated>
+    <updated>2023-12-23T13:02:32.128Z</updated>
     
     
       
@@ -521,31 +548,6 @@
     
     
     <category term="Redis" scheme="http://summerbird-1.github.io/tags/Redis/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>DockerFile部署学习</title>
-    <link href="http://summerbird-1.github.io/2023/11/14/DockerFile%E9%83%A8%E7%BD%B2%E5%AD%A6%E4%B9%A0/"/>
-    <id>http://summerbird-1.github.io/2023/11/14/DockerFile%E9%83%A8%E7%BD%B2%E5%AD%A6%E4%B9%A0/</id>
-    <published>2023-11-14T12:18:48.000Z</published>
-    <updated>2023-11-17T11:54:03.848Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;🐋进化➡️DockerFile部署🐳&quot;&gt;&lt;a href=&quot;#🐋进化➡️DockerFile部署🐳&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="部署" scheme="http://summerbird-1.github.io/categories/%E9%83%A8%E7%BD%B2/"/>
-    
-    
-    <category term="DockerFile" scheme="http://summerbird-1.github.io/tags/DockerFile/"/>
     
   </entry>
   
