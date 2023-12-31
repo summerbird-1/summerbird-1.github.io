@@ -6,7 +6,7 @@
   <link href="http://summerbird-1.github.io/atom.xml" rel="self"/>
   
   <link href="http://summerbird-1.github.io/"/>
-  <updated>2023-12-24T10:26:02.853Z</updated>
+  <updated>2023-12-27T07:49:51.116Z</updated>
   <id>http://summerbird-1.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>rbac系统开发过程</title>
+    <link href="http://summerbird-1.github.io/2023/12/27/rbac%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B/"/>
+    <id>http://summerbird-1.github.io/2023/12/27/rbac%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B/</id>
+    <published>2023-12-27T07:49:02.000Z</published>
+    <updated>2023-12-27T07:49:51.116Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;先留个坑，忙完期末写&lt;/p&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="开发" scheme="http://summerbird-1.github.io/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="rbac" scheme="http://summerbird-1.github.io/tags/rbac/"/>
+    
+    <category term="SpringBoot" scheme="http://summerbird-1.github.io/tags/SpringBoot/"/>
+    
+    <category term="redis" scheme="http://summerbird-1.github.io/tags/redis/"/>
+    
+  </entry>
   
   <entry>
     <title>在线笔记平台部署</title>
@@ -522,32 +552,6 @@
     <category term="LeetCode" scheme="http://summerbird-1.github.io/tags/LeetCode/"/>
     
     <category term="动态规划" scheme="http://summerbird-1.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Springboot中使用Redis</title>
-    <link href="http://summerbird-1.github.io/2023/11/15/Springboot%E4%B8%AD%E4%BD%BF%E7%94%A8redis/"/>
-    <id>http://summerbird-1.github.io/2023/11/15/Springboot%E4%B8%AD%E4%BD%BF%E7%94%A8redis/</id>
-    <published>2023-11-15T11:50:57.000Z</published>
-    <updated>2023-11-16T01:37:03.735Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;用缓存，主要有两个用途：&lt;strong&gt;高性能、高并发&lt;/strong&gt;。&lt;/p&gt;
-&lt;h2 id=&quot;Redis简介🍎🍎&quot;&gt;&lt;a href=&quot;#Redis简介🍎🍎&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Springboot" scheme="http://summerbird-1.github.io/categories/Springboot/"/>
-    
-    
-    <category term="Redis" scheme="http://summerbird-1.github.io/tags/Redis/"/>
     
   </entry>
   

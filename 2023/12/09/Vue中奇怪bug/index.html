@@ -482,7 +482,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="一、报错-Error-Package-path-lib-locale-lang-zh-cn-is-not-exported-from-package"><a href="#一、报错-Error-Package-path-lib-locale-lang-zh-cn-is-not-exported-from-package" class="headerlink" title="一、报错 Error: Package path ./lib/locale/lang/zh-cn is not exported from package"></a>一、报错 <strong>Error: Package path ./lib/locale/lang/zh-cn is not exported from package</strong></h3><p>运行npm run serve后</p>
-<img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/2023/12/09/Vue%E4%B8%AD%E5%A5%87%E6%80%AAbug/image-20231209163647478.png" class="" title="image-20231209163647478">
+<img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/2023/12/09/Vue%E4%B8%AD%E5%A5%87%E6%80%AAbug/image-20231209163647478.png" class title="image-20231209163647478">
 
 <p>从报错语句上分析是element-plus这个包缺了什么东西，进入main.js看看，有一行相关语句</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> locale <span class="token keyword">from</span> <span class="token string">'element-plus/lib/locale/lang/zh-cn'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
