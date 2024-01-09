@@ -665,7 +665,7 @@ int main(){
 <p>顺便参照上题剪了枝，同时还有一处剪枝操作，当<code>targetSum</code>值为负数的时候，再往后已经没有意义，直接返回🥳</p>
 <h3 id="17-电话号码的字母组合"><a href="#17-电话号码的字母组合" class="headerlink" title="17.电话号码的字母组合"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/letter-combinations-of-a-phone-number/">17.电话号码的字母组合</a></h3><p>给定一个仅包含数字 <code>2-9</code> 的字符串，返回所有它能表示的字母组合。答案可以按 <strong>任意顺序</strong> 返回。</p>
 <p>给出数字到字母的映射如下（与电话按键相同）。注意 1 不对应任何字母。</p>
-<img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/2023/12/07/%E5%9B%9E%E6%BA%AF%E9%97%AE%E9%A2%98/200px-telephone-keypad2svg.png" class title="img">
+<img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/2023/12/07/%E5%9B%9E%E6%BA%AF%E9%97%AE%E9%A2%98/200px-telephone-keypad2svg.png" class="" title="img">
 
 <p><strong>示例 1：</strong></p>
 <pre class="line-numbers language-none"><code class="language-none">输入：digits = "23"
@@ -864,7 +864,7 @@ int main(){
 <li><code>1 &lt;= target &lt;= 30</code></li>
 </ul>
 <h4 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h4><p>这个和上一题的区别在于多了去重的要求，关于去重，可以分为树枝去重和树层去重，根据本题要求，树枝去重不必要，重要的是树层去重，首先对candidates数组排序，需要有一个used数组记录candidates数组的使用情况，用来判断上一个数字是父节点还是兄弟节点。如下图：来自<a target="_blank" rel="noopener" href="https://programmercarl.com/0040.%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8CII.html#%E6%80%9D%E8%B7%AF">代码随想录</a></p>
-<img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/2023/12/07/%E5%9B%9E%E6%BA%AF%E9%97%AE%E9%A2%98/20230310000918.png" class title="40.组合总和II">
+<img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/2023/12/07/%E5%9B%9E%E6%BA%AF%E9%97%AE%E9%A2%98/20230310000918.png" class="" title="40.组合总和II">
 
 <h4 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h4><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
 #include &lt;vector&gt;
@@ -926,7 +926,7 @@ int main()
 <li><code>1 &lt;= s.length &lt;= 16</code></li>
 <li><code>s</code> 仅由小写英文字母组成</li>
 </ul>
-<h4 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h4><img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/2023/12/07/%E5%9B%9E%E6%BA%AF%E9%97%AE%E9%A2%98/131.%E5%88%86%E5%89%B2%E5%9B%9E%E6%96%87%E4%B8%B2.jpg" class title="131.分割回文串">
+<h4 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h4><img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/2023/12/07/%E5%9B%9E%E6%BA%AF%E9%97%AE%E9%A2%98/131.%E5%88%86%E5%89%B2%E5%9B%9E%E6%96%87%E4%B8%B2.jpg" class="" title="131.分割回文串">
 
 <h5 id="确定递归参数-1"><a href="#确定递归参数-1" class="headerlink" title="确定递归参数"></a>确定递归参数</h5><p>说先一个vector&lt;vector<string>&gt; res来存放最终结果，vector<string>path存放路径结果，int startIndex用来控制切割的点。</string></string></p>
 <pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">vector&lt;vector&lt;string&gt;&gt; res;
@@ -1680,7 +1680,7 @@ bool IsIp(string s, int start, int end)
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2023</span>
+                <span id="year">2023-2024</span>
             
             <span id="year">2023</span>
             <a href="/about" target="_blank">zjz</a>
@@ -1963,7 +1963,7 @@ $(function () {
                                                                                                                             type="module"></script>
                                                                                                                         
 
-                <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":190,"hOffset":50,"vOffset":-5},"mobile":{"show":false,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script>
+                
         <style>
             [bg-lazy] {
                 background-image: none !important;
@@ -1976,4 +1976,4 @@ $(function () {
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":190,"hOffset":50,"vOffset":-5},"mobile":{"show":false,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
