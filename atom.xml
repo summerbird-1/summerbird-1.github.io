@@ -6,7 +6,7 @@
   <link href="http://summerbird-1.github.io/atom.xml" rel="self"/>
   
   <link href="http://summerbird-1.github.io/"/>
-  <updated>2024-01-14T13:11:45.531Z</updated>
+  <updated>2024-01-14T14:45:56.761Z</updated>
   <id>http://summerbird-1.github.io/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>秒杀系统一键部署配置</title>
+    <link href="http://summerbird-1.github.io/2024/01/14/%E7%A7%92%E6%9D%80%E7%B3%BB%E7%BB%9F%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2%E9%85%8D%E7%BD%AE/"/>
+    <id>http://summerbird-1.github.io/2024/01/14/%E7%A7%92%E6%9D%80%E7%B3%BB%E7%BB%9F%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2%E9%85%8D%E7%BD%AE/</id>
+    <published>2024-01-14T14:05:45.000Z</published>
+    <updated>2024-01-14T14:45:56.761Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;秒杀系统一键部署配置&quot;&gt;&lt;a href=&quot;#秒杀系统一键部署配置&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="部署" scheme="http://summerbird-1.github.io/categories/%E9%83%A8%E7%BD%B2/"/>
+    
+    
+    <category term="docker" scheme="http://summerbird-1.github.io/tags/docker/"/>
+    
+    <category term="RabbitMQ" scheme="http://summerbird-1.github.io/tags/RabbitMQ/"/>
+    
+  </entry>
+  
+  <entry>
     <title>秒杀活动页面开发</title>
     <link href="http://summerbird-1.github.io/2024/01/14/%E7%A7%92%E6%9D%80%E6%B4%BB%E5%8A%A8%E9%A1%B5%E9%9D%A2%E5%BC%80%E5%8F%91/"/>
     <id>http://summerbird-1.github.io/2024/01/14/%E7%A7%92%E6%9D%80%E6%B4%BB%E5%8A%A8%E9%A1%B5%E9%9D%A2%E5%BC%80%E5%8F%91/</id>
     <published>2024-01-14T13:09:55.000Z</published>
-    <updated>2024-01-14T13:11:45.531Z</updated>
+    <updated>2024-01-14T14:05:17.954Z</updated>
     
     
       
@@ -526,34 +553,6 @@
     
     
     <category term="DockerCompose" scheme="http://summerbird-1.github.io/tags/DockerCompose/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何推送镜像到dockerhub</title>
-    <link href="http://summerbird-1.github.io/2023/11/16/%E5%A6%82%E4%BD%95%E6%8E%A8%E9%80%81%E9%95%9C%E5%83%8F%E5%88%B0dockerhub/"/>
-    <id>http://summerbird-1.github.io/2023/11/16/%E5%A6%82%E4%BD%95%E6%8E%A8%E9%80%81%E9%95%9C%E5%83%8F%E5%88%B0dockerhub/</id>
-    <published>2023-11-16T12:37:58.000Z</published>
-    <updated>2023-11-16T13:01:41.953Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;在公司开发环境中，一般需要把打包好的镜像推送到镜像仓库，然后拉取部署&lt;/p&gt;
-&lt;h2 id=&quot;一、注册dockerhub账号😹&quot;&gt;&lt;a href=&quot;#一、注册dockerhub账号😹&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="部署" scheme="http://summerbird-1.github.io/categories/%E9%83%A8%E7%BD%B2/"/>
-    
-    
-    <category term="docker" scheme="http://summerbird-1.github.io/tags/docker/"/>
-    
-    <category term="dockerhub" scheme="http://summerbird-1.github.io/tags/dockerhub/"/>
     
   </entry>
   

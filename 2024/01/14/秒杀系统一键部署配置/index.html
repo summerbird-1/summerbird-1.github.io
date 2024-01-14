@@ -5,7 +5,7 @@
 <head>
     <meta name="referrer" content="no-referrer-when-downgrade">
     <meta charset="utf-8">
-    <meta name="keywords" content="自然辩证法与马克思主义思想中的知识建构, SummerBird">
+    <meta name="keywords" content="秒杀系统一键部署配置, SummerBird">
     <meta name="description" content="向往热烈而自由">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>自然辩证法与马克思主义思想中的知识建构 | SummerBird</title>
+    <title>秒杀系统一键部署配置 | SummerBird</title>
     <link rel="icon" type="image/png" href="/avatar.webp">
     <link rel="stylesheet" type="text/css" href="/libs/artitalk/artitalk.min.css">
 
@@ -288,12 +288,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.webp')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.webp')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">自然辩证法与马克思主义思想中的知识建构</h1>
+                    <h1 class="description center-align post-title">秒杀系统一键部署配置</h1>
                 </div>
             </div>
         </div>
@@ -412,8 +412,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E8%87%AA%E7%84%B6%E8%BE%A9%E8%AF%81%E6%B3%95/">
-                                <span class="chip bg-color">自然辩证法</span>
+                            <a href="/tags/docker/">
+                                <span class="chip bg-color">docker</span>
+                            </a>
+                        
+                            <a href="/tags/RabbitMQ/">
+                                <span class="chip bg-color">RabbitMQ</span>
                             </a>
                         
                     </div>
@@ -424,8 +428,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/HomeWork/" class="post-category">
-                                HomeWork
+                            <a href="/categories/%E9%83%A8%E7%BD%B2/" class="post-category">
+                                部署
                             </a>
                         
                     </div>
@@ -437,28 +441,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2023-11-11
+                    2024-01-14
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2023-11-15
+                    2024-01-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    998
+                    2.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    3 Min
+                    9 Min
                 </div>
                 
 
@@ -481,40 +485,355 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="自然辩证法与马克思主义思想中的知识建构"><a href="#自然辩证法与马克思主义思想中的知识建构" class="headerlink" title="自然辩证法与马克思主义思想中的知识建构"></a>自然辩证法与马克思主义思想中的知识建构</h3><h4 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h4><p>​		在人类思想史上，马克思主义以其深刻的社会分析和综合性的思考而引起广泛关注。本文将聚焦于马恩主义思想中的自然辩证法，并通过对恩格斯未完成著作《自然辩证法》的解读，探讨自然辩证法在知识建构中的作用。通过对自然辩证法和马克思恩格斯本人的思想的回顾，我们将探索这一综合性思维在当代教育和知识体系构建中的启示。</p>
-<h4 id="自然辩证法的哲学基础"><a href="#自然辩证法的哲学基础" class="headerlink" title="自然辩证法的哲学基础"></a>自然辩证法的哲学基础</h4><ol>
-<li><p><strong>发展和变化的观念</strong></p>
-<p>自然辩证法强调一切事物都处于不断发展和变化之中。这种哲学基础反映在对社会历史发展的分析上，认为社会制度和经济关系也随着历史的推移而发生演变。</p>
+                <h2 id="秒杀系统一键部署配置"><a href="#秒杀系统一键部署配置" class="headerlink" title="秒杀系统一键部署配置"></a>秒杀系统一键部署配置</h2><p>​		在阿里云服务器上部署开发的秒杀系统，首先服务器要确保安装了docker和docker-compose服务。思路是首先打包后端jar包，拉取对应的jdk镜像，接着前端项目也得build，nginx服务的配置以及镜像拉取，最后使用dockercompose文件同时拉取mysql、redis、rabbitmq、后端，前端的镜像，并启动这些容器。</p>
+<h3 id="一、后端部署配置"><a href="#一、后端部署配置" class="headerlink" title="一、后端部署配置"></a>一、后端部署配置</h3><h4 id="1、生成jar包"><a href="#1、生成jar包" class="headerlink" title="1、生成jar包"></a>1、生成jar包</h4><p>这个在shell脚本中完成</p>
+<p>deploy.sh</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker run -it --rm --name ssadmin-maven \
+    -v ssadmin-maven-repo:/root/.m2 \
+    -v "$PWD/serve":/usr/src/mymaven \
+    -w /usr/src/mymaven \
+    maven:3.8.4-jdk-8 mvn clean install package -e '-Dmaven.test.skip=true'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="2、拉取jdk镜像"><a href="#2、拉取jdk镜像" class="headerlink" title="2、拉取jdk镜像"></a>2、拉取jdk镜像</h4><p>这个是后端项目下的Dockerfile文件</p>
+<pre class="line-numbers language-docker" data-language="docker"><code class="language-docker">FROM eclipse-temurin:8-jre
+
+RUN mkdir -p /ssadmin-server
+WORKDIR /ssadmin-server
+
+COPY ./target/demo20230927-0.0.1-SNAPSHOT.jar app.jar
+
+ENV TZ=Asia/Shanghai
+ENV JAVA_OPTS="-Xms512m -Xmx512m -Djava.security.egd=file:/dev/./urandom"
+ENV ARGS=""
+
+EXPOSE 28080
+
+CMD java ${JAVA_OPTS} -jar app.jar $ARGS<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="二、前端部署配置"><a href="#二、前端部署配置" class="headerlink" title="二、前端部署配置"></a>二、前端部署配置</h3><h4 id="1、build前端项目，拉取nginx镜像"><a href="#1、build前端项目，拉取nginx镜像" class="headerlink" title="1、build前端项目，拉取nginx镜像"></a>1、build前端项目，拉取nginx镜像</h4><p>在前端项目下的Dockerfile中完成</p>
+<pre class="line-numbers language-Dockerfile" data-language="Dockerfile"><code class="language-Dockerfile"># Stage 1: Build
+FROM node:16-alpine as build-stage
+
+WORKDIR /admim
+
+COPY .npmrc package.json ./
+RUN yarn install --frozen-lockfile
+
+COPY . .
+
+# 构建命令
+
+ARG NODE_ENV
+RUN if [ "$NODE_ENV" = "production" ]; then \
+      yarn build:prod; \
+    else \
+      yarn build; \
+    fi
+
+# Stage 2: Run
+FROM nginx:alpine
+
+ENV TZ=Asia/Shanghai
+
+COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=build-stage /admim/dist /usr/share/nginx/html
+
+EXPOSE 80<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="2、nginx配置文件"><a href="#2、nginx配置文件" class="headerlink" title="2、nginx配置文件"></a>2、nginx配置文件</h4><pre class="line-numbers language-conf" data-language="conf"><code class="language-conf">server {
+    listen       80 default_server;
+    server_name  _; ## 重要！！！修改成你的外网 IP/域名
+
+    gzip on;
+    gzip_min_length 1k;     # 设置允许压缩的页面最小字节数
+    gzip_buffers 4 16k;     # 用来存储 gzip 的压缩结果
+    gzip_http_version 1.1;  # 识别 HTTP 协议版本
+    gzip_comp_level 2;      # 设置 gzip 的压缩比 1-9。1 压缩比最小但最快，而 9 相反
+    gzip_types text/plain application/x-javascript text/css application/xml application/javascript; # 指定压缩类型
+    gzip_proxied any;       # 无论后端服务器的 headers 头返回什么信息，都无条件启用压缩
+
+    location / { ## 前端项目
+        root   /usr/share/nginx/html/;
+        index  index.html index.htm;
+        try_files $uri $uri/ /index.html;
+    }
+
+    location /api/ { ## 后端项目 - 管理后台
+        proxy_pass http://ssadmin-server:28080/; ## 重要！！！proxy_pass 需要设置为后端项目所在服务器的 IP
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header REMOTE-HOST $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p> <code>proxy_pass http://ssadmin-server:28080/</code>;这个ip为后端容器地址，填写后端容器名</p>
+<h4 id="3、-npmrc文件"><a href="#3、-npmrc文件" class="headerlink" title="3、.npmrc文件"></a>3、.npmrc文件</h4><p>npmrc 文件是npm 的配置文件，<strong>用于在全局或特定用户的npm 环境中存储不同的配置选项</strong>。 这些配置选项可以针对npm 包的下载源、镜像、认证等方面进行设置。</p>
+<pre class="line-numbers language-npmrc" data-language="npmrc"><code class="language-npmrc">phantomjs_cdnurl=http://cnpmjs.org/downloads
+chromedriver_cdnurl=http://cdn.npm.taobao.org/dist/chromedriver
+sass_binary_site=https://npm.taobao.org/mirrors/node-sass/
+registry=https://registry.npmmirror.com<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="三、docker-compose配置"><a href="#三、docker-compose配置" class="headerlink" title="三、docker-compose配置"></a>三、docker-compose配置</h3><h5 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h5><ul>
+<li>通过 YAML 文件定义整个应用程序的架构和配置。</li>
+<li>可以一次性启动或停止整个应用程序。</li>
+<li>可以自定义网络和数据卷等配置，实现容器之间的通信和数据共享。</li>
+<li>可以轻松地扩展应用程序，添加或删除容器，实现应用程序的动态调整。</li>
+</ul>
+<p>该文件写在与前后端项目同一级（根目录）下</p>
+<p><code>docker-compose.yml</code></p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">version: "3.4"
+
+services:
+  mysql:
+    container_name: ssadmin-mysql
+    image: mysql:8
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-root}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-123456}
+    volumes:
+      - mysql:/var/lib/mysql/
+      - ./sql/rbac_2024-01-14.sql:/docker-entrypoint-initdb.d/rbac_2024-01-14.sql:ro
+    networks:
+      - my_network
+  redis:
+    container_name: ssadmin-redis
+    image: redis:6-alpine
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis:/data
+    networks:
+      - my_network
+  rabbitmq:
+    image: rabbitmq:3.8-management
+    container_name: ssadmin-rabbitmq
+    restart: always
+    ports:
+      - "5672:5672"
+    environment:
+      - RABBITMQ_DEFAULT_USER=root
+      - RABBITMQ_DEFAULT_PASS=123456
+    volumes:
+      - rabbitmq:/var/lib/rabbitmq
+    networks:
+      - my_network
+  server:
+    container_name: ssadmin-server
+    build:
+      context: ./serve/
+    image: ssadmin-server
+    restart: unless-stopped
+    ports:
+      - "28080:28080"
+    networks:
+      - my_network
+    environment:
+      SPRING_PROFILES_ACTIVE: local
+      JAVA_OPTS: ${JAVA_OPTS:- -Xms512m -Xmx512m -Djava.security.egd=file:/dev/./urandom}
+      ARGS: 
+        --spring.datasource.url=${DATASOURCE_URL:-jdbc:mysql://ssadmin-mysql:3306/root?useSSL=false&amp;serverTimezone=Asia/Shanghai&amp;allowPublicKeyRetrieval=true&amp;nullCatalogMeansCurrent=true} 
+        --spring.datasource.username=${DATASOURCE_USERNAME:-root} 
+        --spring.datasource.password=${DATASOURCE_PASSWORD:-123456} 
+        --spring.redis.host=${REDIS_HOST:-ssadmin-redis}
+        --spring.rabbitmq.host=${RABBITMQ_HOST:-ssadmin-rabbitmq}
+    depends_on:
+      - mysql
+      - redis
+      - rabbitmq
+  web:
+    container_name: ssadmin-web
+    build:
+      context: ./web
+    image: ssadmin-web
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    networks:
+      - my_network
+    depends_on:
+      - server
+volumes:
+  mysql:
+    driver: local
+  redis:
+    driver: local
+  rabbitmq:
+    driver: local
+networks:
+  my_network:
+    driver: bridge
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="拎出来mysql这一块讲讲"><a href="#拎出来mysql这一块讲讲" class="headerlink" title="拎出来mysql这一块讲讲"></a>拎出来mysql这一块讲讲</h5><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">mysql:
+   container_name: ssadmin-mysql
+   image: mysql:8
+   restart: unless-stopped
+   tty: true
+   ports:
+     - "3306:3306"
+   environment:
+     MYSQL_DATABASE: ${MYSQL_DATABASE:-root}
+     MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-123456}
+   volumes:
+     - mysql:/var/lib/mysql/
+     - ./sql/rbac_2024-01-14.sql:/docker-entrypoint-initdb.d/rbac_2024-01-14.sql:ro
+   networks:
+     - my_network<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol>
+<li>**<code>container_name: ssadmin-mysql</code>**：这一行指定了容器的名称为 <code>ssadmin-mysql</code>。这个可以用来代替容器所在ip使用</li>
+<li>**<code>image: mysql:8</code>**：这里指定使用的 Docker 镜像是 <code>mysql</code> 的版本 8</li>
+<li>**<code>restart: unless-stopped</code>**：这个选项配置容器的重启策略。在这里，除非明确停止，否则如果容器退出，它会自动重启。</li>
+<li>**<code>tty: true</code>**：这行代码分配一个伪 TTY 终端，通常用于保持容器运行。</li>
+<li>**<code>ports:</code>**：<ul>
+<li>**<code>- "3306:3306"</code>**：这里将容器内的 3306 端口映射到宿主机的 3306 端口，使得可以通过宿主机的 3306 端口访问 MySQL。</li>
+</ul>
 </li>
-<li><p><strong>内在矛盾和对立的推动</strong></p>
-<p>自然辩证法认为一切事物内部都包含着矛盾和对立。类似地，马克思主义视角下，社会中存在的阶级对立和经济矛盾推动着社会的发展。</p>
+<li>**<code>environment:</code>**：这一部分定义了环境变量。<ul>
+<li>**<code>MYSQL_DATABASE: ${MYSQL_DATABASE:-root}</code>**：设置 MySQL 数据库的名称。如果环境变量 <code>MYSQL_DATABASE</code> 未设置，则默认为 <code>root</code>。</li>
+<li>**<code>MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-123456}</code>**：设置 MySQL root 用户的密码。如果环境变量 <code>MYSQL_ROOT_PASSWORD</code> 未设置，则默认为 <code>123456</code>。</li>
+</ul>
+</li>
+<li>**<code>volumes:</code>**：这部分用于数据持久化和数据初始化。<ul>
+<li>**<code>- mysql:/var/lib/mysql/</code>**：将名为 <code>mysql</code> 的卷挂载到容器的 <code>/var/lib/mysql/</code> 目录，用于持久化 MySQL 数据。</li>
+<li>**<code>- ./sql/rbac_2024-01-14.sql:/docker-entrypoint-initdb.d/rbac_2024-01-14.sql:ro</code>**：将宿主机上的 <code>sql/rbac_2024-01-14.sql</code>文件以只读方式挂载到容器的 <code>/docker-entrypoint-initdb.d</code> 目录。MySQL 容器会在首次初始化时执行这个目录下的 SQL 脚本。</li>
+</ul>
+</li>
+<li>**<code>networks:</code>**： 这部分用于容器网络。<ul>
+<li><strong><code>- my_network</code></strong> 将 <code>phpmyadmin</code> 服务加入到 <code>my_network</code> 网络。</li>
+</ul>
 </li>
 </ol>
-<h4 id="马克思主义思想的博学综合性"><a href="#马克思主义思想的博学综合性" class="headerlink" title="马克思主义思想的博学综合性"></a>马克思主义思想的博学综合性</h4><ol>
-<li><p><strong>多领域涉猎</strong></p>
-<p>马克思和恩格斯的博学综合性，在阅读《自然辩证法》一书的过程中，深刻地感受到了他们对自然科学、哲学、历史等领域的涉猎，体现了对于社会现象的全面关注。自然辩证法为这种多领域涉猎提供了理论支持，强调事物内在的复杂性和多样性。</p>
+<h5 id="server配置"><a href="#server配置" class="headerlink" title="server配置"></a>server配置</h5><p>后端服务server的配置中要注意这两项：</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">--spring.redis.host=${REDIS_HOST:-ssadmin-redis}
+--spring.rabbitmq.host=${RABBITMQ_HOST:-ssadmin-rabbitmq}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>这个相当于application.yml中规定redis和rabbitmq的地址，使得后端可以找到这两个服务</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">build:
+     context: ./serve/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>这一项规定了后端项目所在的目录↑</p>
+<p><strong><code>depends_on:</code></strong></p>
+<ul>
+<li><strong><code>- mysql - redis - rabbitmq</code></strong> ：表明 <code>server</code> 服务依赖于 <code>mysql</code> 和 <code>redis</code> 以及rabbitmq服务。这意味着 Docker Compose 会先启动 <code>mysql</code> 和 <code>redis</code>以及rabbitmq 服务，然后再启动 <code>server</code> 服务。</li>
+</ul>
+<h5 id="数据网络配置"><a href="#数据网络配置" class="headerlink" title="数据网络配置"></a>数据网络配置</h5><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">volumes:
+  mysql:
+    driver: local
+  redis:
+    driver: local
+  rabbitmq:
+    driver: local
+networks:
+  my_network:
+    driver: bridge<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol>
+<li>**<code>volumes:</code>**（顶级）：定义了卷的具体配置。<ul>
+<li>**<code>mysql:</code>**：定义了一个名为 <code>mysql</code> 的卷。</li>
+<li>**<code>driver: local</code>**：指定使用本地驱动来创建卷。</li>
+</ul>
 </li>
-<li><p><strong>否定之否定的观念</strong></p>
-<p>马克思主义思想中的”否定之否定”的概念与自然辩证法有关。在社会变革的过程中，旧的制度被否定，但同时也包含了新的发展方向。这种观念反映了自然辩证法中事物发展的阶段性和渐进性。</p>
+<li>**<code>networks:</code>**（顶级）：定义了网络的具体配置。<ul>
+<li>**<code>my_network:</code>**：定义了一个名为 <code>my_network</code> 的网络。</li>
+<li>**<code>driver: bridge</code>**：指定使用桥接模式来创建网络。</li>
+</ul>
 </li>
 </ol>
-<h4 id="知识建构与自然辩证法的结合"><a href="#知识建构与自然辩证法的结合" class="headerlink" title="知识建构与自然辩证法的结合"></a>知识建构与自然辩证法的结合</h4><ol>
-<li><p><strong>对知识的整合和连接</strong></p>
-<p>自然辩证法的思想启示我们在知识建构中要注重对事物整体的理解，将不同领域的知识进行有机整合。马克思主义的博学综合性为构建这种全面的知识网络提供了理论基础。</p>
-</li>
-<li><p><strong>理论与实践相结合</strong></p>
-<p>马克思主义思想中强调理论与实践的相互关系，这与自然辩证法的观点相契合。知识不仅仅是对于事物本质的理论认知，还需要通过实践去检验和发展。</p>
-</li>
-</ol>
-<h4 id="对自然辩证法和知识建构的思考"><a href="#对自然辩证法和知识建构的思考" class="headerlink" title="对自然辩证法和知识建构的思考"></a>对自然辩证法和知识建构的思考</h4><ol>
-<li><p><strong>跨学科思考与综合性学科研究</strong></p>
-<p>自然辩证法的思想启发我们在知识建构中要进行跨学科思考，打破学科之间的界限。这与你提出的构建知识网络的主张相契合，有助于形成更为有机的知识结构。</p>
-</li>
-<li><p><strong>对分工的反思</strong></p>
-<p>马克思主义思想中对分工的批判与自然辩证法对于事物内在矛盾的强调呼应。在当代社会，对于学科分工是否同样导致了对知识的局限性值得深入思考。</p>
-</li>
-</ol>
-<h4 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h4><p>通过对自然辩证法和马克思主义思想的回顾，我们看到了一种对于知识的全面关注和综合性思考。自然辩证法的哲学基础为对事物发展的理解提供了一种框架，而马克思主义的博学综合性则为跨学科思考和综合性学科研究提供了理论基础。在当代，我们或许可以从这一综合性思维中得到启示，构建更加有机、全面的知识体系，以推动社会和个体的全面发展。</p>
+<h3 id="四、部署脚本"><a href="#四、部署脚本" class="headerlink" title="四、部署脚本"></a>四、部署脚本</h3><p>deploy.sh</p>
+<p>这个脚本负责串联这些过程，负责环境检查、jar包生成、dockercompose的启动等</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">#!/bin/bash
+
+# 启动服务
+echo -e "开始部署......"
+
+# 当任何一个命令返回非零值时，退出脚本
+set -e
+
+# 定义颜色
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m' # 无颜色
+
+
+# 检查docker命令是否可用
+if ! command -v docker &amp;&gt; /dev/null
+then
+    echo -e "${RED}docker 命令未找到，请先安装 Docker。${NC}"
+    exit 1
+fi
+
+echo -e "检查docker命令是否可用......${GREEN}通过${NC}"
+
+# 检查docker-compose命令是否可用
+if ! command -v docker-compose &amp;&gt; /dev/null
+then
+    echo -e "${RED}docker-compose 命令未找到，请先安装 Docker Compose。${NC}"
+    exit 1
+fi
+
+echo -e "检查docker-compose 命令......${GREEN}通过${NC}"
+
+# 检查 Maven 缓存 volume 是否已经存在
+if docker volume inspect ssadmin-maven-repo &amp;&gt; /dev/null; then
+    echo -e "${GREEN}Maven 缓存 volume 已存在。${NC}"
+else
+    echo -e "${GREEN}创建 Maven 缓存 volume...${NC}"
+    docker volume create --name ssadmin-maven-repo
+fi
+
+# 通过容器构建 jar 包
+
+echo -e "开始构建 jar 包..."
+
+docker run -it --rm --name ssadmin-maven \
+    -v ssadmin-maven-repo:/root/.m2 \
+    -v "$PWD/serve":/usr/src/mymaven \
+    -w /usr/src/mymaven \
+    maven:3.8.4-jdk-8 mvn clean install package -e '-Dmaven.test.skip=true' || { echo -e "${RED}构建 jar 包失败。${NC}"; exit 1; }
+
+echo -e "通过容器构建 jar 包......${GREEN}通过${NC}"
+
+# 构建镜像
+echo -e "开始构建镜像..."
+docker-compose build --no-cache || { echo -e "${RED}构建 Docker 镜像失败。${NC}"; exit 1; }
+
+echo -e "构建 Docker 镜像......${GREEN}通过${NC}"
+
+# 启动服务
+echo -e "检查是否有正在运行的服务..."
+
+# 检查是否有正在运行的 docker-compose 服务
+if docker-compose ps | grep "ssadmin"; then
+    echo -e "${GREEN}停止正在运行的服务...${NC}"
+    docker-compose down || { echo -e "${RED}停止服务失败。${NC}"; exit 1; }
+    echo -e "${GREEN}服务已成功停止。${NC}"
+else
+    echo -e "${GREEN}没有找到正在运行的服务。${NC}"
+fi
+
+echo -e "启动新服务..."
+
+docker-compose up -d || { echo -e "${RED}启动服务失败。${NC}"; exit 1; }
+
+echo -e "${GREEN}恭喜你！系统部署完成！${NC}"
+echo -e ""
+echo -e "**********************************"
+echo -e "***  Admin UI: http://hostname ***"
+echo -e "**********************************"
+echo -e ""<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="五、部署测试"><a href="#五、部署测试" class="headerlink" title="五、部署测试"></a>五、部署测试</h3><h5 id="1、拉取项目"><a href="#1、拉取项目" class="headerlink" title="1、拉取项目"></a>1、拉取项目</h5><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">git clone https://gitee.com/zhang-junzhao/rbac-seckill-system.git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h5 id="2、一键部署"><a href="#2、一键部署" class="headerlink" title="2、一键部署"></a>2、一键部署</h5><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">cd rbac-seckill-system
+chmod +x deploy.sh
+./deploy.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -541,7 +860,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://summerbird-1.github.io/2023/11/11/%E8%87%AA%E7%84%B6%E8%BE%A9%E8%AF%81%E6%B3%95%E4%B8%8E%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E6%80%9D%E6%83%B3%E4%B8%AD%E7%9A%84%E7%9F%A5%E8%AF%86%E5%BB%BA%E6%9E%84/">http://summerbird-1.github.io/2023/11/11/%E8%87%AA%E7%84%B6%E8%BE%A9%E8%AF%81%E6%B3%95%E4%B8%8E%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E6%80%9D%E6%83%B3%E4%B8%AD%E7%9A%84%E7%9F%A5%E8%AF%86%E5%BB%BA%E6%9E%84/</a>
+                    <a href="http://summerbird-1.github.io/2024/01/14/%E7%A7%92%E6%9D%80%E7%B3%BB%E7%BB%9F%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2%E9%85%8D%E7%BD%AE/">http://summerbird-1.github.io/2024/01/14/%E7%A7%92%E6%9D%80%E7%B3%BB%E7%BB%9F%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2%E9%85%8D%E7%BD%AE/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -579,8 +898,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E8%87%AA%E7%84%B6%E8%BE%A9%E8%AF%81%E6%B3%95/">
-                                    <span class="chip bg-color">自然辩证法</span>
+                                <a href="/tags/docker/">
+                                    <span class="chip bg-color">docker</span>
+                                </a>
+                            
+                                <a href="/tags/RabbitMQ/">
+                                    <span class="chip bg-color">RabbitMQ</span>
                                 </a>
                             
                         </div>
@@ -758,17 +1081,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2023/11/12/%E5%88%86%E6%B2%BB%E9%97%AE%E9%A2%98/">
+                <a href="/2024/01/14/%E7%A7%92%E6%9D%80%E7%B3%BB%E7%BB%9F%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2%E9%85%8D%E7%BD%AE/">
                     <div class="card-image">
                         
                         
-                        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/featureimages/15.webp" class="responsive-img" alt="分治问题">
+                        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/featureimages/13.webp" class="responsive-img" alt="秒杀系统一键部署配置">
                         
-                        <span class="card-title">分治问题</span>
+                        <span class="card-title">秒杀系统一键部署配置</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -778,26 +1102,31 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-01-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Algorithm/" class="post-category">
-                                    Algorithm
+                            <a href="/categories/%E9%83%A8%E7%BD%B2/" class="post-category">
+                                    部署
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%88%86%E6%B2%BB/">
-                        <span class="chip bg-color">分治</span>
+                    <a href="/tags/docker/">
+                        <span class="chip bg-color">docker</span>
+                    </a>
+                    
+                    <a href="/tags/RabbitMQ/">
+                        <span class="chip bg-color">RabbitMQ</span>
                     </a>
                     
                 </div>
@@ -811,13 +1140,13 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/11/10/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/">
+                <a href="/2024/01/14/%E7%A7%92%E6%9D%80%E6%B4%BB%E5%8A%A8%E9%A1%B5%E9%9D%A2%E5%BC%80%E5%8F%91/">
                     <div class="card-image">
                         
                         
-                        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/featureimages/7.webp" class="responsive-img" alt="动态规划之石子合并">
+                        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/featureimages/23.webp" class="responsive-img" alt="秒杀活动页面开发">
                         
-                        <span class="card-title">动态规划之石子合并</span>
+                        <span class="card-title">秒杀活动页面开发</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -828,14 +1157,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-01-14
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Algorithm/" class="post-category">
-                                    Algorithm
+                            <a href="/categories/%E5%BC%80%E5%8F%91/" class="post-category">
+                                    开发
                                 </a>
                             
                             
@@ -845,12 +1174,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
-                        <span class="chip bg-color">动态规划</span>
+                    <a href="/tags/rbac/">
+                        <span class="chip bg-color">rbac</span>
                     </a>
                     
-                    <a href="/tags/%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/">
-                        <span class="chip bg-color">石子合并</span>
+                    <a href="/tags/Springboot/">
+                        <span class="chip bg-color">Springboot</span>
                     </a>
                     
                 </div>
