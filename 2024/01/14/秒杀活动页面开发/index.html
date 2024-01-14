@@ -1,0 +1,2041 @@
+<!DOCTYPE HTML>
+<html lang="zh_CN">
+
+
+<head>
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta charset="utf-8">
+    <meta name="keywords" content="秒杀活动页面开发, SummerBird">
+    <meta name="description" content="向往热烈而自由">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>秒杀活动页面开发 | SummerBird</title>
+    <link rel="icon" type="image/png" href="/avatar.webp">
+    <link rel="stylesheet" type="text/css" href="/libs/artitalk/artitalk.min.css">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="SummerBird" type="application/atom+xml">
+</head>
+
+
+    
+        <style>
+    body{
+       background-image: url(https://telegraph-image-17t.pages.dev/file/07572ef64a5cdcc1030fb.png);
+       background-repeat:no-repeat;
+       background-size:cover;
+       background-attachment:fixed;
+    }
+</style>
+
+            
+
+                <body>
+                    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    <div>
+                        
+                            <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/avatar.webp" class="logo-img" alt="LOGO">
+                            
+                                <span class="logo-span">
+                                    SummerBird
+                                </span>
+                    </div>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/artitalk" class="waves-effect waves-light">
+      
+      <i class="fas fa-pen-alt" style="zoom: 0.6;"></i>
+      
+      <span>说说</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友链</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/avatar.webp" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">SummerBird</div>
+        <div class="logo-desc">
+            
+            向往热烈而自由
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/artitalk" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-pen-alt"></i>
+			
+			说说
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友链
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+                        
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.webp')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">秒杀活动页面开发</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+    width: 345px;
+    padding-left: 20px;
+    background-color: rgb(255, 255, 255,0.7);
+    border-radius: 10px;
+    box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1) !important;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/rbac/">
+                                <span class="chip bg-color">rbac</span>
+                            </a>
+                        
+                            <a href="/tags/Springboot/">
+                                <span class="chip bg-color">Springboot</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%BC%80%E5%8F%91/" class="post-category">
+                                开发
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2024-01-14
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
+                    2024-01-14
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    3.4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
+                    18 Min
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="秒杀活动页面开发流程"><a href="#秒杀活动页面开发流程" class="headerlink" title="秒杀活动页面开发流程"></a>秒杀活动页面开发流程</h2><h3 id="一、数据库表"><a href="#一、数据库表" class="headerlink" title="一、数据库表"></a>一、数据库表</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">DROP TABLE IF EXISTS `seckillactivity`;
+CREATE TABLE `seckillactivity`  (
+  `activity_id` int NOT NULL AUTO_INCREMENT,
+  `concert_id` int NULL DEFAULT NULL,
+  `concert_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `start_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `end_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `status` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL,
+  `description` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL,
+  PRIMARY KEY (`activity_id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = DYNAMIC;
+
+-- ----------------------------
+-- Records of seckillactivity
+-- ----------------------------
+INSERT INTO `seckillactivity` VALUES (1, 1, '赵传2023北京跨年演唱会 ——给所有知道我名字的人', '2023-12-27 18:00:00', '2024-01-02 18:00:00', '0', NULL);
+INSERT INTO `seckillactivity` VALUES (2, 2, '张紫宁「偶·像」巡回演唱会北京站', '2023-12-27 18:00:00', '2024-01-01 18:00:00', '0', '');
+INSERT INTO `seckillactivity` VALUES (3, 3, '后来的人」王贰浪2023全国巡演-北京站', '2023-12-27 18:00:00', '2024-01-01 18:00:00', '0', NULL);
+INSERT INTO `seckillactivity` VALUES (4, 4, '次元音浪-音乐番only', '2023-12-27 18:00:00', '2024-01-01 18:00:00', '0', NULL);
+INSERT INTO `seckillactivity` VALUES (5, 5, '「春节进行时」新春聚会音乐节 小年舞台-北京站', '2023-12-27 18:00:00', '2024-01-12 18:00:00', '0', NULL);
+INSERT INTO `seckillactivity` VALUES (6, 6, '致敬Beyond・黄家驹30周年全国巡演/630乐队', '2023-12-27 18:00:00', '2024-01-12 18:00:00', '0', NULL);
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="二、前端页面"><a href="#二、前端页面" class="headerlink" title="二、前端页面"></a>二、前端页面</h3><h4 id="1、页面组件"><a href="#1、页面组件" class="headerlink" title="1、页面组件"></a>1、页面组件</h4><p>src\views\seckill\SecKillActivity.vue</p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
+    &lt;div class="app-container"&gt;
+        &lt;el-row :gutter="20"&gt;
+            &lt;el-col :span="24" :xs="24"&gt;
+                &lt;el-form v-show="showSearch" ref="queryForm" :model="queryParams" :inline="true" label-width="68px"&gt;
+                    &lt;el-form-item label="商品名称" prop="concertName"&gt;
+                        &lt;el-input v-model="queryParams.concertName" placeholder="请输入商品名称" clearable size="small"
+                            style="width: 240px" @keyup.enter.native="handleQuery" /&gt;
+                    &lt;/el-form-item&gt;
+                    &lt;el-form-item label="状态" prop="status"&gt;
+                        &lt;el-select v-model="queryParams.status" placeholder="活动状态" clearable size="small"
+                            style="width: 240px"&gt;
+                            &lt;el-option :key="0" label="正常" :value="0" /&gt;
+                            &lt;el-option :key="1" label="停用" :value="1" /&gt;
+                        &lt;/el-select&gt;
+                    &lt;/el-form-item&gt;
+                    &lt;el-form-item&gt;
+                        &lt;el-button type="primary" icon="el-icon-search" size="mini" @click="handleQuery"&gt;搜索&lt;/el-button&gt;
+                    &lt;/el-form-item&gt;
+                &lt;/el-form&gt;
+
+                &lt;el-row :gutter="10" class="mb8"&gt;
+                    &lt;el-col :span="1.5"&gt;
+                        &lt;el-button type="primary" plain icon="el-icon-plus" size="mini" @click="handleAdd"&gt;新增&lt;/el-button&gt;
+                    &lt;/el-col&gt;
+                &lt;/el-row&gt;
+
+                &lt;el-table :data="concertList" style="width: 100%" @selection-change="handleSelectionChange"&gt;
+                    &lt;el-table-column type="selection" width="55" /&gt;
+                    &lt;el-table-column prop="activityId" label="活动编号" align="center" /&gt;
+                    &lt;el-table-column prop="concertName" label="商品名称" align="center" /&gt;
+                    &lt;el-table-column prop="startTime" label="开始时间" align="center" /&gt;
+                    &lt;el-table-column prop="endTime" label="结束时间" align="center" /&gt;
+                    &lt;el-table-column prop="status" label="状态" align="center"&gt;
+                        &lt;template slot-scope="scope"&gt;
+                            &lt;el-switch v-model="scope.row.status" active-value="0" inactive-value="1"
+                                @change="handleStatusChange(scope.row)" /&gt;
+                        &lt;/template&gt;
+                    &lt;/el-table-column&gt;
+                    &lt;el-table-column label="操作" align="center" width="160" class-name="small-padding fixed-width"&gt;
+                        &lt;template slot-scope="scope"&gt;
+                            &lt;el-button size="mini" type="text" icon="el-icon-zoom-in"
+                                @click="handledes(scope.row)"&gt;详情&lt;/el-button&gt;
+                            &lt;el-button size="mini" type="text" icon="el-icon-edit"
+                                @click="handleUpdate(scope.row)"&gt;修改&lt;/el-button&gt;
+                            &lt;el-button size="mini" type="text" icon="el-icon-delete"
+                                @click="handleDelete(scope.row)"&gt;删除&lt;/el-button&gt;
+                        &lt;/template&gt;
+                    &lt;/el-table-column&gt;
+                &lt;/el-table&gt;
+            &lt;/el-col&gt;
+        &lt;/el-row&gt;
+        &lt;el-pagination :page-size.sync="queryParams.pageSize" layout="total, sizes, prev, pager, next, jumper"
+            :total="total" :page-sizes="[10, 20, 30, 40]" :current-page.sync="queryParams.pageNum" @current-change="getList"
+            @size-change="getList" /&gt;
+        &lt;!-- 描述信息对话框 --&gt;
+        &lt;el-dialog title="活动详情" :visible.sync="dialogVisible" width="30%" :before-close="handleClose"&gt;
+            &lt;span&gt;{{ this.description }}&lt;/span&gt;
+            &lt;span slot="footer" class="dialog-footer"&gt;
+                &lt;el-button @click="dialogVisible = false"&gt;取 消&lt;/el-button&gt;
+                &lt;el-button type="primary" @click="dialogVisible = false"&gt;确 定&lt;/el-button&gt;
+            &lt;/span&gt;
+        &lt;/el-dialog&gt;
+        &lt;!-- 添加或修改参数配置对话框 --&gt;
+        &lt;el-dialog :title="title" :visible.sync="open" width="600px" append-to-body&gt;
+            &lt;el-form ref="form" :model="form" :rules="rules" label-width="80px"&gt;
+                &lt;el-row&gt;
+                    &lt;el-col :span="24"&gt;
+                        &lt;el-form :model="form" ref="form" :rules="rules" label-width="80px"&gt;
+                            &lt;el-form-item label="商品名称" prop="concertName"&gt;
+                                &lt;el-select v-model="form.concertName" placeholder="请选择" @change="handleConcertChange"&gt;
+                                    &lt;el-option v-for="item in concertOptions" :key="item.concertId"
+                                        :label="item.concertName" :value="item.concertName" /&gt;
+                                &lt;/el-select&gt;
+                            &lt;/el-form-item&gt;
+                            &lt;!-- 其他表单项 --&gt;
+                        &lt;/el-form&gt;
+                    &lt;/el-col&gt;
+                &lt;/el-row&gt;
+                &lt;el-row&gt;
+                    &lt;div class="block1"&gt;
+                        &lt;span class="demonstration1"&gt;开始时间&lt;/span&gt;
+                        &lt;el-date-picker v-model="form.startTime" type="datetime" placeholder="选择开始时间"&gt;
+                        &lt;/el-date-picker&gt;
+                    &lt;/div&gt;
+                &lt;/el-row&gt;
+                &lt;el-row&gt;
+                    &lt;div class="block2"&gt;
+                        &lt;span class="demonstration2"&gt;结束时间&lt;/span&gt;
+                        &lt;el-date-picker v-model="form.endTime" type="datetime" placeholder="选择结束时间"&gt;
+                        &lt;/el-date-picker&gt;
+                    &lt;/div&gt;
+                &lt;/el-row&gt;
+                &lt;el-form-item label="活动描述"&gt;
+                    &lt;el-input type="textarea" v-model="form.description"&gt;&lt;/el-input&gt;
+                &lt;/el-form-item&gt;
+                &lt;el-row&gt;
+                    &lt;el-col :span="12"&gt;
+                        &lt;el-form-item label="状态"&gt;
+                            &lt;el-radio-group v-model="form.status"&gt;
+                                &lt;el-radio :key="'0'" :label="'0'"&gt;启用&lt;/el-radio&gt;
+                                &lt;el-radio :key="'1'" :label="'1'"&gt;关闭&lt;/el-radio&gt;
+                            &lt;/el-radio-group&gt;
+                        &lt;/el-form-item&gt;
+                    &lt;/el-col&gt;
+                &lt;/el-row&gt;
+
+
+            &lt;/el-form&gt;
+            &lt;div slot="footer" class="dialog-footer"&gt;
+                &lt;el-button type="primary" @click="submitForm"&gt;确 定&lt;/el-button&gt;
+                &lt;el-button @click="cancel"&gt;取 消&lt;/el-button&gt;
+            &lt;/div&gt;
+        &lt;/el-dialog&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+  
+&lt;script&gt;
+import {
+    listActivitys,
+    listAllProduct,
+    addActivity,
+    changeActivityStatus,
+    delActivity,
+    getActivity,
+    updateActivity
+} from '@/api/seckillactivity'
+export default {
+    name: 'User',
+    data() {
+        return {
+            // 查询参数
+            queryParams: {
+                pageNum: 1,
+                pageSize: 10,
+                concertName: undefined,
+                status: undefined
+            },
+            title: '',
+            // 是否显示弹出层
+            open: false,
+            // 表单校验
+            rules: {
+                userName: [
+                    { required: true, message: '用户名称不能为空', trigger: 'blur' },
+                    {
+                        min: 2,
+                        max: 20,
+                        message: '用户名称长度必须介于 2 和 20 之间',
+                        trigger: 'blur'
+                    }
+                ],
+                nickName: [
+                    { required: true, message: '用户昵称不能为空', trigger: 'blur' }
+                ],
+                concertname: [{ required: true, message: '请选择商品名称', trigger: 'change' }],
+                password: [
+                    { required: true, message: '用户密码不能为空', trigger: 'blur' },
+                    {
+                        min: 5,
+                        max: 20,
+                        message: '用户密码长度必须介于 5 和 20 之间',
+                        trigger: 'blur'
+                    }
+                ],
+                email: [
+                    {
+                        type: 'email',
+                        message: "'请输入正确的邮箱地址",
+                        trigger: ['blur', 'change']
+                    }
+                ],
+                phonenumber: [
+                    {
+                        pattern: /^1[3|4|5|6|7|8|9][0-9]\d{8}$/,
+                        message: '请输入正确的手机号码',
+                        trigger: 'blur'
+                    }
+                ]
+            },
+            // 角色选项
+            concertOptions: [],
+            // 显示搜索条件
+            showSearch: true,
+            // 遮罩层
+            loading: true,
+            // 用户表格数据
+            concertList: null,
+            // 总条数
+            total: 0,
+            // 选中数组
+            ids: [],
+            // 表单参数
+            form: {},
+            //更新还是新增
+            type: true,
+            // 商品描述
+            description: '',
+            // 弹出层显示
+            dialogVisible: false
+        }
+    },
+    watch: {},
+    created() {
+        this.getList()
+    },
+    methods: {
+        /** 搜索按钮操作 */
+        handleQuery() {
+            this.queryParams.pageNum = 1
+            this.getList()
+        },
+        // 多选框选中数据
+        handleSelectionChange(selection) {
+            this.ids = selection.map(item =&gt; item.id)
+            this.single = selection.length !== 1
+            this.multiple = !selection.length
+        },
+        // 取消按钮
+        cancel() {
+            this.open = false
+            this.reset()
+        },
+        /** 查询用户列表 */
+        getList() {
+            this.loading = true
+            listActivitys(this.queryParams).then((response) =&gt; {
+                if (response.code == 4001)
+                    this.$modal.msgError(response.msg)
+                else {
+                    this.concertList = response.data.rows
+                    this.total = response.total
+                }
+                this.loading = false
+            })
+        },
+        // 用户状态修改
+        handleStatusChange(row) {
+            const text = row.status === '0' ? '启用' : '停止'
+            this.$modal.confirm('确认要' + text + '该秒杀活动吗？')
+                .then(function () {
+                    return changeActivityStatus(row.activityId, row.status)
+                })
+                .then((res) =&gt; {
+                    if (res.code == 4001) {
+                        this.$modal.msgError(res.msg)
+                    } else {
+                        this.$modal.msgSuccess(text + '成功')
+                    }
+                    this.getList();
+                })
+                .catch(function () {
+                    row.status = row.status === '0' ? '1' : '0'
+                })
+        },
+        /** 修改按钮操作 */
+        handleUpdate(row) {
+            this.type = false
+            this.reset()
+            const id = row.activityId
+            listAllProduct().then((response) =&gt; {
+              
+                this.concertOptions = response.data
+            })
+            getActivity(id).then((response) =&gt; {
+                if(response.code == 4001)
+                this.$modal.msgError(response.msg)
+                else{
+                this.form = response.data
+                console.log("this.form" + response.data)
+                this.open = true
+                this.title = '修改活动信息'
+                }
+                //this.form.password = response.password
+            })
+        },
+        // 表单重置
+        reset() {
+            this.form = {
+                concertId: undefined,
+                concertName: undefined,
+                startTime: undefined,
+                endTime: undefined,
+                description: undefined,
+                status: '0'
+            }
+            this.resetForm('form')
+        },
+        /** 新增用户 */
+        handleAdd() {
+            this.reset()
+            this.type = true
+            listAllProduct().then((response) =&gt; {
+                if(response.code == 4001)
+                this.$modal.msgError(response.msg)
+                else{
+                this.concertOptions = response.data
+                this.open = true
+                this.title = '添加商品'
+                }
+            })
+        },
+        /** 商品描述 */
+        handledes(row) {
+            console.log(row)
+            this.dialogVisible = true
+            this.description = row.description
+        },
+        handleClose(done) {
+            this.$confirm('确认关闭？')
+                .then(_ =&gt; {
+                    done();
+                })
+                .catch(_ =&gt; { });
+        },
+        handleConcertChange(selectedConcertname) {
+            const selectedConcert = this.concertOptions.find(item =&gt; item.concertname === selectedConcertname);
+            if (selectedConcert) {
+                this.form.concertid = selectedConcert.concertid;
+                this.form.concertname = selectedConcert.concertname;
+            } else {
+                // Handle the case where no match is found, reset values or provide a default behavior
+                this.form.concertid = undefined;
+                this.form.concertname = undefined;
+            }
+
+            this.$refs.form.validateField('concertname'); // 手动触发验证，确保concertname的验证状态正确更新
+        },
+        /** 删除按钮操作 */
+        handleDelete(row) {
+            const ids = row.activityId
+            this.$modal.confirm('是否确认删除活动编号为"' + ids + '"的数据项？')
+                .then(function () {
+                    return delActivity(ids)
+                })
+                .then((res) =&gt; {
+                    if(res.code == 4001)
+                    this.$modal.msgError(res.msg)
+                    else{
+                    this.getList()
+                    this.$modal.msgSuccess('删除成功')
+                    }
+                })
+                .catch(() =&gt; { })
+        },
+        /** 提交按钮 */
+        submitForm: function () {
+            this.$refs['form'].validate((valid) =&gt; {
+                if (valid) {
+                    if (this.type == false) {
+                        this.form.startTime = this.parseTime(this.form.startTime)
+                        this.form.endTime = this.parseTime(this.form.endTime)
+                        updateActivity(this.form).then((response) =&gt; {
+                            this.$modal.msgSuccess('修改成功')
+                            this.open = false
+                            this.getList()
+                        })
+                    } else {
+                        this.form.startTime = this.parseTime(this.form.startTime)
+                        this.form.endTime = this.parseTime(this.form.endTime)
+                        console.log(this.form.startTime)
+                        addActivity(this.form).then((response) =&gt; {
+                            this.$modal.msgSuccess('新增成功')
+                            this.open = false
+                            this.getList()
+                        })
+                    }
+                }
+            })
+        }
+    }
+}
+&lt;/script&gt;
+&lt;style scoped&gt;
+.form-row {
+    margin-bottom: 15px;
+}
+
+.block1,
+.block2 {
+    margin-bottom: 10px;
+}
+
+.demonstration1,
+.demonstration2 {
+    margin-right: 10px;
+}
+&lt;/style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="2、接口文件"><a href="#2、接口文件" class="headerlink" title="2、接口文件"></a>2、接口文件</h4><p>web\src\api\seckillactivity.js</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> request <span class="token keyword">from</span> <span class="token string">'@/utils/request'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">listActivitys</span><span class="token punctuation">(</span><span class="token parameter">query</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token string">'/seckillActivity/listAllSeckill'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">'get'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">params</span><span class="token operator">:</span> query
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">listAllProduct</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token string">'/seckillActivity/concertNameList'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">'get'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">addActivity</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+     <span class="token keyword">return</span> <span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token string">'/seckillActivity'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">'post'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">data</span> <span class="token operator">:</span> data
+     <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">changeActivityStatus</span><span class="token punctuation">(</span><span class="token parameter">activityid<span class="token punctuation">,</span>status</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token punctuation">{</span>
+        activityid<span class="token punctuation">,</span>
+        status
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token string">'/seckillActivity/changeStatus'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">'put'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">data</span> <span class="token operator">:</span> data
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">delActivity</span><span class="token punctuation">(</span><span class="token parameter">id</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token string">'/seckillActivity/'</span> <span class="token operator">+</span> id<span class="token punctuation">,</span>
+        <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">'delete'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">getActivity</span><span class="token punctuation">(</span><span class="token parameter">id</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token string">'/seckillActivity/'</span> <span class="token operator">+</span> id<span class="token punctuation">,</span>
+        <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">'get'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">updateActivity</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token string">'/seckillActivity'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">'put'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">data</span> <span class="token operator">:</span> data
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="三、后端实现"><a href="#三、后端实现" class="headerlink" title="三、后端实现"></a>三、后端实现</h3><p>以列出所有活动接口（listActivitys）为例</p>
+<h4 id="1、controller层"><a href="#1、controller层" class="headerlink" title="1、controller层"></a>1、controller层</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java">@RestController
+@AuthToken
+@RequestMapping("/seckillActivity")
+public class SecKillActivityController {
+
+    @Autowired
+    private ConcertService concertService;
+    @Autowired
+    private SeckillactivityService seckillactivityService;
+
+    @Autowired
+    private  PermissionUtil permissionUtil;
+
+        /**
+     * 获取所有秒杀活动列表
+     *
+     * @param seckillactivity 秒杀活动对象
+     * @param pageSize 分页大小
+     * @param pageNum 分页数
+     * @return CommonResult&lt;?&gt; 返回结果对象
+     */
+    @GetMapping("/listAllSeckill")
+    public CommonResult&lt;?&gt; listAllSeckill(Seckillactivity seckillactivity, Integer pageSize, Integer pageNum) {
+        if(seckillactivity.getStatus() != null || seckillactivity.getConcertName() != null)
+            if(!permissionUtil.hasPermission("seckillactivity:query"))
+                return CommonResult.error(4001, "无权限");
+        return seckillactivityService.listAllSeckill(seckillactivity, pageSize, pageNum);
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="2、Service接口层"><a href="#2、Service接口层" class="headerlink" title="2、Service接口层"></a>2、Service接口层</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java">public interface SeckillactivityService extends IService&lt;Seckillactivity&gt; {
+
+    CommonResult&lt;?&gt; listAllSeckill(Seckillactivity seckillactivity, Integer pageSize, Integer pageNum);
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="3、Service实现层"><a href="#3、Service实现层" class="headerlink" title="3、Service实现层"></a>3、Service实现层</h4><p>使用分页查询实现</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@Service("seckillactivityService")
+public class SeckillactivityServiceImpl extends ServiceImpl&lt;SeckillactivityMapper, Seckillactivity&gt; implements SeckillactivityService {
+
+        /**
+     * 查询所有秒杀活动
+     *
+     * @param seckillactivity 秒杀活动对象
+     * @param pageSize  分页大小
+     * @param pageNum  分页数
+     * @return 查询结果
+     */
+    @Override
+    public CommonResult&lt;?&gt; listAllSeckill(Seckillactivity seckillactivity, Integer pageSize, Integer pageNum) {
+        LambdaQueryWrapper&lt;Seckillactivity&gt; queryWrapper = new LambdaQueryWrapper&lt;&gt;();
+        queryWrapper.like(StringUtils.hasText(seckillactivity.getConcertName()), Seckillactivity::getConcertName, seckillactivity.getConcertName());
+        queryWrapper.eq(StringUtils.hasText(seckillactivity.getStatus()), Seckillactivity::getStatus, seckillactivity.getStatus());
+        Page&lt;Seckillactivity&gt; page = new Page&lt;&gt;();
+        page.setCurrent(pageNum);
+        page.setSize(pageSize);
+        page(page, queryWrapper);
+
+        //封装vo
+        PageVo pageVo = new PageVo();
+        pageVo.setRows(page.getRecords());
+        pageVo.setTotal(page.getTotal());
+        return CommonResult.success(pageVo);
+    }
+
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>pageVo.java</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class PageVo {
+    private List rows;
+    private Long total;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="4、Mapper层"><a href="#4、Mapper层" class="headerlink" title="4、Mapper层"></a>4、Mapper层</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java">public interface SeckillactivityMapper extends BaseMapper&lt;Seckillactivity&gt; {
+
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="5、其他接口"><a href="#5、其他接口" class="headerlink" title="5、其他接口"></a>5、其他接口</h4><p>分别实现了查询所有活动，添加活动，条件查询，修改活动，删除活动，修改活动状态这几个接口</p>
+<h5 id="1、controller层-1"><a href="#1、controller层-1" class="headerlink" title="1、controller层"></a>1、controller层</h5><pre class="line-numbers language-java" data-language="java"><code class="language-java">@RestController
+@AuthToken
+@RequestMapping("/seckillActivity")
+public class SecKillActivityController {
+
+    @Autowired
+    private ConcertService concertService;
+    @Autowired
+    private SeckillactivityService seckillactivityService;
+
+    @Autowired
+    private  PermissionUtil permissionUtil;
+        /**
+     * 获取音乐会名称列表
+     *
+     * @return CommonResult 音会名称列表
+     */
+    @GetMapping("/concertNameList")
+    public CommonResult&lt;?&gt; concertNameList() {
+        if(!permissionUtil.hasPermission("seckillactivity:add"))
+            return CommonResult.error(4001, "无权限");
+        return concertService.concertNameList();
+    }
+
+
+        /**
+     * 获取所有秒杀活动列表
+     *
+     * @param seckillactivity 秒杀活动对象
+     * @param pageSize 分页大小
+     * @param pageNum 分页数
+     * @return CommonResult&lt;?&gt; 返回结果对象
+     */
+    @GetMapping("/listAllSeckill")
+    public CommonResult&lt;?&gt; listAllSeckill(Seckillactivity seckillactivity, Integer pageSize, Integer pageNum) {
+        if(seckillactivity.getStatus() != null || seckillactivity.getConcertName() != null)
+            if(!permissionUtil.hasPermission("seckillactivity:query"))
+                return CommonResult.error(4001, "无权限");
+        return seckillactivityService.listAllSeckill(seckillactivity, pageSize, pageNum);
+    }
+
+
+        /**
+     * 添加秒杀活动
+     *
+     * @param seckillactivity 秒杀活动对象
+     * @return CommonResult&lt;?&gt; 返回结果对象
+     */
+    @PostMapping()
+    public CommonResult&lt;?&gt; addSeckillActivity(@RequestBody Seckillactivity seckillactivity) {
+
+         return seckillactivityService.addSeckill(seckillactivity);
+    }
+
+
+        /**
+     * 修改秒杀活动的状态
+     * @param activityIdStatus 活动ID和状态的对象
+     * @return 修改结果
+     */
+    @PutMapping("/changeStatus")
+    public CommonResult&lt;?&gt; changeStatus(@RequestBody ActivityIdStatus activityIdStatus) {
+        if(!permissionUtil.hasPermission("seckillactivity:edit"))
+            return CommonResult.error(4001, "无权限");
+        return seckillactivityService.changeStatus(activityIdStatus);
+    }
+
+        /**
+     * 删除秒杀活动
+     * @param id 秒杀活动ID
+     * @return 删除结果
+     */
+    @DeleteMapping("/{id}")
+    public CommonResult&lt;?&gt; delete(@PathVariable("id") Integer id) {
+        if(!permissionUtil.hasPermission("seckillactivity:remove"))
+            return CommonResult.error(4001, "无权限");
+        return CommonResult.success(seckillactivityService.removeById(id));
+    }
+
+        /**
+     * 根据活动ID获取秒杀活动信息
+     *
+     * @param id 活动ID
+     * @return 秒杀活动信息
+     */
+    @GetMapping("/{id}")
+    public CommonResult&lt;?&gt; getActivity(@PathVariable("id") Integer id) {
+        if(!permissionUtil.hasPermission("seckillactivity:edit"))
+            return CommonResult.error(4001, "无权限");
+        return CommonResult.success(seckillactivityService.getById(id));
+    }
+
+
+        /**
+     * 更新秒杀活动
+     * 请求方式：PUT
+     * 请求参数：秒杀活动对象
+     * 响应结果：CommonResult
+     */
+    @PutMapping()
+    public CommonResult&lt;?&gt; update(@RequestBody Seckillactivity seckillactivity) {
+        return CommonResult.success(seckillactivityService.updateById(seckillactivity));
+    }
+
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="2、service接口层"><a href="#2、service接口层" class="headerlink" title="2、service接口层"></a>2、service接口层</h5><pre class="line-numbers language-java" data-language="java"><code class="language-java">/**
+ * (Seckillactivity)表服务接口
+ *
+ * @author makejava
+ * @since 2023-12-20 14:01:59
+ */
+public interface SeckillactivityService extends IService&lt;Seckillactivity&gt; {
+
+    CommonResult&lt;?&gt; listAllSeckill(Seckillactivity seckillactivity, Integer pageSize, Integer pageNum);
+
+    CommonResult&lt;?&gt; addSeckill(Seckillactivity seckillactivity);
+
+    CommonResult&lt;?&gt; changeStatus(ActivityIdStatus activityIdStatus);
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="3、service实现层"><a href="#3、service实现层" class="headerlink" title="3、service实现层"></a>3、service实现层</h5><pre class="line-numbers language-java" data-language="java"><code class="language-java">@Service("seckillactivityService")
+public class SeckillactivityServiceImpl extends ServiceImpl&lt;SeckillactivityMapper, Seckillactivity&gt; implements SeckillactivityService {
+
+        /**
+     * 查询所有秒杀活动
+     *
+     * @param seckillactivity 秒杀活动对象
+     * @param pageSize  分页大小
+     * @param pageNum  分页数
+     * @return 查询结果
+     */
+    @Override
+    public CommonResult&lt;?&gt; listAllSeckill(Seckillactivity seckillactivity, Integer pageSize, Integer pageNum) {
+        LambdaQueryWrapper&lt;Seckillactivity&gt; queryWrapper = new LambdaQueryWrapper&lt;&gt;();
+        queryWrapper.like(StringUtils.hasText(seckillactivity.getConcertName()), Seckillactivity::getConcertName, seckillactivity.getConcertName());
+        queryWrapper.eq(StringUtils.hasText(seckillactivity.getStatus()), Seckillactivity::getStatus, seckillactivity.getStatus());
+        Page&lt;Seckillactivity&gt; page = new Page&lt;&gt;();
+        page.setCurrent(pageNum);
+        page.setSize(pageSize);
+        page(page, queryWrapper);
+
+        //封装vo
+        PageVo pageVo = new PageVo();
+        pageVo.setRows(page.getRecords());
+        pageVo.setTotal(page.getTotal());
+        return CommonResult.success(pageVo);
+    }
+
+
+        /**
+     * 添加秒杀活动
+     *
+     * @param seckillactivity (秒杀活动对象)
+     * @return CommonResult&lt;?&gt; 通用结果对象
+     */
+    @Override
+    public CommonResult&lt;?&gt; addSeckill(Seckillactivity seckillactivity){
+        save(seckillactivity);
+        return CommonResult.success(null);
+    }
+
+
+        /**
+     * 修改活动状态
+     *
+     * @param activityIdStatus 活动ID和状态
+     * @return 操作结果
+     */
+    @Override
+    public CommonResult&lt;?&gt; changeStatus(ActivityIdStatus activityIdStatus) {
+        // 通过活动ID获取活动对象
+        Seckillactivity seckillactivity = getById(activityIdStatus.getActivityid());
+        // 修改活动状态
+        seckillactivity.setStatus(activityIdStatus.getStatus());
+        // 更新活动对象
+        updateById(seckillactivity);
+        // 返回操作成功的结果
+        return CommonResult.success(null);
+    }
+
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="4、mapper接口层"><a href="#4、mapper接口层" class="headerlink" title="4、mapper接口层"></a>4、mapper接口层</h5><pre class="line-numbers language-java" data-language="java"><code class="language-java">public interface SeckillactivityMapper extends BaseMapper&lt;Seckillactivity&gt; {
+
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="6、工具类"><a href="#6、工具类" class="headerlink" title="6、工具类"></a>6、工具类</h4><p>1、权限管理</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@Component
+public class PermissionUtil {
+
+    private final RedisTemplate&lt;String, String&gt; redisTemplate;
+
+    public PermissionUtil(RedisTemplate&lt;String, String&gt; redisTemplate) {
+        this.redisTemplate = redisTemplate;
+    }
+        /**
+     * 判断用户是否拥有指定权限
+     * @param perm 需要判断的权限
+     * @return 如果用户拥有指定权限，返回true；否则返回false
+     */
+    public boolean hasPermission(String perm) {
+        // 从redis中获取权限列表
+        String perms = redisTemplate.opsForValue().get("perms");
+        // 将权限列表字符串转换为字符串列表
+        List&lt;String&gt; permsList = JSONUtil.toList(perms, String.class);
+        // 如果权限列表中包含指定权限，返回true；否则返回false
+        return permsList.contains(perm);
+    }
+
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="四、实现效果"><a href="#四、实现效果" class="headerlink" title="四、实现效果"></a>四、实现效果</h3><img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/2024/01/14/%E7%A7%92%E6%9D%80%E6%B4%BB%E5%8A%A8%E9%A1%B5%E9%9D%A2%E5%BC%80%E5%8F%91/image-20240114211122754.png" class title="image-20240114211122754">
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">zjz</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://summerbird-1.github.io/2024/01/14/%E7%A7%92%E6%9D%80%E6%B4%BB%E5%8A%A8%E9%A1%B5%E9%9D%A2%E5%BC%80%E5%8F%91/">http://summerbird-1.github.io/2024/01/14/%E7%A7%92%E6%9D%80%E6%B4%BB%E5%8A%A8%E9%A1%B5%E9%9D%A2%E5%BC%80%E5%8F%91/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        Reprint policy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    All articles in this blog are used except for special statements
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    reprint polocy. If reproduced, please indicate source
+                    <a href="/about" target="_blank">zjz</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/rbac/">
+                                    <span class="chip bg-color">rbac</span>
+                                </a>
+                            
+                                <a href="/tags/Springboot/">
+                                    <span class="chip bg-color">Springboot</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/reward/wechatpay.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+        <script src="https://utteranc.es/client.js"
+        repo="summerbird-1/utterancs"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+                
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
+            <div class="card">
+                <a href="/2024/01/14/%E7%A7%92%E6%9D%80%E6%B4%BB%E5%8A%A8%E9%A1%B5%E9%9D%A2%E5%BC%80%E5%8F%91/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/featureimages/23.webp" class="responsive-img" alt="秒杀活动页面开发">
+                        
+                        <span class="card-title">秒杀活动页面开发</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-01-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%BC%80%E5%8F%91/" class="post-category">
+                                    开发
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/rbac/">
+                        <span class="chip bg-color">rbac</span>
+                    </a>
+                    
+                    <a href="/tags/Springboot/">
+                        <span class="chip bg-color">Springboot</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/12/27/rbac%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://telegraph-image-17t.pages.dev/file/7161bdd8f80fb762af104.gif" data-original="/medias/featureimages/21.webp" class="responsive-img" alt="rbac系统开发过程">
+                        
+                        <span class="card-title">rbac系统开发过程</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-12-27
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%BC%80%E5%8F%91/" class="post-category">
+                                    开发
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/rbac/">
+                        <span class="chip bg-color">rbac</span>
+                    </a>
+                    
+                    <a href="/tags/SpringBoot/">
+                        <span class="chip bg-color">SpringBoot</span>
+                    </a>
+                    
+                    <a href="/tags/redis/">
+                        <span class="chip bg-color">redis</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+    <div id="floating-toc-btn" class="hide-on-med-and-down">
+        <a class="btn-floating btn-large bg-color">
+            <i class="fas fa-list-ul"></i>
+        </a>
+    </div>
+    
+
+        <script src="/libs/tocbot/tocbot.min.js"></script>
+        <script>
+            $(function () {
+                tocbot.init({
+                    tocSelector: '#toc-content',
+                    contentSelector: '#articleContent',
+                    headingsOffset: -($(window).height() * 0.4 - 45),
+                    collapseDepth: Number('0'),
+                    headingSelector: 'h2, h3, h4'
+                });
+
+                // modify the toc link href to support Chinese.
+                let i = 0;
+                let tocHeading = 'toc-heading-';
+                $('#toc-content a').each(function () {
+                    $(this).attr('href', '#' + tocHeading + (++i));
+                });
+
+                // modify the heading title id to support Chinese.
+                i = 0;
+                $('#articleContent').children('h2, h3, h4').each(function () {
+                    $(this).attr('id', tocHeading + (++i));
+                });
+
+                // Set scroll toc fixed.
+                let tocHeight = parseInt($(window).height() * 0.4 - 64);
+                let $tocWidget = $('.toc-widget');
+                $(window).scroll(function () {
+                    let scroll = $(window).scrollTop();
+                    /* add post toc fixed. */
+                    if (scroll > tocHeight) {
+                        $tocWidget.addClass('toc-fixed');
+                    } else {
+                        $tocWidget.removeClass('toc-fixed');
+                    }
+                });
+
+        
+                    /* 修复文章卡片 div 的宽度. */
+                    let fixPostCardWidth = function (srcId, targetId) {
+                        let srcDiv = $('#' + srcId);
+                        if (srcDiv.length === 0) {
+                            return;
+                        }
+
+                        let w = srcDiv.width();
+                        if (w >= 450) {
+                            w = w + 21;
+                        } else if (w >= 350 && w < 450) {
+                            w = w + 18;
+                        } else if (w >= 300 && w < 350) {
+                            w = w + 16;
+                        } else {
+                            w = w + 14;
+                        }
+                        $('#' + targetId).width(w);
+                    };
+
+                    // 切换TOC目录展开收缩的相关操作.
+                    const expandedClass = 'expanded';
+                    let $tocAside = $('#toc-aside');
+                    let $mainContent = $('#main-content');
+                    $('#floating-toc-btn .btn-floating').click(function () {
+                        if ($tocAside.hasClass(expandedClass)) {
+                            $tocAside.removeClass(expandedClass).hide();
+                            $mainContent.removeClass('l9');
+                        } else {
+                            $tocAside.addClass(expandedClass).show();
+                            $mainContent.addClass('l9');
+                        }
+                        fixPostCardWidth('artDetail', 'prenext-posts');
+                    });
+        
+    });
+        </script>
+    
+
+</main>
+
+
+
+
+                            <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2023-2024</span>
+            
+            <span id="year">2023</span>
+            <a href="/about" target="_blank">zjz</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">89.4k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2023";
+                    var startMonth = "10";
+                    var startDate = "30";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/summerbird-1" class="tooltipped" target="https://github.com/summerbird-1" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:2718075060@qq.com" class="tooltipped" target="2718075060@qq.com" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2718075060" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2718075060" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+                                <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+                                    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+                                        <!-- 切换夜间/白天模式按钮 -->
+                                        <a onclick="switchNightMode()" id="sma"> <i class="fa fa-moon-o" id="nightMode"
+                                                aria-hidden="true"></i> </a>
+                                        <script
+                                            src="/libs/materialize/materialize.min.js"></script>
+                                        <script
+                                            src="/libs/masonry/masonry.pkgd.min.js"></script>
+                                        <script
+                                            src="/libs/aos/aos.js"></script>
+                                        <script
+                                            src="/libs/scrollprogress/scrollProgress.min.js"></script>
+                                        <script
+                                            src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+                                        <script
+                                            src="/js/matery.js"></script>
+
+                                        <!-- Baidu Analytics -->
+
+                                            <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+                                                
+                                                    <script
+                                                        src="/libs/others/clicklove.js"
+                                                        async="async"></script>
+                                                    
+                                                        
+                                                            <script async
+                                                                src="/libs/others/busuanzi.pure.mini.js"></script>
+                                                            
+
+                                                                
+
+                                                                        
+
+                                                                                
+                                                                                        
+
+                                                                                                
+
+                                                                                                            
+
+                                                                                                                    
+                                                                                                                        <script
+                                                                                                                            src="/libs/instantpage/instantpage.js"
+                                                                                                                            type="module"></script>
+                                                                                                                        
+
+                <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":190,"hOffset":50,"vOffset":-5},"mobile":{"show":false,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script>
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
