@@ -6,7 +6,7 @@
   <link href="http://summerbird-1.github.io/atom.xml" rel="self"/>
   
   <link href="http://summerbird-1.github.io/"/>
-  <updated>2024-01-14T14:45:56.761Z</updated>
+  <updated>2024-01-16T04:55:42.420Z</updated>
   <id>http://summerbird-1.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>WSL安装报错</title>
+    <link href="http://summerbird-1.github.io/2024/01/16/WSL%E5%AE%89%E8%A3%85%E6%8A%A5%E9%94%99/"/>
+    <id>http://summerbird-1.github.io/2024/01/16/WSL%E5%AE%89%E8%A3%85%E6%8A%A5%E9%94%99/</id>
+    <published>2024-01-16T04:50:31.000Z</published>
+    <updated>2024-01-16T04:55:42.420Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;Windows11安装WSL2报错🐧&quot;&gt;&lt;a href=&quot;#Windows11安装WSL2报错🐧&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="bug" scheme="http://summerbird-1.github.io/categories/bug/"/>
+    
+    
+    <category term="WSL" scheme="http://summerbird-1.github.io/tags/WSL/"/>
+    
+  </entry>
+  
+  <entry>
     <title>秒杀系统一键部署配置</title>
     <link href="http://summerbird-1.github.io/2024/01/14/%E7%A7%92%E6%9D%80%E7%B3%BB%E7%BB%9F%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2%E9%85%8D%E7%BD%AE/"/>
     <id>http://summerbird-1.github.io/2024/01/14/%E7%A7%92%E6%9D%80%E7%B3%BB%E7%BB%9F%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2%E9%85%8D%E7%BD%AE/</id>
     <published>2024-01-14T14:05:45.000Z</published>
-    <updated>2024-01-14T14:45:56.761Z</updated>
+    <updated>2024-01-14T14:46:35.238Z</updated>
     
     
       
@@ -528,31 +553,6 @@
     <category term="Vue" scheme="http://summerbird-1.github.io/tags/Vue/"/>
     
     <category term="Springboot" scheme="http://summerbird-1.github.io/tags/Springboot/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>DockerCompose部署学习</title>
-    <link href="http://summerbird-1.github.io/2023/11/16/DockerCompose%E9%83%A8%E7%BD%B2%E5%AD%A6%E4%B9%A0/"/>
-    <id>http://summerbird-1.github.io/2023/11/16/DockerCompose%E9%83%A8%E7%BD%B2%E5%AD%A6%E4%B9%A0/</id>
-    <published>2023-11-16T13:00:53.000Z</published>
-    <updated>2023-11-17T11:57:36.601Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;一、为什么用DockerCompose？😏&quot;&gt;&lt;a href=&quot;#一、为什么用DockerCompose？😏&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="部署" scheme="http://summerbird-1.github.io/categories/%E9%83%A8%E7%BD%B2/"/>
-    
-    
-    <category term="DockerCompose" scheme="http://summerbird-1.github.io/tags/DockerCompose/"/>
     
   </entry>
   
