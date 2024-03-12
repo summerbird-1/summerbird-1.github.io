@@ -452,21 +452,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2024-01-14
+                    2024-02-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    218
+                    6.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    1 Min
+                    34 Min
                 </div>
                 
 
@@ -499,6 +499,918 @@
 <p>Java版本: jdk17</p>
 <p>​		该项目为基于RBAC权限设计的后台管理系统，在此基础上集成了一个演唱会秒杀系统。RBAC是什么？Role-Based Access Control：基于 <strong>角色</strong> 的权限控制 <code>用户 -&gt; 角色 -&gt; 权限</code>，简单来说就是在用户和权限之间加了一层角色，给角色赋予权限，再为用户赋予角色，这样实现了用户和权限之间的解耦。</p>
 <p>主要记录后端开发以及测试部署过程，对于前端设计不作为重点。</p>
+<p>项目地址:<a target="_blank" rel="noopener" href="https://github.com/summerbird-1/SeckillSystem">https://github.com/summerbird-1/SeckillSystem</a></p>
+<h2 id="二、项目准备"><a href="#二、项目准备" class="headerlink" title="二、项目准备"></a>二、项目准备</h2><h3 id="1、前端项目"><a href="#1、前端项目" class="headerlink" title="1、前端项目"></a>1、前端项目</h3><p>前端使用的是Vue项目，<a target="_blank" rel="noopener" href="https://github.com/summerbird-1/SeckillSystem%E8%AF%A5%E4%BB%93%E5%BA%93web%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%BA%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E3%80%82">https://github.com/summerbird-1/SeckillSystem该仓库web文件夹为前端工程。</a></p>
+<p>打开终端 1、<code>npm i</code>  2、<code>npm run serve</code></p>
+<h3 id="2、后端项目"><a href="#2、后端项目" class="headerlink" title="2、后端项目"></a>2、后端项目</h3><p>后端项目使用的是Springboot3.17 + jdk17，用IDEA创建，目前没法直接创建jdk1.8和Springboot2.x的项目了。</p>
+<h4 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h4><p>新建一个数据库，运行如下sql文件</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">/*
+ Navicat Premium Data Transfer
+
+ Source Server         : mysql
+ Source Server Type    : MySQL
+ Source Server Version : 50560
+ Source Host           : localhost:3306
+ Source Schema         : rbac
+
+ Target Server Type    : MySQL
+ Target Server Version : 50560
+ File Encoding         : 65001
+
+ Date: 14/01/2024 00:17:19
+*/
+
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for concert
+-- ----------------------------
+DROP TABLE IF EXISTS `concert`;
+CREATE TABLE `concert`  (
+  `concert_id` int(11) NOT NULL AUTO_INCREMENT,
+  `concert_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL,
+  `concert_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `concert_place` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL,
+  `picture_url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL,
+  `description` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL,
+  PRIMARY KEY (`concert_id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = DYNAMIC;
+
+-- ----------------------------
+-- Records of concert
+-- ----------------------------
+INSERT INTO `concert` VALUES (1, '赵传2023北京跨年演唱会 ——给所有知道我名字的人', '2024-01-10 19:00:00', '北京市 | 首都体育馆', 'https://img.alicdn.com/bao/uploaded/https://img.alicdn.com/imgextra/i3/2251059038/O1CN01naDJxL2GdSXzNxxd6_!!2251059038.jpg_q60.jpg_.webp', NULL);
+INSERT INTO `concert` VALUES (2, '张紫宁「偶·像」巡回演唱会北京站', '2024-01-20 19:00:00', '北京市 | M空间', 'https://img.alicdn.com/bao/uploaded/https://img.alicdn.com/imgextra/i1/2251059038/O1CN01Zjk1Oe2GdSYFtbTbS_!!2251059038.jpg_q60.jpg_.webp', NULL);
+INSERT INTO `concert` VALUES (3, '后来的人」王贰浪2023全国巡演-北京站', '2024-01-13 20:00:00', '北京市 | 本土王牌LIVE', 'https://img.alicdn.com/bao/uploaded/https://img.alicdn.com/imgextra/i1/2251059038/O1CN01hBMYXY2GdSXUiQZaF_!!2251059038.png_q60.jpg_.webp', NULL);
+INSERT INTO `concert` VALUES (4, '次元音浪-音乐番only', '2024-01-15 19:00:00', '北京市 | IMAGINE 想象空间', 'https://img.alicdn.com/bao/uploaded/i2/2251059038/O1CN01NhuB7u2GdSYBnj9tc_!!0-item_pic.jpg_q60.jpg_.webp', NULL);
+INSERT INTO `concert` VALUES (5, '「春节进行时」新春聚会音乐节 小年舞台-北京站', '2024-02-02 19:30:00', '北京市 | IMAGINE 想象空间', 'https://img.alicdn.com/bao/uploaded/i3/2251059038/O1CN01hOd6Le2GdSYNzhdEu_!!2-item_pic.png_q60.jpg_.webp', NULL);
+INSERT INTO `concert` VALUES (6, '致敬Beyond・黄家驹30周年全国巡演/630乐队', '2024-01-18 19:00:00', '北京市 | WeShow Live ', 'https://img.alicdn.com/bao/uploaded/https://img.alicdn.com/imgextra/i3/2251059038/O1CN016PJdoj2GdSVv5visg_!!2251059038.jpg_q60.jpg_.webp', NULL);
+
+-- ----------------------------
+-- Table structure for menu
+-- ----------------------------
+DROP TABLE IF EXISTS `menu`;
+CREATE TABLE `menu`  (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '菜单ID',
+  `menu_name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '菜单名称',
+  `parent_id` bigint(20) NULL DEFAULT 0 COMMENT '父菜单ID',
+  `order_num` int(11) NULL DEFAULT 0 COMMENT '显示顺序',
+  `path` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '路由地址',
+  `component` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '组件路径',
+  `is_frame` int(11) NULL DEFAULT 1 COMMENT '是否为外链（0是 1否）',
+  `menu_type` char(1) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '菜单类型（M目录 C菜单 F按钮）',
+  `visible` char(1) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '0' COMMENT '菜单状态（0显示 1隐藏）',
+  `status` char(1) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '0' COMMENT '菜单状态（0正常 1停用）',
+  `perms` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '权限标识',
+  `icon` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '#' COMMENT '菜单图标',
+  `create_by` bigint(20) NULL DEFAULT NULL COMMENT '创建者',
+  `create_time` datetime NULL DEFAULT NULL COMMENT '创建时间',
+  `update_by` bigint(20) NULL DEFAULT NULL COMMENT '更新者',
+  `update_time` datetime NULL DEFAULT NULL COMMENT '更新时间',
+  `remark` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '备注',
+  `del_flag` char(1) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '0',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 2065 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '菜单权限表' ROW_FORMAT = DYNAMIC;
+
+-- ----------------------------
+-- Records of menu
+-- ----------------------------
+INSERT INTO `menu` VALUES (100, '用户管理', 0, 1, 'user', 'rbac/user', 1, 'C', '0', '0', '', 'user', 0, '2021-11-12 10:46:19', 1, '2022-07-31 15:47:58', '用户管理菜单', '1');
+INSERT INTO `menu` VALUES (101, '角色管理', 0, 2, 'role', 'rbac/role', 1, 'C', '0', '0', 'role:list', 'peoples', 0, '2021-11-12 10:46:19', 0, NULL, '角色管理菜单', '1');
+INSERT INTO `menu` VALUES (102, '菜单管理', 0, 3, 'menu', 'rbac/menu', 1, 'C', '0', '0', 'menu:list', 'tree-table', 0, '2021-11-12 10:46:19', 0, NULL, '菜单管理菜单', '1');
+INSERT INTO `menu` VALUES (1001, '用户查询', 100, 1, '', '', 1, 'F', '0', '0', 'user:query', '#', 0, '2021-11-12 10:46:19', 0, NULL, '', '1');
+INSERT INTO `menu` VALUES (1002, '用户新增', 100, 2, '', '', 1, 'F', '0', '0', 'user:add', '#', 0, '2021-11-12 10:46:19', 0, NULL, '', '1');
+INSERT INTO `menu` VALUES (1003, '用户修改', 100, 3, '', '', 1, 'F', '0', '0', 'user:edit', '#', 0, '2021-11-12 10:46:19', 0, NULL, '', '1');
+INSERT INTO `menu` VALUES (1004, '用户删除', 100, 4, '', '', 1, 'F', '0', '0', 'user:remove', '#', 0, '2021-11-12 10:46:19', 0, NULL, '', '1');
+INSERT INTO `menu` VALUES (1008, '角色查询', 101, 1, '', '', 1, 'F', '0', '0', 'role:query', '#', 0, '2021-11-12 10:46:19', 0, NULL, '', '1');
+INSERT INTO `menu` VALUES (1009, '角色新增', 101, 2, '', '', 1, 'F', '0', '0', 'role:add', '#', 0, '2021-11-12 10:46:19', 0, NULL, '', '1');
+INSERT INTO `menu` VALUES (1010, '角色修改', 101, 3, '', '', 1, 'F', '0', '0', 'role:edit', '#', 0, '2021-11-12 10:46:19', 0, NULL, '', '1');
+INSERT INTO `menu` VALUES (1011, '角色删除', 101, 4, '', '', 1, 'F', '0', '0', 'role:remove', '#', 0, '2021-11-12 10:46:19', 0, NULL, '', '1');
+INSERT INTO `menu` VALUES (1013, '菜单查询', 102, 1, '', '', 1, 'F', '0', '0', 'menu:query', '#', 0, '2021-11-12 10:46:19', 0, NULL, '', '1');
+INSERT INTO `menu` VALUES (1014, '菜单新增', 102, 2, '', '', 1, 'F', '0', '0', 'menu:add', '#', 0, '2021-11-12 10:46:19', 0, NULL, '', '1');
+INSERT INTO `menu` VALUES (1015, '菜单修改', 102, 3, '', '', 1, 'F', '0', '0', 'menu:edit', '#', 0, '2021-11-12 10:46:19', 0, NULL, '', '1');
+INSERT INTO `menu` VALUES (1016, '菜单删除', 102, 4, '', '', 1, 'F', '0', '0', 'menu:remove', '#', 0, '2021-11-12 10:46:19', 0, NULL, '', '1');
+INSERT INTO `menu` VALUES (2035, '权限管理', 0, 4, 'permission', NULL, 1, 'M', '0', '0', NULL, 'lock', NULL, NULL, NULL, NULL, '', '1');
+INSERT INTO `menu` VALUES (2036, '秒杀商品', 0, 4, 'seckill', 'seckill/SkillProduct', 1, 'C', '0', '0', NULL, 'skill', NULL, NULL, NULL, NULL, '', '1');
+INSERT INTO `menu` VALUES (2037, '订单管理', 0, 5, 'order', 'seckill/Order', 1, 'C', '0', '0', NULL, 'star', NULL, NULL, NULL, NULL, '', '1');
+INSERT INTO `menu` VALUES (2038, '系统管理', 0, 1, '', 'Layout', 1, 'M', '0', '0', NULL, 'el-icon-setting', NULL, NULL, NULL, NULL, '', '0');
+INSERT INTO `menu` VALUES (2039, '用户管理', 2038, 1, 'user', 'rbac/User', 1, 'C', '0', '0', 'user:list', 'el-icon-user', NULL, '2023-12-27 17:42:05', NULL, NULL, '', '0');
+INSERT INTO `menu` VALUES (2040, '新增用户', 2039, 2, '', NULL, 1, 'F', '0', '0', 'user:add', '#', NULL, NULL, NULL, NULL, '', '0');
+INSERT INTO `menu` VALUES (2041, '查询用户', 2039, 1, '', NULL, 1, 'F', '0', '0', 'user:query', '#', NULL, NULL, NULL, NULL, '', '0');
+INSERT INTO `menu` VALUES (2042, '修改用户', 2039, 3, '', NULL, 1, 'F', '0', '0', 'user:edit', '#', NULL, NULL, NULL, NULL, '', '0');
+INSERT INTO `menu` VALUES (2043, '删除用户', 2039, 4, '', NULL, 1, 'F', '0', '0', 'user:remove', '#', NULL, NULL, NULL, NULL, '', '0');
+INSERT INTO `menu` VALUES (2044, '角色管理', 2038, 2, 'role', 'rbac/Role', 1, 'C', '0', '0', 'role:list', 'el-icon-user-solid', NULL, '2023-12-27 19:06:25', NULL, NULL, '', '0');
+INSERT INTO `menu` VALUES (2045, '查询角色', 2044, 1, '', NULL, 1, 'F', '0', '0', 'role:query', '#', NULL, NULL, NULL, NULL, '', '0');
+INSERT INTO `menu` VALUES (2046, '新增角色', 2044, 2, '', NULL, 1, 'F', '0', '0', 'role:add', '#', NULL, NULL, NULL, NULL, '', '0');
+INSERT INTO `menu` VALUES (2047, '修改角色', 2044, 3, '', NULL, 1, 'F', '0', '0', 'role:edit', '#', NULL, NULL, NULL, NULL, '', '0');
+INSERT INTO `menu` VALUES (2048, '删除角色', 2044, 4, '', NULL, 1, 'F', '0', '0', 'role:remove', '#', NULL, NULL, NULL, NULL, '', '0');
+INSERT INTO `menu` VALUES (2049, '菜单管理', 2038, 3, 'menu', 'rbac/Menu', 1, 'C', '0', '0', 'menu:list', 'el-icon-s-order', NULL, NULL, NULL, NULL, '', '0');
+INSERT INTO `menu` VALUES (2050, '查询菜单', 2049, 1, '', NULL, 1, 'F', '0', '0', 'menu:query', '#', NULL, NULL, NULL, NULL, '', '0');
+INSERT INTO `menu` VALUES (2051, '新增菜单', 2049, 2, '', NULL, 1, 'F', '0', '0', 'menu:add', '#', NULL, NULL, NULL, NULL, '', '0');
+INSERT INTO `menu` VALUES (2052, '修改菜单', 2049, 3, '', NULL, 1, 'F', '0', '0', 'menu:edit', '#', NULL, NULL, NULL, NULL, '', '0');
+INSERT INTO `menu` VALUES (2053, '删除菜单', 2049, 4, '', NULL, 1, 'F', '0', '0', 'menu:remove', '#', NULL, NULL, NULL, NULL, '', '0');
+INSERT INTO `menu` VALUES (2054, '秒杀系统', 0, 2, '', 'Layout', 1, 'M', '0', '0', NULL, 'el-icon-shopping-cart-2', NULL, NULL, NULL, NULL, '', '0');
+INSERT INTO `menu` VALUES (2055, '秒杀管理', 2054, 3, 'seckillactivity', 'seckill/SecKillActivity', 1, 'C', '0', '0', 'seckillactivity:list', 'el-icon-tickets', NULL, NULL, NULL, NULL, '', '0');
+INSERT INTO `menu` VALUES (2056, '查询活动', 2055, 1, '', NULL, 1, 'F', '0', '0', 'seckillactivity:query', '#', NULL, NULL, NULL, NULL, '', '0');
+INSERT INTO `menu` VALUES (2057, '添加活动', 2056, 2, '', NULL, 1, 'F', '0', '0', 'seckillactivity:add', '#', NULL, NULL, NULL, NULL, '', '1');
+INSERT INTO `menu` VALUES (2058, '添加活动', 2055, 2, '', NULL, 1, 'F', '0', '0', 'seckillactivity:add', '#', NULL, '2023-12-27 19:06:48', NULL, NULL, '', '0');
+INSERT INTO `menu` VALUES (2059, '修改活动', 2055, 3, '', NULL, 1, 'F', '0', '0', 'seckillactivity:edit', '#', NULL, NULL, NULL, NULL, '', '0');
+INSERT INTO `menu` VALUES (2060, '删除活动', 2055, 4, '', NULL, 1, 'F', '0', '0', 'seckillactivity:remove', '#', NULL, NULL, NULL, NULL, '', '0');
+INSERT INTO `menu` VALUES (2061, '商品管理', 2054, 1, 'product', 'seckill/Product', 1, 'C', '0', '0', 'product:list', 'el-icon-goods', NULL, '2023-12-27 13:53:03', NULL, NULL, '', '1');
+INSERT INTO `menu` VALUES (2062, '秒杀活动', 2054, 1, 'seckill', 'seckill/ConcertView', 1, 'C', '0', '0', 'seckill:list', 'el-icon-goods', NULL, '2024-01-13 10:48:59', NULL, NULL, '', '0');
+INSERT INTO `menu` VALUES (2063, '用户订单', 2054, 2, 'userOrder', 'seckill/UserOrderView', 1, 'C', '0', '0', 'order:list', 'el-icon-s-order', NULL, '2024-01-13 13:04:20', NULL, NULL, '', '0');
+INSERT INTO `menu` VALUES (2064, '库存管理', 2054, 4, 'stock', 'seckill/StockView', 1, 'C', '0', '0', 'seckillactivity:add', 'el-icon-tickets', NULL, '2024-01-13 19:37:00', NULL, NULL, '', '0');
+
+-- ----------------------------
+-- Table structure for role
+-- ----------------------------
+DROP TABLE IF EXISTS `role`;
+CREATE TABLE `role`  (
+  `roleId` bigint(20) NOT NULL AUTO_INCREMENT,
+  `rolename` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT '',
+  `description` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT '',
+  `status` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
+  PRIMARY KEY (`roleId`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 21 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = DYNAMIC;
+
+-- ----------------------------
+-- Records of role
+-- ----------------------------
+INSERT INTO `role` VALUES (1, '管理员', '系统管理员', '0');
+INSERT INTO `role` VALUES (2, '编辑', '文章编辑员', '0');
+INSERT INTO `role` VALUES (3, '普通用户', '系统普通用户', '0');
+INSERT INTO `role` VALUES (20, '咸鱼', '管理用户', '0');
+
+-- ----------------------------
+-- Table structure for role_menu
+-- ----------------------------
+DROP TABLE IF EXISTS `role_menu`;
+CREATE TABLE `role_menu`  (
+  `role_id` bigint(20) NOT NULL COMMENT '角色ID',
+  `menu_id` bigint(20) NOT NULL COMMENT '菜单ID',
+  PRIMARY KEY (`role_id`, `menu_id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '角色和菜单关联表' ROW_FORMAT = DYNAMIC;
+
+-- ----------------------------
+-- Records of role_menu
+-- ----------------------------
+INSERT INTO `role_menu` VALUES (0, 0);
+INSERT INTO `role_menu` VALUES (2, 2054);
+INSERT INTO `role_menu` VALUES (2, 2055);
+INSERT INTO `role_menu` VALUES (2, 2056);
+INSERT INTO `role_menu` VALUES (2, 2058);
+INSERT INTO `role_menu` VALUES (2, 2059);
+INSERT INTO `role_menu` VALUES (2, 2060);
+INSERT INTO `role_menu` VALUES (3, 2054);
+INSERT INTO `role_menu` VALUES (3, 2062);
+INSERT INTO `role_menu` VALUES (3, 2063);
+INSERT INTO `role_menu` VALUES (11, 1);
+INSERT INTO `role_menu` VALUES (11, 100);
+INSERT INTO `role_menu` VALUES (11, 101);
+INSERT INTO `role_menu` VALUES (11, 102);
+INSERT INTO `role_menu` VALUES (11, 1001);
+INSERT INTO `role_menu` VALUES (11, 1002);
+INSERT INTO `role_menu` VALUES (11, 1003);
+INSERT INTO `role_menu` VALUES (11, 1004);
+INSERT INTO `role_menu` VALUES (11, 1005);
+INSERT INTO `role_menu` VALUES (11, 1006);
+INSERT INTO `role_menu` VALUES (11, 1007);
+INSERT INTO `role_menu` VALUES (11, 1008);
+INSERT INTO `role_menu` VALUES (11, 1009);
+INSERT INTO `role_menu` VALUES (11, 1010);
+INSERT INTO `role_menu` VALUES (11, 1011);
+INSERT INTO `role_menu` VALUES (11, 1012);
+INSERT INTO `role_menu` VALUES (11, 1013);
+INSERT INTO `role_menu` VALUES (11, 1014);
+INSERT INTO `role_menu` VALUES (11, 1015);
+INSERT INTO `role_menu` VALUES (11, 1016);
+INSERT INTO `role_menu` VALUES (11, 2017);
+INSERT INTO `role_menu` VALUES (11, 2018);
+INSERT INTO `role_menu` VALUES (11, 2019);
+INSERT INTO `role_menu` VALUES (11, 2021);
+INSERT INTO `role_menu` VALUES (11, 2022);
+INSERT INTO `role_menu` VALUES (11, 2024);
+INSERT INTO `role_menu` VALUES (11, 2025);
+INSERT INTO `role_menu` VALUES (11, 2026);
+INSERT INTO `role_menu` VALUES (11, 2027);
+INSERT INTO `role_menu` VALUES (11, 2028);
+INSERT INTO `role_menu` VALUES (12, 2017);
+INSERT INTO `role_menu` VALUES (12, 2022);
+INSERT INTO `role_menu` VALUES (12, 2024);
+INSERT INTO `role_menu` VALUES (12, 2025);
+INSERT INTO `role_menu` VALUES (12, 2026);
+INSERT INTO `role_menu` VALUES (12, 2027);
+INSERT INTO `role_menu` VALUES (13, 1);
+INSERT INTO `role_menu` VALUES (13, 100);
+INSERT INTO `role_menu` VALUES (13, 101);
+INSERT INTO `role_menu` VALUES (13, 102);
+INSERT INTO `role_menu` VALUES (13, 1001);
+INSERT INTO `role_menu` VALUES (13, 1002);
+INSERT INTO `role_menu` VALUES (13, 1003);
+INSERT INTO `role_menu` VALUES (13, 1004);
+INSERT INTO `role_menu` VALUES (13, 1005);
+INSERT INTO `role_menu` VALUES (13, 1006);
+INSERT INTO `role_menu` VALUES (13, 1007);
+INSERT INTO `role_menu` VALUES (13, 1008);
+INSERT INTO `role_menu` VALUES (13, 1009);
+INSERT INTO `role_menu` VALUES (13, 1010);
+INSERT INTO `role_menu` VALUES (13, 1011);
+INSERT INTO `role_menu` VALUES (13, 1012);
+INSERT INTO `role_menu` VALUES (13, 1013);
+INSERT INTO `role_menu` VALUES (13, 1014);
+INSERT INTO `role_menu` VALUES (13, 1015);
+INSERT INTO `role_menu` VALUES (13, 1016);
+INSERT INTO `role_menu` VALUES (13, 2017);
+INSERT INTO `role_menu` VALUES (13, 2018);
+INSERT INTO `role_menu` VALUES (13, 2019);
+INSERT INTO `role_menu` VALUES (13, 2021);
+INSERT INTO `role_menu` VALUES (13, 2022);
+INSERT INTO `role_menu` VALUES (13, 2023);
+INSERT INTO `role_menu` VALUES (13, 2024);
+INSERT INTO `role_menu` VALUES (13, 2025);
+INSERT INTO `role_menu` VALUES (13, 2026);
+INSERT INTO `role_menu` VALUES (13, 2027);
+INSERT INTO `role_menu` VALUES (13, 2028);
+INSERT INTO `role_menu` VALUES (18, 100);
+INSERT INTO `role_menu` VALUES (18, 1001);
+INSERT INTO `role_menu` VALUES (18, 1002);
+INSERT INTO `role_menu` VALUES (18, 1003);
+INSERT INTO `role_menu` VALUES (18, 1004);
+INSERT INTO `role_menu` VALUES (19, 100);
+INSERT INTO `role_menu` VALUES (19, 1001);
+INSERT INTO `role_menu` VALUES (19, 1002);
+INSERT INTO `role_menu` VALUES (19, 1003);
+INSERT INTO `role_menu` VALUES (19, 1004);
+INSERT INTO `role_menu` VALUES (20, 2038);
+INSERT INTO `role_menu` VALUES (20, 2049);
+INSERT INTO `role_menu` VALUES (20, 2050);
+INSERT INTO `role_menu` VALUES (20, 2051);
+INSERT INTO `role_menu` VALUES (20, 2052);
+INSERT INTO `role_menu` VALUES (20, 2053);
+INSERT INTO `role_menu` VALUES (21, 100);
+INSERT INTO `role_menu` VALUES (21, 101);
+INSERT INTO `role_menu` VALUES (21, 102);
+INSERT INTO `role_menu` VALUES (21, 1001);
+INSERT INTO `role_menu` VALUES (21, 1002);
+INSERT INTO `role_menu` VALUES (21, 1003);
+INSERT INTO `role_menu` VALUES (21, 1004);
+INSERT INTO `role_menu` VALUES (21, 1008);
+INSERT INTO `role_menu` VALUES (21, 1009);
+INSERT INTO `role_menu` VALUES (21, 1010);
+INSERT INTO `role_menu` VALUES (21, 1011);
+INSERT INTO `role_menu` VALUES (21, 1013);
+INSERT INTO `role_menu` VALUES (21, 1014);
+INSERT INTO `role_menu` VALUES (21, 1015);
+INSERT INTO `role_menu` VALUES (21, 1016);
+
+-- ----------------------------
+-- Table structure for seckillactivity
+-- ----------------------------
+DROP TABLE IF EXISTS `seckillactivity`;
+CREATE TABLE `seckillactivity`  (
+  `activity_id` int(11) NOT NULL AUTO_INCREMENT,
+  `concert_id` int(11) NULL DEFAULT NULL,
+  `concert_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `start_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `end_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `status` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL,
+  `description` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL,
+  PRIMARY KEY (`activity_id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = DYNAMIC;
+
+-- ----------------------------
+-- Records of seckillactivity
+-- ----------------------------
+INSERT INTO `seckillactivity` VALUES (1, 1, '赵传2023北京跨年演唱会 ——给所有知道我名字的人', '2023-12-27 18:28:22', '2024-01-02 18:00:00', '0', NULL);
+INSERT INTO `seckillactivity` VALUES (2, 2, '张紫宁「偶·像」巡回演唱会北京站', '2023-12-30 18:28:22', '2024-01-01 18:00:00', '0', 'sfssfsfsfsf');
+INSERT INTO `seckillactivity` VALUES (3, 3, '后来的人」王贰浪2023全国巡演-北京站', '2023-12-27 18:28:22', '2024-01-01 18:00:00', '0', NULL);
+INSERT INTO `seckillactivity` VALUES (4, 4, '次元音浪-音乐番only', '2023-12-27 18:28:22', '2024-01-01 18:00:00', '0', NULL);
+INSERT INTO `seckillactivity` VALUES (5, 5, '「春节进行时」新春聚会音乐节 小年舞台-北京站', '2023-12-27 18:28:22', '2024-01-12 18:00:00', '0', NULL);
+INSERT INTO `seckillactivity` VALUES (6, 6, '致敬Beyond・黄家驹30周年全国巡演/630乐队', '2023-12-27 18:28:22', '2024-01-12 18:00:00', '0', NULL);
+
+-- ----------------------------
+-- Table structure for sys_user
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_user`;
+CREATE TABLE `sys_user`  (
+  `userId` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键',
+  `username` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'NULL' COMMENT '用户名',
+  `password` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'NULL' COMMENT '密码',
+  `status` char(1) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '0' COMMENT '账号状态（0正常 1停用）',
+  `email` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '邮箱',
+  `phone` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '手机号',
+  PRIMARY KEY (`userId`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '用户表' ROW_FORMAT = DYNAMIC;
+
+-- ----------------------------
+-- Records of sys_user
+-- ----------------------------
+INSERT INTO `sys_user` VALUES (2, 'zjz', '123456', '0', '123@qq.com', '13031939607');
+INSERT INTO `sys_user` VALUES (3, 'hj', '123456', '0', '123@qq.com', '12121212112');
+-- ----------------------------
+-- Table structure for ticketinventory
+-- ----------------------------
+DROP TABLE IF EXISTS `ticketinventory`;
+CREATE TABLE `ticketinventory`  (
+  `ticketInventory_id` int(11) NOT NULL AUTO_INCREMENT,
+  `concert_id` int(11) NULL DEFAULT NULL,
+  `available_stock` int(11) NULL DEFAULT NULL,
+  `total_stock` int(11) NULL DEFAULT NULL,
+  `ticket_price` decimal(10, 2) NULL DEFAULT NULL,
+  PRIMARY KEY (`ticketInventory_id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = DYNAMIC;
+
+-- ----------------------------
+-- Records of ticketinventory
+-- ----------------------------
+INSERT INTO `ticketinventory` VALUES (1, 1, 456, 6545, 500.00);
+INSERT INTO `ticketinventory` VALUES (2, 2, 4998, 5000, 500.00);
+INSERT INTO `ticketinventory` VALUES (3, 3, 4994, 5000, 500.00);
+INSERT INTO `ticketinventory` VALUES (4, 4, 4994, 5000, 500.00);
+INSERT INTO `ticketinventory` VALUES (5, 5, 4998, 5000, 500.00);
+INSERT INTO `ticketinventory` VALUES (6, 6, 4998, 5000, 500.00);
+
+-- ----------------------------
+-- Table structure for user_order
+-- ----------------------------
+DROP TABLE IF EXISTS `user_order`;
+CREATE TABLE `user_order`  (
+  `order_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NULL DEFAULT NULL,
+  `concert_id` int(11) NULL DEFAULT NULL,
+  `quantity` int(11) NULL DEFAULT NULL,
+  `amount` decimal(10, 2) NULL DEFAULT NULL,
+  `status` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL,
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `pay_time` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`order_id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = DYNAMIC;
+
+-- ----------------------------
+-- Records of user_order
+-- ----------------------------
+INSERT INTO `user_order` VALUES (1, 2, 1, 1, 500.00, '已支付', '2024-01-13 08:20:44', '2024-01-13 16:20:45');
+INSERT INTO `user_order` VALUES (2, 2, 2, 1, 500.00, '已支付', '2024-01-13 08:21:56', '2024-01-13 16:21:57');
+INSERT INTO `user_order` VALUES (3, 2, 3, 2, 1000.00, '已支付', '2024-01-13 08:24:59', '2024-01-13 16:24:59');
+INSERT INTO `user_order` VALUES (4, 2, 4, 2, 1000.00, '已支付', '2024-01-13 08:25:00', '2024-01-13 16:25:01');
+INSERT INTO `user_order` VALUES (5, 3, 5, 2, 1000.00, '已支付', '2024-01-13 08:26:54', '2024-01-13 16:26:54');
+INSERT INTO `user_order` VALUES (6, 3, 3, 1, 500.00, '已支付', '2024-01-13 08:27:30', '2024-01-13 16:27:30');
+INSERT INTO `user_order` VALUES (7, 3, 6, 1, 500.00, '已支付', '2024-01-13 08:28:00', '2024-01-13 16:28:00');
+INSERT INTO `user_order` VALUES (8, 3, 1, 1, 500.00, '待支付', '2024-01-13 16:36:42', NULL);
+
+-- ----------------------------
+-- Table structure for user_roles
+-- ----------------------------
+DROP TABLE IF EXISTS `user_roles`;
+CREATE TABLE `user_roles`  (
+  `userId` bigint(20) NOT NULL,
+  `roleId` bigint(20) NOT NULL,
+  PRIMARY KEY (`userId`, `roleId`) USING BTREE,
+  INDEX `role_id`(`roleId`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = DYNAMIC;
+
+-- ----------------------------
+-- Records of user_roles
+-- ----------------------------
+INSERT INTO `user_roles` VALUES (1, 1);
+INSERT INTO `user_roles` VALUES (2, 1);
+INSERT INTO `user_roles` VALUES (1, 2);
+INSERT INTO `user_roles` VALUES (1, 3);
+INSERT INTO `user_roles` VALUES (3, 3);
+
+SET FOREIGN_KEY_CHECKS = 1;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="依赖准备"><a href="#依赖准备" class="headerlink" title="依赖准备"></a>依赖准备</h4><p>pom.xml</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependencies</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-boot-starter-web<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-boot-devtools<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scope</span><span class="token punctuation">&gt;</span></span>runtime<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>scope</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>optional</span><span class="token punctuation">&gt;</span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>optional</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.projectlombok<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>lombok<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>optional</span><span class="token punctuation">&gt;</span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>optional</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-boot-starter-test<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scope</span><span class="token punctuation">&gt;</span></span>test<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>scope</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+        <span class="token comment">&lt;!-- MyBatis plus--&gt;</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>com.baomidou<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>mybatis-plus-boot-starter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>exclusions</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>exclusion</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.mybatis<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>mybatis-spring<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>exclusion</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>exclusions</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>3.5.3.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.mybatis<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>mybatis-spring<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>3.0.3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>mysql<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>mysql-connector-java<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>8.0.33<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+        <span class="token comment">&lt;!-- Spring Data Redis依赖 --&gt;</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-boot-starter-data-redis<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+        <span class="token comment">&lt;!-- Jedis客户端依赖 --&gt;</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>redis.clients<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>jedis<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+        <span class="token comment">&lt;!--jwt依赖--&gt;</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>io.jsonwebtoken<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>jjwt<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>0.9.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>javax.xml.bind<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>jaxb-api<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>2.3.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>com.sun.xml.bind<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>jaxb-impl<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>2.3.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>com.sun.xml.bind<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>jaxb-core<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>2.3.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-boot-starter-aop<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.assertj<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>assertj-core<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencies</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="application-yml配置"><a href="#application-yml配置" class="headerlink" title="application.yml配置"></a>application.yml配置</h4><p>一开始要先写一个登录接口，端口、数据库、MybatisPlus、Redis、JWT通通配好</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"># server配置
+server:
+  port: 28080
+
+# spring配置
+spring:
+  datasource:
+    # 数据库连接信息
+    url: jdbc:mysql://localhost:3306/rbac?useUnicode=true&amp;characterEncoding=utf-8&amp;serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+  main:
+    allow-circular-references: true
+  jackson:
+    time-zone: GMT+8
+  data:
+    redis:
+      # Redis配置
+      host: 127.0.0.1
+      port: 6379
+      jedis:
+        pool:
+          # Redis连接池配置
+          max-active: 10
+          max-idle: 5
+          min-idle: 1
+          max-wait: 10000ms
+  mybatis-plus:
+    # MyBatis Plus配置
+    configuration:
+      # 设置日志实现类
+      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    global-config:
+      # 全局配置
+      db-config:
+        # 数据库配置
+        logic-delete-field: delFlag
+        logic-delete-value: 1
+        logic-not-delete-value: 0
+        id-type: auto
+    mapper-locations: classpath*:/mapper/**/*.xml
+
+# JWT配置
+jwt:
+  secret: gx4SN/4gh6QPvLfVWCW8Aoo4l2n66d2338IwXyu1koDT1W94XS35OZJPYkA2IIMMgmlz96LCHSNc8jLYuzwB1IreKOZz2TZhsWODfjHAS9bYlduniCUSuSPZ5/OP15O63fn1kN1N5w64frpyWcWbTtiCgLMkJpnfjmqFMAr7fgcOGyt2rmunvFYni9T78Q4fn/0gpx3qm8zXw3oBbFb1Ge9Wnh1UCSapXd/EzLau3iaXqp9f+8FHmSCo9vbEaRSRMPHdcpnB4WKHKySE/BCNSsWM+kHmHyrAbvKErPCz2XXMnIalUoAtquq03LnmYjrBHyI230VcYEVzGmzLOTsSJw==
+  access_token:
+    # 访问令牌配置
+    expiration: 36000 # 以秒为单位
+  refresh_token:
+    # 刷新令牌配置
+    expiration: 604800 # 以秒为单位
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在resource目录下新建一个mapper文件夹。数据库名，用户名密码替换为自己的</p>
+<h2 id="三、登录实现"><a href="#三、登录实现" class="headerlink" title="三、登录实现"></a>三、登录实现</h2><p>​		登录这块是该项目的一个难点，用户登录过程中需要填写用户名和密码，根据用户名到数据库中查找用户比对密码，通过校验之后，根据用户名生成token，采用双token机制，refreshToken的有效期比较长，当accessToken过期之后，可以用其刷新accessToken，存储用Redis。同时还要查询用户所拥有的权限，返回给前端以实现动态路由的功能。</p>
+<h4 id="工具类"><a href="#工具类" class="headerlink" title="工具类"></a>工具类</h4><p>以用户名生成token</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.JwtException;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Function;
+
+@Component
+public class JwtTokenUtil {
+
+    @Value("${jwt.secret}")
+    private String secret;
+
+    @Value("${jwt.access_token.expiration}")
+    private Long accessTokenExpiration;
+
+    @Value("${jwt.refresh_token.expiration}")
+    private Long refreshTokenExpiration;
+
+    public String generateAccessToken(String username) {
+        Map&lt;String, Object&gt; claims = new HashMap&lt;&gt;();
+        return doGenerateToken(claims, username, accessTokenExpiration);
+    }
+
+    public String generateRefreshToken(String username) {
+        Map&lt;String, Object&gt; claims = new HashMap&lt;&gt;();
+        return doGenerateToken(claims, username, refreshTokenExpiration);
+    }
+
+    private String doGenerateToken(Map&lt;String, Object&gt; claims, String username, Long expiration) {
+        return Jwts.builder()
+                .setClaims(claims)
+                .setSubject(username)
+                .setIssuedAt(new Date(System.currentTimeMillis()))
+                .setExpiration(new Date(System.currentTimeMillis() + expiration * 1000))
+                .signWith(SignatureAlgorithm.HS256,secret)
+                .compact();
+    }
+
+    public String getUsernameFromToken(String token) {
+                return getClaimFromToken(token, Claims::getSubject);
+    }
+
+    public Date getExpirationDateFromToken(String token) {
+        return getClaimFromToken(token, Claims::getExpiration);
+    }
+
+    public &lt;T&gt; T getClaimFromToken(String token, Function&lt;Claims, T&gt; claimsResolver) {
+        Claims claims = getAllClaimsFromToken(token);
+        return claimsResolver.apply(claims);
+    }
+
+    private Claims getAllClaimsFromToken(String token) {
+        return Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody();
+    }
+
+    private Boolean isTokenExpired(String token) {
+        Date expiration = getExpirationDateFromToken(token);
+        return expiration.before(new Date());
+    }
+
+    public Boolean validateToken(String token) {
+        try {
+            Jwts.parser().setSigningKey(secret).parseClaimsJws(token);
+            return !isTokenExpired(token);
+        } catch (JwtException | IllegalArgumentException e) {
+            return false;
+        }
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="3-1用户登录"><a href="#3-1用户登录" class="headerlink" title="3.1用户登录"></a>3.1用户登录</h3><h4 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h4><p>用户输入用户名密码之后，校验通过之后，根据用户名生成accessToken和refreshToken存入Redis以及返回给前端。</p>
+<h4 id="接口设计"><a href="#接口设计" class="headerlink" title="接口设计"></a>接口设计</h4><table>
+<thead>
+<tr>
+<th>请求方式</th>
+<th>请求路径</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>POST</td>
+<td>/login</td>
+</tr>
+</tbody></table>
+<p>请求体 </p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json">{
+    "username": "zjz",
+    "password": "1234"
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>相应格式</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json">{
+    "code": 200,
+    "msg": "操作成功",
+    "data": {
+        "accessToken": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ6anoiLCJleHAiOjE3MDY2OTk2NzAsImlhdCI6MTcwNjY2MzY3MH0.vJjFXPaRr7LtRDvUV81PJiyKBKOS_p80lb0k0oHdi0o",
+        "refreshToken": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ6anoiLCJleHAiOjE3MDcyNjg0NzAsImlhdCI6MTcwNjY2MzY3MH0.ioifvjmWzrMIVFZOLaOQ9rxXXkQGf2BCtIsrFg-S3gs"
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><p>LoginController</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@RestController
+public class LoginController {
+
+    @Autowired
+    private UserService userService;
+    @PostMapping("/login")
+    public CommonResult&lt;?&gt; login(@RequestBody LoginRequest loginRequest){
+          return userService.login(loginRequest);
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在UserServiceImpl中实现该方法</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@Autowired
+private JwtTokenUtil jwtTokenUtil;
+@Autowired
+private RedisTemplate&lt;String, String&gt; redisTemplate;
+@Autowired
+private Environment environment;
+/**
+     * 用户登录
+     *
+     * @param loginRequest 登录请求
+     * @return 登录结果
+     */
+    @Override
+    public CommonResult&lt;?&gt; login(LoginRequest loginRequest) {
+        // 创建查询条件
+        LambdaQueryWrapper&lt;User&gt; queryWrapper = new LambdaQueryWrapper&lt;&gt;();
+        queryWrapper.eq(User::getUsername, loginRequest.getUsername());
+        // 根据查询条件获取用户
+        User user = getOne(queryWrapper);
+        // 如果用户为空，返回错误结果
+        if (Objects.isNull(user)) {
+            return CommonResult.error(500, "用户名或密码错误");
+        }
+        // 检查密码是否正确
+        if (!user.getPassword().equals(loginRequest.getPassword())) {
+            return CommonResult.error(500, "用户名或密码错误");
+        }
+        // 获取用户名
+        String username = user.getUsername();
+        // 生成访问令牌
+        String accessToken = jwtTokenUtil.generateAccessToken(username);
+        // 生成刷新令牌
+        String refreshToken = jwtTokenUtil.generateRefreshToken(username);
+        // 获取访问令牌和刷新令牌的过期时间
+        Long accessTokenTTL = Long.valueOf(Objects.requireNonNull(environment.getProperty("jwt.access_token.expiration")));
+        Long refreshTokenTTL = Long.valueOf(Objects.requireNonNull(environment.getProperty("jwt.refresh_token.expiration")));
+        // 将访问令牌和刷新令牌存入Redis
+        redisTemplate.opsForValue().set(accessToken, "accessToken", accessTokenTTL, TimeUnit.SECONDS);
+        redisTemplate.opsForValue().set(refreshToken, "refreshToken", refreshTokenTTL, TimeUnit.SECONDS);
+        // 创建TokenResponse对象
+        TokenResponse tokenResponse = new TokenResponse(accessToken, refreshToken);
+        // 返回成功结果
+        return CommonResult.success(tokenResponse);
+    }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="3-2-获取用户信息"><a href="#3-2-获取用户信息" class="headerlink" title="3.2 获取用户信息"></a>3.2 获取用户信息</h3><h4 id="需求-1"><a href="#需求-1" class="headerlink" title="需求"></a>需求</h4><p>在用户登录的同时获取用户信息，包括用户权限信息</p>
+<h4 id="接口设计-1"><a href="#接口设计-1" class="headerlink" title="接口设计"></a>接口设计</h4><table>
+<thead>
+<tr>
+<th>请求方式</th>
+<th>请求路径</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>GET</td>
+<td>/getInfo</td>
+</tr>
+</tbody></table>
+<h2 id="三、用户管理"><a href="#三、用户管理" class="headerlink" title="三、用户管理"></a>三、用户管理</h2><p>用户管理界面需要有以下功能：</p>
+<ul>
+<li>查询用户（条件）</li>
+<li>新增用户</li>
+<li>修改用户信息</li>
+<li>删除用户</li>
+</ul>
+<p>常规的增删改查操作，<strong>注意</strong>：在新增用户和修改用户信息的过程中需要查询角色信息，以及用户当前角色信息。主要是学习一下分页查询的应用</p>
+<h3 id="1、查询用户"><a href="#1、查询用户" class="headerlink" title="1、查询用户"></a>1、查询用户</h3><h4 id="需求-2"><a href="#需求-2" class="headerlink" title="需求"></a>需求</h4><p>​    需要有用户列表分页查询的功能。</p>
+<p>​	要求能够针对用户姓名进行模糊查询。</p>
+<p>​	要求能够针对电话号码和状态进行查询。</p>
+<h4 id="接口设计-2"><a href="#接口设计-2" class="headerlink" title="接口设计"></a>接口设计</h4><table>
+<thead>
+<tr>
+<th>请求方式</th>
+<th>请求路径</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>GET</td>
+<td>/user/list</td>
+</tr>
+</tbody></table>
+<p>Query格式请求参数：</p>
+<p>pageNum: 页码</p>
+<p>pageSize: 每页条数</p>
+<p>userName：角色名称</p>
+<p>phone：电话号码</p>
+<p>status：状态</p>
+<p>响应格式：</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json">{
+    "code": 200,
+    "msg": "操作成功",
+    "data": {
+        "rows": [
+            {
+                "userid": 2,
+                "username": "zjz",
+                "status": "0",
+                "email": "123@qq.com",
+                "phone": "13031939607"
+            },
+            {
+                "userid": 3,
+                "username": "hj",
+                "status": "0",
+                "email": "123@qq.com",
+                "phone": "12121212112"
+            }
+        ],
+        "total": 2
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h4><h5 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h5><p>想要利用MybatisPlus分页查询，首先要配置分页拦截器</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@Configuration
+public class MbatisPlusConfig {
+
+    /**
+     * 3.4.0之后版本
+     * @return
+     */
+    @Bean
+    public MybatisPlusInterceptor mybatisPlusInterceptor(){
+        MybatisPlusInterceptor mybatisPlusInterceptor = new MybatisPlusInterceptor();
+        mybatisPlusInterceptor.addInnerInterceptor(new PaginationInnerInterceptor());
+        return mybatisPlusInterceptor;
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="实体类"><a href="#实体类" class="headerlink" title="实体类"></a>实体类</h5><p>User类，建议用插件生成，IDEA有MybatisPlus插件，用来生成表对应的实体类，service层和mapper层代码，我用的是EasyCode</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@TableName("sys_user")
+public class User  {
+//主键@TableId
+    private Long userid;
+
+//用户名
+    private String username;
+//密码
+    private String password;
+//账号状态（0正常 1停用）
+    private String status;
+//邮箱
+    private String email;
+//手机号
+    private String phone;
+
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>分页类PageVo</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class PageVo {
+    private List rows;
+    private Long total;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="统一响应"><a href="#统一响应" class="headerlink" title="统一响应"></a>统一响应</h5><p>对每个接口统一封装一下，返回格式大致为</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json">{
+    "code" : 200,
+    "msg"  : "操作成功"，
+    "data" : []
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>CommonResult</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@Data
+public class CommonResult&lt;T&gt; implements Serializable {
+
+    private Integer code;
+    private String msg;
+    private T data;
+
+
+    public static &lt;T&gt; CommonResult&lt;T&gt; success(T data) {
+        CommonResult&lt;T&gt; result = new CommonResult&lt;&gt;();
+        result.code = 200;
+        result.data = data;
+        result.msg = "操作成功";
+        return result;
+    }
+
+    public static &lt;T&gt; CommonResult&lt;T&gt; error(Integer code, String message) {
+        CommonResult&lt;T&gt; result = new CommonResult&lt;&gt;();
+        result.code = code;
+        result.msg = message;
+        return result;
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="controller层"><a href="#controller层" class="headerlink" title="controller层"></a>controller层</h5><p>UserController</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@RestController
+@RequestMapping("/user")
+public class UserController {
+    @Resource
+    private UserService userService;
+    @GetMapping("/list")
+    public CommonResult&lt;?&gt; list(User user, Integer pageNum, Integer pageSize){
+        return CommonResult.success(userService.list(user, pageNum, pageSize));
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="service层"><a href="#service层" class="headerlink" title="service层"></a>service层</h5><pre class="line-numbers language-java" data-language="java"><code class="language-java">public interface UserService extends IService&lt;User&gt; {
+
+    PageVo list(User user, Integer pageNum, Integer pageSize);
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="service接口层"><a href="#service接口层" class="headerlink" title="service接口层"></a>service接口层</h5><pre class="line-numbers language-java" data-language="java"><code class="language-java">@Service("userService")
+public class UserServiceImpl extends ServiceImpl&lt;UserMapper, User&gt; implements UserService {
+
+    /**
+     * 列出用户页面的用户信息
+     *
+     * @param user 当前用户对象
+     * @param pageNum 当前页码
+     * @param pageSize 每页用户数量
+     * @return 返回包含用户信息的分页对象
+     */
+    @Override
+    public PageVo list(User user, Integer pageNum, Integer pageSize) {
+        LambdaQueryWrapper&lt;User&gt; queryWrapper = new LambdaQueryWrapper&lt;&gt;();
+        queryWrapper.like(StringUtils.hasText(user.getUsername()), User::getUsername, user.getUsername());
+        queryWrapper.eq(StringUtils.hasText(user.getPhone()), User::getPhone, user.getPhone());
+        queryWrapper.eq(StringUtils.hasText(user.getStatus()), User::getStatus, user.getStatus());
+        Page&lt;User&gt; page = new Page&lt;&gt;();
+        page.setCurrent(pageNum);
+        page.setSize(pageSize);
+        page(page, queryWrapper);
+
+        List&lt;User&gt; userList = page.getRecords();
+        List&lt;UserVo&gt; userVos = BeanCopyUtils.copyBeanList(userList, UserVo.class);
+        PageVo pageVo = new PageVo();
+        pageVo.setRows(userVos);
+        pageVo.setTotal(page.getTotal());
+        return pageVo;
+    }
+
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这里提到的工具类BeanCopyUtils，将一个类里面的属性赋值到一个新的类中，该类是原先类的子集。支持单个对象复制和集合复制。</p>
+<h5 id="工具类-1"><a href="#工具类-1" class="headerlink" title="工具类"></a>工具类</h5><pre class="line-numbers language-java" data-language="java"><code class="language-java">public class BeanCopyUtils {
+    private BeanCopyUtils(){
+
+    }
+    public static &lt;V&gt; V copyBean(Object source,Class&lt;V&gt; clazz) {
+
+        V result = null;
+        try {
+            //创建目标对象
+            result = clazz.newInstance();
+            //实现属性copy
+            BeanUtils.copyProperties(source, result);
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        //返回结果
+
+        return result;
+    }
+    public static &lt;O,V&gt; List&lt;V&gt; copyBeanList(List&lt;O&gt; list, Class&lt;V&gt; clazz){
+        return list.stream()
+                .map(o -&gt; copyBean(o, clazz))
+                .collect(Collectors.toList());
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -994,7 +1906,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">91.6k</span>&nbsp;字
+                class="white-color">98.1k</span>&nbsp;字
             
             
             
